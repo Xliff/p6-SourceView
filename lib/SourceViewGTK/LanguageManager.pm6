@@ -26,7 +26,7 @@ class SourceViewGTK::LanguageManager {
     my CArray[Str] $sps = gtk_source_manager_get_search_path($slm);
     my @sps;
     my $i = 0;
-    @sps[$i] = $sps[$i] while $sps[$i++];
+    @sps[$i] = $sps[$i++] while $sps[$i];
     @sps;   b bnm,. 
   }
     
@@ -34,7 +34,7 @@ class SourceViewGTK::LanguageManager {
     my CArray[Str] $lids = gtk_source_manager_get_language_ids($slm);
     my @lids;
     my $i = 0;
-    @lids[$i] = $lids[$i] while $lids[$i++];
+    @lids[$i] = $lids[$i++] while $lids[$i];
     @lids;
   }
 
@@ -59,7 +59,7 @@ class SourceViewGTK::LanguageManager {
   multi method set_search_path(@dirs)  {
     die '@dirs must only contain Str objects' unless @dirs.all ~~ Str;
     my $sp = CArray[Str].new;
-    $sp[$_] = @dirs[$_] for @dirs.elems;
+    $sp[$_] = @dirs[$_] for ^@dirs.elems;
     samewith($sp);
   }
   multi method set_search_path (CArray[Str] $dirs) {
