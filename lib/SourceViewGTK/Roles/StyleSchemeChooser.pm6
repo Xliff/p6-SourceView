@@ -8,7 +8,7 @@ use SourceViewGTK::Raw::StyleSchemeChooser;
 use SourceViewGTK::StyleScheme;
 
 role SourceViewGTK::Roles::StyleSchemeChooser {
-  has GtkSourceStyleSchemeChooser $!sscc;
+  has GtkSourceStyleSchemeChooser $!ssc;
   
   method gtk_source_style_scheme_chooser_style_scheme 
     is rw 
@@ -17,11 +17,11 @@ role SourceViewGTK::Roles::StyleSchemeChooser {
     Proxy.new(
       FETCH => sub ($) {
         SourceViewGTK::StyleScheme.new( 
-          gtk_source_style_scheme_chooser_get_style_scheme($!sscc)
+          gtk_source_style_scheme_chooser_get_style_scheme($!ssc)
         );
       },
       STORE => sub ($, GtkSourceStyleScheme() $scheme is copy) {
-        gtk_source_style_scheme_chooser_set_style_scheme($!sscc, $scheme);
+        gtk_source_style_scheme_chooser_set_style_scheme($!ssc, $scheme);
       }
     );
   }
