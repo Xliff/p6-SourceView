@@ -8,7 +8,7 @@ use GTK::SourceView::Raw::Types;
 use GTK::Raw::ReturnedValue;
 use GTK::Raw::Subs;
 
-role GTK::SourceView::Roles::SourceBuffer {
+role SourceViewGTK::Roles::Buffer {
   has %!signals-sb;
   
   # GtkSourceBuffer, GtkTextIter, GtkSourceBracketMatchType, gpointer

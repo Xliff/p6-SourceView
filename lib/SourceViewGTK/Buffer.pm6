@@ -2,17 +2,17 @@ use v6.c;
 
 use GTK::Compat::Types;
 use GTK::Raw::Types;
-use GTK::SourceView::Raw::Types;
+use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Types;
 
-use GTK::SourceView::Roles::SourceBuffer;
+use SourceViewGTK::Roles::Buffer;
 
 use GTK::TextView;
 
-class GTK::SourceView::SourceBuffer is GTK::TextView {
+class SourceViewGTK::Buffer is GTK::TextBuffer {
   also does GTK::Roles::Types;
-  also does GTK::SourceView::Roles::SourceBuffer;
+  also does GTK::SourceView::Roles::Buffer;
   
   has GtkSourceBuffer $!sb
   

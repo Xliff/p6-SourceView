@@ -6,7 +6,7 @@ use GTK::Compat::Types;
 use GTK::Raw::Types;
 use GTK::SourceView::Raw::Types;
 
-unit package GTK::SourceView::Raw::SourceBuffer;
+unit package SourceViewGTK::Raw::Buffer;
 
 sub gtk_source_buffer_backward_iter_to_source_mark (
   GtkSourceBuffer $buffer, 
