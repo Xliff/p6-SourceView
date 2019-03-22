@@ -290,7 +290,13 @@ class SourceViewGTK::View is GTK::TextView {
     gtk_source_view_get_mark_attributes($!sv, $category, $p);
   }
 
-  method get_space_drawer is also<get-space-drawer> {
+  method get_space_drawer 
+    is also<
+      get-space-drawer 
+      space-drawer 
+      space_drawer
+    > 
+  {
     SourceViewGTK::SpaceDrawer.new( 
       gtk_source_view_get_space_drawer($!sv)
     );
