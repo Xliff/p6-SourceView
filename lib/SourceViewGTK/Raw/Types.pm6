@@ -10,6 +10,8 @@ class GtkSourceBuffer                             is repr('CPointer') is export 
 class GtkSourceCompletion                         is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceCompletionContext                  is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceCompletionInfo                     is repr('CPointer') is export does GTK::Roles::Pointers { }
+class GtkSourceCompletionItem                     is repr("CPointer") is export does GTK::Roles::Pointers { }
+class GtkSourceCompletionProposal                 is repr("CPointer") is export does GTK::Roles::Pointers { }
 class GtkSourceCompletionProvider                 is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceGutter                             is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceLanguage                           is repr('CPointer') is export does GTK::Roles::Pointers { }
@@ -28,6 +30,8 @@ class GtkSourceUndoManager                        is repr('CPointer') is export 
 class GtkSourceView                               is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceViewCompletion                     is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceViewCompletionContext              is repr("CPointer") is export does GTK::Roles::Pointers { }
+class GtkSourceViewCompletionInfo                 is repr("CPointer") is export does GTK::Roles::Pointers { }
+
 
 our enum GtkSourceFileLoaderError is export <
   GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG 
@@ -60,10 +64,10 @@ our enum GtkSourceFileSaverError is export <
 >;
 
 our enum GtkSourceSortFlags is export (
-    GTK_SOURCE_SORT_FLAGS_NONE              =>  0,
-    GTK_SOURCE_SORT_FLAGS_CASE_SENSITIVE    =>  1 +< 0,
-    GTK_SOURCE_SORT_FLAGS_REVERSE_ORDER     =>  1 +< 1,
-    GTK_SOURCE_SORT_FLAGS_REMOVE_DUPLICATES =>  1 +< 2,
+  GTK_SOURCE_SORT_FLAGS_NONE              =>  0,
+  GTK_SOURCE_SORT_FLAGS_CASE_SENSITIVE    =>  1 +< 0,
+  GTK_SOURCE_SORT_FLAGS_REVERSE_ORDER     =>  1 +< 1,
+  GTK_SOURCE_SORT_FLAGS_REMOVE_DUPLICATES =>  1 +< 2,
 );
 
 our enum GtkSourceGutterRendererState is export (
