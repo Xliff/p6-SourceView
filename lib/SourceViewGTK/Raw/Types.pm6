@@ -27,7 +27,7 @@ class GtkSourceSyleSchemeChooserButton            is repr('CPointer') is export 
 class GtkSourceUndoManager                        is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceView                               is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceViewCompletion                     is repr('CPointer') is export does GTK::Roles::Pointers { }
-
+class GtkSourceViewCompletionContext              is repr("CPointer") is export does GTK::Roles::Pointers { }
 
 our enum GtkSourceFileLoaderError is export <
   GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG 
