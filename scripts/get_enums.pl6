@@ -27,11 +27,33 @@ sub MAIN ($filename) {
       for $el -> $e {
         ((my $n = $e[1].Str) ~~ s/'='//).trim;
         $n ~~ s/'<<'/+</;
-        @e.push: $e[0].Str.trim;
-        @e.push: $n with $n.chars;
+        my $ee;
+        $ee.push: $e[0].Str.trim;
+        $ee.push: $n if $n.chars;
+        @e.push: $ee;
       }
       %enums{$l<enum><rn>} = @e;
     }
   }
-  %enums.gist.say;
+  
+  for %enums.keys -> $k {
+    #say %enums{$k}.gist;
+    my $m = %enums{$k}.map( *.map( *.elems ) ).max;
+    say "  our enum {$k} { $m == 2 ?? '(' !! '<' }";
+    for %enums{$k} -> $ek {
+      for $ek -> $el {
+        for $el.List -> $eel {
+          given $m {
+            when 1 {
+              say "      { $eel[0] } ";
+            }
+            when 2 {
+              say "      { $eel[0] } => { $eel[1] }"; 
+            }
+          }
+        }
+      }
+    }
+    say "  { $m == 2 ?? ')' !! '>' };\n";
+  }
 }
