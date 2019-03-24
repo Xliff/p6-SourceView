@@ -8,7 +8,6 @@ use SourceViewGTK::Raw::CompletionContext;
 use GTK::Roles::Types;
 
 use GTK::TextIter;
-use SourceViewGTK::Completion;
 
 class SourceViewGTK::CompletionContext {
   also does GTK::Roles::Types;
@@ -48,7 +47,7 @@ class SourceViewGTK::CompletionContext {
         $gv = GTK::Compat::Value.new(
           self.prop_get('completion', $gv)
         );
-        SourceViewGTK::Completion.new( 
+        ::('SourceViewGTK::Completion').new( 
           nativecast(GtkSourceCompletion, $gv.object) 
         )
       },

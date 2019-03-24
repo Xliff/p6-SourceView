@@ -5,9 +5,6 @@ use NativeCall;
 use GTK::Compat::Types;
 use GTK::SourceView::Raw::Types;
 
-use GTK::Raw::ReturnedValue;
-use GTK::Raw::Subs;
-
 role SourceViewGTK::Roles::Buffer {
   has %!signals-sb;
   

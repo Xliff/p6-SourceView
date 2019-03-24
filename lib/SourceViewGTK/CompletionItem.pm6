@@ -3,10 +3,10 @@ use v6.c;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionItem;
 
-use SourceViewGTK::Roles::GtkSourceCompletionProposal;
+use SourceViewGTK::Roles::CompletionProposal;
 
 class SourceViewGTK::CompletionItem {
-  also does SourceViewGTK::Roles::GtkSourceCompletionProposal;
+  also does SourceViewGTK::Roles::CompletionProposal;
   
   has GtkSourceCompletionItem $!sci;
   

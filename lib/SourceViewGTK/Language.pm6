@@ -5,7 +5,7 @@ use GTK::SourceView::Raw::Types;
 
 use GTK::SourceView::Raw::Language;
 
-class GTK::SourceView::Language {
+class SourceViewGTK::Language {
   has GtkSourceLanguage $!sl;
   
   submethod BUILD (:$language) {

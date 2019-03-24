@@ -18,7 +18,7 @@ use SourceViewGTK::View;
 
 class SourceViewGTK::Completion {
   also does GTK::Roles::Types;
-  also does GTK::Roles::Signals::Generic;s
+  also does GTK::Roles::Signals::Generic;
   also does SourceViewGTK::Roles::Signals::Completion;
   
   has GtkSourceViewCompletion $!sc;
@@ -260,7 +260,7 @@ class SourceViewGTK::Completion {
   }
 
   method remove_provider (
-    GtkSourceCompletionProvider $provider, 
+    GtkSourceCompletionProvider() $provider, 
     CArray[Pointer[GError]] $error
   ) {
     so gtk_source_completion_remove_provider($!sc, $provider, $error);
@@ -268,7 +268,7 @@ class SourceViewGTK::Completion {
 
   method start (
     GList() $providers, 
-    GtkSourceCompletionContext $context
+    GtkSourceCompletionContext() $context
   ) {
     so gtk_source_completion_start($!sc, $providers, $context);
   }

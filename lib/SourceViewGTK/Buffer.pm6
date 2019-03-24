@@ -6,7 +6,7 @@ use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Types;
 
-use SourceViewGTK::Roles::Buffer;
+use SourceViewGTK::Roles::Signals::Buffer;
 
 use GTK::TextView;
 

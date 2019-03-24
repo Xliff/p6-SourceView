@@ -1,7 +1,5 @@
 use v6.c;
 
-use GTK::Raw::ReturnedValue;
-
 use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
