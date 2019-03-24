@@ -3,11 +3,16 @@ use v6.c;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionItem;
 
+use SourceViewGTK::Roles::GtkSourceCompletionProposal;
+
 class SourceViewGTK::CompletionItem {
+  also does SourceViewGTK::Roles::GtkSourceCompletionProposal;
+  
   has GtkSourceCompletionItem $!sci;
   
   submethod BUILD (:$item) {
-    $!sci = $item; 
+    # SourceViewGTK::Roles::CompletionProposal
+    $!scp = nativecast(GtkSourceCompletionProposal, $!sci = $item); 
   }
   
   method new {
@@ -33,104 +38,44 @@ class SourceViewGTK::CompletionItem {
 
   # Type: GdkPixbuf
   method icon is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_OBJECT );
-    Proxy.new(
-      FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
-          self.prop_get('icon', $gv)
-        );
-        GTK::Compat::Pixbuf.new( nativecast(GtkPixbuf, $gv.object) );
-      },
-      STORE => -> $, GtkPixbuf() $val is copy {
-        $gv.object = $val;
-        self.prop_set('icon', $gv);
-      }
-    );
+    Proxy.new:
+      FETCH => -> $                   { self.get_icon        },
+      STORE => -> $ GdkPixbuf() $icon { self.set_icon($icon) };
   }
 
   # Type: gchar
   method icon-name is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
-    Proxy.new(
-      FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
-          self.prop_get('icon-name', $gv)
-        );
-        $gv.string;
-      },
-      STORE => -> $, Str() $val is copy {
-        $gv.string = $val;
-        self.prop_set('icon-name', $gv);
-      }
-    );
+    Proxy.new:
+      FECTH => -> $              { self.get_icon_name       },
+      STORE => -> $, Str() $name { self.set_con_name($name) };
   }
 
   # Type: gchar
   method info is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
-    Proxy.new(
-      FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
-          self.prop_get('info', $gv)
-        );
-        $gv.string;
-      },
-      STORE => -> $, Str() $val is copy {
-        $gv.string = $val;
-        self.prop_set('info', $gv);
-      }
-    );
+    Proxy.new:
+      FETCH => -> $              { self.get_info        }
+      STORE => -> $, Str() $info { self.set_info($info) };,
   }
 
   # Type: gchar
   method label is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
-    Proxy.new(
-      FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
-          self.prop_get('label', $gv)
-        );
-        $gv.string;
-      },
-      STORE => -> $, Str() $val is copy {
-        $gv.string = $val;
-        self.prop_set('label', $gv);
-      }
-    );
+    Proxy.new:
+      FETCH => -> $               { self.get_label         },
+      STORE => -> $, Str() $label { self.set_label($label) };
   }
 
   # Type: gchar
   method markup is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
-    Proxy.new(
-      FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
-          self.prop_get('markup', $gv)
-        );
-        $gv.string;
-      },
-      STORE => -> $, Str() $val is copy {
-        $gv.string = $val;
-        self.prop_set('markup', $gv);
-      }
-    );
+    Proxy.new:
+      FETCH => -> $                { self.get_markup          },
+      STORE => -> $, Str() $markup { self.set_markup($markup) };
   }
 
   # Type: gchar
   method text is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
-    Proxy.new(
-      FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
-          self.prop_get('text', $gv)
-        );
-        $gv.string;
-      },
-      STORE => -> $, Str() $val is copy {
-        $gv.string = $val;
-        self.prop_set('text', $gv);
-      }
-    );
+    Proxy.new:
+      FETCH => -> $              { self.get_text        },
+      STORE => -> $, Str() $text { self.set_text($text) };
   }
   
   method get_type {

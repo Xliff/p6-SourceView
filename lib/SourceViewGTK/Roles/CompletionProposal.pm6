@@ -16,9 +16,9 @@ role SourceViewGTK::Roles::CompletionProposal {
     gtk_source_completion_proposal_equal($!scp, $other);
   }
 
-  method get_gicon {
-    gtk_source_completion_proposal_get_gicon($!scp);
-  }
+  # method get_gicon {
+  #   gtk_source_completion_proposal_get_gicon($!scp);
+  # }
 
   method get_icon {
     GTK::Compat::Pixbuf.new( 
