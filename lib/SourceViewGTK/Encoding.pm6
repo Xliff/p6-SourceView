@@ -14,6 +14,10 @@ class SourceViewGTK::Encoding {
   
   method SourceViewGTK::Raw::Types::GtkSourceEncoding { $!se }
   
+  method new (GtkSourceEncoding $encoding) {
+    self.bless(:$encoding);
+  }
+  
   method get_current {
     self.bless( encoding => gtk_source_encoding_get_current() );
   }

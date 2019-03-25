@@ -23,7 +23,12 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     self.setTextBuffer( $!sb = $buffer );
   }
   
-  method new (GtkTextTagTable() $table) {
+  method SourceViewGTK::Raw::Types::GtkSourceBuffer { $!sb }
+  
+  multi method new (GtkSourceBuffer $buffer) {
+    self.bless(:$buffer);
+  }
+  multi method new (GtkTextTagTable() $table) {
     self.bless( buffer => gtk_source_buffer_new($table) );
   }
   

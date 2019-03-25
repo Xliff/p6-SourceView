@@ -22,6 +22,7 @@ class GtkSourceCompletionWords                    is repr("CPointer") is export 
 class GtkSourceEncoding                           is repr("CPointer") is export does GTK::Roles::Pointers { }
 class GtkSourceFile                               is repr("CPointer") is export does GTK::Roles::Pointers { }
 class GtkSourceFileLoader                         is repr("CPointer") is export does GTK::Roles::Pointers { }
+class GtkSourceFileSaver                          is repr("CPointer") is export does GTK::Roles::Pointers { }
 class GtkSourceGutter                             is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceLanguage                           is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceLanguageManager                    is repr('CPointer') is export does GTK::Roles::Pointers { }
@@ -42,6 +43,7 @@ class GtkSourceViewCompletionContext              is repr("CPointer") is export 
 class GtkSourceViewCompletionInfo                 is repr("CPointer") is export does GTK::Roles::Pointers { }
 class GtkSourceViewLanguage                       is repr("CPointer") is export does GTK::Roles::Pointers { }
 class GtkSourceViewUndoManager                    is repr("CPointer") is export does GTK::Roles::Pointers { }
+
 
 our enum GtkSourceFileLoaderError is export <
   GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG 

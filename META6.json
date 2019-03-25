@@ -20,6 +20,7 @@
       "SourceViewGTK::Raw::Encoding"                 :  "lib/SourceViewGTK/Raw/Encoding.pm6"                 ,
       "SourceViewGTK::Raw::File"                     :  "lib/SourceViewGTK/Raw/File.pm6"                     ,
       "SourceViewGTK::Raw::FileLoader"               :  "lib/SourceViewGTK/Raw/FileLoader.pm6"               ,
+      "SourceViewGTK::Raw::FileSaver"                :  "lib/SourceViewGTK/Raw/FileSaver.pm6"                ,
       "SourceViewGTK::Raw::Language"                 :  "lib/SourceViewGTK/Raw/Language.pm6"                 ,
       "SourceViewGTK::Raw::LanguageManager"          :  "lib/SourceViewGTK/Raw/LanguageManager.pm6"          ,
       "SourceViewGTK::Raw::StyleScheme"              :  "lib/SourceViewGTK/Raw/StyleScheme.pm6"              ,
@@ -50,7 +51,8 @@
       "SourceViewGTK::StyleSchemeChooserButton"      :  "lib/SourceViewGTK/StyleSchemeChooserButton.pm6"     ,
       "SourceViewGTK::StyleSchemeChooserWidget"      :  "lib/SourceViewGTK/StyleSchemeChooserWidget.pm6"     ,
       "SourceViewGTK::Buffer"                        :  "lib/SourceViewGTK/Buffer.pm6"                       ,
-      "SourceViewGTK::Completion"                    :  "lib/SourceViewGTK/Completion.pm6"                   
+      "SourceViewGTK::Completion"                    :  "lib/SourceViewGTK/Completion.pm6"                   ,
+      "SourceViewGTK::FileSaver"                     :  "lib/SourceViewGTK/FileSaver.pm6"                    
     },
     "name": "p6-SourceViewGTK",
     "perl": "6.c",
@@ -63,6 +65,7 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
 
 
 

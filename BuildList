@@ -13,6 +13,7 @@ GTK::TextView
 GTK::Widget
 GTK::Window
 Method::Also
+SOurceViewGTK::File
 SourceViewGTK::Raw::Types
 SourceViewGTK::Raw::Buffer
 SourceViewGTK::Raw::Completion
@@ -25,6 +26,7 @@ SourceViewGTK::Raw::CompletionWords
 SourceViewGTK::Raw::Encoding
 SourceViewGTK::Raw::File
 SourceViewGTK::Raw::FileLoader
+SourceViewGTK::Raw::FileSaver
 SourceViewGTK::Raw::Language
 SourceViewGTK::Raw::LanguageManager
 SourceViewGTK::Raw::StyleScheme
@@ -56,3 +58,4 @@ SourceViewGTK::StyleSchemeChooserButton
 SourceViewGTK::StyleSchemeChooserWidget
 SourceViewGTK::Buffer
 SourceViewGTK::Completion
+SourceViewGTK::FileSaver
