@@ -3,12 +3,16 @@ use v6.c;
 use Method::Also;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
+use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::View;
 
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::View;
 
-our SourceViewAncestry where GtkSourceView | GtkTextViewAncestry;
+use GTK::TextView;
+
+our subset SourceViewAncestry where GtkSourceView | TextViewAncestry;
 
 class SourceViewGTK::View is GTK::TextView {
   also does GTK::Roles::Types;
@@ -25,7 +29,7 @@ class SourceViewGTK::View is GTK::TextView {
   submethod BUILD (:$view) {
     given $view {
       when SourceViewAncestry {
-        self.setTextView($sv = $view);
+        self.setTextView($!sv = $view);
       }
       when SourceViewGTK::View {
       }
@@ -34,9 +38,7 @@ class SourceViewGTK::View is GTK::TextView {
     }
   }
   
-  method SourceView::Raw::Types::GtkSourceView {
-    $!sv;
-  }
+  method SourceView::Raw::Types::GtkSourceView { $!sv }
   
   method new {
     self.bless( view => gtk_source_view_new() );
@@ -55,7 +57,7 @@ class SourceViewGTK::View is GTK::TextView {
   # Is originally:
   # GtkSourceView, gint, gpointer --> void
   method change-number is also<change_number> {
-    self.connect-change-number($!sv);
+    self.connect-int($!sv, 'change-number');
   }
 
   # Is originally:
@@ -73,19 +75,19 @@ class SourceViewGTK::View is GTK::TextView {
   # Is originally:
   # GtkSourceView, gboolean, gpointer --> void
   method move-lines is also<move_lines> {
-    self.connect-move-lines($!sv);
+    self.connect-uint($!sv, 'move-lines');
   }
 
   # Is originally:
   # GtkSourceView, gboolean, gpointer --> void
   method move-to-matching-bracket is also<move_to_matching_bracket> {
-    self.connect-move-to-matching-bracket($!sv);
+    self.connect-uint($!sv, 'move-to-matching-bracket');
   }
 
   # Is originally:
   # GtkSourceView, gint, gpointer --> void
   method move-words is also<move_words> {
-    self.connect-move-words($!sv);
+    self.connect-int($!sv, 'move-words');
   }
 
   # Is originally:
@@ -102,7 +104,9 @@ class SourceViewGTK::View is GTK::TextView {
 
   # Is originally:
   # GtkSourceView, GtkTextIter, gint, gpointer --> void
-  method smart-home-end is also<smart_home_end> {
+  #
+  # Postfixed with "-signal" so as to not conflict with the "attribute"
+  method smart-home-end-signal is also<smart_home_end_signal> {
     self.connect-smart-home-end($!sv);
   }
 

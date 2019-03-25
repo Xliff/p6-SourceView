@@ -3,6 +3,7 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::View;
@@ -15,7 +16,7 @@ sub gtk_source_view_get_completion (GtkSourceView $view)
 
 sub gtk_source_view_get_gutter (
   GtkSourceView $view, 
-  GtkTextWindowType $window_type
+  guint $window_type              # GtkTextWindowType $window_type
 )
   returns GtkSourceGutter
   is native(sourceview)
@@ -97,7 +98,7 @@ sub gtk_source_view_get_auto_indent (GtkSourceView $view)
   { * }
 
 sub gtk_source_view_get_background_pattern (GtkSourceView $view)
-  returns GtkSourceBackgroundPatternType
+  returns guint # GtkSourceBackgroundPatternType
   is native(sourceview)
   is export
   { * }
@@ -157,7 +158,7 @@ sub gtk_source_view_get_smart_backspace (GtkSourceView $view)
   { * }
 
 sub gtk_source_view_get_smart_home_end (GtkSourceView $view)
-  returns GtkSourceSmartHomeEndType
+  returns guint # GtkSourceSmartHomeEndType
   is native(sourceview)
   is export
   { * }

@@ -3,7 +3,8 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
-use GTK::SourceView::Raw::Types;
+use GTK::Raw::Types;
+use SourceViewGTK::Raw::Types;
 
 role SourceViewGTK::Roles::Buffer {
   has %!signals-sb;

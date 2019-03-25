@@ -1,9 +1,11 @@
 use v6.c;
 
-use GTK::Compat::Types;
-use GTK::SourceView::Raw::Types;
+use NativeCall;
 
-use GTK::SourceView::Raw::Language;
+use GTK::Compat::Types;
+use SourceViewGTK::Raw::Types;
+
+use SourceViewGTK::Raw::Language;
 
 class SourceViewGTK::Language {
   has GtkSourceLanguage $!sl;
@@ -12,7 +14,9 @@ class SourceViewGTK::Language {
     $!sl = $language;
   }
   
-  method new(GtlSourceLanguage $language) {
+  method SourceViewGTK::Raw::Types::GtkSourceLanguage { $!sl }
+  
+  method new(GtkSourceLanguage $language) {
     my $o = self.bless(:$language);
     $o.upref;
     $o;
@@ -20,7 +24,7 @@ class SourceViewGTK::Language {
   
   method get_globs {
     my CArray[Str] $g = gtk_source_language_get_globs($!sl);
-    my ($i, @ids) = (0);
+    my ($i, @g) = (0);
     @g[$i] = $g[$i++] while $g[$i];
     # g_strfreev($g);
     @g;
@@ -59,7 +63,7 @@ class SourceViewGTK::Language {
   }
 
   method get_style_ids {
-    my CArray[Str] $sids ;= gtk_source_language_get_style_ids($!sl);
+    my CArray[Str] $sids = gtk_source_language_get_style_ids($!sl);
     my ($i, @ids) = (0);
     @ids[$i] = $sids[$i++] while $sids[$i];
     # g_strfreev($sids);

@@ -1,5 +1,9 @@
 use v6.c;
 
+use NativeCall;
+
+use GTK::Compat::Types;
+
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionItem;
 
@@ -39,8 +43,8 @@ class SourceViewGTK::CompletionItem {
   # Type: GdkPixbuf
   method icon is rw  {
     Proxy.new:
-      FETCH => -> $                   { self.get_icon        },
-      STORE => -> $ GdkPixbuf() $icon { self.set_icon($icon) };
+      FETCH => -> $                    { self.get_icon        },
+      STORE => -> $, GdkPixbuf() $icon { self.set_icon($icon) };
   }
 
   # Type: gchar
@@ -53,8 +57,8 @@ class SourceViewGTK::CompletionItem {
   # Type: gchar
   method info is rw  {
     Proxy.new:
-      FETCH => -> $              { self.get_info        }
-      STORE => -> $, Str() $info { self.set_info($info) };,
+      FETCH => -> $              { self.get_info        },
+      STORE => -> $, Str() $info { self.set_info($info) };
   }
 
   # Type: gchar

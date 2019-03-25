@@ -1,15 +1,17 @@
 use v6.c;
 
 use Method::Also;
+use NativeCall;
 
 use GTK::Compat::Types;
+use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::StyleSchemeChooserButton;
 
 use GTK::Button;
 
 use SourceViewGTK::Roles::StyleSchemeChooser;
 
-our StyleSchemeChooserButtonAncestry 
+our subset StyleSchemeChooserButtonAncestry 
   where GtkSourceStyleSchemeChooserButton | ButtonAncestry;
 
 class SourceViewGTK::StyleSchemeChooserButton is GTK::Button {

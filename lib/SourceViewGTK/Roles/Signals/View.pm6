@@ -1,6 +1,9 @@
 use v6.c;
 
+use NativeCall;
+
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Signals::Generic;
@@ -9,56 +12,6 @@ role SourceViewGTK::Roles::Signals::View {
   also does GTK::Roles::Signals::Generic;
   
   has %!signals-sv;
-  
-   # GtkSourceView, uint32, gpointer
-  method connect-change-case (
-    $obj,
-    $signal = 'change-case',
-    &handler?
-  ) {
-    my $hid;
-    %!signals-sv //= do {
-      my $s = Supplier.new;
-      $hid = g-connect-uint($obj, $signal,
-        -> $, $gsccte, $ud {
-          CATCH {
-            default { $s.quit($_) }
-          }
-
-          $s.emit( [self, $gsccte, $ud ] );
-        },
-        Pointer, 0
-      );
-      [ $s.Supply, $obj, $hid];
-    };
-    %!signals-sv{$signal}[0].tap(&handler) with &handler;
-    %!signals-sv{$signal}[0];
-  }
-
-  # GtkSourceView, gint, gpointer
-  method connect-change-number (
-    $obj,
-    $signal = 'change-number',
-    &handler?
-  ) {
-    my $hid;
-    %!signals-sv //= do {
-      my $s = Supplier.new;
-      $hid = g-connect-int($obj, $signal,
-        -> $, $gt, $ud {
-          CATCH {
-            default { $s.quit($_) }
-          }
-
-          $s.emit( [self, $gt, $ud ] );
-        },
-        Pointer, 0
-      );
-      [ $s.Supply, $obj, $hid];
-    };
-    %!signals-sv{$signal}[0].tap(&handler) with &handler;
-    %!signals-sv{$signal}[0];
-  }
 
   # GtkSourceView, GtkTextIter, GdkEvent, gpointer
   method connect-line-mark-activated (
@@ -76,81 +29,6 @@ role SourceViewGTK::Roles::Signals::View {
           }
 
           $s.emit( [self, $gtir, $get, $ud ] );
-        },
-        Pointer, 0
-      );
-      [ $s.Supply, $obj, $hid];
-    };
-    %!signals-sv{$signal}[0].tap(&handler) with &handler;
-    %!signals-sv{$signal}[0];
-  }
-
-  # GtkSourceView, gboolean, gpointer
-  method connect-move-lines (
-    $obj,
-    $signal = 'move-lines',
-    &handler?
-  ) {
-    my $hid;
-    %!signals-sv //= do {
-      my $s = Supplier.new;
-      $hid = g-connect-uint($obj, $signal,
-        -> $, $gn, $ud {
-          CATCH {
-            default { $s.quit($_) }
-          }
-
-          $s.emit( [self, $gn, $ud ] );
-        },
-        Pointer, 0
-      );
-      [ $s.Supply, $obj, $hid];
-    };
-    %!signals-sv{$signal}[0].tap(&handler) with &handler;
-    %!signals-sv{$signal}[0];
-  }
-
-  # GtkSourceView, gboolean, gpointer
-  method connect-move-to-matching-bracket (
-    $obj,
-    $signal = 'move-to-matching-bracket',
-    &handler?
-  ) {
-    my $hid;
-    %!signals-sv //= do {
-      my $s = Supplier.new;
-      $hid = g-connect-uint($obj, $signal,
-        -> $, $gn, $ud {
-          CATCH {
-            default { $s.quit($_) }
-          }
-
-          $s.emit( [self, $gn, $ud ] );
-        },
-        Pointer, 0
-      );
-      [ $s.Supply, $obj, $hid];
-    };
-    %!signals-sv{$signal}[0].tap(&handler) with &handler;
-    %!signals-sv{$signal}[0];
-  }
-
-  # GtkSourceView, gint, gpointer
-  method connect-move-words (
-    $obj,
-    $signal = 'move-words',
-    &handler?
-  ) {
-    my $hid;
-    %!signals-sv //= do {
-      my $s = Supplier.new;
-      $hid = g-connect-int($obj, $signal,
-        -> $, $gt, $ud {
-          CATCH {
-            default { $s.quit($_) }
-          }
-
-          $s.emit( [self, $gt, $ud ] );
         },
         Pointer, 0
       );

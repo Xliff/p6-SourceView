@@ -1,11 +1,14 @@
 use v6.c;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionProvider;
 use SourceViewGTK::Raw::Types;
 
 role SourceViewGTK::Roles::CompletionProvider {
-  has GtkSourceCompletionProposal $!scp;
+  has GtkSourceCompletionProvider $!scp;
+  
+  method SourceViewGTK::Raw::TYpes::GtkSourceCompletionProvider { $!scp }
   
   method activate_proposal (
     GtkSourceCompletionProposal() $proposal, 

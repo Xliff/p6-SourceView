@@ -1,12 +1,15 @@
 use v6.c;
 
 use GTK::Compat::Types;
+use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionProposal;
 
-use GTK::Compat::Pixbuf:
+use GTK::Compat::Pixbuf;
 
 role SourceViewGTK::Roles::CompletionProposal {
   has GtkSourceCompletionProposal $!scp;
+  
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionProposal { $!scp }
   
   method emit-changed {
     gtk_source_completion_proposal_changed($!scp);

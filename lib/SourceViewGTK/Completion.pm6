@@ -2,16 +2,17 @@ use v6.c;
 
 use NativeCall;
 
+use GTK::Compat::GList;
 use GTK::Compat::Types;
-use SourceViewGTK::Raw::Types;
+use GTK::Raw::Types;
 
+use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Completion;
 
-use GTK::Roles::TYpes;
+use GTK::Roles::Types;
 use GTK::Roles::Signals::Generic;
 use SourceViewGTK::Roles::Signals::Completion;
 
-use GTK::Compat::GList;
 use SourceViewGTK::CompletionContext;
 use SourceViewGTK::CompletionInfo;
 use SourceViewGTK::View;
@@ -21,7 +22,7 @@ class SourceViewGTK::Completion {
   also does GTK::Roles::Signals::Generic;
   also does SourceViewGTK::Roles::Signals::Completion;
   
-  has GtkSourceViewCompletion $!sc;
+  has GtkSourceCompletion $!sc;
   
   submethod BUILD (:$completion) {
     $!sc = $completion; 
@@ -234,7 +235,7 @@ class SourceViewGTK::Completion {
   }
 
   method error_quark {
-    gtk_source_completion_error_quark($!sc);
+    gtk_source_completion_error_quark();
   }
 
   method get_info_window {
@@ -255,7 +256,8 @@ class SourceViewGTK::Completion {
     SourceViewGTK::View.new( gtk_source_completion_get_view($!sc) );
   }
 
-  method hide {
+  # Renamed to avoid conflict with the signal 'hide'
+  method hide-window {
     gtk_source_completion_hide($!sc);
   }
 

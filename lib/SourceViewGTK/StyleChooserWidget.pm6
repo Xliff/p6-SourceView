@@ -1,12 +1,15 @@
 use v6.c;
 
+use NativeCall;
+
 use SourceViewGTK::Raw::Types;
+use SourceViewGTK::Raw::StyleSchemeChooserWidget;
 
 use GTK::Widget;
 
 use SourceViewGTK::Roles::StyleSchemeChooser;
 
-our StyleChooserWidgetAncestry
+our subset StyleChooserWidgetAncestry
   where GtkSourceStyleChooserWidget | WidgetAncestry;
 
 class SourceViewGTK::StyleChooserWidget is GTK::Widget {

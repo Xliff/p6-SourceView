@@ -3,9 +3,9 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
-use GTK::SourceView::Raw::Types;
+use SourceViewGTK::Raw::Types;
 
-unit package GTK::SourceView::Raw::Language;
+unit package SourceViewGTK::Raw::Language;
 
 sub gtk_source_language_get_globs (GtkSourceLanguage $language)
   returns CArray[Str]

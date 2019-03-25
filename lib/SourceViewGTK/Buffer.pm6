@@ -2,6 +2,7 @@ use v6.c;
 
 use GTK::Compat::Types;
 use GTK::Raw::Types;
+use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Types;
@@ -10,58 +11,64 @@ use SourceViewGTK::Roles::Signals::Buffer;
 
 use GTK::TextView;
 
+use SourceViewGTK::Language;
+
 class SourceViewGTK::Buffer is GTK::TextBuffer {
   also does GTK::Roles::Types;
-  also does GTK::SourceView::Roles::Buffer;
+  also does SourceViewGTK::Roles::Buffer;
   
-  has GtkSourceBuffer $!sb
+  has GtkSourceBuffer $!sb;
   
   submethod BUILD (:$buffer) {
     self.setTextBuffer( $!sb = $buffer );
   }
   
-  method new {
-    self.bless( buffer => gtk_source_buffer_new() );
+  method new (GtkTextTagTable() $table) {
+    self.bless( buffer => gtk_source_buffer_new($table) );
+  }
+  
+  method new_with_language (GtkSourceViewLanguage() $language) {
+    gtk_source_buffer_new_with_language($language);
   }
   
   # Is originally:
   # GtkSourceBuffer, GtkTextIter, GtkSourceBracketMatchType, gpointer --> void
   method bracket-matched {
-    self.connect-bracket-matched($!w);
+    self.connect-bracket-matched($!sb);
   }
 
   # Is originally:
   # GtkSourceBuffer, GtkTextIter, GtkTextIter, gpointer --> void
   method highlight-updated {
-    self.connect-highlight-updated($!w);
+    self.connect-highlight-updated($!sb);
   }
 
   # Is originally:
   # GtkSourceBuffer, gpointer --> void
   method redo {
-    self.connect($!w, 'redo');
+    self.connect($!sb, 'redo');
   }
 
   # Is originally:
   # GtkSourceBuffer, GtkTextMark, gpointer --> void
   method source-mark-updated {
-    self.connect-source-mark-updated($!w);
+    self.connect-source-mark-updated($!sb);
   }
 
   # Is originally:
   # GtkSourceBuffer, gpointer --> void
   method undo {
-    self.connect($!w, 'undo');
+    self.connect($!sb, 'undo');
   }
   
   method highlight_matching_brackets is rw {
     Proxy.new(
       FETCH => sub ($) {
-        so gtk_source_buffer_get_highlight_matching_brackets($!sv);
+        so gtk_source_buffer_get_highlight_matching_brackets($!sb);
       },
       STORE => sub ($, Int() $highlight is copy) {
         my gboolean $h = self.RESOLVE-BOOL($highlight);
-        gtk_source_buffer_set_highlight_matching_brackets($!sv, $h);
+        gtk_source_buffer_set_highlight_matching_brackets($!sb, $h);
       }
     );
   }
@@ -69,11 +76,11 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method highlight_syntax is rw {
     Proxy.new(
       FETCH => sub ($) {
-        so gtk_source_buffer_get_highlight_syntax($!sv);
+        so gtk_source_buffer_get_highlight_syntax($!sb);
       },
       STORE => sub ($, Int() $highlight is copy) {
         my gboolean $h = self.RESOLVE-BOOL($highlight);
-        gtk_source_buffer_set_highlight_syntax($!sv, $h);
+        gtk_source_buffer_set_highlight_syntax($!sb, $h);
       }
     );
   }
@@ -81,11 +88,11 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method implicit_trailing_newline is rw {
     Proxy.new(
       FETCH => sub ($) {
-        so gtk_source_buffer_get_implicit_trailing_newline($!sv);
+        so gtk_source_buffer_get_implicit_trailing_newline($!sb);
       },
       STORE => sub ($, Int() $implicit_trailing_newline is copy) {
         my gboolean $itn = self.RESOLVE-BOOL($implicit_trailing_newline);
-        gtk_source_buffer_set_implicit_trailing_newline($!sv, $itn);
+        gtk_source_buffer_set_implicit_trailing_newline($!sb, $itn);
       }
     );
   }
@@ -93,11 +100,10 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method language is rw {
     Proxy.new(
       FETCH => sub ($) {
-        GtkSourceLanguage( gtk_source_buffer_get_language($!sv) );
+        SourceViewGTK::Language.new( gtk_source_buffer_get_language($!sb) );
       },
-      STORE => sub ($, Int() $language is copy) {
-        my guint $l = self.RESOLVE-UINT($language);
-        gtk_source_buffer_set_language($!sv, $l);
+      STORE => sub ($, GtkSourceLanguage() $language is copy) {
+        gtk_source_buffer_set_language($!sb, $language);
       }
     );
   }
@@ -105,11 +111,11 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method max_undo_levels is rw {
     Proxy.new(
       FETCH => sub ($) {
-        gtk_source_buffer_get_max_undo_levels($!sv);
+        gtk_source_buffer_get_max_undo_levels($!sb);
       },
       STORE => sub ($, Int() $max_undo_levels is copy) {
-        my gint $mul = self.RESOLVE-INT($mul);
-        gtk_source_buffer_set_max_undo_levels($!sv, $mul);
+        my gint $mul = self.RESOLVE-INT($max_undo_levels);
+        gtk_source_buffer_set_max_undo_levels($!sb, $mul);
       }
     );
   }
@@ -117,10 +123,10 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method style_scheme is rw {
     Proxy.new(
       FETCH => sub ($) {
-        gtk_source_buffer_get_style_scheme($!sv);
+        gtk_source_buffer_get_style_scheme($!sb);
       },
       STORE => sub ($, $scheme is copy) {
-        gtk_source_buffer_set_style_scheme($!sv, $scheme);
+        gtk_source_buffer_set_style_scheme($!sb, $scheme);
       }
     );
   }
@@ -128,11 +134,10 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method undo_manager is rw {
     Proxy.new(
       FETCH => sub ($) {
-        GtkSourceStyleScheme( gtk_source_buffer_get_undo_manager($!sv) );
+        GtkSourceStyleScheme( gtk_source_buffer_get_undo_manager($!sb) );
       },
-      STORE => sub ($, Int() $manager is copy) {
-        my guint $m = self.RESOLVE-UINT($manager);
-        gtk_source_buffer_set_undo_manager($!sv, $m);
+      STORE => sub ($, GtkSourceViewUndoManager() $manager is copy) {
+        gtk_source_buffer_set_undo_manager($!sb, $manager);
       }
     );
   }
@@ -238,11 +243,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     gtk_source_buffer_join_lines($!sb, $start, $end);
   }
 
-  method new_with_language {
-    gtk_source_buffer_new_with_language($!sb);
-  }
-
-  method redo {
+  method emit-redo {
     gtk_source_buffer_redo($!sb);
   }
 
@@ -261,11 +262,11 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     Int() $column
   ) {
     my guint $f = self.RESOLVE-UINT($flags);
-    my gint $c = self.RESOLVE-INT($column)l
+    my gint $c = self.RESOLVE-INT($column);
     gtk_source_buffer_sort_lines($!sb, $start, $end, $f, $c);
   }
 
-  method undo {
+  method emit-undo {
     gtk_source_buffer_undo($!sb);
   }
   

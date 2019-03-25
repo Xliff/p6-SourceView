@@ -7,6 +7,12 @@ use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::StyleScheme;
 
+sub gtk_source_style_scheme_get_description (GtkSourceStyleScheme $scheme)
+  returns Str
+  is native(sourceview)
+  is export
+  { * }
+
 sub gtk_source_style_scheme_get_filename (GtkSourceStyleScheme $scheme)
   returns Str
   is native(sourceview)

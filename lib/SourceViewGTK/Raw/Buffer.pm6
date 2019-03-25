@@ -4,7 +4,7 @@ use NativeCall;
 
 use GTK::Compat::Types;
 use GTK::Raw::Types;
-use GTK::SourceView::Raw::Types;
+use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Buffer;
 
@@ -37,7 +37,7 @@ sub gtk_source_buffer_can_undo (GtkSourceBuffer $buffer)
 
 sub gtk_source_buffer_change_case (
   GtkSourceBuffer $buffer, 
-  GtkSourceChangeCaseType $case_type, 
+  uint32 $case_type,              # GtkSourceChangeCaseType $case_type, 
   GtkTextIter $start, 
   GtkTextIter $end
 )
@@ -185,7 +185,7 @@ sub gtk_source_buffer_sort_lines (
   GtkSourceBuffer $buffer, 
   GtkTextIter $start, 
   GtkTextIter $end, 
-  GtkSourceSortFlags $flags, 
+  uint32 $flags,                  # GtkSourceSortFlags $flags, 
   gint $column
 )
   is native(sourceview)

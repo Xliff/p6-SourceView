@@ -1,6 +1,11 @@
 use v6.c;
 
+use NativeCall;
+
+use Method::Also;
+
 use GTK::Compat::Types;
+use SourceViewGTK::Raw::LanguageManager;
 use SourceViewGTK::Raw::Types;
 
 class SourceViewGTK::LanguageManager {
@@ -10,12 +15,14 @@ class SourceViewGTK::LanguageManager {
     $!slm = $manager;
   }
   
+  method SourceViewGTK::Raw::Types::GtkSourceLanguageManager { $!slm }
+  
   method new {
     self.bless( manager => gtk_source_language_manager_new() );
   }
   
   method get_default is also<get-default> {
-    gtk_source_language_manager_get_default($!slm);
+    self.bless( manager => gtk_source_language_manager_get_default() );
   }
 
   method get_language (Str() $id) is also<get-language> {
@@ -23,15 +30,15 @@ class SourceViewGTK::LanguageManager {
   }
   
   method get_search_path is also<get-search-path> {
-    my CArray[Str] $sps = gtk_source_manager_get_search_path($slm);
+    my CArray[Str] $sps = gtk_source_language_manager_get_search_path($!slm);
     my @sps;
     my $i = 0;
     @sps[$i] = $sps[$i++] while $sps[$i];
-    @sps;   b bnm,. 
+    @sps;
   }
     
   method get_language_ids is also<get-language-ids> {
-    my CArray[Str] $lids = gtk_source_manager_get_language_ids($slm);
+    my CArray[Str] $lids = gtk_source_language_manager_get_language_ids($!slm);
     my @lids;
     my $i = 0;
     @lids[$i] = $lids[$i++] while $lids[$i];

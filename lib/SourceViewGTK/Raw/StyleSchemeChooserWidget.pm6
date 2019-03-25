@@ -14,7 +14,7 @@ sub gtk_source_style_scheme_chooser_widget_get_type ()
   { * }
 
 sub gtk_source_style_scheme_chooser_widget_new ()
-  returns GtSourceStyleSchemeChooserWidget
+  returns GtkSourceStyleSchemeChooserWidget
   is native(sourceview)
   is export
   { * }

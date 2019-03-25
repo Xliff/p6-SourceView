@@ -1,6 +1,9 @@
 use v6.c;
 
+use NativeCall;
+
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::StyleSchemeChooserWidget;
 use SourceViewGTK::Raw::Types;
 
@@ -8,11 +11,11 @@ use SourceViewGTK::Roles::StyleSchemeChooser;
 
 use GTK::Widget;
 
-our StyleSchemeChooserWidgetAncestry 
-  where GtkStyleSchemeChooserWidget | WidgetAncestry;
+our subset StyleSchemeChooserWidgetAncestry 
+  where GtkSourceStyleSchemeChooserWidget | WidgetAncestry;
 
-class SourceViewGTK::StyleSChemeChooserWidget is GTK::Widget {
-  has GtkSourceViewStyleSchemeChooserWidget $!sscw;
+class SourceViewGTK::StyleSchemeChooserWidget is GTK::Widget {
+  has GtkSourceStyleSchemeChooserWidget $!sscw;
   
   method bless(*%attrinit) {
     my $o = self.CREATE.BUILDALL(Empty, %attrinit);
@@ -26,13 +29,13 @@ class SourceViewGTK::StyleSChemeChooserWidget is GTK::Widget {
         my $to-parent;    
         
         $!sscw = do {
-          when GtkStyleSchemeChooserWidget {
+          when GtkSourceStyleSchemeChooserWidget {
             $to-parent = nativecast(GtkWidget, $widget);
             $widget;
           }
           default {
             $to-parent = $_;
-            nativecast(GtkStyleSchemeChooserWidget, $widget);
+            nativecast(GtkSourceStyleSchemeChooserWidget, $widget);
           }
         }
         self.setWidget($to-parent);

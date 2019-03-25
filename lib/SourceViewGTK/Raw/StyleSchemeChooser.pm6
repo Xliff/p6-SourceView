@@ -5,7 +5,7 @@ use NativeCall;
 use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
-unit packabge SourceViewGTK::Raw::StyleSchemeChooser;
+unit package SourceViewGTK::Raw::StyleSchemeChooser;
 
 sub gtk_source_style_scheme_chooser_get_type ()
   returns GType

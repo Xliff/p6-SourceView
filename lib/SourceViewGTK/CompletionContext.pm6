@@ -1,7 +1,12 @@
 use v6.c;
 
 use Method::Also;
+use NativeCall;
 
+use GTK::Compat::Value;
+use GTK::Compat::Types;
+
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionContext;
 
@@ -12,11 +17,13 @@ use GTK::TextIter;
 class SourceViewGTK::CompletionContext {
   also does GTK::Roles::Types;
   
-  has GtkSourceViewCompletionContext $!scc;
+  has GtkSourceCompletionContext $!scc;
   
   submethod BUILD (:$context) {
     $!scc = $context;
   }
+  
+  method SourceViewGTK::Raw::Types::GtkSourceViewCompletionContext { $!scc }
   
   method new (GtkSourceCompletionContext $context) {
     self.bless(:$context);
@@ -75,16 +82,19 @@ class SourceViewGTK::CompletionContext {
     );
   }
 
-  method add_proposals is also<add-proposals> (
-    GtkSourceCompletionProvider $provider, 
-    GList $proposals, 
-    gboolean $finished
-  ) {
+  method add_proposals (
+    GtkSourceCompletionProvider() $provider, 
+    GList() $proposals, 
+    Int() $finished
+  ) 
+    is also<add-proposals>
+  {
+    my gboolean $f = self.RESOLVE-BOOL($finished);
     gtk_source_completion_context_add_proposals(
       $!scc, 
       $provider, 
       $proposals, 
-      $finished
+      $f
     );
   }
 

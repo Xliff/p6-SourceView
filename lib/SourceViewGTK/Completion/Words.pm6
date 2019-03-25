@@ -1,10 +1,15 @@
 use v6.c;
 
+use NativeCall;
+
 use GTK::Compat::Types;
+use GTK::Compat::Value;
+
 use GTK::Raw::Types;
+use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionWords;
 
-use SourveViewGTK::Roles::CompletionProvider;
+use SourceViewGTK::Roles::CompletionProvider;
 
 class SourceViewGTK::Completion::Words {
   also does SourceViewGTK::Roles::CompletionProvider;
@@ -16,8 +21,10 @@ class SourceViewGTK::Completion::Words {
     $!scp = nativecast(GtkSourceCompletionWords, $!scw = $words);
   }
   
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionWords { $!scw }
+  
   method new (GdkPixbuf() $icon) {
-    gtk_source_completion_words_new($!scw, $icon);
+    gtk_source_completion_words_new($icon);
   }
   
   # Type: uint32 (GtkSourceCompletionActivation)
@@ -28,7 +35,7 @@ class SourceViewGTK::Completion::Words {
         $gv = GTK::Compat::Value.new(
           self.prop_get('activation', $gv)
         );
-        GtkSourceActivation( $gv.uint );
+        GtkSourceCompletionActivation( $gv.uint );
       },
       STORE => -> $, Int() $val is copy {
         $gv.uint = $val;

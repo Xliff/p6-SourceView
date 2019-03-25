@@ -4,6 +4,7 @@ use Method::Also;
 use NativeCall;
 
 use GTK::Compat::Types;
+use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::StyleSchemeManager;
 
 class SourceViewGTK::StyleSchemeManager {
@@ -12,6 +13,8 @@ class SourceViewGTK::StyleSchemeManager {
   submethod BUILD (:$manager) {
     $!sscm = $manager;
   }
+  
+  method SourceViewGTK::Raw::Types::GtkSourceStyleSchemeManager { $!sscm }
   
   method new {
     self.bless( manager => gtk_source_style_scheme_manager_new() );
@@ -26,7 +29,7 @@ class SourceViewGTK::StyleSchemeManager {
   }
 
   method get_default is also<get-default> {
-    gtk_source_style_scheme_manager_get_default($!sscm);
+    self.bless( manager => gtk_source_style_scheme_manager_get_default() );
   }
 
   method get_scheme (Str() $scheme_id) is also<get-scheme> {

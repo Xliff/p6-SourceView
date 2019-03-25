@@ -3,6 +3,7 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::CompletionProvider;
@@ -20,7 +21,7 @@ sub gtk_source_completion_provider_activate_proposal (
 sub gtk_source_completion_provider_get_activation (
   GtkSourceCompletionProvider $provider
 )
-  returns GtkSourceCompletionActivation
+  returns uint32 # GtkSourceCompletionActivation
   is native(sourceview)
   is export
   { * }

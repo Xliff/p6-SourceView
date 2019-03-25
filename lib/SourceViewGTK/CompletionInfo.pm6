@@ -2,14 +2,18 @@ use v6.c;
 
 use Method::Also;
 
+use GTK::Raw::Types;
+
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionInfo;
 
-our CompletionInfoAncestry 
-  where GtkSourceViewCompletionInfo | WindowAncestry;
+use GTK::Window;
+
+our subset CompletionInfoAncestry 
+  where GtkSourceCompletionInfo | WindowAncestry;
 
 class SourceViewGTK::CompletionInfo is GTK::Window {
-  has GtkSourceViewCompletionInfo $!sci;
+  has GtkSourceCompletionInfo $!sci;
   
   method bless(*%attrinit) {
     my $o = self.CREATE.BUILDALL(Empty, %attrinit);

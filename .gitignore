@@ -1,2 +1,4 @@
 .precomp/
 lib/.precomp/
+.touch/
+*.bak
