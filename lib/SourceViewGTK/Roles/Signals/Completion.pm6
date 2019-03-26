@@ -5,7 +5,11 @@ use NativeCall;
 use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
+use GTK::Roles::Signals::Generic;
+
 role SourceViewGTK::Roles::Signals::Completion {
+  also does GTK::Roles::Signals::Generic;
+  
   has %!signals-sc;
   
   # GtkSourceCompletion, GtkScrollStep, gint, gpointer

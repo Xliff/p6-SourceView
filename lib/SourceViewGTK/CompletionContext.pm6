@@ -81,14 +81,29 @@ class SourceViewGTK::CompletionContext {
       }
     );
   }
+  
+  proto method add_proposals (|)
+    is also<add-proposals>
+    { * }
 
-  method add_proposals (
+  multi method add_proposals (
+    GtkSourceCompletionProvider() $provider, 
+    @proposals,
+    Int() $finished
+  ) {
+    # List of GtkSourceCompletionItem
+    my $proposals = GTK::Compat::GList.new(@proposals);
+    samewith(
+      $provider,
+      $proposals,
+      $finished
+    );
+  }
+  multi method add_proposals (
     GtkSourceCompletionProvider() $provider, 
     GList() $proposals, 
     Int() $finished
-  ) 
-    is also<add-proposals>
-  {
+  ) {
     my gboolean $f = self.RESOLVE-BOOL($finished);
     gtk_source_completion_context_add_proposals(
       $!scc, 

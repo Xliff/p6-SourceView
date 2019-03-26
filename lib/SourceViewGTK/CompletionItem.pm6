@@ -19,6 +19,8 @@ class SourceViewGTK::CompletionItem {
     $!scp = nativecast(GtkSourceCompletionProposal, $!sci = $item); 
   }
   
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionItem { $!sci }
+  
   method new {
     self.bless( item => gtk_source_completion_item_new() );
   }

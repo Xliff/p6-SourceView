@@ -6,7 +6,11 @@ use GTK::Compat::Types;
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
+use GTK::Roles::Signals::Generic;
+
 role SourceViewGTK::Roles::Buffer {
+  also does GTK::Roles::Signals::Generic;
+  
   has %!signals-sb;
   
   # GtkSourceBuffer, GtkTextIter, GtkSourceBracketMatchType, gpointer

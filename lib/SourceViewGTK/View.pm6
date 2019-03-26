@@ -38,7 +38,11 @@ class SourceViewGTK::View is GTK::TextView {
     }
   }
   
-  method SourceView::Raw::Types::GtkSourceView { $!sv }
+  submethod DESTROY {
+    #self.disconnect-all($_) for %!signals-sv;
+  }
+  
+  method SourceViewGTK::Raw::Types::GtkSourceView { $!sv }
   
   method new {
     self.bless( view => gtk_source_view_new() );

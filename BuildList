@@ -1,9 +1,13 @@
+Cairo
 GTK::Button
 GTK::Compat::GList
 GTK::Compat::GSList
 GTK::Compat::Pixbuf
+GTK::Compat::RGBA
+GTK::Compat::ReturnedValue
 GTK::Compat::Types
 GTK::Compat::Value
+GTK::Raw::ReturnedValue
 GTK::Raw::Types
 GTK::Roles::Pointers
 GTK::Roles::Signals::Generic
@@ -13,7 +17,6 @@ GTK::TextView
 GTK::Widget
 GTK::Window
 Method::Also
-SOurceViewGTK::File
 SourceViewGTK::Raw::Types
 SourceViewGTK::Raw::Buffer
 SourceViewGTK::Raw::Completion
@@ -27,8 +30,14 @@ SourceViewGTK::Raw::Encoding
 SourceViewGTK::Raw::File
 SourceViewGTK::Raw::FileLoader
 SourceViewGTK::Raw::FileSaver
+SourceViewGTK::Raw::Gutter
+SourceViewGTK::Raw::GutterRenderer
+SourceViewGTK::Raw::GutterRendererPixbuf
+SourceViewGTK::Raw::GutterRendererText
 SourceViewGTK::Raw::Language
 SourceViewGTK::Raw::LanguageManager
+SourceViewGTK::Raw::Mark
+SourceViewGTK::Raw::MarkAttributes
 SourceViewGTK::Raw::StyleScheme
 SourceViewGTK::Raw::StyleSchemeChooser
 SourceViewGTK::Raw::StyleSchemeChooserButton
@@ -39,6 +48,8 @@ SourceViewGTK::Roles::CompletionProposal
 SourceViewGTK::Roles::CompletionProvider
 SourceViewGTK::Roles::Signals::Buffer
 SourceViewGTK::Roles::Signals::Completion
+SourceViewGTK::Roles::Signals::GutterRenderer
+SourceViewGTK::Roles::Signals::MarkAttributes
 SourceViewGTK::Roles::Signals::View
 SourceViewGTK::StyleScheme
 SourceViewGTK::StyleSchemeManager
@@ -50,8 +61,13 @@ SourceViewGTK::CompletionItem
 SourceViewGTK::Encoding
 SourceViewGTK::File
 SourceViewGTK::FileLoader
+SourceViewGTK::GutterRenderer
+SourceViewGTK::GutterRenderer::Pixbuf
+SourceViewGTK::GutterRenderer::Text
 SourceViewGTK::Language
 SourceViewGTK::LanguageManager
+SourceViewGTK::Mark
+SourceViewGTK::MarkAttributes
 SourceViewGTK::Roles::StyleSchemeChooser
 SourceViewGTK::StyleChooserWidget
 SourceViewGTK::StyleSchemeChooserButton
@@ -59,3 +75,4 @@ SourceViewGTK::StyleSchemeChooserWidget
 SourceViewGTK::Buffer
 SourceViewGTK::Completion
 SourceViewGTK::FileSaver
+SourceViewGTK::Gutter

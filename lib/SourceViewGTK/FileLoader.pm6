@@ -14,6 +14,8 @@ class SourceViewGTK::FileLoader {
     $!sfl = $loader;
   }
   
+  method SourceViewGTK::Raw::Types::GtkSourceFileLoader { $!sfl }
+  
   method new (GtkSourceBuffer() $buffer, GtkSourceFile() $file) {
     self.bless( loader => gtk_source_file_loader_new($buffer, $file) );
   }

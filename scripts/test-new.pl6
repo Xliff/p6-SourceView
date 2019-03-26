@@ -34,7 +34,6 @@ sub MAIN( $rev = 'HEAD' ) {
     my $proc = Proc::Async.new(
       'perl6',
       '--stagestats',
-      '-I../cairo-p6/lib',
       '-I../p6-Pango/lib',
       '-I../p6-GtkPlus/lib',
       '-Ilib',

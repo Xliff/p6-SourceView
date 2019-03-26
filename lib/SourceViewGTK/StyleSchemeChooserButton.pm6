@@ -38,6 +38,10 @@ class SourceViewGTK::StyleSchemeChooserButton is GTK::Button {
       }
     }
   }
+  
+  method SourceViewGTK::Raw::Types::GtkSourceStyleSchemeChooserButton { 
+    $!sscb 
+  }
 
   method new {
     self.bless( button => gtk_source_style_scheme_chooser_button_new() );

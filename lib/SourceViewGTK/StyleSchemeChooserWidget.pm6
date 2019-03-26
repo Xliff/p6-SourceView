@@ -48,6 +48,8 @@ class SourceViewGTK::StyleSchemeChooserWidget is GTK::Widget {
     }
   }
   
+  method SourceViewGTK::Raw::Types::StyleSchemeChooserWidget { $!sscw }
+  
   method new {
     self.bless( widget => gtk_source_style_scheme_chooser_widget_new() );
   }

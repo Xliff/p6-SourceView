@@ -10,7 +10,6 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Completion;
 
 use GTK::Roles::Types;
-use GTK::Roles::Signals::Generic;
 use SourceViewGTK::Roles::Signals::Completion;
 
 use SourceViewGTK::CompletionContext;
@@ -19,7 +18,6 @@ use SourceViewGTK::View;
 
 class SourceViewGTK::Completion {
   also does GTK::Roles::Types;
-  also does GTK::Roles::Signals::Generic;
   also does SourceViewGTK::Roles::Signals::Completion;
   
   has GtkSourceCompletion $!sc;
@@ -27,6 +25,8 @@ class SourceViewGTK::Completion {
   submethod BUILD (:$completion) {
     $!sc = $completion; 
   }
+  
+  method SourceViewGTK::Raw::Types::GtkSourceCompletion { $!sc }
   
   # Is originally:
   # GtkSourceCompletion, gpointer --> void

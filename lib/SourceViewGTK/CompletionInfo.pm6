@@ -33,6 +33,8 @@ class SourceViewGTK::CompletionInfo is GTK::Window {
     }
   }
   
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionInfo { $!sci }
+  
   method new {
     self.bless( info => gtk_source_completion_info_new() );
   }
