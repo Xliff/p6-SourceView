@@ -133,3 +133,20 @@ our enum GtkSourceBackgroundPatternType is export <
   GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE 
   GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID 
 >;
+
+our enum GtkSourceSpaceTypeFlags is export (
+  GTK_SOURCE_SPACE_TYPE_NONE      => 0,
+  GTK_SOURCE_SPACE_TYPE_SPACE     => 1,
+  GTK_SOURCE_SPACE_TYPE_TAB       => 1 +< 1,
+  GTK_SOURCE_SPACE_TYPE_NEWLINE   => 1 +< 2,
+  GTK_SOURCE_SPACE_TYPE_NBSP      => 1 +< 3,
+  GTK_SOURCE_SPACE_TYPE_ALL       => 0xf
+);
+
+our enum GtkSourceSpaceLocationFlags is export (
+  GTK_SOURCE_SPACE_LOCATION_NONE          => 0,
+  GTK_SOURCE_SPACE_LOCATION_LEADING       => 1,
+  GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT   => 1 +< 1,
+  GTK_SOURCE_SPACE_LOCATION_TRAILING      => 1 +< 2,
+  GTK_SOURCE_SPACE_LOCATION_ALL           => 0x7
+);

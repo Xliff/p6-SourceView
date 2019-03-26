@@ -38,6 +38,7 @@ SourceViewGTK::Raw::LanguageManager
 SourceViewGTK::Raw::Mark
 SourceViewGTK::Raw::MarkAttributes
 SourceViewGTK::Raw::PrintCompositor
+SourceViewGTK::Raw::SpaceDrawer
 SourceViewGTK::Raw::StyleScheme
 SourceViewGTK::Raw::StyleSchemeChooser
 SourceViewGTK::Raw::StyleSchemeChooserButton
@@ -51,6 +52,7 @@ SourceViewGTK::Roles::Signals::Completion
 SourceViewGTK::Roles::Signals::GutterRenderer
 SourceViewGTK::Roles::Signals::MarkAttributes
 SourceViewGTK::Roles::Signals::View
+SourceViewGTK::SpaceDrawer
 SourceViewGTK::StyleScheme
 SourceViewGTK::StyleSchemeManager
 SourceViewGTK::View

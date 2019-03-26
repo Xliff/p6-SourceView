@@ -10,8 +10,12 @@ my regex name {
 #   <[A..Z]>+ [ '=' [ \d+ | \d+ '<<' \d+ ] ]? ','
 # }
 
+my token d {
+  <[0..9 x]>
+}
+
 my rule enum_entry {
-  \s* ( <[_ A..Z]>+ ) ( [ '=' \d+ [ '<<' \d+ ]? ]? ) ','? \v*
+  \s* ( <[_ A..Z]>+ ) ( [ '=' <d>+ [ '<<' <d>+ ]? ]? ) ','? \v*
 }
 
 my rule enum {
@@ -37,7 +41,7 @@ sub MAIN ($dir) {
       my @e;
       for $l<enum><enum_entry> -> $el {
         for $el -> $e {
-          ((my $n = $e[1].Str) ~~ s/'='//).trim;
+          ((my $n = $e[1].Str.trim) ~~ s/'='//);
           $n ~~ s/'<<'/+</;
           my $ee;
           $ee.push: $e[0].Str.trim;
@@ -58,10 +62,14 @@ sub MAIN ($dir) {
         for $el.List -> $eel {
           given $m {
             when 1 {
-              say "      { $eel[0] } ";
+              say "      { $eel[0] },";
             }
             when 2 {
-              say "      { $eel[0] } => { $eel[1] }"; 
+              with $eel[1] {
+                say "      { $eel[0] } => { $eel[1] },"; 
+              } else {
+                say "      '{ $eel[0] }',";
+              }
             }
           }
         }

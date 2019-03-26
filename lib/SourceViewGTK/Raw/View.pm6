@@ -247,7 +247,7 @@ sub gtk_source_view_set_smart_backspace (
 
 sub gtk_source_view_set_smart_home_end (
   GtkSourceView $view, 
-  uint32 $smart_home_end          # GtkSourceSmartHomeEndTypes
+  uint32 $smart_home_end          # GtkSourceSmartHomeEndType
 )
   is native(sourceview)
   is export
