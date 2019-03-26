@@ -16,7 +16,7 @@ class SourceViewGTK::Language {
   
   method SourceViewGTK::Raw::Types::GtkSourceLanguage { $!sl }
   
-  method new(GtkSourceLanguage $language) {
+  method new (GtkSourceLanguage $language) {
     my $o = self.bless(:$language);
     $o.upref;
     $o;

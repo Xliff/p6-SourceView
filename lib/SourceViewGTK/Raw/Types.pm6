@@ -31,6 +31,7 @@ class GtkSourceLanguage                           is repr('CPointer') is export 
 class GtkSourceLanguageManager                    is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceMark                               is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceMarkAttributes                     is repr('CPointer') is export does GTK::Roles::Pointers { }
+class GtkSourcePrintCompositor                    is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceSpaceDrawer                        is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceStyle                              is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceStyleChooserWidget                 is repr('CPointer') is export does GTK::Roles::Pointers { }

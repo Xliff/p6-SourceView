@@ -44,7 +44,13 @@ class SourceViewGTK::View is GTK::TextView {
   
   method SourceViewGTK::Raw::Types::GtkSourceView { $!sv }
   
-  method new {
+  multi method new (GtkSourceView $view) {
+    my $o = self.bless(:$view);
+    $o.upref;
+    $o;
+  }
+  
+  multi method new {
     self.bless( view => gtk_source_view_new() );
   }
 

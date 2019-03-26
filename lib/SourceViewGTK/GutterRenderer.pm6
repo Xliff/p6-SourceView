@@ -29,6 +29,10 @@ class SourceViewGTK::GutterRenderer {
   
   method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer { $!sgr }
   
+  method new (GtkSourceGutterRenderer $renderer) {
+    self.bless(:$renderer);
+  }
+  
   method setGutterRenderer($renderer) {
     $!sgr = $renderer;
   }

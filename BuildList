@@ -4,7 +4,6 @@ GTK::Compat::GList
 GTK::Compat::GSList
 GTK::Compat::Pixbuf
 GTK::Compat::RGBA
-GTK::Compat::ReturnedValue
 GTK::Compat::Types
 GTK::Compat::Value
 GTK::Raw::ReturnedValue
@@ -38,6 +37,7 @@ SourceViewGTK::Raw::Language
 SourceViewGTK::Raw::LanguageManager
 SourceViewGTK::Raw::Mark
 SourceViewGTK::Raw::MarkAttributes
+SourceViewGTK::Raw::PrintCompositor
 SourceViewGTK::Raw::StyleScheme
 SourceViewGTK::Raw::StyleSchemeChooser
 SourceViewGTK::Raw::StyleSchemeChooserButton
@@ -76,3 +76,4 @@ SourceViewGTK::Buffer
 SourceViewGTK::Completion
 SourceViewGTK::FileSaver
 SourceViewGTK::Gutter
+SourceViewGTK::PrintCompositor
