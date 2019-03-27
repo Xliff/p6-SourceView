@@ -57,6 +57,7 @@
       "SourceViewGTK::StyleSchemeManager"             :  "lib/SourceViewGTK/StyleSchemeManager.pm6"           ,
       "SourceViewGTK::Tag"                            :  "lib/SourceViewGTK/Tag.pm6"                          ,
       "SourceViewGTK::UndoManager"                    :  "lib/SourceViewGTK/UndoManager.pm6"                  ,
+      "SourceViewGTK::Utils"                          :  "lib/SourceViewGTK/Utils.pm6"                        ,
       "SourceViewGTK::Version"                        :  "lib/SourceViewGTK/Version.pm6"                      ,
       "SourceViewGTK::View"                           :  "lib/SourceViewGTK/View.pm6"                         ,
       "SourceViewGTK::Completion::Words"              :  "lib/SourceViewGTK/Completion/Words.pm6"             ,
@@ -96,6 +97,7 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
 
 
 

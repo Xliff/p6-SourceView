@@ -68,6 +68,7 @@ SourceViewGTK::StyleScheme
 SourceViewGTK::StyleSchemeManager
 SourceViewGTK::Tag
 SourceViewGTK::UndoManager
+SourceViewGTK::Utils
 SourceViewGTK::Version
 SourceViewGTK::View
 SourceViewGTK::Completion::Words
