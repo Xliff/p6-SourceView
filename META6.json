@@ -40,6 +40,7 @@
       "SourceViewGTK::Raw::StyleSchemeChooserButton"  :  "lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6" ,
       "SourceViewGTK::Raw::StyleSchemeChooserWidget"  :  "lib/SourceViewGTK/Raw/StyleSchemeChooserWidget.pm6" ,
       "SourceViewGTK::Raw::StyleSchemeManager"        :  "lib/SourceViewGTK/Raw/StyleSchemeManager.pm6"       ,
+      "SourceViewGTK::Raw::UndoManager"               :  "lib/SourceViewGTK/Raw/UndoManager.pm6"              ,
       "SourceViewGTK::Raw::Version"                   :  "lib/SourceViewGTK/Raw/Version.pm6"                  ,
       "SourceViewGTK::Raw::View"                      :  "lib/SourceViewGTK/Raw/View.pm6"                     ,
       "SourceViewGTK::Region"                         :  "lib/SourceViewGTK/Region.pm6"                       ,
@@ -55,6 +56,7 @@
       "SourceViewGTK::StyleScheme"                    :  "lib/SourceViewGTK/StyleScheme.pm6"                  ,
       "SourceViewGTK::StyleSchemeManager"             :  "lib/SourceViewGTK/StyleSchemeManager.pm6"           ,
       "SourceViewGTK::Tag"                            :  "lib/SourceViewGTK/Tag.pm6"                          ,
+      "SourceViewGTK::UndoManager"                    :  "lib/SourceViewGTK/UndoManager.pm6"                  ,
       "SourceViewGTK::Version"                        :  "lib/SourceViewGTK/Version.pm6"                      ,
       "SourceViewGTK::View"                           :  "lib/SourceViewGTK/View.pm6"                         ,
       "SourceViewGTK::Completion::Words"              :  "lib/SourceViewGTK/Completion/Words.pm6"             ,
@@ -94,6 +96,7 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
 
 
 
