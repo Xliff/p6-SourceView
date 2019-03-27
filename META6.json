@@ -31,6 +31,7 @@
       "SourceViewGTK::Raw::Mark"                      :  "lib/SourceViewGTK/Raw/Mark.pm6"                     ,
       "SourceViewGTK::Raw::MarkAttributes"            :  "lib/SourceViewGTK/Raw/MarkAttributes.pm6"           ,
       "SourceViewGTK::Raw::PrintCompositor"           :  "lib/SourceViewGTK/Raw/PrintCompositor.pm6"          ,
+      "SourceViewGTK::Raw::Region"                    :  "lib/SourceViewGTK/Raw/Region.pm6"                   ,
       "SourceViewGTK::Raw::SearchContext"             :  "lib/SourceViewGTK/Raw/SearchContext.pm6"            ,
       "SourceViewGTK::Raw::SearchSettings"            :  "lib/SourceViewGTK/Raw/SearchSettings.pm6"           ,
       "SourceViewGTK::Raw::SpaceDrawer"               :  "lib/SourceViewGTK/Raw/SpaceDrawer.pm6"              ,
@@ -41,6 +42,7 @@
       "SourceViewGTK::Raw::StyleSchemeManager"        :  "lib/SourceViewGTK/Raw/StyleSchemeManager.pm6"       ,
       "SourceViewGTK::Raw::Version"                   :  "lib/SourceViewGTK/Raw/Version.pm6"                  ,
       "SourceViewGTK::Raw::View"                      :  "lib/SourceViewGTK/Raw/View.pm6"                     ,
+      "SourceViewGTK::Region"                         :  "lib/SourceViewGTK/Region.pm6"                       ,
       "SourceViewGTK::Roles::CompletionProposal"      :  "lib/SourceViewGTK/Roles/CompletionProposal.pm6"     ,
       "SourceViewGTK::Roles::CompletionProvider"      :  "lib/SourceViewGTK/Roles/CompletionProvider.pm6"     ,
       "SourceViewGTK::Roles::Signals::Buffer"         :  "lib/SourceViewGTK/Roles/Signals/Buffer.pm6"         ,
@@ -91,6 +93,7 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
 
 
 

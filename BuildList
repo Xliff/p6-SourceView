@@ -12,12 +12,12 @@ GTK::Raw::Utils
 GTK::Roles::Pointers
 GTK::Roles::Signals::Generic
 GTK::Roles::Types
+GTK::TextBuffer
 GTK::TextIter
 GTK::TextView
 GTK::Widget
 GTK::Window
 Method::Also
-SourceViewGtK::Raw::Map
 SourceViewGTK::Raw::Types
 SourceViewGTK::Raw::Buffer
 SourceViewGTK::Raw::Completion
@@ -41,6 +41,7 @@ SourceViewGTK::Raw::Map
 SourceViewGTK::Raw::Mark
 SourceViewGTK::Raw::MarkAttributes
 SourceViewGTK::Raw::PrintCompositor
+SourceViewGTK::Raw::Region
 SourceViewGTK::Raw::SearchContext
 SourceViewGTK::Raw::SearchSettings
 SourceViewGTK::Raw::SpaceDrawer
@@ -51,6 +52,7 @@ SourceViewGTK::Raw::StyleSchemeChooserWidget
 SourceViewGTK::Raw::StyleSchemeManager
 SourceViewGTK::Raw::Version
 SourceViewGTK::Raw::View
+SourceViewGTK::Region
 SourceViewGTK::Roles::CompletionProposal
 SourceViewGTK::Roles::CompletionProvider
 SourceViewGTK::Roles::Signals::Buffer
