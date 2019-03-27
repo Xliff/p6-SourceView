@@ -1,6 +1,6 @@
 {
     "depends": [
-        "GtkPlus"
+        "p6-GtkPlus"
     ],
     "description": "Perl6 library bindings for GTK SourceView 4",
     "version": "r0.01",
@@ -35,6 +35,7 @@
       "SourceViewGTK::Raw::SearchContext"             :  "lib/SourceViewGTK/Raw/SearchContext.pm6"            ,
       "SourceViewGTK::Raw::SearchSettings"            :  "lib/SourceViewGTK/Raw/SearchSettings.pm6"           ,
       "SourceViewGTK::Raw::SpaceDrawer"               :  "lib/SourceViewGTK/Raw/SpaceDrawer.pm6"              ,
+      "SourceViewGTK::Raw::Style"                     :  "lib/SourceViewGTK/Raw/Style.pm6"                    ,
       "SourceViewGTK::Raw::StyleScheme"               :  "lib/SourceViewGTK/Raw/StyleScheme.pm6"              ,
       "SourceViewGTK::Raw::StyleSchemeChooser"        :  "lib/SourceViewGTK/Raw/StyleSchemeChooser.pm6"       ,
       "SourceViewGTK::Raw::StyleSchemeChooserButton"  :  "lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6" ,
@@ -53,6 +54,7 @@
       "SourceViewGTK::Roles::Signals::View"           :  "lib/SourceViewGTK/Roles/Signals/View.pm6"           ,
       "SourceViewGTK::SearchSettings"                 :  "lib/SourceViewGTK/SearchSettings.pm6"               ,
       "SourceViewGTK::SpaceDrawer"                    :  "lib/SourceViewGTK/SpaceDrawer.pm6"                  ,
+      "SourceViewGTK::Style"                          :  "lib/SourceViewGTK/Style.pm6"                        ,
       "SourceViewGTK::StyleScheme"                    :  "lib/SourceViewGTK/StyleScheme.pm6"                  ,
       "SourceViewGTK::StyleSchemeManager"             :  "lib/SourceViewGTK/StyleSchemeManager.pm6"           ,
       "SourceViewGTK::Tag"                            :  "lib/SourceViewGTK/Tag.pm6"                          ,
@@ -97,21 +99,3 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

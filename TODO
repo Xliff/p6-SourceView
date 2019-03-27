@@ -1,1 +1,2 @@
+- GtkSourceStyle analog is missing from SourceViewGTK. Find a demo using it to see the best way to implement.
 - Complete Aliasing!!
