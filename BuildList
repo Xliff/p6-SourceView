@@ -51,6 +51,7 @@ SourceViewGTK::Raw::StyleSchemeChooser
 SourceViewGTK::Raw::StyleSchemeChooserButton
 SourceViewGTK::Raw::StyleSchemeChooserWidget
 SourceViewGTK::Raw::StyleSchemeManager
+SourceViewGTK::Raw::UndoManager
 SourceViewGTK::Raw::Version
 SourceViewGTK::Raw::View
 SourceViewGTK::Region
@@ -66,6 +67,7 @@ SourceViewGTK::SpaceDrawer
 SourceViewGTK::StyleScheme
 SourceViewGTK::StyleSchemeManager
 SourceViewGTK::Tag
+SourceViewGTK::UndoManager
 SourceViewGTK::Version
 SourceViewGTK::View
 SourceViewGTK::Completion::Words
