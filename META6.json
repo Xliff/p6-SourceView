@@ -27,15 +27,19 @@
       "SourceViewGTK::Raw::GutterRendererText"        :  "lib/SourceViewGTK/Raw/GutterRendererText.pm6"       ,
       "SourceViewGTK::Raw::Language"                  :  "lib/SourceViewGTK/Raw/Language.pm6"                 ,
       "SourceViewGTK::Raw::LanguageManager"           :  "lib/SourceViewGTK/Raw/LanguageManager.pm6"          ,
+      "SourceViewGTK::Raw::Map"                       :  "lib/SourceViewGTK/Raw/Map.pm6"                      ,
       "SourceViewGTK::Raw::Mark"                      :  "lib/SourceViewGTK/Raw/Mark.pm6"                     ,
       "SourceViewGTK::Raw::MarkAttributes"            :  "lib/SourceViewGTK/Raw/MarkAttributes.pm6"           ,
       "SourceViewGTK::Raw::PrintCompositor"           :  "lib/SourceViewGTK/Raw/PrintCompositor.pm6"          ,
+      "SourceViewGTK::Raw::SearchContext"             :  "lib/SourceViewGTK/Raw/SearchContext.pm6"            ,
+      "SourceViewGTK::Raw::SearchSettings"            :  "lib/SourceViewGTK/Raw/SearchSettings.pm6"           ,
       "SourceViewGTK::Raw::SpaceDrawer"               :  "lib/SourceViewGTK/Raw/SpaceDrawer.pm6"              ,
       "SourceViewGTK::Raw::StyleScheme"               :  "lib/SourceViewGTK/Raw/StyleScheme.pm6"              ,
       "SourceViewGTK::Raw::StyleSchemeChooser"        :  "lib/SourceViewGTK/Raw/StyleSchemeChooser.pm6"       ,
       "SourceViewGTK::Raw::StyleSchemeChooserButton"  :  "lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6" ,
       "SourceViewGTK::Raw::StyleSchemeChooserWidget"  :  "lib/SourceViewGTK/Raw/StyleSchemeChooserWidget.pm6" ,
       "SourceViewGTK::Raw::StyleSchemeManager"        :  "lib/SourceViewGTK/Raw/StyleSchemeManager.pm6"       ,
+      "SourceViewGTK::Raw::Version"                   :  "lib/SourceViewGTK/Raw/Version.pm6"                  ,
       "SourceViewGTK::Raw::View"                      :  "lib/SourceViewGTK/Raw/View.pm6"                     ,
       "SourceViewGTK::Roles::CompletionProposal"      :  "lib/SourceViewGTK/Roles/CompletionProposal.pm6"     ,
       "SourceViewGTK::Roles::CompletionProvider"      :  "lib/SourceViewGTK/Roles/CompletionProvider.pm6"     ,
@@ -44,9 +48,11 @@
       "SourceViewGTK::Roles::Signals::GutterRenderer" :  "lib/SourceViewGTK/Roles/Signals/GutterRenderer.pm6" ,
       "SourceViewGTK::Roles::Signals::MarkAttributes" :  "lib/SourceViewGTK/Roles/Signals/MarkAttributes.pm6" ,
       "SourceViewGTK::Roles::Signals::View"           :  "lib/SourceViewGTK/Roles/Signals/View.pm6"           ,
+      "SourceViewGTK::SearchSettings"                 :  "lib/SourceViewGTK/SearchSettings.pm6"               ,
       "SourceViewGTK::SpaceDrawer"                    :  "lib/SourceViewGTK/SpaceDrawer.pm6"                  ,
       "SourceViewGTK::StyleScheme"                    :  "lib/SourceViewGTK/StyleScheme.pm6"                  ,
       "SourceViewGTK::StyleSchemeManager"             :  "lib/SourceViewGTK/StyleSchemeManager.pm6"           ,
+      "SourceViewGTK::Version"                        :  "lib/SourceViewGTK/Version.pm6"                      ,
       "SourceViewGTK::View"                           :  "lib/SourceViewGTK/View.pm6"                         ,
       "SourceViewGTK::Completion::Words"              :  "lib/SourceViewGTK/Completion/Words.pm6"             ,
       "SourceViewGTK::CompletionContext"              :  "lib/SourceViewGTK/CompletionContext.pm6"            ,
@@ -60,9 +66,11 @@
       "SourceViewGTK::GutterRenderer::Text"           :  "lib/SourceViewGTK/GutterRenderer/Text.pm6"          ,
       "SourceViewGTK::Language"                       :  "lib/SourceViewGTK/Language.pm6"                     ,
       "SourceViewGTK::LanguageManager"                :  "lib/SourceViewGTK/LanguageManager.pm6"              ,
+      "SourceViewGTK::Map"                            :  "lib/SourceViewGTK/Map.pm6"                          ,
       "SourceViewGTK::Mark"                           :  "lib/SourceViewGTK/Mark.pm6"                         ,
       "SourceViewGTK::MarkAttributes"                 :  "lib/SourceViewGTK/MarkAttributes.pm6"               ,
       "SourceViewGTK::Roles::StyleSchemeChooser"      :  "lib/SourceViewGTK/Roles/StyleSchemeChooser.pm6"     ,
+      "SourceViewGTK::SearchContext"                  :  "lib/SourceViewGTK/SearchContext.pm6"                ,
       "SourceViewGTK::StyleChooserWidget"             :  "lib/SourceViewGTK/StyleChooserWidget.pm6"           ,
       "SourceViewGTK::StyleSchemeChooserButton"       :  "lib/SourceViewGTK/StyleSchemeChooserButton.pm6"     ,
       "SourceViewGTK::StyleSchemeChooserWidget"       :  "lib/SourceViewGTK/StyleSchemeChooserWidget.pm6"     ,
@@ -83,6 +91,9 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
+
+
 
 
 

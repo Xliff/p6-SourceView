@@ -1,6 +1,7 @@
 use v6.c;
 
 use Method::Also;
+use NativeCall;
 
 use GTK::Compat::Types;
 use GTK::Raw::Types;
@@ -12,7 +13,8 @@ use SourceViewGTK::Roles::Signals::View;
 
 use GTK::TextView;
 
-our subset SourceViewAncestry where GtkSourceView | TextViewAncestry;
+our subset SourceViewAncestry is export 
+  where GtkSourceView | TextViewAncestry;
 
 class SourceViewGTK::View is GTK::TextView {
   also does GTK::Roles::Types;
@@ -29,13 +31,30 @@ class SourceViewGTK::View is GTK::TextView {
   submethod BUILD (:$view) {
     given $view {
       when SourceViewAncestry {
-        self.setTextView($!sv = $view);
+        
       }
       when SourceViewGTK::View {
       }
       default {
       }
     }
+  }
+  
+  method setSourceView(SourceViewAncestry $view) {
+    my $to-parent;
+    given $view {
+      $!sv = do {
+        when GtkSourceView {
+          $to-parent = nativecast(GtkTextView, $_);
+          $_;
+        }
+        default {
+          $to-parent = $_;
+          nativecast(GtkSourceView, $_);
+        }
+      }
+    }
+    self.setTextView($to-parent);
   }
   
   submethod DESTROY {

@@ -42,7 +42,7 @@ sub MAIN ($pattern is copy, :$prefix!) {
       CATCH { default { 1; } }
     }
     say
-      "class $_ is repr(\"CPointer\") is export does GTK::Roles::Pointers \{ \}"
+      "class $_ is repr('CPointer') is export does GTK::Roles::Pointers \{ \}"
     unless $is-there;
   }
 
