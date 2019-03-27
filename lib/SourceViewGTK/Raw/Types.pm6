@@ -46,6 +46,7 @@ class GtkSourceStyleSchemeChooserButton           is repr('CPointer') is export 
 class GtkSourceStyleSchemeChooserWidget           is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceStyleSchemeManager                 is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceSyleSchemeChooserButton            is repr('CPointer') is export does GTK::Roles::Pointers { }
+class GtkSourceTag                                is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceUndoManager                        is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceView                               is repr('CPointer') is export does GTK::Roles::Pointers { }
 class GtkSourceViewCompletionContext              is repr('CPointer') is export does GTK::Roles::Pointers { }

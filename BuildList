@@ -14,6 +14,7 @@ GTK::Roles::Signals::Generic
 GTK::Roles::Types
 GTK::TextBuffer
 GTK::TextIter
+GTK::TextTag
 GTK::TextView
 GTK::Widget
 GTK::Window
@@ -64,6 +65,7 @@ SourceViewGTK::SearchSettings
 SourceViewGTK::SpaceDrawer
 SourceViewGTK::StyleScheme
 SourceViewGTK::StyleSchemeManager
+SourceViewGTK::Tag
 SourceViewGTK::Version
 SourceViewGTK::View
 SourceViewGTK::Completion::Words

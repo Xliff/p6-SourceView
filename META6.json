@@ -54,6 +54,7 @@
       "SourceViewGTK::SpaceDrawer"                    :  "lib/SourceViewGTK/SpaceDrawer.pm6"                  ,
       "SourceViewGTK::StyleScheme"                    :  "lib/SourceViewGTK/StyleScheme.pm6"                  ,
       "SourceViewGTK::StyleSchemeManager"             :  "lib/SourceViewGTK/StyleSchemeManager.pm6"           ,
+      "SourceViewGTK::Tag"                            :  "lib/SourceViewGTK/Tag.pm6"                          ,
       "SourceViewGTK::Version"                        :  "lib/SourceViewGTK/Version.pm6"                      ,
       "SourceViewGTK::View"                           :  "lib/SourceViewGTK/View.pm6"                         ,
       "SourceViewGTK::Completion::Words"              :  "lib/SourceViewGTK/Completion/Words.pm6"             ,
@@ -93,6 +94,7 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
 
 
 
