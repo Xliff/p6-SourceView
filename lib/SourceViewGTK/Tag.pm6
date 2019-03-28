@@ -16,8 +16,8 @@ our subset SourceTagAncestry is export
 class SourceViewGTK::Tag is GTK::TextTag {
   has GtkSourceTag $!st;
   
-  submethod BUILD (:$tag) {
-    given $tag {
+  submethod BUILD (:$sourcetag) {
+    given $sourcetag {
       when SourceTagAncestry {
         my $to-parent;
         $!st = do {
@@ -39,8 +39,11 @@ class SourceViewGTK::Tag is GTK::TextTag {
     }
   }
   
-  method new (Str() $name) {
-    self.bless( tag => gtk_source_tag_new($name) );
+  multi method new (SourceTagAncestry $sourcetag) {
+    self.bless(:$sourcetag);
+  }
+  multi method new (Str() $name) {
+    self.bless( sourcetag => gtk_source_tag_new($name) );
   }
   
   # Type: gboolean

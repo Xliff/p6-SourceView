@@ -19,7 +19,7 @@ role SourceViewGTK::Roles::Signals::Completion {
     &handler?
   ) {
     my $hid;
-    %!signals-sc //= do {
+    %!signals-sc{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-move($obj, $signal,
         -> $, $gssp, $gt, $ud {
@@ -44,7 +44,7 @@ role SourceViewGTK::Roles::Signals::Completion {
     &handler?
   ) {
     my $hid;
-    %!signals-sc //= do {
+    %!signals-sc{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-move($obj, $signal,
         -> $, $gssp, $gt, $ud {
@@ -69,7 +69,7 @@ role SourceViewGTK::Roles::Signals::Completion {
     &handler?
   ) {
     my $hid;
-    %!signals-sc //= do {
+    %!signals-sc{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-populate-context($obj, $signal,
         -> $, $gscct, $ud {

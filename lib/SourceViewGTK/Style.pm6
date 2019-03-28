@@ -7,10 +7,22 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::Style;
 
+use GTK::Roles::Properties;
+
 use GTK::Compat::Value;
 
 class SourceViewGTK::Style {
+  also does GTK::Roles::Properties;
+  
   has GtkSourceStyle $!ss;
+  
+  submethod BUILD (:$style) {
+    self!setObject($!ss = $style);          # GTK::Roles::Properties\
+  }
+  
+  method new (GtkSourceStyle $style) {
+    self.bless(:$style);
+  }
   
   # Str
   method background is rw  {

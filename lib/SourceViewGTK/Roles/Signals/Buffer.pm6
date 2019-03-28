@@ -20,7 +20,7 @@ role SourceViewGTK::Roles::Buffer {
     &handler?
   ) {
     my $hid;
-    %!signals-sb //= do {
+    %!signals-sb{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-bracket-matched($obj, $signal,
         -> $, $gtir, $gsbmte, $ud {
@@ -45,7 +45,7 @@ role SourceViewGTK::Roles::Buffer {
     &handler?
   ) {
     my $hid;
-    %!signals-sb //= do {
+    %!signals-sb{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-highlight-updated($obj, $signal,
         -> $, $gtir1, $gtir2, $ud {
@@ -70,7 +70,7 @@ role SourceViewGTK::Roles::Buffer {
     &handler?
   ) {
     my $hid;
-    %!signals-sb //= do {
+    %!signals-sb{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-source-mark-updated($obj, $signal,
         -> $, $gtmk, $ud {

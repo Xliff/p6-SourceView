@@ -17,7 +17,7 @@ role SourceViewGTK::Roles::Signals::MarkAttributes {
     &handler?
   ) {
     my $hid;
-    %!signals-sma //= do {
+    %!signals-sma{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-query-tooltip-markup($obj, $signal,
         -> $, $gsmk, $ud --> Str {
@@ -44,7 +44,7 @@ role SourceViewGTK::Roles::Signals::MarkAttributes {
     &handler?
   ) {
     my $hid;
-    %!signals-sma //= do {
+    %!signals-sma{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-query-tooltip-text($obj, $signal,
         -> $, $gsmk, $ud --> Str {

@@ -4,13 +4,17 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::SearchSettings;
 
+use GTK::Compat::Roles::Object;
 use GTK::Roles::Types;
 
 class SourceViewGTK::SearchSettings {
+  also does GTK::Compat::Roles::Object;
+  also does GTK::Roles::Types;
+  
   has GtkSourceSearchSettings $!sss;
   
   submethod BUILD (:$settings) {
-    $!sss = $settings;
+    self!setObject($!sss = $settings);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceSearchSettings { $!sss }

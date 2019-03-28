@@ -6,16 +6,18 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Gutter;
 
 use GTK::Roles::Types;
+use GTK::Compat::Roles::Object;
 
 use SourceViewGTK::GutterRenderer;
 
 class SourceViewGTK::Gutter {
   also does GTK::Roles::Types;
+  also does GTK::Compat::Roles::Object;
   
   has GtkSourceGutter $!sg;
   
   submethod BUILD (:$gutter) {
-    $!sg = $gutter; 
+    self!setObject($!sg = $gutter); 
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceGutter { $!sg }

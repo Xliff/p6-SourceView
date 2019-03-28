@@ -36,7 +36,9 @@ class SourceViewGTK::GutterRenderer::Text {
     }
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceGutterRendererText { $!sgrt }
+  method SourceViewGTK::Raw::Types::GtkSourceGutterRendererText 
+   #is also<GutterRendererText>
+   { $!sgrt }
   
   method new {
     self.bless( renderer => gtk_source_gutter_renderer_text_new() );

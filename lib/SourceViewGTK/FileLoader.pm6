@@ -7,11 +7,15 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileLoader;
 
+use GTK::Compat::Roles::Object;
+
 class SourceViewGTK::FileLoader {
+  also does GTK::Compat::Roles::Object; 
+  
   has GtkSourceFileLoader $!sfl;
   
   submethod BUILD (:$loader) {
-    $!sfl = $loader;
+    self!setObject($!sfl = $loader);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceFileLoader { $!sfl }

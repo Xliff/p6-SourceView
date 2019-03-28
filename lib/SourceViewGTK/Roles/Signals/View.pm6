@@ -20,7 +20,7 @@ role SourceViewGTK::Roles::Signals::View {
     &handler?
   ) {
     my $hid;
-    %!signals-sv //= do {
+    %!signals-sv{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-line-mark-activated($obj, $signal,
         -> $, $gtir, $get, $ud {
@@ -45,7 +45,7 @@ role SourceViewGTK::Roles::Signals::View {
     &handler?
   ) {
     my $hid;
-    %!signals-sv //= do {
+    %!signals-sv{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-smart-home-end($obj, $signal,
         -> $, $gtir, $gt, $ud {

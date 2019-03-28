@@ -3,11 +3,15 @@ use v6.c;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Mark;
 
+use GTK::Compat::Roles::Object;
+
 class SourceViewGTK::Mark {
+  also does GTK::Compat::Roles::Object;
+  
   has GtkSourceMark $!sm;
   
   submethod BUILD (:$mark) {
-    $!sm = $mark;
+    self!setObject($!sm = $mark);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceMark { $!sm }

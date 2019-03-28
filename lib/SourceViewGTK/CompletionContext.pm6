@@ -10,20 +10,24 @@ use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionContext;
 
+use GTK::Roles::Properties;
 use GTK::Roles::Types;
 
 use GTK::TextIter;
 
 class SourceViewGTK::CompletionContext {
+  also does GTK::Roles::Properties;
   also does GTK::Roles::Types;
   
   has GtkSourceCompletionContext $!scc;
   
   submethod BUILD (:$context) {
-    $!scc = $context;
+    self!setObject($!scc = $context);
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceViewCompletionContext { $!scc }
+  method SourceViewGTK::Raw::Types::GtkSourceViewCompletionContext 
+    #is also<CompletionContext>
+    { $!scc }
   
   method new (GtkSourceCompletionContext $context) {
     self.bless(:$context);

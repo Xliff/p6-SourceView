@@ -1,17 +1,22 @@
 use v6.c;
 
+use NativeCall;
+
 use GTK::Compat::Types;
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Types;
-
 use SourceViewGTK::Roles::Signals::Buffer;
 
-use GTK::TextView;
+use GTK::TextBuffer;
 
 use SourceViewGTK::Language;
+use SourceViewGTK::Tag;
+
+our subset SourceBufferAncestry is export
+  where GtkSourceBuffer | GtkTextBuffer;
 
 class SourceViewGTK::Buffer is GTK::TextBuffer {
   also does GTK::Roles::Types;
@@ -20,12 +25,35 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   has GtkSourceBuffer $!sb;
   
   submethod BUILD (:$buffer) {
-    self.setTextBuffer( $!sb = $buffer );
+    my $to-parent;
+    given $buffer {
+      when SourceBufferAncestry {
+        $!sb = do {
+          when GtkSourceBuffer {
+            $to-parent = nativecast(GtkTextBuffer, $_);
+            $_;
+          } 
+          default {
+            $to-parent = $_;
+            nativecast(GtkSourceBuffer, $_);
+          }
+        }
+        self.setTextBuffer($to-parent);
+      }
+      when SourceViewGTK::Buffer {
+      }
+      default {
+      }
+    }
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceBuffer { $!sb }
+  method SourceViewGTK::Raw::Types::GtkSourceBuffer 
+    #is also<SourceBuffer>
+    { $!sb }
   
-  multi method new (GtkSourceBuffer $buffer) {
+  proto method new (|) { * }
+  
+  multi method new (SourceBufferAncestry $buffer) {
     self.bless(:$buffer);
   }
   multi method new (GtkTextTagTable() $table) {
@@ -180,6 +208,23 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     GtkTextIter() $where
   ) {
     gtk_source_buffer_create_source_mark($!sb, $name, $category, $where);
+  }
+  
+  method create_source_tag ( 
+    Str() $tag_name,
+    Str() $prop_name,
+    Int() $prop_val,
+  ) {
+    my guint $pv = self.RESOLVE-UINT($prop_val);
+    SourceViewGTK::Tag.new(
+      gtk_source_buffer_create_source_tag(
+        $!sb, 
+        $tag_name, 
+        $prop_name, 
+        $pv, 
+        Str
+      )
+    );
   }
 
   method end_not_undoable_action {

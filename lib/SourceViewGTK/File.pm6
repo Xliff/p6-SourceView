@@ -7,11 +7,15 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::File;
 
+use GTK::Compat::Roles::Object;
+
 class SourceViewGTK::File {
+  also does GTK::Compat::Roles::Object;
+  
   has GtkSourceFile $!sf;
   
   submethod BUILD (:$file) {
-    $!sf = $file;
+    self!setObject($!sf = $file);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceFile { $!sf }

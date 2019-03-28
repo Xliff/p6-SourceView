@@ -5,6 +5,7 @@ use NativeCall;
 
 use GTK::Compat::Types;
 use GTK::Raw::Types;
+use GTK::Raw::TextView;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::View;
 
@@ -12,6 +13,7 @@ use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::View;
 
 use GTK::TextView;
+use SourceViewGTK::Buffer;
 
 our subset SourceViewAncestry is export 
   where GtkSourceView | TextViewAncestry;
@@ -31,7 +33,7 @@ class SourceViewGTK::View is GTK::TextView {
   submethod BUILD (:$view) {
     given $view {
       when SourceViewAncestry {
-        
+        self.setSourceView($view);
       }
       when SourceViewGTK::View {
       }
@@ -155,6 +157,21 @@ class SourceViewGTK::View is GTK::TextView {
         gtk_source_view_set_auto_indent($!sv, $e);
       }
     );
+  }
+  
+  method buffer is rw {
+    Proxy.new: 
+      FETCH => -> $ { 
+        SourceViewGTK::Buffer.new( 
+          gtk_text_view_get_buffer(self.TextView)
+        );
+      },
+      # The lack of type coercion here is correct. That should be handled 
+      # by the parent.
+      STORE => -> $, $val {
+        # callsame shold return the Proxy.
+        callsame() = $val;
+      }
   }
 
   method background_pattern is rw is also<background-pattern> {

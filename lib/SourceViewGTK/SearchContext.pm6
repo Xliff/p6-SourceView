@@ -8,17 +8,19 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::SearchContext;
 
+use GTK::Compat::Roles::Object;
 use GTK::Roles::Types;
 
 use SourceViewGTK::SearchSettings;
 
 class SourceViewGTK::SearchContext {
+  also does GTK::Compat::Roles::Object;
   also does GTK::Roles::Types;
   
   has GtkSourceSearchContext $!ssc;
   
   submethod BUILD (:$context) {
-    $!ssc = $context;
+    self!setObject($!ssc = $context);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceSearchContext { $!ssc }

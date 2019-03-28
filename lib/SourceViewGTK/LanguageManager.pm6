@@ -8,14 +8,20 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::LanguageManager;
 use SourceViewGTK::Raw::Types;
 
+use GTK::Compat::Roles::Object;
+
 class SourceViewGTK::LanguageManager {
+  also does GTK::Compat::Roles::Object;
+  
   has GtkSourceLanguageManager $!slm;
   
   submethod BUILD (:$manager) {
-    $!slm = $manager;
+    self!setObject($!slm = $manager);
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceLanguageManager { $!slm }
+  method SourceViewGTK::Raw::Types::GtkSourceLanguageManager 
+    is also<LanguageManager>
+    { $!slm }
   
   method new {
     self.bless( manager => gtk_source_language_manager_new() );

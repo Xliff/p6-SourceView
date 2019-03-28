@@ -8,6 +8,7 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileSaver;
 
 use GTK::Roles::Types;
+use GTK::Compat::Roles::Object;
 
 use SourceViewGTK::Buffer;
 use SourceViewGTK::Encoding;
@@ -15,11 +16,12 @@ use SourceViewGTK::File;
 
 class SourceViewGTK::FileSaver {
   also does GTK::Roles::Types;
+  also does GTK::Compat::Roles::Object;
   
   has GtkSourceFileSaver $!sfs;
   
   submethod BUILD (:$saver) {
-    $!sfs = $saver;
+    self!setObject($!sfs = $saver);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceFileSaver { $!sfs }

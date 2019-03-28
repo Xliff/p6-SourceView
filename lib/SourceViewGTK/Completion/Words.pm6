@@ -9,16 +9,20 @@ use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionWords;
 
+use GTK::Roles::Properties;
 use SourceViewGTK::Roles::CompletionProvider;
 
 class SourceViewGTK::Completion::Words {
+  also does GTK::Roles::Properties;
   also does SourceViewGTK::Roles::CompletionProvider;
   
   has GtkSourceCompletionWords $!scw;
   
   submethod BUILD (:$words) {
     # SourceViewGTK::Roles::CompletionProvider
-    $!scp = nativecast(GtkSourceCompletionWords, $!scw = $words);
+    self!setObject(
+      $!scp = nativecast(GtkSourceCompletionWords, $!scw = $words)
+    );
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceCompletionWords { $!scw }

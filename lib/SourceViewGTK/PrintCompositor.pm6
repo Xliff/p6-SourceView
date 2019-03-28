@@ -6,15 +6,19 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::PrintCompositor;
 
+use GTK::Compat::Roles::Object;
+use GTK::Roles::Types;
+
 use SourceViewGTK::Buffer;
 
 class SourceViewGTK::PrintCompositor {
+  also does GTK::Compat::Roles::Object;
   also does GTK::Roles::Types;
   
   has GtkSourcePrintCompositor $!spc;
   
   submethod BUILD (:$compositor) {
-    $!spc = $compositor;
+    self!setObject($!spc = $compositor);
   }
   
   method SourceViewGTK::Raw::Types::GtkSourcePrintCompositor { $!spc }

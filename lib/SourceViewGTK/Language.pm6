@@ -7,14 +7,20 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::Language;
 
+use GTK::Compat::Roles::Object;
+
 class SourceViewGTK::Language {
+  also does GTK::Compat::Roles::Object;
+  
   has GtkSourceLanguage $!sl;
   
   submethod BUILD (:$language) {
-    $!sl = $language;
+    self!setObject($!sl = $language);
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceLanguage { $!sl }
+  method SourceViewGTK::Raw::Types::GtkSourceLanguage 
+    #is also<Language>
+    { $!sl }
   
   method new (GtkSourceLanguage $language) {
     my $o = self.bless(:$language);

@@ -5,14 +5,20 @@ use GTK::Compat::GSList;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Encoding;
 
+use GTK::Compat::Roles::Object;
+
 class SourceViewGTK::Encoding {
+  also does GTK::Compat::Roles::Object;
+  
   has GtkSourceEncoding $!se;
   
   submethod BUILD (:$encoding) {
-    $!se = $encoding;
+    self!setObject($!se = $encoding);
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceEncoding { $!se }
+  method SourceViewGTK::Raw::Types::GtkSourceEncoding 
+    #is also<Sourceencoding>
+    { $!se }
   
   method new (GtkSourceEncoding $encoding) {
     self.bless(:$encoding);

@@ -10,10 +10,14 @@ use SourceViewGTK::Raw::GutterRenderer;
 use GTK::Compat::RGBA;
 use GTK::Compat::Value;
 
+use GTK::Roles::Properties;
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::GutterRenderer;
 
+use GTK::Compat::Value;
+
 class SourceViewGTK::GutterRenderer {
+  also does GTK::Roles::Properties;
   also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::GutterRenderer;
   
@@ -34,7 +38,7 @@ class SourceViewGTK::GutterRenderer {
   }
   
   method setGutterRenderer($renderer) {
-    $!sgr = $renderer;
+    self!setObject($!sgr = $renderer);
   }
   
   # Is originally:

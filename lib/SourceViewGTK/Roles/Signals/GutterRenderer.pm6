@@ -22,7 +22,7 @@ role SourceViewGTK::Roles::Signals::GutterRenderer {
     &handler?
   ) {
     my $hid;
-    %!signals-sgr //= do {
+    %!signals-sgr{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-activate($obj, $signal,
         -> $, $gtir, $gre, $get, $ud {
@@ -49,7 +49,7 @@ role SourceViewGTK::Roles::Signals::GutterRenderer {
     &handler?
   ) {
     my $hid;
-    %!signals-sgr //= do {
+    %!signals-sgr{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-query-activatable($obj, $signal,
         -> $, $gtir, $gre, $get, $ud --> gboolean {
@@ -76,7 +76,7 @@ role SourceViewGTK::Roles::Signals::GutterRenderer {
     &handler?
   ) {
     my $hid;
-    %!signals-sgr //= do {
+    %!signals-sgr{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-query-data($obj, $signal,
         -> $, $gtir1, $gtir2, $gsgrse, $ud {
@@ -101,7 +101,7 @@ role SourceViewGTK::Roles::Signals::GutterRenderer {
     &handler?
   ) {
     my $hid;
-    %!signals-sgr //= do {
+    %!signals-sgr{$signal} //= do {
       my $s = Supplier.new;
       $hid = g-connect-query-tooltip($obj, $signal,
         -> $, $gtir, $gre, $gt1, $gt2, $gtp, $ud --> gboolean {

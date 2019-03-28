@@ -2,28 +2,31 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::GList;
 use GTK::Compat::Types;
 use GTK::Raw::Types;
-
 use SourceViewGTK::Raw::Types;
+
 use SourceViewGTK::Raw::Completion;
 
+use GTK::Roles::Properties;
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::Completion;
 
+use GTK::Compat::GList;
+use GTK::Compat::Value;
 use SourceViewGTK::CompletionContext;
 use SourceViewGTK::CompletionInfo;
 use SourceViewGTK::View;
 
 class SourceViewGTK::Completion {
+  also does GTK::Roles::Properties;
   also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::Completion;
   
   has GtkSourceCompletion $!sc;
   
   submethod BUILD (:$completion) {
-    $!sc = $completion; 
+    self!setObject($!sc = $completion); 
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceCompletion { $!sc }

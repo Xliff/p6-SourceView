@@ -7,19 +7,25 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionItem;
 
+use GTK::Compat::Roles::Object;
 use SourceViewGTK::Roles::CompletionProposal;
 
 class SourceViewGTK::CompletionItem {
+  also does GTK::Compat::Roles::Object;
   also does SourceViewGTK::Roles::CompletionProposal;
   
   has GtkSourceCompletionItem $!sci;
   
   submethod BUILD (:$item) {
     # SourceViewGTK::Roles::CompletionProposal
-    $!scp = nativecast(GtkSourceCompletionProposal, $!sci = $item); 
+    self!setObject(
+      $!scp = nativecast(GtkSourceCompletionProposal, $!sci = $item)
+    );
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionItem { $!sci }
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionItem 
+    #is also<CompletionItem>
+    { $!sci }
   
   method new {
     self.bless( item => gtk_source_completion_item_new() );

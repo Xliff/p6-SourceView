@@ -5,15 +5,17 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::SpaceDrawer;
 
+use GTK::Compat::Roles::Object;
 use GTK::Roles::Types;
 
 class SourceViewGTK::SpaceDrawer {
+  also does GTK::Compat::Roles::Object;
   also does GTK::Roles::Types;
   
   has GtkSourceSpaceDrawer $!ssd;
   
   submethod BUILD (:$drawer) {
-    $!ssd = $drawer;
+    self!setObject($!ssd = $drawer);
   }
   
   method new {
@@ -21,7 +23,6 @@ class SourceViewGTK::SpaceDrawer {
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceSpaceDrawer { $!ssd }
-  
   
   method enable_matrix is rw {
     Proxy.new(

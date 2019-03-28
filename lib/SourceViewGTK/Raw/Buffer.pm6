@@ -296,3 +296,16 @@ sub gtk_source_buffer_set_undo_manager (
   is native(sourceview)
   is export
   { * }
+
+sub gtk_source_buffer_create_source_tag (
+  GtkSourceBuffer $buffer,
+  Str $tag_name,
+  Str $prop_name,
+  guint $prop_val,
+  Str
+)
+  returns GtkSourceTag
+  is native(sourceview)
+  is export
+  { * }
+  

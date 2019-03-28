@@ -19,6 +19,7 @@ GTK::TextView
 GTK::Widget
 GTK::Window
 Method::Also
+Pango::Raw::Types
 SourceViewGTK::Raw::Types
 SourceViewGTK::Raw::Buffer
 SourceViewGTK::Raw::Completion
