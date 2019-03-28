@@ -84,7 +84,7 @@ $a.activate.tap({
   $panel-grid.add(%check-buttons<tag-set>);
   %check-buttons<tag-set>.active = True;
   GTK::Compat::Binding.bind(
-    %check-buttons<tag-set>, 'active', $space-drawer, 'draw-spaces-set'
+    %check-buttons<tag-set>, 'active', $tag, 'draw-spaces-set'
   );
   
   %check-buttons<tag> = GTK::CheckButton.new_with_label(
@@ -93,7 +93,7 @@ $a.activate.tap({
   $panel-grid.add(%check-buttons<tag>);
   %check-buttons<tag>.active = True;
   GTK::Compat::Binding.bind(
-    %check-buttons<tag>, 'active', $space-drawer, 'draw-spaces'
+    %check-buttons<tag>, 'active', $tag, 'draw-spaces'
   );
 
   %check-buttons<implicit> = GTK::CheckButton.new_with_label(
