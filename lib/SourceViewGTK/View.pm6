@@ -159,7 +159,10 @@ class SourceViewGTK::View is GTK::TextView {
     );
   }
   
-  method buffer is rw {
+  method source_buffer 
+    is also<source-buffer>
+    is rw 
+  {
     Proxy.new: 
       FETCH => -> $ { 
         SourceViewGTK::Buffer.new( 
@@ -168,7 +171,7 @@ class SourceViewGTK::View is GTK::TextView {
       },
       # The lack of type coercion here is correct. That should be handled 
       # by the parent.
-      STORE => -> $, $val {
+      STORE => -> $, GtkTextBuffer() $val {
         # callsame shold return the Proxy.
         callsame() = $val;
       }

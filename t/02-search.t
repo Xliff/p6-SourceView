@@ -14,8 +14,10 @@ use SourceViewGTK::LanguageManager;
 
 my (%globals, %settings);
 
-sub open_file(Str $filename) {
+sub open_file(Str $filename is copy) {
   my $contents;
+  
+  $filename = "t/{ $filename }" unless $filename.IO.e;
   
   die "Imposible to load file: { $filename }\n" 
     unless $filename.IO.e && ($contents = $filename.IO.slurp);
@@ -70,21 +72,39 @@ sub forward_search_finished($search_context, $result, $) {
   select_search_occurence($start, $end) if $start.defined && $end.defined;
 }
 
-sub MAIN {
+sub process_ui {
   my $dir = 'ui';
   $dir = "t/{ $dir }" unless $dir.IO.d;
   
   die 'Cannot find UI directory!' unless $dir.IO.e && $dir.IO.d;
   die 'Cannot find UI file!' unless 
     (my $filename = "{ $dir }/test-search.ui").IO.e;
+  my $contents = $filename.IO.slurp;
+  
+  my regex quoted { \" ~ \" (<-[\"]>+) }
+  $contents ~~ s:g{ '<template class='<quoted>' parent='<quoted> } =
+                  "<object class=$/<quoted>[1] id=$/<quoted>[0]";
+  $contents ~~ s:g!'</template>'!</object>!;
+  $contents;
+}
+
+sub MAIN {
+  my $ui-data = process_ui;
   
   my $a = GTK::Application.new( title => 'org.genex.sourceview.search' );
-  my $b = GTK::Builder.new_from_file($filename);
+  my $b = GTK::Builder.new_from_string($ui-data);
   
   die 'GTK::Builder error' unless $b.keys;
   
+  (%globals<source_buffer> = $b<source_view>.source_buffer).upref;
+  open_file('gtksourceview/gtksourcesearchcontext.c');
+  
   %globals{$_} := $b{$_} for $b.keys;
   %globals<settings> = SourceViewGTK::SearchSettings.new;
+  %globals<search_context> = SourceViewGTK::SearchContext.new(
+    %globals<source_buffer>, 
+    %globals<settings>
+  );
   %settings{$_[0]} = GTK::Compat::Binding.bind_property(
     %globals<settings>, $_[0], $_[1], 'active'
   ) for (
@@ -150,6 +170,11 @@ sub MAIN {
     
     my ($, $iter) = %globals<source_buffer>.get_selection_bounds;
     %globals<search_context>.forward_async($iter, &forward_search_finished);
+    
+    $a.window.destroy-signal.tap({ $a.exit });
+    $a.window.set_default_size(700, 500);
+    $a.window.add($b<TestSearch>);
+    $a.window.show_all;
   });
  
   $a.run;
