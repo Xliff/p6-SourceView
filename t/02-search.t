@@ -1,0 +1,156 @@
+use v6.c;
+
+use GTK::Compat::Types;
+
+use GTK::Raw::Subs;
+
+use GTK::Application;
+use GTK::Builder;
+use GTK::TextBuffer;
+use GTK::TextIter;
+
+use SourceViewGTK::Language;
+use SourceViewGTK::LanguageManager;
+
+my (%globals, %settings);
+
+sub open_file(Str $filename) {
+  my $contents;
+  
+  die "Imposible to load file: { $filename }\n" 
+    unless $filename.IO.e && ($contents = $filename.IO.slurp);
+  
+  %globals<source_buffer>.text = $contents;
+  
+  my $lang_man = SourceViewGTK::LanguageManager.get_default;
+  my $lang = $lang_man.get_language('c');
+  my $iter = %globals<source_buffer>.get_start_iter;
+  
+  %globals<source_buffer>.language = $lang;
+  %globals<source_buffer>.select_range($iter, $iter);
+}
+
+sub update_label_occurences {
+  my $occ_count = %globals<source_buffer>.get_occurrences_count;
+  my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
+  my $occ_pos = %globals<source_buffer>.get_occurence_position($start, $end);
+  
+  %globals<label_occurences>.text = $occ_count == -1 ??
+    '' !! $occ_pos == -1 ??
+      "{ $occ_count } occurrences" !! "{ $occ_pos } of { $occ_count }";
+}
+
+sub update_label_regex_error {
+  my $err = %globals<search_context>.get_regex_error;
+  
+  with $err {
+    %globals<label_regex_error>.text = .message;
+    %globals<label_regex_error>.show;
+    clear_error($err);
+  } else {
+    %globals<label_regex_error>.text = '';
+    %globals<label_regex_error>.hide;
+  }
+}
+
+sub select_search_occurence($start, $end) {
+  %globals<source_buffer>.select_range($start, $end);
+  %globals<source_view>.scroll_mark_onscreen(
+    %globals<source_buffer>.get_insert
+  );
+}
+
+sub backward_search_finished($search_context, $result, $) {
+  my ($start, $end) = $search_context.backward_finish($result);
+  select_search_occurence($start, $end) if $start.defined && $end.defined;
+}
+
+sub forward_search_finished($search_context, $result, $) {
+  my ($start, $end) = $search_context.forward_finish($result);
+  select_search_occurence($start, $end) if $start.defined && $end.defined;
+}
+
+sub MAIN {
+  my $dir = 'ui';
+  $dir = "t/{ $dir }" unless $dir.IO.d;
+  
+  die 'Cannot find UI directory!' unless $dir.IO.e && $dir.IO.d;
+  die 'Cannot find UI file!' unless 
+    (my $filename = "{ $dir }/test-search.ui").IO.e;
+  
+  my $a = GTK::Application.new( title => 'org.genex.sourceview.search' );
+  my $b = GTK::Builder.new_from_file($filename);
+  
+  die 'GTK::Builder error' unless $b.keys;
+  
+  %globals{$_} := $b{$_} for $b.keys;
+  %globals<settings> = SourceViewGTK::SearchSettings.new;
+  %settings{$_[0]} = GTK::Compat::Binding.bind_property(
+    %globals<settings>, $_[0], $_[1], 'active'
+  ) for (
+    [ 'case-sensitive',     %globals<match_case_toggled_cb>         ],
+    [ 'at-word-boundaries', %globals<at_word_boundaries_toggled_cb> ],
+    [ 'wrap-around',        %globals<wrap_around_toggled_cb>        ],
+    [ 'highlight',          %globals<highlight_toggled_cb>          ],
+    [ 'regex-enabled',      %globals<regex_toggled_cb>              ]
+  );
+  
+  $b.add_callback_symbol('search_entry_changed_cb', -> $, $ {
+    my $text = $b<search_entry>.text;
+    my $utext = SourceViewGTK::Utils.unescape_search_text($text);
+    %globals<settings>.search_text = $utext;
+  });
+  
+  $b.add_callback_symbol('button_previous_clicked_cb', -> $, $ {
+    my ($start) = $b<source_buffer>.get_selection_bounds;
+    %globals<search_context>.backward_async($start, &backward_search_finished);
+  });
+  
+  $b.add_callback_symbol('button_next_clicked_cb', -> $, $ {
+    my ($, $start) = $b<source_buffer>.get_selection_bounds;
+    %globals<search_context>.forward_async($start, &forward_search_finished);
+  });
+  
+  $b.add_callback_symbol('button_replaced_clicked_cb', -> $, $ {
+    my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
+    my $buffer = $b<replace_entry>;
+    my $len = $buffer.get_bytes;
+    
+    %globals<search_context>.replace(
+      $start, 
+      $end, 
+      $b<replace_entry>.text, 
+      $len
+    );
+    
+    %globals<search_context>.occurences-count.tap( -> $ {
+      update_label_occurences;
+    });
+    
+    %globals<search_contect>.regex-error.tap( -> $ {
+      update_label_regex_error;
+    });
+    
+    %globals<source_buffer>.mark-set.tap( -> *@a {
+      my $insert = %globals<source_buffer>.get_insert;
+      my $bound = %globals<source_buffer>.get_selection_bound;
+      if (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.p) &&
+        $b<idle_update_label_id> == 0
+      {
+        # g_idle_add should be place into an object, but for now...
+        %globals<idle_update_label_id> = g_idle_add(-> --> guint {
+          %globals<idle_update_label_id> = 0;
+          update_label_occurences;
+          G_SOURCE_REMOVE;
+        }, gpointer);
+      }
+    });
+    
+    update_label_regex_error;
+    
+    my ($, $iter) = %globals<source_buffer>.get_selection_bounds;
+    %globals<search_context>.forward_async($iter, &forward_search_finished);
+  });
+ 
+  $a.run;
+}

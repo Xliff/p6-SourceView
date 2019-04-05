@@ -1,3 +1,4 @@
 - GtkSourceStyle analog is missing from SourceViewGTK. Find a demo using it to see the best way to implement.
 - Insure all objects <PERIOD> are assigned either the GTK::Roles::Properties or the GTK::Compat::Roles::Object role for GObject
 - Complete Aliasing!!
+- Investigate all async *_finish routines to see if a multi with a simpler interface is possible. 

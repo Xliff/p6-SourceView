@@ -11,6 +11,7 @@ use SourceViewGTK::Raw::SearchContext;
 use GTK::Compat::Roles::Object;
 use GTK::Roles::Types;
 
+use SourceViewGTK::Buffer;
 use SourceViewGTK::SearchSettings;
 
 class SourceViewGTK::SearchContext {
@@ -60,16 +61,18 @@ class SourceViewGTK::SearchContext {
     GtkTextIter() $iter, 
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
-    Int() $has_wrapped_around
+    $has_wrapped_around is rw
   ) {
-    my gboolean $hwa = self.RESOLVE-BOOL($has_wrapped_around);
-    gtk_source_search_context_backward(
+    my gboolean $hwa = 0;
+    my $rc = gtk_source_search_context_backward(
       $!ssc, 
       $iter, 
       $match_start, 
       $match_end, 
       $hwa
     );
+    $has_wrapped_around = $hwa if $rc;
+    $rc;
   }
 
   multi method backward_async (
@@ -95,15 +98,20 @@ class SourceViewGTK::SearchContext {
     );
   }
 
-  method backward_finish (
+  # Handling should be done for all other _finish methods.
+  multi method backward_finish (GAsyncResult $result) {
+    my GtkTextIter ($start, $end, $wrapped) = GtkTextIter.new xx 2;
+    ($start, $end, $wrapped) if samewith($result, $start, $end, $wrapped);
+  }
+  multi method backward_finish (
     GAsyncResult $result, 
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
-    Int() $has_wrapped_around, 
+    $has_wrapped_around is rw, 
     CArray[Pointer[GError]] $error = gerror()
   ) {
-    my gboolean $hwa = self.RESOLVE-BOOL($has_wrapped_around);
-    $ERROR = Nil;
+    clear_error;
+    my guint $hwa = 0;
     my $rc = gtk_source_search_context_backward_finish(
       $!ssc, 
       $result, 
@@ -112,7 +120,8 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $ERROR = $error[0] with $error[0];
+    $has_wrapped_around = $hwa if $rc;;
+    set_error($error);
     $rc;
   }
 
@@ -120,16 +129,18 @@ class SourceViewGTK::SearchContext {
     GtkTextIter() $iter, 
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
-    Int() $has_wrapped_around
+    $has_wrapped_around is rw
   ) {
-    my gboolean $hwa = self.RESOLVE-BOOL($has_wrapped_around);
-    gtk_source_search_context_forward(
+    my gboolean $hwa = 0;
+    my $rc = gtk_source_search_context_forward(
       $!ssc, 
       $iter, 
       $match_start, 
       $match_end, 
-      $has_wrapped_around
+      $hwa
     );
+    $has_wrapped_around = $hwa if $rc;
+    $rc;
   }
 
   multi method forward_async(
@@ -155,15 +166,22 @@ class SourceViewGTK::SearchContext {
     );
   }
 
-  method forward_finish (
+  multi method forward_finish (
+    GAsyncResult $result 
+  ) {
+    my ($start, $end) = GtkTextIter.new;
+    my $wrapped = 0;
+    ($start, $end, $wrapped) if samewith($result, $start, $end, $wrapped);
+  }
+  multi method forward_finish (
     GAsyncResult $result, 
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
-    Int() $has_wrapped_around, 
+    $has_wrapped_around is rw, 
     CArray[Pointer[GError]] $error
   ) {
-    $ERROR = Nil;
-    my gboolean $hwa = self.RESOLVE-BOOL($has_wrapped_around);
+    my guint $hwa = 0;
+    clear_error;
     my $rc = gtk_source_search_context_forward_finish(
       $!ssc, 
       $result, 
@@ -172,12 +190,13 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $ERROR = $error[0] with $error[0];
+    $has_wrapped_around = $hwa if $hwa;
+    set_error($error);
     $rc;
   }
 
   method get_buffer {
-    gtk_source_search_context_get_buffer($!ssc);
+    SourceViewGTK::Buffer.new( gtk_source_search_context_get_buffer($!ssc) );
   }
 
   method get_occurrence_position (
@@ -206,7 +225,13 @@ class SourceViewGTK::SearchContext {
   }
 
   method get_type {
-    gtk_source_search_context_get_type();
+    state ($n, $t);
+    unstable_get_type( 
+      self.^name, 
+      gtk_source_search_context_get_type, 
+      $n, 
+      $t 
+    )
   }
 
   method replace (
@@ -217,7 +242,7 @@ class SourceViewGTK::SearchContext {
     CArray[Pointer[GError]] $error = gerror()
   ) {
     my gint $rl = self.RESOLVE-INT($replace_length);
-    $ERROR = Nil;
+    clear_error;
     my $rc = gtk_source_search_context_replace(
       $!ssc, 
       $match_start, 
@@ -226,7 +251,7 @@ class SourceViewGTK::SearchContext {
       $replace_length, 
       $error
     );
-    $ERROR = $error[0] with $error[0];
+    set_error($error);
     $rc;
   }
 
@@ -236,14 +261,14 @@ class SourceViewGTK::SearchContext {
     CArray[Pointer[GError]] $error = gerror()
   ) {
     my gint $rl = self.RESOLVE-INT($replace_length);
-    $ERROR = Nil;
+    clear_error;
     my $rc = gtk_source_search_context_replace_all(
       $!ssc, 
       $replace, 
       $replace_length, 
       $error
     );
-    $ERROR = $error[0] with $error[0];
+    set_error($error);
     $rc;
   }
 

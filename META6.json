@@ -61,7 +61,6 @@
       "SourceViewGTK::UndoManager"                    :  "lib/SourceViewGTK/UndoManager.pm6"                  ,
       "SourceViewGTK::Utils"                          :  "lib/SourceViewGTK/Utils.pm6"                        ,
       "SourceViewGTK::Version"                        :  "lib/SourceViewGTK/Version.pm6"                      ,
-      "SourceViewGTK::View"                           :  "lib/SourceViewGTK/View.pm6"                         ,
       "SourceViewGTK::Completion::Words"              :  "lib/SourceViewGTK/Completion/Words.pm6"             ,
       "SourceViewGTK::CompletionContext"              :  "lib/SourceViewGTK/CompletionContext.pm6"            ,
       "SourceViewGTK::CompletionInfo"                 :  "lib/SourceViewGTK/CompletionInfo.pm6"               ,
@@ -74,19 +73,20 @@
       "SourceViewGTK::GutterRenderer::Text"           :  "lib/SourceViewGTK/GutterRenderer/Text.pm6"          ,
       "SourceViewGTK::Language"                       :  "lib/SourceViewGTK/Language.pm6"                     ,
       "SourceViewGTK::LanguageManager"                :  "lib/SourceViewGTK/LanguageManager.pm6"              ,
-      "SourceViewGTK::Map"                            :  "lib/SourceViewGTK/Map.pm6"                          ,
       "SourceViewGTK::Mark"                           :  "lib/SourceViewGTK/Mark.pm6"                         ,
       "SourceViewGTK::MarkAttributes"                 :  "lib/SourceViewGTK/MarkAttributes.pm6"               ,
       "SourceViewGTK::Roles::StyleSchemeChooser"      :  "lib/SourceViewGTK/Roles/StyleSchemeChooser.pm6"     ,
-      "SourceViewGTK::SearchContext"                  :  "lib/SourceViewGTK/SearchContext.pm6"                ,
       "SourceViewGTK::StyleChooserWidget"             :  "lib/SourceViewGTK/StyleChooserWidget.pm6"           ,
       "SourceViewGTK::StyleSchemeChooserButton"       :  "lib/SourceViewGTK/StyleSchemeChooserButton.pm6"     ,
       "SourceViewGTK::StyleSchemeChooserWidget"       :  "lib/SourceViewGTK/StyleSchemeChooserWidget.pm6"     ,
       "SourceViewGTK::Buffer"                         :  "lib/SourceViewGTK/Buffer.pm6"                       ,
-      "SourceViewGTK::Completion"                     :  "lib/SourceViewGTK/Completion.pm6"                   ,
       "SourceViewGTK::FileSaver"                      :  "lib/SourceViewGTK/FileSaver.pm6"                    ,
       "SourceViewGTK::Gutter"                         :  "lib/SourceViewGTK/Gutter.pm6"                       ,
-      "SourceViewGTK::PrintCompositor"                :  "lib/SourceViewGTK/PrintCompositor.pm6"              
+      "SourceViewGTK::PrintCompositor"                :  "lib/SourceViewGTK/PrintCompositor.pm6"              ,
+      "SourceViewGTK::SearchContext"                  :  "lib/SourceViewGTK/SearchContext.pm6"                ,
+      "SourceViewGTK::View"                           :  "lib/SourceViewGTK/View.pm6"                         ,
+      "SourceViewGTK::Completion"                     :  "lib/SourceViewGTK/Completion.pm6"                   ,
+      "SourceViewGTK::Map"                            :  "lib/SourceViewGTK/Map.pm6"                          
     },
     "name": "p6-SourceViewGTK",
     "perl": "6.c",
@@ -99,4 +99,5 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
 

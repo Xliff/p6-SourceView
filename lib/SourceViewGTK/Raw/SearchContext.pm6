@@ -139,7 +139,7 @@ sub gtk_source_search_context_replace (
   GtkSourceSearchContext $search,
   GtkTextIter $match_start, 
   GtkTextIter $match_end, 
-  gchar $replace, 
+  Str $replace, 
   gint $replace_length, 
   CArray[Pointer[GError]] $error
 )
@@ -150,7 +150,7 @@ sub gtk_source_search_context_replace (
 
 sub gtk_source_search_context_replace_all (
   GtkSourceSearchContext $search, 
-  gchar $replace, 
+  Str $replace, 
   gint $replace_length, 
   CArray[Pointer[GError]] $error
 )
