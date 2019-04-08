@@ -1,11 +1,11 @@
 use v6.c;
 
+use Method::Also;
 use NativeCall;
 
-use GTK::Compat::Types;
 use GTK::Raw::Types;
-use SourceViewGTK::Raw::StyleSchemeChooserWidget;
 use SourceViewGTK::Raw::Types;
+use SourceViewGTK::Raw::StyleSchemeChooserWidget;
 
 use SourceViewGTK::Roles::StyleSchemeChooser;
 
@@ -48,14 +48,21 @@ class SourceViewGTK::StyleSchemeChooserWidget is GTK::Widget {
     }
   }
   
-  method SourceViewGTK::Raw::Types::StyleSchemeChooserWidget { $!sscw }
+  method SourceViewGTK::Raw::Types::StyleSchemeChooserWidget 
+    is also<SourceStyleSchemeChooserWidget>
+  { $!sscw }
   
   method new {
     self.bless( widget => gtk_source_style_scheme_chooser_widget_new() );
   }
   
-  method get_type {
-    gtk_source_style_scheme_chooser_widget_get_type();
+  method get_type is also<get-type> {
+    state ($n, $t);
+    GTK::Widget.unstable_get_type( 
+      &gtk_source_style_scheme_chooser_widget_get_type,
+      $n,
+      $t
+    );
   }
 
 }

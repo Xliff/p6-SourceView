@@ -34,7 +34,7 @@ class SourceViewGTK::CompletionInfo is GTK::Window {
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceCompletionInfo 
-    #is also<CompletionInfo>
+    is also<SourceCompletionInfo>
     { $!sci }
   
   multi method new (GtkSourceCompletionInfo $info) {
@@ -46,7 +46,12 @@ class SourceViewGTK::CompletionInfo is GTK::Window {
   }
   
   method get_type is also<get-type> {
-    gtk_source_completion_info_get_type();
+    state ($n, $t);
+    GTK::Widget.unstable_get_type(
+      &gtk_source_completion_info_get_type,
+      $n,
+      $t
+    )
   }
 
   method move_to_iter (GtkTextView() $view, GtkTextIter() $iter) 

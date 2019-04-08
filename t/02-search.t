@@ -11,6 +11,9 @@ use GTK::TextIter;
 
 use SourceViewGTK::Language;
 use SourceViewGTK::LanguageManager;
+use SourceViewGTK::SearchContext;
+use SourceViewGTK::SearchSettings;
+use SourceViewGTK::View;
 
 my (%globals, %settings);
 
@@ -92,9 +95,12 @@ sub MAIN {
   my $ui-data = process_ui;
   
   my $a = GTK::Application.new( title => 'org.genex.sourceview.search' );
+  # To register GtkSourceView with GtkBuilder.
+  my $dv = SourceViewGTK::View.new;
   my $b = GTK::Builder.new_from_string($ui-data);
   
   die 'GTK::Builder error' unless $b.keys;
+  
   
   (%globals<source_buffer> = $b<source_view>.source_buffer).upref;
   open_file('gtksourceview/gtksourcesearchcontext.c');
@@ -104,15 +110,6 @@ sub MAIN {
   %globals<search_context> = SourceViewGTK::SearchContext.new(
     %globals<source_buffer>, 
     %globals<settings>
-  );
-  %settings{$_[0]} = GTK::Compat::Binding.bind_property(
-    %globals<settings>, $_[0], $_[1], 'active'
-  ) for (
-    [ 'case-sensitive',     %globals<match_case_toggled_cb>         ],
-    [ 'at-word-boundaries', %globals<at_word_boundaries_toggled_cb> ],
-    [ 'wrap-around',        %globals<wrap_around_toggled_cb>        ],
-    [ 'highlight',          %globals<highlight_toggled_cb>          ],
-    [ 'regex-enabled',      %globals<regex_toggled_cb>              ]
   );
   
   $b.add_callback_symbol('search_entry_changed_cb', -> $, $ {
@@ -143,39 +140,55 @@ sub MAIN {
       $len
     );
     
-    %globals<search_context>.occurences-count.tap( -> $ {
-      update_label_occurences;
-    });
-    
-    %globals<search_contect>.regex-error.tap( -> $ {
-      update_label_regex_error;
-    });
-    
-    %globals<source_buffer>.mark-set.tap( -> *@a {
-      my $insert = %globals<source_buffer>.get_insert;
-      my $bound = %globals<source_buffer>.get_selection_bound;
-      if (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.p) &&
-        $b<idle_update_label_id> == 0
-      {
-        # g_idle_add should be place into an object, but for now...
-        %globals<idle_update_label_id> = g_idle_add(-> --> guint {
-          %globals<idle_update_label_id> = 0;
-          update_label_occurences;
-          G_SOURCE_REMOVE;
-        }, gpointer);
-      }
-    });
-    
-    update_label_regex_error;
-    
-    my ($, $iter) = %globals<source_buffer>.get_selection_bounds;
-    %globals<search_context>.forward_async($iter, &forward_search_finished);
-    
-    $a.window.destroy-signal.tap({ $a.exit });
-    $a.window.set_default_size(700, 500);
-    $a.window.add($b<TestSearch>);
-    $a.window.show_all;
+    ($start, $end) = %globals<source_buffer>.get_selection_bounds;
+    %globals<search_context>.forward_async($end, &forward_search_finished);
   });
+  
+  $b.add_callback_symbol('button_replaced_all_clicked_cb', -> $, $ {
+    my $eb = %globals<replace_entry>.buffer;
+    my $len = $eb.get_bytes;
+    %globals<search_context>.replace_all(%globals<replace_entry>.text, $len);
+  });
+  
+  %settings{$_[0]} = GTK::Compat::Binding.bind_property(
+    %globals<settings>, $_[0], $_[1], 'active'
+  ) for (
+    [ 'case-sensitive',     %globals<match_case_toggled_cb>         ],
+    [ 'at-word-boundaries', %globals<at_word_boundaries_toggled_cb> ],
+    [ 'wrap-around',        %globals<wrap_around_toggled_cb>        ],
+    [ 'highlight',          %globals<highlight_toggled_cb>          ],
+    [ 'regex-enabled',      %globals<regex_toggled_cb>              ]
+  );
+    
+  %globals<search_context>.occurences-count.tap( -> $ {
+    update_label_occurences;
+  });
+  
+  %globals<search_context>.regex-error.tap( -> $ {
+    update_label_regex_error;
+  });
+  
+  %globals<source_buffer>.mark-set.tap( -> *@a {
+    my $insert = %globals<source_buffer>.get_insert;
+    my $bound = %globals<source_buffer>.get_selection_bound;
+    if (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.p) &&
+      $b<idle_update_label_id> == 0
+    {
+      # g_idle_add should be place into an object, but for now...
+      %globals<idle_update_label_id> = g_idle_add(-> --> guint {
+        %globals<idle_update_label_id> = 0;
+        update_label_occurences;
+        G_SOURCE_REMOVE;
+      }, gpointer);
+    }
+  });
+  
+  update_label_regex_error;
+  
+  $a.window.destroy-signal.tap({ $a.exit });
+  $a.window.set_default_size(700, 500);
+  $a.window.add($b<TestSearch>);
+  $a.window.show_all;
  
   $a.run;
 }

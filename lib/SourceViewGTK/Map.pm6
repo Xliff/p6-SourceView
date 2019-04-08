@@ -1,5 +1,6 @@
 use v6.c;
 
+use Method::Also;
 use NativeCall;
 
 use SourceViewGTK::Raw::Types;
@@ -53,8 +54,9 @@ class SourceViewGTK::Map is SourceViewGTK::View {
     );
   }
 
-  method get_type {
-    gtk_source_map_get_type();
+  method get_type is also<get-type> {
+    state ($n, $t);
+    GTK::Widget.unstable_get_type( &gtk_source_map_get_type, $n, $t );
   }
 
 }

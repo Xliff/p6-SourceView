@@ -31,7 +31,9 @@ class SourceViewGTK::GutterRenderer {
     #self.disconnect-all($_) for %!signals-sgr;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer { $!sgr }
+  method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer 
+    is <SourceGutterRenderer>
+  { $!sgr }
   
   method new (GtkSourceGutterRenderer $renderer) {
     self.bless(:$renderer);
@@ -291,7 +293,13 @@ class SourceViewGTK::GutterRenderer {
   }
 
   method get_type {
-    gtk_source_gutter_renderer_get_type();
+    state ($n, $t);
+    unstable_get_type(
+      self.^name, 
+      &gtk_source_gutter_renderer_get_type, 
+      $n. 
+      $t
+    );
   }
 
   method get_view {
