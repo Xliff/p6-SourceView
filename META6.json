@@ -8,6 +8,7 @@
     "license": "GPL-3.0",
     "source-url": "https://github.com/Xliff/p6-SourceViewGtk",
     "provides": {
+      "SourceViewGTK::Builder::Registry"              :  "lib/SourceViewGTK/Builder/Registry.pm6"             ,
       "SourceViewGTK::Raw::Types"                     :  "lib/SourceViewGTK/Raw/Types.pm6"                    ,
       "SourceViewGTK::Raw::Buffer"                    :  "lib/SourceViewGTK/Raw/Buffer.pm6"                   ,
       "SourceViewGTK::Raw::Completion"                :  "lib/SourceViewGTK/Raw/Completion.pm6"               ,
@@ -99,5 +100,9 @@
     "support": {"source": null},
     "authors": ["clifton.wood@gmail.com"]
 }
+
+
+
+
 
 

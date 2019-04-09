@@ -65,17 +65,23 @@ class SourceViewGTK::View is GTK::TextView {
   
   method SourceViewGTK::Raw::Types::GtkSourceView { $!sv }
   
-  multi method new (GtkSourceView $view) {
+  multi method new (SourceViewAncestry $view) {
     my $o = self.bless(:$view);
     $o.upref;
     $o;
   }
-  
   multi method new {
     self.bless( view => gtk_source_view_new() );
   }
 
-  method new_with_buffer(GtkSourceBuffer $buffer) is also<new-with-buffer> {
+  proto method new_with_buffer (|)
+    is also<new-with-buffer>
+  { * }
+  
+  multi method new_with_buffer(GtkTextBuffer() $buffer) {
+    samewith( nativecast(GtkSourceBuffer, $buffer) );
+  }
+  multi method new_with_buffer (GtkSourceBuffer() $buffer) {
     self.bless( view => gtk_source_view_new_with_buffer($buffer) );
   }
   

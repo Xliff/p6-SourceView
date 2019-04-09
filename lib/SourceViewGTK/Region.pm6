@@ -31,7 +31,7 @@ class SourceViewGTK::Region {
   }
 
   method add_subregion (GtkTextIter() $start, GtkTextIter() $end) {
-    gtk_source_region_add_subregion($!sr, $_start, $_end);
+    gtk_source_region_add_subregion($!sr, $start, $end);
   }
 
   multi method get_bounds {
@@ -60,7 +60,7 @@ class SourceViewGTK::Region {
 
   method intersect_subregion (GtkTextIter() $start, GtkTextIter() $end) {
     SourceViewGTK::Region.new(
-      gtk_source_region_intersect_subregion($!sr, $_start, $_end)
+      gtk_source_region_intersect_subregion($!sr, $start, $end)
     );
   }
 
@@ -73,7 +73,7 @@ class SourceViewGTK::Region {
   }
 
   method subtract_subregion (GtkTextIter() $start, GtkTextIter() $end) {
-    gtk_source_region_subtract_subregion($!sr, $_start, $_end);
+    gtk_source_region_subtract_subregion($!sr, $start, $end);
   }
 
   method to_string {
@@ -95,17 +95,23 @@ class SourceViewGTK::RegionIter {
   
   method new (GtkSourceRegionIter $iter) {
     self.bless(:$iter);
-    
-  method get_subregion (GtkTextIter() $start, GtkTextIter() $end) {
-    so gtk_source_region_iter_get_subregion($!sr, $start, $end);
+  }
+   
+  multi method get_subregion {
+    my ($start, $end) = GtkTextIter.new;
+    samewith($start, $end);
+    ( GTK::TextIter.new($start), GtkTextIter.new($end) );
+  } 
+  multi method get_subregion (GtkTextIter() $start, GtkTextIter() $end) {
+    so gtk_source_region_iter_get_subregion($!sri, $start, $end);
   }
 
   method is_end {
-    so gtk_source_region_iter_is_end($!sr);
+    so gtk_source_region_iter_is_end($!sri);
   }
 
   method next {
-    gtk_source_region_iter_next($!sr);
+    so gtk_source_region_iter_next($!sri);
   }
   
 }
