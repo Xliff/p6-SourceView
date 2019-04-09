@@ -2,3 +2,6 @@
 lib/.precomp/
 .touch/
 *.bak
+LastBuildResults
+*.bump
+LastBuildResults.*

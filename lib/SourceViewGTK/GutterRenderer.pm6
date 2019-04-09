@@ -32,7 +32,7 @@ class SourceViewGTK::GutterRenderer {
   }
   
   method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer 
-    is <SourceGutterRenderer>
+  #  is also<SourceGutterRenderer>
   { $!sgr }
   
   method new (GtkSourceGutterRenderer $renderer) {
@@ -297,7 +297,7 @@ class SourceViewGTK::GutterRenderer {
     unstable_get_type(
       self.^name, 
       &gtk_source_gutter_renderer_get_type, 
-      $n. 
+      $n,
       $t
     );
   }

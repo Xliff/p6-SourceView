@@ -15,6 +15,8 @@ use SourceViewGTK::SearchContext;
 use SourceViewGTK::SearchSettings;
 use SourceViewGTK::View;
 
+use SourceViewGTK::Builder::Registry;
+
 my (%globals, %settings);
 
 sub open_file(Str $filename is copy) {
@@ -95,12 +97,14 @@ sub MAIN {
   my $ui-data = process_ui;
   
   my $a = GTK::Application.new( title => 'org.genex.sourceview.search' );
-  # To register GtkSourceView with GtkBuilder.
   my $dv = SourceViewGTK::View.new;
+  
+  # Register SourceViewGTK widgets.
+  GTK::Builder.register( SourceViewGTK::Builder::Registry );
+  
   my $b = GTK::Builder.new_from_string($ui-data);
   
   die 'GTK::Builder error' unless $b.keys;
-  
   
   (%globals<source_buffer> = $b<source_view>.source_buffer).upref;
   open_file('gtksourceview/gtksourcesearchcontext.c');

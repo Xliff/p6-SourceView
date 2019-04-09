@@ -1,5 +1,6 @@
 use v6.c;
 
+#use Grammar::Tracer;
 use JSON::Fast;
 
 grammar ParseBuildResults {

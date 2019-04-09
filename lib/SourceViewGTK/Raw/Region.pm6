@@ -3,6 +3,7 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Region;
@@ -18,7 +19,8 @@ sub gtk_source_region_add_region (
 sub gtk_source_region_add_subregion (
   GtkSourceRegion $region, 
   GtkTextIter $start, 
-  GtkTextIter $end)
+  GtkTextIter $end
+)
   is native(sourceview)
   is export
   { * }
