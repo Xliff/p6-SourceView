@@ -61,11 +61,10 @@ class SourceViewGTK::SearchContext {
   multi method backward (
     GtkTextIter() $iter
   ) {
-    my $hwa = 0;
-    my ($start, $end) = GtkTextIter.new xx 2;
+    my ($start, $end, $hwa) = ( |(GtkTextIter.new xx 2), 0 );
     samewith($iter, $start, $end, $hwa);
   }
-  method backward (
+  multi method backward (
     GtkTextIter() $iter, 
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
@@ -82,8 +81,8 @@ class SourceViewGTK::SearchContext {
     $has_wrapped_around = $hwa if $rc;
     $rc ?? 
       (
-        $start.defined ?? GTK::TextIter.new($start) !! Nil,
-        $end.defined   ?? GTK::textIter.new($end)   !! Nil,
+        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
         $hwa
       )
       !!
@@ -123,8 +122,7 @@ class SourceViewGTK::SearchContext {
   { * }
   
   multi method backward_finish (GAsyncResult $result) {
-    my GtkTextIter ($start, $end, $wrapped) = GtkTextIter.new xx 2;
-    my $wrapped = 0;
+    my GtkTextIter ($start, $end, $wrapped) = ( |(GtkTextIter.new xx 2), 0 );
     samewith($result, $start, $end, $wrapped);
   }
   multi method backward_finish (
@@ -159,8 +157,7 @@ class SourceViewGTK::SearchContext {
   multi method forward (
     GtkTextIter() $iter
   ) {
-    my $hwa = 0;
-    my ($start, $end) = GtkTextIter.new xx 2;
+    my ($start, $end, $hwa) = ( |(GtkTextIter.new xx 2), 0 );
     samewith($iter, $start, $end, $hwa);
   }
   multi method forward (
@@ -180,8 +177,8 @@ class SourceViewGTK::SearchContext {
     $has_wrapped_around = $hwa if $rc;
     $rc ?? 
       (
-        $start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
+        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
         $hwa
       )
       !!
@@ -222,8 +219,7 @@ class SourceViewGTK::SearchContext {
   multi method forward_finish (
     GAsyncResult $result 
   ) {
-    my ($start, $end) = GtkTextIter.new;
-    my $wrapped = 0;
+    my ($start, $end, $wrapped) = ( |(GtkTextIter.new xx 2), 0 );
     samewith($result, $start, $end, $wrapped);
   }
   multi method forward_finish (
@@ -231,7 +227,7 @@ class SourceViewGTK::SearchContext {
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
     $has_wrapped_around is rw, 
-    CArray[Pointer[GError]] $error
+    CArray[Pointer[GError]] $error = gerror()
   ) {
     my guint $hwa = 0;
     clear_error;

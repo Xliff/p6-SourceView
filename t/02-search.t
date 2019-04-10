@@ -72,13 +72,13 @@ sub select_search_occurence($start, $end) {
 
 sub backward_search_finished($search_context, $result, $) {
   CATCH { default { .message.say } }
-  my ($start, $end) = $search_context.backward_finish($result);
+  my ($start, $end) = %globals<search_context>.backward_finish($result);
   select_search_occurence($start, $end) if $start.defined && $end.defined;
 }
 
 sub forward_search_finished($search_context, $result, $) {
   CATCH { default { .message.say } }
-  my ($start, $end) = $search_context.forward_finish($result);
+  my ($start, $end) = %globals<search_context>.forward_finish($result);
   select_search_occurence($start, $end) if $start.defined && $end.defined;
 }
 

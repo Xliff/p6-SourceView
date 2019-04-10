@@ -13,6 +13,7 @@ GTK::Raw::Types
 GTK::Raw::Utils
 GTK::Roles::Pointers
 GTK::Roles::Properties
+GTK::Roles::References
 GTK::Roles::Signals::Generic
 GTK::Roles::Types
 GTK::TextBuffer
