@@ -71,11 +71,13 @@ sub select_search_occurence($start, $end) {
 }
 
 sub backward_search_finished($search_context, $result, $) {
+  CATCH { default { .message.say } }
   my ($start, $end) = $search_context.backward_finish($result);
   select_search_occurence($start, $end) if $start.defined && $end.defined;
 }
 
 sub forward_search_finished($search_context, $result, $) {
+  CATCH { default { .message.say } }
   my ($start, $end) = $search_context.forward_finish($result);
   select_search_occurence($start, $end) if $start.defined && $end.defined;
 }
@@ -130,7 +132,7 @@ sub MAIN {
   
   #$b.add_callback_symbol('button_previous_clicked_cb', -> $, $ {
   %globals<button_previous>.clicked.tap(-> *@a {
-    my ($start) = %globals<source_buffer>.get_selection_bounds;
+    my ($start, $) = %globals<source_buffer>.get_selection_bounds;
     say $start;
     %globals<search_context>.backward_async($start, &backward_search_finished);
   });

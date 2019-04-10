@@ -58,6 +58,13 @@ class SourceViewGTK::SearchContext {
     );
   }
   
+  multi method backward (
+    GtkTextIter() $iter
+  ) {
+    my $hwa = 0;
+    my ($start, $end) = GtkTextIter.new xx 2;
+    samewith($iter, $start, $end, $hwa);
+  }
   method backward (
     GtkTextIter() $iter, 
     GtkTextIter() $match_start, 
@@ -73,7 +80,14 @@ class SourceViewGTK::SearchContext {
       $hwa
     );
     $has_wrapped_around = $hwa if $rc;
-    $rc;
+    $rc ?? 
+      (
+        $start.defined ?? GTK::TextIter.new($start) !! Nil,
+        $end.defined   ?? GTK::textIter.new($end)   !! Nil,
+        $hwa
+      )
+      !!
+      Nil;
   }
 
   proto method backward_async (|) 
@@ -110,7 +124,8 @@ class SourceViewGTK::SearchContext {
   
   multi method backward_finish (GAsyncResult $result) {
     my GtkTextIter ($start, $end, $wrapped) = GtkTextIter.new xx 2;
-    ($start, $end, $wrapped) if samewith($result, $start, $end, $wrapped);
+    my $wrapped = 0;
+    samewith($result, $start, $end, $wrapped);
   }
   multi method backward_finish (
     GAsyncResult $result, 
@@ -131,10 +146,24 @@ class SourceViewGTK::SearchContext {
     );
     $has_wrapped_around = $hwa if $rc;;
     set_error($error);
-    $rc;
+    $rc ?? 
+      (
+        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
+        $has_wrapped_around
+      )
+      !!
+      Nil;
   }
 
-  method forward (
+  multi method forward (
+    GtkTextIter() $iter
+  ) {
+    my $hwa = 0;
+    my ($start, $end) = GtkTextIter.new xx 2;
+    samewith($iter, $start, $end, $hwa);
+  }
+  multi method forward (
     GtkTextIter() $iter, 
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end, 
@@ -149,7 +178,14 @@ class SourceViewGTK::SearchContext {
       $hwa
     );
     $has_wrapped_around = $hwa if $rc;
-    $rc;
+    $rc ?? 
+      (
+        $start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+        $end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
+        $hwa
+      )
+      !!
+      Nil;
   }
 
   proto method forward_async (|)
@@ -188,7 +224,7 @@ class SourceViewGTK::SearchContext {
   ) {
     my ($start, $end) = GtkTextIter.new;
     my $wrapped = 0;
-    ($start, $end, $wrapped) if samewith($result, $start, $end, $wrapped);
+    samewith($result, $start, $end, $wrapped);
   }
   multi method forward_finish (
     GAsyncResult $result, 
@@ -199,7 +235,7 @@ class SourceViewGTK::SearchContext {
   ) {
     my guint $hwa = 0;
     clear_error;
-    my $rc = gtk_source_search_context_forward_finish(
+    my $rc = so gtk_source_search_context_forward_finish(
       $!ssc, 
       $result, 
       $match_start, 
@@ -207,9 +243,16 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $has_wrapped_around = $hwa if $hwa;
+    $has_wrapped_around = $hwa if $rc;
     set_error($error);
-    $rc;
+    $rc ?? 
+      (
+        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
+        $has_wrapped_around
+      )
+      !!
+      Nil;
   }
 
   method get_buffer 
