@@ -1,5 +1,7 @@
 use v6.c;
 
+use GTK::Compat::Binding;
+use GTK::Compat::Signal;
 use GTK::Compat::Types;
 
 use GTK::Raw::Subs;
@@ -14,6 +16,7 @@ use SourceViewGTK::LanguageManager;
 use SourceViewGTK::SearchContext;
 use SourceViewGTK::SearchSettings;
 use SourceViewGTK::View;
+use SourceViewGTK::Utils;
 
 use SourceViewGTK::Builder::Registry;
 
@@ -116,23 +119,32 @@ sub MAIN {
     %globals<settings>
   );
   
-  $b.add_callback_symbol('search_entry_changed_cb', -> $, $ {
+  #$b.add_callback_symbol('search_entry_changed_cb', -> $, $ {
+  %globals<search_entry>.changed.tap(-> *@a {
+    say 'search_entry_changed_cb enter';
     my $text = $b<search_entry>.text;
     my $utext = SourceViewGTK::Utils.unescape_search_text($text);
     %globals<settings>.search_text = $utext;
+    say 'search_entry_changed_cb exit';
   });
   
-  $b.add_callback_symbol('button_previous_clicked_cb', -> $, $ {
-    my ($start) = $b<source_buffer>.get_selection_bounds;
+  #$b.add_callback_symbol('button_previous_clicked_cb', -> $, $ {
+  %globals<button_previous>.clicked.tap(-> *@a {
+    my ($start) = %globals<source_buffer>.get_selection_bounds;
+    say $start;
     %globals<search_context>.backward_async($start, &backward_search_finished);
   });
   
-  $b.add_callback_symbol('button_next_clicked_cb', -> $, $ {
-    my ($, $start) = $b<source_buffer>.get_selection_bounds;
+  #$b.add_callback_symbol('button_next_clicked_cb', -> $, $ {
+  %globals<button_next>.clicked.tap(-> *@a {
+    my ($, $start) = %globals<source_buffer>.get_selection_bounds;
+    say $start;
     %globals<search_context>.forward_async($start, &forward_search_finished);
   });
   
-  $b.add_callback_symbol('button_replaced_clicked_cb', -> $, $ {
+  #$b.add_callback_symbol('button_replaced_clicked_cb', -> $, $ {
+  %globals<button_replace>.clicked.tap(-> *@a {
+    say 'button_replaced_all_clicked_cb enter';
     my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
     my $buffer = $b<replace_entry>;
     my $len = $buffer.get_bytes;
@@ -145,54 +157,82 @@ sub MAIN {
     );
     
     ($start, $end) = %globals<source_buffer>.get_selection_bounds;
+    say "$start/$end";
     %globals<search_context>.forward_async($end, &forward_search_finished);
+    say 'button_replaced_all_clicked_cb exit';
   });
   
-  $b.add_callback_symbol('button_replaced_all_clicked_cb', -> $, $ {
+  #$b.add_callback_symbol('button_replace_all_clicked_cb', -> $, $ {
+  %globals<button_replace_all>.clicked.tap(-> *@a {
+    say 'button_replaced_all_clicked_cb enter';
     my $eb = %globals<replace_entry>.buffer;
     my $len = $eb.get_bytes;
     %globals<search_context>.replace_all(%globals<replace_entry>.text, $len);
+    say 'button_replaced_all_clicked_cb exit';
   });
   
-  %settings{$_[0]} = GTK::Compat::Binding.bind_property(
+  %settings<highlight> = GTK::Compat::Binding.bind(
+    %globals<search_context>, 
+    'highlight', 
+    %globals<checkbutton_highlight>,
+    'active'
+  );
+  %settings{$_[0]} = GTK::Compat::Binding.bind(
     %globals<settings>, $_[0], $_[1], 'active'
   ) for (
-    [ 'case-sensitive',     %globals<match_case_toggled_cb>         ],
-    [ 'at-word-boundaries', %globals<at_word_boundaries_toggled_cb> ],
-    [ 'wrap-around',        %globals<wrap_around_toggled_cb>        ],
-    [ 'highlight',          %globals<highlight_toggled_cb>          ],
-    [ 'regex-enabled',      %globals<regex_toggled_cb>              ]
+    [ 'case-sensitive',     %globals<checkbutton_match_case>         ],
+    [ 'at-word-boundaries', %globals<checkbutton_at_word_boundaries> ],
+    [ 'wrap-around',        %globals<checkbutton_wrap_around>        ],
+    [ 'regex-enabled',      %globals<checkbutton_regex>              ]
   );
     
-  %globals<search_context>.occurences-count.tap( -> $ {
-    update_label_occurences;
-  });
-  
-  %globals<search_context>.regex-error.tap( -> $ {
-    update_label_regex_error;
-  });
-  
-  %globals<source_buffer>.mark-set.tap( -> *@a {
-    my $insert = %globals<source_buffer>.get_insert;
-    my $bound = %globals<source_buffer>.get_selection_bound;
-    if (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.p) &&
-      $b<idle_update_label_id> == 0
-    {
-      # g_idle_add should be place into an object, but for now...
-      %globals<idle_update_label_id> = g_idle_add(-> --> guint {
-        %globals<idle_update_label_id> = 0;
-        update_label_occurences;
-        G_SOURCE_REMOVE;
-      }, gpointer);
+  GTK::Compat::Signal.connect_swapped(
+    %globals<search_context>,
+    'notify::occurences-count',
+    -> *@a { 
+      say 'notify::occurences-count enter';
+      update_label_occurences 
+      say 'notify::occurences-count exit';
     }
+  );
+  
+  GTK::Compat::Signal.connect_swapped(
+    %globals<search_context>,
+    'notify::regex_error',
+     -> $ { update_label_regex_error }
+  );
+  
+  # Causes MoarVM panic: Internal error: Unwound entire stack and missed handler
+  # Reason currently unknown.
+  # %globals<source_buffer>.mark-set.tap( -> *@a {
+  #   CATCH { default { .message.say; } }
+  # 
+  #   my $insert = %globals<source_buffer>.get_insert;
+  #   my $bound = %globals<source_buffer>.get_selection_bound;
+  #   if 
+  #     (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.TextMark.p) 
+  #     &&
+  #     (%globals<idle_update_label_id> // 0) == 0
+  #   {
+  #     # g_idle_add should be place into an object, but for now...
+  #     %globals<idle_update_label_id> = g_idle_add(sub () returns guint {
+  #       say 'idle_update_label_id enter';
+  #       %globals<idle_update_label_id> = 0;
+  #       update_label_occurences;
+  #       say 'idle_update_label_id exit';
+  #       G_SOURCE_REMOVE;
+  #     }, gpointer);
+  #   }
+  # });
+  
+  $a.activate.tap({
+    $a.wait-for-init;
+    update_label_regex_error;
+    $a.window.destroy-signal.tap({ $a.exit });
+    $a.window.set_default_size(700, 500);
+    $a.window.add($b<TestSearch>);
+    $a.window.show_all;
   });
-  
-  update_label_regex_error;
-  
-  $a.window.destroy-signal.tap({ $a.exit });
-  $a.window.set_default_size(700, 500);
-  $a.window.add($b<TestSearch>);
-  $a.window.show_all;
  
   $a.run;
 }

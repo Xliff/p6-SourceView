@@ -8,6 +8,7 @@ use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Types;
+use GTK::Roles::References;
 use SourceViewGTK::Roles::Signals::Buffer;
 
 use GTK::TextBuffer;
@@ -20,7 +21,6 @@ our subset SourceBufferAncestry is export
 
 class SourceViewGTK::Buffer is GTK::TextBuffer {
   also does GTK::Roles::Types;
-  also does SourceViewGTK::Roles::Buffer;
   
   has GtkSourceBuffer $!sb;
   

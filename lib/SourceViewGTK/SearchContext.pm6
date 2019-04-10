@@ -1,5 +1,6 @@
 use v6.c;
 
+use Method::Also;
 use NativeCall;
 
 use GTK::Compat::Types;
@@ -46,7 +47,7 @@ class SourceViewGTK::SearchContext {
     );
   }
 
-  method match_style is rw {
+  method match_style is rw is also<match-style> {
     Proxy.new(
       FETCH => sub ($) {
         gtk_source_search_context_get_match_style($!ssc);
@@ -75,6 +76,10 @@ class SourceViewGTK::SearchContext {
     $rc;
   }
 
+  proto method backward_async (|) 
+    is also<backward-async>
+  { * }
+  
   multi method backward_async (
     GtkTextIter() $iter, 
     &callback,
@@ -99,6 +104,10 @@ class SourceViewGTK::SearchContext {
   }
 
   # Handling should be done for all other _finish methods.
+  proto method backward_finish (|)
+    is also<backward-finish>
+  { * }
+  
   multi method backward_finish (GAsyncResult $result) {
     my GtkTextIter ($start, $end, $wrapped) = GtkTextIter.new xx 2;
     ($start, $end, $wrapped) if samewith($result, $start, $end, $wrapped);
@@ -143,6 +152,10 @@ class SourceViewGTK::SearchContext {
     $rc;
   }
 
+  proto method forward_async (|)
+    is also<forward-async>
+  { * }
+  
   multi method forward_async(
     GtkTextIter() $iter, 
     &callback, 
@@ -166,6 +179,10 @@ class SourceViewGTK::SearchContext {
     );
   }
 
+  proto method forward_finish (|) 
+    is also<forward-finish>
+  { * }
+  
   multi method forward_finish (
     GAsyncResult $result 
   ) {
@@ -195,14 +212,21 @@ class SourceViewGTK::SearchContext {
     $rc;
   }
 
-  method get_buffer {
+  method get_buffer 
+    is also<
+      buffer
+      get-buffer
+    > 
+  {
     SourceViewGTK::Buffer.new( gtk_source_search_context_get_buffer($!ssc) );
   }
 
   method get_occurrence_position (
     GtkTextIter() $match_start, 
     GtkTextIter() $match_end
-  ) {
+  )  
+    is also<get-occurences-position> 
+  {
     gtk_source_search_context_get_occurrence_position(
       $!ssc, 
       $match_start, 
@@ -210,21 +234,36 @@ class SourceViewGTK::SearchContext {
     );
   }
 
-  method get_occurrences_count {
+  # CANNOT offer simplified aliases on this method as it would conflict with
+  # the signal named "occurences-count".
+  method get_occurrences_count 
+    is also<get-occurences-count> 
+  {
     gtk_source_search_context_get_occurrences_count($!ssc);
   }
 
-  method get_regex_error {
+  method get_regex_error 
+    is also<
+      get-regex-error
+      regex_error
+      regex-error
+    >
+  {
     gtk_source_search_context_get_regex_error($!ssc);
   }
 
-  method get_settings {
+  method get_settings
+    is also<
+      get-settings
+      settings
+    >
+  {
     SourceViewGTK::SearchSettings.new(
       gtk_source_search_context_get_settings($!ssc)
     );
   }
 
-  method get_type {
+  method get_type is also<get-type> {
     state ($n, $t);
     unstable_get_type( 
       self.^name, 
@@ -259,7 +298,9 @@ class SourceViewGTK::SearchContext {
     Str() $replace, 
     Int() $replace_length, 
     CArray[Pointer[GError]] $error = gerror()
-  ) {
+  ) 
+    is also<replace-all> 
+  {
     my gint $rl = self.RESOLVE-INT($replace_length);
     clear_error;
     my $rc = gtk_source_search_context_replace_all(
