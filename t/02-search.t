@@ -44,7 +44,7 @@ sub update_label_occurrences {
   say 'update_label_occurrences enter';
   my $occ_count = %globals<search_context>.get_occurrences_count;
   my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
-  say "ULO: { $start } / { $end }";
+  say "ULO ( { $occ_count } ): { $start } / { $end }";
   return unless $start.defined && $end.defined;
   my $occ_pos = %globals<search_context>.get_occurrence_position($start, $end);
   
@@ -83,9 +83,11 @@ sub backward_search_finished($search_context, $result, $gerror) {
   say "E: { $gerror[0].deref.gist }" with $gerror[0];
       
   say 'backward_search_finished enter';
-  my ($start, $end) = %globals<search_context>.backward_finish($result);
-  say "BSF: { $start } / { $end }";
-  select_search_occurrence($start, $end) if $start.defined && $end.defined;
+  my @r;
+  if @r = %globals<search_context>.backward_finish($result) {
+    say "BSF: { @r.join(' / ') }";
+    select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
+  }
   say 'backward_search_finished exit';
 }
 
@@ -96,9 +98,11 @@ sub forward_search_finished($search_context, $result, $gerror) {
   say "E: { $gerror[0].deref.gist }" with $gerror[0];
     
   say 'forward_search_finished enter';
-  my ($start, $end) = %globals<search_context>.forward_finish($result);
-  say "FSF: { $start } / { $end }";
-  select_search_occurrence($start, $end) if $start.defined && $end.defined;
+  my @r;
+  if @r = %globals<search_context>.forward_finish($result) {
+    say "FSF: { @r.join(' / ') }";
+    select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
+  }
   say 'forward_search_finished exit';
 }
 
