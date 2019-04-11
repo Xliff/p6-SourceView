@@ -12,6 +12,8 @@ use SourceViewGTK::Raw::SearchContext;
 use GTK::Compat::Roles::Object;
 use GTK::Roles::Types;
 
+use GTK::TextIter;
+
 use SourceViewGTK::Buffer;
 use SourceViewGTK::SearchSettings;
 
@@ -78,7 +80,7 @@ class SourceViewGTK::SearchContext {
       $match_end, 
       $hwa
     );
-    $has_wrapped_around = $hwa if $rc;
+    $has_wrapped_around = $hwa;
     $rc ?? 
       (
         $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
@@ -122,7 +124,7 @@ class SourceViewGTK::SearchContext {
   { * }
   
   multi method backward_finish (GAsyncResult $result) {
-    my GtkTextIter ($start, $end, $wrapped) = ( |(GtkTextIter.new xx 2), 0 );
+    my ($start, $end, $wrapped) = ( |(GtkTextIter.new xx 2), 0 );
     samewith($result, $start, $end, $wrapped);
   }
   multi method backward_finish (
@@ -134,7 +136,7 @@ class SourceViewGTK::SearchContext {
   ) {
     clear_error;
     my guint $hwa = 0;
-    my $rc = gtk_source_search_context_backward_finish(
+    my $rc = so gtk_source_search_context_backward_finish(
       $!ssc, 
       $result, 
       $match_start, 
@@ -142,8 +144,9 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $has_wrapped_around = $hwa if $rc;;
+    $has_wrapped_around = $hwa;
     set_error($error);
+    say "BF: $rc";
     $rc ?? 
       (
         $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
@@ -174,7 +177,7 @@ class SourceViewGTK::SearchContext {
       $match_end, 
       $hwa
     );
-    $has_wrapped_around = $hwa if $rc;
+    $has_wrapped_around = $hwa;
     $rc ?? 
       (
         $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
@@ -239,16 +242,17 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $has_wrapped_around = $hwa if $rc;
+    $has_wrapped_around = $hwa;
+    say "FF: $rc";
     set_error($error);
-    $rc ?? 
-      (
-        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
-        $has_wrapped_around
-      )
-      !!
-      Nil;
+    
+    say "E: { $error[0].deref.gist }" with $error[0];
+    
+    (
+      $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+      $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+      $has_wrapped_around
+    );
   }
 
   method get_buffer 

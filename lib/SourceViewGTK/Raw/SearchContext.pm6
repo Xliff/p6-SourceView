@@ -24,7 +24,7 @@ sub gtk_source_search_context_backward_async (
   GtkSourceSearchContext $search, 
   GtkTextIter $iter, 
   GCancellable $cancellable, 
-  &callback (Pointer, GAsyncResult, Pointer), 
+  &callback (Pointer, GAsyncResult, CArray[Pointer[GError]]), 
   gpointer $user_data
 )
   is native(sourceview)
@@ -60,7 +60,7 @@ sub gtk_source_search_context_forward_async (
   GtkSourceSearchContext $search, 
   GtkTextIter $iter, 
   GCancellable $cancellable, 
-  &callback (Pointer, GAsyncResult, Pointer),  
+  &callback (Pointer, GAsyncResult, CArray[Pointer[GError]]),  
   gpointer $user_data
 )
   is native(sourceview)

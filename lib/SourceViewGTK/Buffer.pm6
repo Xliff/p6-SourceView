@@ -253,7 +253,8 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   }
 
   method get_type {
-    gtk_source_buffer_get_type();
+    state ($n, $t);
+    unstable_get_type(self.^name, &gtk_source_buffer_get_type, $n, $t);
   }
 
   method iter_backward_to_context_class_toggle (

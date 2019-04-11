@@ -40,14 +40,18 @@ sub open_file(Str $filename is copy) {
   %globals<source_buffer>.select_range($iter, $iter);
 }
 
-sub update_label_occurences {
-  my $occ_count = %globals<source_buffer>.get_occurrences_count;
+sub update_label_occurrences {
+  say 'update_label_occurrences enter';
+  my $occ_count = %globals<search_context>.get_occurrences_count;
   my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
-  my $occ_pos = %globals<source_buffer>.get_occurence_position($start, $end);
+  say "ULO: { $start } / { $end }";
+  return unless $start.defined && $end.defined;
+  my $occ_pos = %globals<search_context>.get_occurrence_position($start, $end);
   
-  %globals<label_occurences>.text = $occ_count == -1 ??
+  %globals<label_occurrences>.text = $occ_count == -1 ??
     '' !! $occ_pos == -1 ??
       "{ $occ_count } occurrences" !! "{ $occ_pos } of { $occ_count }";
+  say 'update_label_occurrences exit';
 }
 
 sub update_label_regex_error {
@@ -63,23 +67,39 @@ sub update_label_regex_error {
   }
 }
 
-sub select_search_occurence($start, $end) {
+sub select_search_occurrence($start, $end) {
+  say 'select_search_occurrence enter';
   %globals<source_buffer>.select_range($start, $end);
   %globals<source_view>.scroll_mark_onscreen(
     %globals<source_buffer>.get_insert
   );
+  say 'select_search_occurrence exit';
 }
 
-sub backward_search_finished($search_context, $result, $) {
+sub backward_search_finished($search_context, $result, $gerror) {
   CATCH { default { .message.say } }
+  
+  say "T: { %globals<settings>.search_text }";
+  say "E: { $gerror[0].deref.gist }" with $gerror[0];
+      
+  say 'backward_search_finished enter';
   my ($start, $end) = %globals<search_context>.backward_finish($result);
-  select_search_occurence($start, $end) if $start.defined && $end.defined;
+  say "BSF: { $start } / { $end }";
+  select_search_occurrence($start, $end) if $start.defined && $end.defined;
+  say 'backward_search_finished exit';
 }
 
-sub forward_search_finished($search_context, $result, $) {
+sub forward_search_finished($search_context, $result, $gerror) {
   CATCH { default { .message.say } }
+  
+  say "T: { %globals<settings>.search_text }";
+  say "E: { $gerror[0].deref.gist }" with $gerror[0];
+    
+  say 'forward_search_finished enter';
   my ($start, $end) = %globals<search_context>.forward_finish($result);
-  select_search_occurence($start, $end) if $start.defined && $end.defined;
+  say "FSF: { $start } / { $end }";
+  select_search_occurrence($start, $end) if $start.defined && $end.defined;
+  say 'forward_search_finished exit';
 }
 
 sub process_ui {
@@ -190,18 +210,22 @@ sub MAIN {
     
   GTK::Compat::Signal.connect_swapped(
     %globals<search_context>,
-    'notify::occurences-count',
+    'notify::occurrences-count',
     -> *@a { 
-      say 'notify::occurences-count enter';
-      update_label_occurences 
-      say 'notify::occurences-count exit';
+      CATCH { default { .message.say } }
+      say 'notify::occurrences-count enter';
+      update_label_occurrences;
+      say 'notify::occurrences-count exit';
     }
   );
   
   GTK::Compat::Signal.connect_swapped(
     %globals<search_context>,
     'notify::regex_error',
-     -> $ { update_label_regex_error }
+    -> *@a { 
+      CATCH { default { .message.say } }
+      update_label_regex_error(); 
+    }
   );
   
   # Causes MoarVM panic: Internal error: Unwound entire stack and missed handler
@@ -220,7 +244,7 @@ sub MAIN {
   #     %globals<idle_update_label_id> = g_idle_add(sub () returns guint {
   #       say 'idle_update_label_id enter';
   #       %globals<idle_update_label_id> = 0;
-  #       update_label_occurences;
+  #       update_label_occurrences;
   #       say 'idle_update_label_id exit';
   #       G_SOURCE_REMOVE;
   #     }, gpointer);
