@@ -41,17 +41,14 @@ sub open_file(Str $filename is copy) {
 }
 
 sub update_label_occurrences {
-  say 'update_label_occurrences enter';
   my $occ_count = %globals<search_context>.get_occurrences_count;
   my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
-  say "ULO ( { $occ_count } ): { $start } / { $end }";
   return unless $start.defined && $end.defined;
   my $occ_pos = %globals<search_context>.get_occurrence_position($start, $end);
   
   %globals<label_occurrences>.text = $occ_count == -1 ??
     '' !! $occ_pos == -1 ??
       "{ $occ_count } occurrences" !! "{ $occ_pos } of { $occ_count }";
-  say 'update_label_occurrences exit';
 }
 
 sub update_label_regex_error {
@@ -68,41 +65,23 @@ sub update_label_regex_error {
 }
 
 sub select_search_occurrence($start, $end) {
-  say 'select_search_occurrence enter';
   %globals<source_buffer>.select_range($start, $end);
   my $insert = %globals<source_buffer>.get_insert;
   %globals<source_view>.scroll_mark_onscreen($insert) with $insert;
-  say 'select_search_occurrence exit';
 }
 
 sub backward_search_finished($search_context, $result, $gerror) {
   CATCH { default { .message.say } }
-  
-  say "T: { %globals<settings>.search_text }";
-  say "E: { $gerror[0].deref.gist }" with $gerror[0];
-      
-  say 'backward_search_finished enter';
-  my @r;
-  if @r = %globals<search_context>.backward_finish($result) {
-    say "BSF: { @r.join(' / ') }";
-    select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
-  }
-  say 'backward_search_finished exit';
+        
+  my @r = %globals<search_context>.backward_finish($result);
+  select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
 }
 
 sub forward_search_finished($search_context, $result, $gerror) {
   CATCH { default { .message.say } }
-  
-  say "T: { %globals<settings>.search_text }";
-  say "E: { $gerror[0].deref.gist }" with $gerror[0];
-    
-  say 'forward_search_finished enter';
-  my @r;
-  if @r = %globals<search_context>.forward_finish($result) {
-    say "FSF: { @r.join(' / ') }";
-    select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
-  }
-  say 'forward_search_finished exit';
+
+  my @r = %globals<search_context>.forward_finish($result);
+  select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
 }
 
 sub process_ui {
@@ -146,33 +125,27 @@ sub MAIN {
   
   #$b.add_callback_symbol('search_entry_changed_cb', -> $, $ {
   %globals<search_entry>.changed.tap(-> *@a {
-    say 'search_entry_changed_cb enter';
     my $text = $b<search_entry>.text;
     my $utext = SourceViewGTK::Utils.unescape_search_text($text);
     %globals<settings>.search_text = $utext;
-    say 'search_entry_changed_cb exit';
   });
   
   #$b.add_callback_symbol('button_previous_clicked_cb', -> $, $ {
   %globals<button_previous>.clicked.tap(-> *@a {
     my ($start, $) = %globals<source_buffer>.get_selection_bounds;
-    say $start;
     %globals<search_context>.backward_async($start, &backward_search_finished);
   });
   
   #$b.add_callback_symbol('button_next_clicked_cb', -> $, $ {
   %globals<button_next>.clicked.tap(-> *@a {
     my ($, $start) = %globals<source_buffer>.get_selection_bounds;
-    say $start;
     %globals<search_context>.forward_async($start, &forward_search_finished);
   });
   
   #$b.add_callback_symbol('button_replaced_clicked_cb', -> $, $ {
   %globals<button_replace>.clicked.tap(-> *@a {
-    say 'button_replaced_all_clicked_cb enter';
     my ($start, $end) = %globals<source_buffer>.get_selection_bounds;
-    my $buffer = $b<replace_entry>;
-    my $len = $buffer.get_bytes;
+    my $len = $b<replace_entry>.buffer.get_bytes;
     
     %globals<search_context>.replace(
       $start, 
@@ -182,18 +155,14 @@ sub MAIN {
     );
     
     ($start, $end) = %globals<source_buffer>.get_selection_bounds;
-    say "$start/$end";
     %globals<search_context>.forward_async($end, &forward_search_finished);
-    say 'button_replaced_all_clicked_cb exit';
   });
   
   #$b.add_callback_symbol('button_replace_all_clicked_cb', -> $, $ {
   %globals<button_replace_all>.clicked.tap(-> *@a {
-    say 'button_replaced_all_clicked_cb enter';
     my $eb = %globals<replace_entry>.buffer;
     my $len = $eb.get_bytes;
     %globals<search_context>.replace_all(%globals<replace_entry>.text, $len);
-    say 'button_replaced_all_clicked_cb exit';
   });
   
   %settings<highlight> = GTK::Compat::Binding.bind(
@@ -216,9 +185,7 @@ sub MAIN {
     'notify::occurrences-count',
     -> *@a { 
       CATCH { default { .message.say } }
-      say 'notify::occurrences-count enter';
       update_label_occurrences;
-      say 'notify::occurrences-count exit';
     }
   );
   
@@ -245,10 +212,8 @@ sub MAIN {
     {
       # g_idle_add should be place into an object, but for now...
       %globals<idle_update_label_id> = g_idle_add_rint(sub () returns guint {
-        say 'idle_update_label_id enter';
         %globals<idle_update_label_id> = 0;
         update_label_occurrences;
-        say 'idle_update_label_id exit';
         G_SOURCE_REMOVE;
       }, gpointer);
     }
