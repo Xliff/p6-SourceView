@@ -80,12 +80,12 @@ class SourceViewGTK::SearchContext {
       $match_end, 
       $hwa
     );
-    $has_wrapped_around = $hwa;
+    $has_wrapped_around = so $hwa;
     $rc ?? 
       (
         $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
-        $hwa
+        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $has_wrapped_around
       )
       !!
       Nil;
@@ -144,13 +144,13 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $has_wrapped_around = $hwa;
+    $has_wrapped_around = so $hwa;
     set_error($error);
     say "BF: $rc";
     $rc ?? 
       (
         $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
+        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
         $has_wrapped_around
       )
       !!
@@ -177,12 +177,12 @@ class SourceViewGTK::SearchContext {
       $match_end, 
       $hwa
     );
-    $has_wrapped_around = $hwa;
+    $has_wrapped_around = so $hwa;
     $rc ?? 
       (
         $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::textIter.new($match_end)   !! Nil,
-        $hwa
+        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $has_wrapped_around
       )
       !!
       Nil;
@@ -242,17 +242,20 @@ class SourceViewGTK::SearchContext {
       $hwa, 
       $error
     );
-    $has_wrapped_around = $hwa;
+    $has_wrapped_around = so $hwa;
     say "FF: $rc";
     set_error($error);
     
     say "E: { $error[0].deref.gist }" with $error[0];
     
-    (
-      $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-      $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
-      $has_wrapped_around
-    );
+    $rc ?? 
+      (
+        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
+        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $has_wrapped_around
+      )
+      !!
+      Nil;
   }
 
   method get_buffer 

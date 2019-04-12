@@ -70,9 +70,8 @@ sub update_label_regex_error {
 sub select_search_occurrence($start, $end) {
   say 'select_search_occurrence enter';
   %globals<source_buffer>.select_range($start, $end);
-  %globals<source_view>.scroll_mark_onscreen(
-    %globals<source_buffer>.get_insert
-  );
+  my $insert = %globals<source_buffer>.get_insert;
+  %globals<source_view>.scroll_mark_onscreen($insert) with $insert;
   say 'select_search_occurrence exit';
 }
 
@@ -234,26 +233,26 @@ sub MAIN {
   
   # Causes MoarVM panic: Internal error: Unwound entire stack and missed handler
   # Reason currently unknown.
-  # %globals<source_buffer>.mark-set.tap( -> *@a {
-  #   CATCH { default { .message.say; } }
-  # 
-  #   my $insert = %globals<source_buffer>.get_insert;
-  #   my $bound = %globals<source_buffer>.get_selection_bound;
-  #   if 
-  #     (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.TextMark.p) 
-  #     &&
-  #     (%globals<idle_update_label_id> // 0) == 0
-  #   {
-  #     # g_idle_add should be place into an object, but for now...
-  #     %globals<idle_update_label_id> = g_idle_add(sub () returns guint {
-  #       say 'idle_update_label_id enter';
-  #       %globals<idle_update_label_id> = 0;
-  #       update_label_occurrences;
-  #       say 'idle_update_label_id exit';
-  #       G_SOURCE_REMOVE;
-  #     }, gpointer);
-  #   }
-  # });
+  %globals<source_buffer>.mark-set.tap( -> *@a {
+    CATCH { default { .message.say; } }
+  
+    my $insert = %globals<source_buffer>.get_insert;
+    my $bound = %globals<source_buffer>.get_selection_bound;
+    if 
+      (@a[2].p == $insert.TextMark.p || @a[2].p == $bound.TextMark.p) 
+      &&
+      (%globals<idle_update_label_id> // 0) == 0
+    {
+      # g_idle_add should be place into an object, but for now...
+      %globals<idle_update_label_id> = g_idle_add_rint(sub () returns guint {
+        say 'idle_update_label_id enter';
+        %globals<idle_update_label_id> = 0;
+        update_label_occurrences;
+        say 'idle_update_label_id exit';
+        G_SOURCE_REMOVE;
+      }, gpointer);
+    }
+  });
   
   $a.activate.tap({
     $a.wait-for-init;
