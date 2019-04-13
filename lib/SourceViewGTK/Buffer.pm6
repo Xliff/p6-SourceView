@@ -7,6 +7,7 @@ use GTK::Raw::Types;
 use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 
+use GTK::Compat::Roles::ListData;
 use GTK::Roles::Types;
 use GTK::Roles::References;
 use SourceViewGTK::Roles::Signals::Buffer;
@@ -65,7 +66,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   }
   
   # Is originally:
-  # GtkSourceBuffer, GtkTextIter, GtkSourceBracketMatchType, gpointer --> void
+  # GtkSourceBuffer, GtkTextIter, uint32 (GtkSourceBracketMatchType), gpointer --> void
   method bracket-matched {
     self.connect-bracket-matched($!sb);
   }
@@ -240,7 +241,11 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   }
 
   method get_context_classes_at_iter (GtkTextIter() $iter) {
-    gtk_source_buffer_get_context_classes_at_iter($!sb, $iter);
+    my CArray[Str] $l = 
+      gtk_source_buffer_get_context_classes_at_iter($!sb, $iter);
+    my ($i, @l) = ( 0 );
+    @l[$i] = $l[$i++] while $l[$i].defined;
+    @l;
   }
 
   method get_source_marks_at_iter (GtkTextIter() $iter, Str() $category) {
@@ -249,7 +254,10 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
 
   method get_source_marks_at_line (Int() $line, Str() $category) {
     my gint $l = self.RESOLVE-INT($line);
-    gtk_source_buffer_get_source_marks_at_line($!sb, $l, $category);
+    my $sm_list = GTK::Compat::GSList.new(
+      gtk_source_buffer_get_source_marks_at_line($!sb, $l, $category)
+    ) but GTK::Compat::Roles::ListData[GtkSourceMark];
+    $sm_list.Array.map({ SourceViewGTK::Mark.new($_) with $_ });
   }
 
   method get_type {

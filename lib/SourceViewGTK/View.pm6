@@ -362,7 +362,8 @@ class SourceViewGTK::View is GTK::TextView {
   }
 
   method get_type is also<get-type> {
-    gtk_source_view_get_type();
+    state ($n, $t);
+    unstable_get_type( self.^name, &gtk_source_view_get_type, $n, $t );
   }
 
   method get_visual_column (GtkTextIter() $iter) is also<get-visual-column> {

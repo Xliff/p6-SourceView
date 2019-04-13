@@ -109,7 +109,7 @@ class SourceViewGTK::PrintCompositor {
       FETCH => sub ($) {
         so gtk_source_print_compositor_get_print_header($!spc);
       },
-      STORE => sub ($, $print is copy) {
+      STORE => sub ($, Int() $print is copy) {
         my gboolean $p = self.RESOLVE-BOOL($print);
         gtk_source_print_compositor_set_print_header($!spc, $p);
       }

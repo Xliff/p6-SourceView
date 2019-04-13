@@ -1,5 +1,9 @@
 use v6.c;
 
+use Method::Also;
+
+use GTK::Compat::Types;
+
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Mark;
 
@@ -14,18 +18,26 @@ class SourceViewGTK::Mark {
     self!setObject($!sm = $mark);
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceMark { $!sm }
+  method SourceViewGTK::Raw::Types::GtkSourceMark 
+    is also<SourceMark> 
+  { $!sm }
   
-  method new (Str() $name, Str() $category) {
+  multi method new (GtkSourceMark $mark) {
+    my $o = self.bless(:$mark);
+    #$o.upref;
+    $o;
+  }
+  multi method new (Str() $name, Str() $category) {
     self.bless( mark => gtk_source_mark_new($name, $category) );
   }
   
-  method get_category {
+  method get_category is also<get-category> {
     gtk_source_mark_get_category($!sm);
   }
 
-  method get_type {
-    gtk_source_mark_get_type();
+  method get_type is also<get-type> {
+    state ($n, $t);
+    unstable_get_type( self.^name, &gtk_source_mark_get_type, $n, $t );
   }
 
   method next (Str() $category) {
