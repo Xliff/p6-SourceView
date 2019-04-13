@@ -7,12 +7,28 @@ use Cairo;
 use Pango::Raw::Types;
 use Pango::Layout;
 
+use GTK::Compat::Types;
+
 use GTK::Compat::ContentType;
+use GTK::Compat::Binding;
+use GTK::Compat::RGBA;
 
+use GTK::Raw::Types;
+
+use GTK::Application;
+use GTK::Builder;
+use GTK::Dialog::FileChooser;
 use GTK::PrintOperation;
+use GTK::PrintContext;
+use GTK::TextMark;
 
+use SourceViewGTK::Raw::Types;
+
+use SourceViewGTK::File;
+use SourceViewGTK::FileLoader;
 use SourceViewGTK::Language;
 use SourceViewGTK::LanguageManager;
+use SourceViewGTK::MarkAttributes;
 use SourceViewGTK::PrintCompositor;
 use SourceViewGTK::View;
 
@@ -25,6 +41,8 @@ constant LINE_NUMBERS_FONT_NAME	= 'Sans 8';
 constant HEADER_FONT_NAME	      = 'Sans 11';
 constant FOOTER_FONT_NAME	      = 'Sans 11';
 constant BODY_FONT_NAME		      = 'Monospace 9';
+
+my %globals;
 
 sub remove_all_marks ($buffer) {
   my ($start, $end) = $buffer.get_bounds;
@@ -91,7 +109,7 @@ sub load_cb ($loader is rw, $result, $) {
   $loader.load_finish($result);
   with $ERROR {
     GTK::Compat::Log.warning(
-      "Error while loading the file: { $error.message }"
+      "Error while loading the file: { $ERROR.message }"
     );
     clear_error;
     return;
@@ -114,8 +132,8 @@ sub load_cb ($loader is rw, $result, $) {
 }
 
 sub open_file ($filename) {
+  my $location = GTK::Compat::File.new_for_path($filename);
   %globals<file> = SourceViewGTK::File.new;
-  $location = GTK::Compat::File.new_for_path($filename);
   %globals<file>.location = $location;
 
   my $loader = SourceViewGTK::FileLoader.new(|%globals<buffer file>);
@@ -137,19 +155,19 @@ sub smart_home_end_changed_cb ($combo) {
     when 2  { GTK_SOURCE_SMART_HOME_END_AFTER    }
     when 3  { GTK_SOURCE_SMART_HOME_END_ALWAYS   }
     default { GTK_SOURCE_SMART_HOME_END_DISABLED }
-  });
+  };
 }
 
 sub move_string_iter(:$forward = True) {
   my $method =
-    "iter_{ $forward ?? 'forward' || 'backward' }_to_context_class_togggle";
+    "iter_{ $forward ?? 'forward' !! 'backward' }_to_context_class_togggle";
 
   my $insert = %globals<buffer>.get_insert;
   my $iter = %globals<buffer>.get_iter_at_mark($insert);
 
-  if %globals<buffer>."$meth"($iter, 'string') {
+  if %globals<buffer>."$method"($iter, 'string') {
     %globals<buffer>.place_cursor($iter);
-    %globals<view>scroll_mark_onscreen($insert);
+    %globals<view>.scroll_mark_onscreen($insert);
   }
   %globals<view>.grab_focus;
 }
@@ -176,17 +194,18 @@ sub open_button_clicked_cb {
 }
 
 # Can be optimized OUT! - using NON_BLOCKING_PAGINATION
-sub begin_print ($, $, $) {
+sub begin_print ($context) {
   1 while %globals<compositor>.paginate($context);
-  %globals<print_operation>.n_pages = $compositor.get_n_pages;
+  %globals<print_operation>.n_pages = %globals<compositor>.get_n_pages;
 }
   
 # Using - ENABLE_CUSTOM_OVERLAY
-sub draw_page($, $, $, $) {
-  my $cr = Cairo::Context.new( %globals<print_context>.get_cairo_context );
+sub draw_page ($ctxt) {
+  my $context = GTK::PrintContext.new($ctxt);
+  my $cr = Cairo::Context.new( $context.get_cairo_context );
   $cr.save;
   
-  my $layout = GTK::PrintContext.create_pango_layout(%globals<print_context>);
+  my $layout = GTK::PrintContext.create_pango_layout($ctxt);
   $layout.text = 'Draft';
   
   my $desc = Pango::FontDescription.new_from_string('Sans Bold 120');
@@ -219,7 +238,7 @@ sub print_button_clicked_cb {
   
   %globals<compositor> = SourceViewGTK::PrintCompositor.new(%globals<buffer>);
   %globals<compositor>.tab_with = %globals<view>.tab_width;
-  %globals<compositor>.wrap_mode = %globals<view>wrap_mode;
+  %globals<compositor>.wrap_mode = %globals<view>.wrap_mode;
   %globals<compositor>.print_line_numbers = True;
   %globals<compositor>.body_font_name = BODY_FONT_NAME;
   %globals<compositor>.footer_font_name = FOOTER_FONT_NAME;
@@ -228,7 +247,7 @@ sub print_button_clicked_cb {
   %globals<compositor>.set_header_format(
     True, 'Printed on %A', 'test-widget', '%F'
   );
-  %globals<compositor>.set_footer_format(True, '%T', $basename. 'Page %N/%Q');
+  %globals<compositor>.set_footer_format(True, '%T', $basename, 'Page %N/%Q');
   %globals<compositor>.print_header = True;
   %globals<compositor>.print_footer = True;
   
@@ -237,15 +256,15 @@ sub print_button_clicked_cb {
   %globals<print_operation>.show_progress = True;
   
   GTK::Compat::Signal.connect(%globals<print_operation>, .key, .value ) for (
-    'paginate'   => -> $ { begin_print                },
-    'draw-page'  => -> $ { draw_page                  },
-    'end-print'  => -> $ { %globals<compositor> = Nil }
+    'paginate'   => -> *@a { begin_print( @a[1] )       },
+    'draw-page'  => -> *@a { draw_page(   @a[1] )       },
+    'end-print'  => -> *@a { %globals<compositor> = Nil }
   );
   
   %globals<print_operation>.run( GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG );
 }
 
-sub update_curspr_position_info {
+sub update_cursor_position_info {
   my $iter = %globals<buffer>.get_iter_at_mark(%globals<buffer>.get_insert);
   my $o = $iter.offset;
   my $l = $iter.line + 1;
@@ -258,7 +277,7 @@ sub update_curspr_position_info {
 }
   
 sub line_mark_activated_cb ($i, $event) {
-  my $button_event = nativecast(GtkButtonEvent, $event);
+  my $button_event = cast(GdkEventButton, $event);
   my $iter = GTK::TextIter.new($i);
   my $mark_type = $button_event.button ?? MARK_TYPE_1 !! MARK_TYPE_2;
   my $mark_list = %globals<buffer>.get_source_marks_at_line(
@@ -311,16 +330,14 @@ sub add_source_mark_attributes {
   $a2.icon_name = 'list-remove';
   $a2.query-tooltip-markup.tap(-> *@a { mark_tooltip_func(@a[1]) });
   
-  %globals<view>.set_mark_attributes(MARK_TYPE_1, $a1, 1)
-  %globals<view>.set_mark_attributes(MARK_TYPE_2, $a2, 2)
-}
+  %globals<view>.set_mark_attributes(MARK_TYPE_1, $a1, 1);
+  %globals<view>.set_mark_attributes(MARK_TYPE_2, $a2, 2);
+}    
 
 sub MAIN {
-  my $ui-data = process-ui('test-widget.ui');
+  my $ui-data = process_ui('test-widget.ui');
   
-  my $a = GTK::Application.new( title => 'org.genex.sourceview.test_widget' );
-  my $b = GTK::Builder.new
-
+  my $a  = GTK::Application.new( title => 'org.genex.sourceview.test_widget' );
   my $dv = SourceViewGTK::View.new;
 
   # Register SourceViewGTK widgets.
@@ -329,7 +346,97 @@ sub MAIN {
   my $b = GTK::Builder.new_from_string($ui-data);
 
   die 'GTK::Builder error' unless $b.keys;
-  %globals{$_} := $b{$_} for $b.keys;
+  %globals{$_}      := $b{$_} for $b.keys;
+  %globals<buffer>   = $b<view>.buffer;
 
-  # finish with _init
+  GTK::Compat::Binding.bind(%globals<view>, $_[0], $_[1], 'active')
+    for (
+      [ 'auto-indent',                   $b<auto_indent>            ],
+      [ 'highlight-current-line',        $b<highlight_current_line> ],
+      [ 'insert-spaces-instead-of-tabs', $b<indent_spaces>          ],
+      [ 'show-line-marks',               $b<show_line_marks>        ],
+      [ 'show-line-numbers',             $b<show_line_numbers>      ],
+      [ 'show-right-margin',             $b<show_right_margin>      ],
+    );
+
+  GTK::Compat::Binding.bind(%globals<buffer>, $_[0], $_[1], 'active')
+    for (
+      [ 'highlight-syntax',            $b<highlight_syntax>           ],
+      [ 'highlight-matching-brackets', $b<highlight_matching_bracket> ],
+    );
+  
+  $b<open_button>    .clicked.tap(-> *@a { open_button_clicked_cb       });
+  $b<print_button>   .clicked.tap(-> *@a { print_button_clicked_cb      });
+  $b<backward_string>.clicked.tap(-> *@a { move_string_iter(:!forward)  });
+  $b<forward_string> .clicked.tap(-> *@a { move_string_iter(:forward)   });
+  $b<smart_home_end> .changed.tap(-> *@a { smart_home_end_changed_cb    });  
+  
+  $b<right_margin_position>.changed.tap(-> *@a {
+    $b<view>.right-margin-position = 
+      $b<right_margin_position>.get_value_as_int;
+  });
+  
+  $b<wrap_lines>.toggled.tap(-> *@a {
+    $b<view>.wrap-mode = $b<wrap_lines>.active ?? 
+      GTK_WRAP_WORD !! GTK_WRAP_NONE;
+  });
+  
+  $b<tab_width>.changed.tap(-> *@a {
+    $b<view>.tab-width = $b<tab_width>.get_value_as_int;
+  });
+  
+  $b<show_top_border_window_checkbutton>.toggled.tap(-> *@a {
+    $b<view>.set_border_window_size(
+      GTK_TEXT_WINDOW_TOP,
+      $b<show_top_border_window_checkbutton>.active ?? 20 !! 0;
+    );
+  });
+  
+  $b<indent_width_checkbutton>.toggled.tap(-> *@a { 
+    update_indent_width 
+  });
+  $b<indent_width_spinbutton> .value-changed.tap(-> *@a { 
+    update_indent_width 
+  });
+  
+  %globals<buffer>.mark-set.tap(-> *@a { 
+    update_cursor_position_info 
+      if @a[2].p == %globals<buffer>.get_insert.TextMark.p
+  });
+  %globals<buffer>.bracket-matched.tap(-> *@a { 
+    bracket_matched_cb( |@a[1, 2] ) 
+  });
+  
+  add_source_mark_attributes;
+  
+  $b<view>.line-mark-activated.tap(-> *@a { 
+    line_mark_activated_cb( |@a[1, 2] );
+  });
+  
+  $b<background_pattern>.changed.tap(-> *@a {
+    $b<view>.background-pattern = $b<background_pattern>.text eq 'Grid' ??
+      GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID 
+      !!
+      GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE 
+  });
+  
+  %globals<space_drawer> = $b<view>.space-drawer;
+  GTK::Compat::Binding.bind(
+    $b<draw_spaces_checkbutton>, 
+    'active', 
+    %globals<space_drawer>, 
+    'enable-matrix'
+  );
+  
+  open_file('/gtksourceview/gtksourcebuffer.c');
+  
+  $a.activate.tap({
+    $a.wait-for-init;
+    $a.window.set_default_size(900, 600);
+    $a.window.destroy-signal.tap({ $a.exit });
+    $a.window.add($b<TestWidget>);
+    $a.window.show_all;
+  });
+  
+  $a.run;
 }
