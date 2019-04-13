@@ -1,5 +1,7 @@
 use v6.c;
 
+use lib 't';
+
 use GTK::Compat::Binding;
 use GTK::Compat::Signal;
 use GTK::Compat::Types;
@@ -19,6 +21,8 @@ use SourceViewGTK::View;
 use SourceViewGTK::Utils;
 
 use SourceViewGTK::Builder::Registry;
+
+use SourceViewTests;
 
 my (%globals, %settings);
 
@@ -84,24 +88,8 @@ sub forward_search_finished($search_context, $result, $gerror) {
   select_search_occurrence(@r[0], @r[1]) if @r[0].defined && @r[1].defined;
 }
 
-sub process_ui {
-  my $dir = 'ui';
-  $dir = "t/{ $dir }" unless $dir.IO.d;
-  
-  die 'Cannot find UI directory!' unless $dir.IO.e && $dir.IO.d;
-  die 'Cannot find UI file!' unless 
-    (my $filename = "{ $dir }/test-search.ui").IO.e;
-  my $contents = $filename.IO.slurp;
-  
-  my regex quoted { \" ~ \" (<-[\"]>+) }
-  $contents ~~ s:g{ '<template class='<quoted>' parent='<quoted> } =
-                  "<object class=$/<quoted>[1] id=$/<quoted>[0]";
-  $contents ~~ s:g!'</template>'!</object>!;
-  $contents;
-}
-
 sub MAIN {
-  my $ui-data = process_ui;
+  my $ui-data = process_ui('test-search.ui');
   
   my $a = GTK::Application.new( title => 'org.genex.sourceview.search' );
   my $dv = SourceViewGTK::View.new;

@@ -76,6 +76,19 @@ class SourceViewGTK::MarkAttributes {
     );
   }
   
+  # Wrapper attribute
+  method background is rw {
+    Proxy.new:
+      FETCH => -> $, { 
+        my GTK::Compat::RGBA $c .= new;
+        self.get_background($c);
+        $c;
+      },
+      STORE => -> $, GdkRGBA $c {
+        self.set_background($c);
+      }
+  }
+  
   method get_background (GdkRGBA $background) {
     gtk_source_mark_attributes_get_background($!sma, $background);
   }

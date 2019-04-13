@@ -1,5 +1,7 @@
 use v6.c;
 
+use lib 't';
+
 use Cairo;
 
 use Pango::Raw::Types;
@@ -13,6 +15,8 @@ use SourceViewGTK::Language;
 use SourceViewGTK::LanguageManager;
 use SourceViewGTK::PrintCompositor;
 use SourceViewGTK::View;
+
+use SourceViewTests;
 
 constant MARK_TYPE_1            = 'one';
 constant MARK_TYPE_2            = 'two';
@@ -269,7 +273,63 @@ sub line_mark_activated_cb ($i, $event) {
   }
   #g_slist_free (mark_list);
 }
+
+sub bracket_matched_cb ($it, $s) {
+  my $state = GtkSourceBracketMatchType($s);
+  my $iter = GTK::TextIter.new($it);
   
+  say "Bracket match state: '{ $state }'";
+  if $state == GTK_SOURCE_BRACKET_MATCH_FOUND {
+    my ($ch, $r, $c) = ($iter.char, $iter.line + 1, $iter.line_offset + 1);
+    say qq:to/MATCH/.chomp;
+      Matched bracket: '{ $ch }' at row: { $r }, col: { $c }
+      MATCH
+  }
+}
+
+sub mark_tooltip_func ($m) {
+  my $mark = GTK::TextMark.new($m);
+  my $buffer = $mark.buffer;
+  my $iter = $buffer.get_iter_at_mark($mark);
+  my ($line, $col) = ($iter.line + 1, $iter.get_line_offset);
   
+  $mark.category eq MARK_TYPE_1 ??
+    "Line: { $line }, Column: { $col }"
+    !!
+    "<b>Line</b>: { $line }\n<i>Column</i>: { $col }";
+}
+
+sub add_source_mark_attributes {
+  my ($a1, $a2) = SourceViewGTK::MarkAttributes.new xx 2;
+  my ($c1, $c2) = GTK::Compat::RGBA.new xx 2;
   
+  $a1.background = do { $c1.parse('lightgreen'); $c1 };
+  $a1.icon_name = 'list-add';
+  $a1.query-tooltip-markup.tap(-> *@a { mark_tooltip_func(@a[1]) });
   
+  $a2.background = do { $c2.parse('pink'); $c2 };
+  $a2.icon_name = 'list-remove';
+  $a2.query-tooltip-markup.tap(-> *@a { mark_tooltip_func(@a[1]) });
+  
+  %globals<view>.set_mark_attributes(MARK_TYPE_1, $a1, 1)
+  %globals<view>.set_mark_attributes(MARK_TYPE_2, $a2, 2)
+}
+
+sub MAIN {
+  my $ui-data = process-ui('test-widget.ui');
+  
+  my $a = GTK::Application.new( title => 'org.genex.sourceview.test_widget' );
+  my $b = GTK::Builder.new
+
+  my $dv = SourceViewGTK::View.new;
+
+  # Register SourceViewGTK widgets.
+  GTK::Builder.register( SourceViewGTK::Builder::Registry );
+
+  my $b = GTK::Builder.new_from_string($ui-data);
+
+  die 'GTK::Builder error' unless $b.keys;
+  %globals{$_} := $b{$_} for $b.keys;
+
+  # finish with _init
+}
