@@ -10,26 +10,26 @@ use SourceViewGTK::Raw::FileLoader;
 use GTK::Compat::Roles::Object;
 
 class SourceViewGTK::FileLoader {
-  also does GTK::Compat::Roles::Object; 
-  
+  also does GTK::Compat::Roles::Object;
+
   has GtkSourceFileLoader $!sfl;
-  
+
   submethod BUILD (:$loader) {
     self!setObject($!sfl = $loader);
   }
-  
+
   method SourceViewGTK::Raw::Types::GtkSourceFileLoader { $!sfl }
-  
+
   method new (GtkSourceBuffer() $buffer, GtkSourceFile() $file) {
     self.bless( loader => gtk_source_file_loader_new($buffer, $file) );
   }
 
   method new_from_stream (
-    GtkSourceBuffer $buffer, 
-    GtkSourceFile() $file, 
+    GtkSourceBuffer $buffer,
+    GtkSourceFile() $file,
     GInputStream $stream
   ) {
-    self.bless( 
+    self.bless(
       loader => gtk_source_file_loader_new_from_stream($buffer, $file, $stream)
     )
   }
@@ -71,17 +71,17 @@ class SourceViewGTK::FileLoader {
   }
 
   multi method load_async (
-    Int() $io_priority, 
-    &progress_callback, 
-    GCancellable $cancellable, 
-    gpointer $progress_callback_data = Pointer, 
-    GDestroyNotify $progress_callback_notify = Pointer, 
-    GAsyncReadyCallback $callback = Pointer, 
+    Int() $io_priority,
+    &callback,
+    &progress_callback = -> $, $, $ { },
+    GCancellable $cancellable = Pointer,
+    gpointer $progress_callback_data = Pointer,
+    GDestroyNotify $progress_callback_notify = Pointer,
     gpointer $user_data = Pointer
   ) {
     samewith(
-      $io_priority, 
-      $cancellable, 
+      $io_priority,
+      $cancellable,
       &progress_callback,
       $progress_callback_data,
       $callback,
@@ -89,34 +89,34 @@ class SourceViewGTK::FileLoader {
     );
   }
   multi method load_async (
-    Int() $io_priority, 
-    GCancellable $cancellable, 
-    &progress_callback, 
-    gpointer $progress_callback_data = Pointer, 
-    GDestroyNotify $progress_callback_notify = Pointer, 
-    GAsyncReadyCallback $callback = Pointer, 
+    Int() $io_priority,
+    GCancellable $cancellable,
+    &progress_callback,
+    gpointer $progress_callback_data,
+    GDestroyNotify $progress_callback_notify,
+    &callback,
     gpointer $user_data = Pointer
   ) {
     my gint $ip = self.RESOLVE-INT($io_priority);
     gtk_source_file_loader_load_async(
-      $!sfl, 
-      $ip, 
-      $cancellable, 
-      &progress_callback, 
-      $progress_callback_data, 
-      $progress_callback_notify, 
-      $callback, 
+      $!sfl,
+      $ip,
+      $cancellable,
+      &progress_callback,
+      $progress_callback_data,
+      $progress_callback_notify,
+      $callback,
       $user_data
     );
   }
 
   multi method load_finish (GAsyncResult $result) {
     my $error = CArray[Pointer[GError]].new;
-    
+
     samewith($result, $error);
   }
   multi method load_finish (
-    GAsyncResult $result, 
+    GAsyncResult $result,
     CArray[Pointer[GError]] $error = gerror()
   ) {
     $ERROR = Nil;
@@ -126,9 +126,9 @@ class SourceViewGTK::FileLoader {
 
   method set_candidate_encodings (GSList() $candidate_encodings) {
     gtk_source_file_loader_set_candidate_encodings(
-      $!sfl, 
+      $!sfl,
       $candidate_encodings
     );
   }
-  
+
 }
