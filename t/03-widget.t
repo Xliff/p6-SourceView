@@ -141,7 +141,9 @@ sub load_cb ($, $result, $) {
   #LEAVE %globals<loader>:delete;
 }
 
-sub open_file ($filename) {
+sub open_file ($filename is copy) {
+  $filename = "t/{ $filename }" unless $filename.IO.e;
+
   my $location = GTK::Compat::File.new_for_path($filename);
   %globals<file> = SourceViewGTK::File.new;
   %globals<file>.location = $location;
@@ -192,7 +194,7 @@ sub open_button_clicked_cb {
   );
 
   without $last_dir {
-    $last_dir = '/gtksourceviewwith';
+    $last_dir = '/gtksourceview';
     $last_dir = "t/{ $last_dir }" unless $last_dir.IO.d;
   }
 
@@ -429,6 +431,22 @@ sub MAIN {
     line_mark_activated_cb( |@a[1, 2] );
   });
 
+  GTK::Compat::Binding.bind(
+    $b<chooser_button>, 'style-scheme',
+    %globals<buffer>,   'style-scheme',
+    G_BINDING_SYNC_CREATE
+  );
+  GTK::Compat::Binding.bind(
+    $b<show_map_checkbutton>, 'active',
+    $b<map>,                  'visible',
+    G_BINDING_SYNC_CREATE
+  );
+  GTK::Compat::Binding.bind(
+    $b<smart_backspace_checkbutton>, 'active',
+    %globals<view>,                  'smart-backspace',
+    G_BINDING_SYNC_CREATE
+  );
+
   $b<background_pattern>.changed.tap(-> *@a {
     $b<view>.background-pattern = $b<background_pattern>.text eq 'Grid' ??
       GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID
@@ -444,7 +462,7 @@ sub MAIN {
     'enable-matrix'
   );
 
-  open_file('/gtksourceview/gtksourcebuffer.c');
+  open_file('gtksourceview/gtksourcebuffer.c');
 
   $a.activate.tap({
     say 'activate enter';
@@ -452,7 +470,7 @@ sub MAIN {
     $a.window.set_default_size(900, 600);
     $a.window.destroy-signal.tap({ $a.exit });
     $a.window.add($b<TestWidget>);
-    $a.window.show_all;
+    $a.window.show;
     say 'activate exit';
   });
 
