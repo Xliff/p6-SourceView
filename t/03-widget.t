@@ -155,7 +155,7 @@ sub open_file ($filename is copy) {
 }
 
 sub update_indent_width {
-  %globals.view.indent_width = %globals<indent_width_checkbutton>.active ??
+  %globals<view>.indent_width = %globals<indent_width_checkbutton>.active ??
     %globals<indent_width_spinbutton>.get_value_as_int !! -1;
 }
 
@@ -171,7 +171,7 @@ sub smart_home_end_changed_cb {
 
 sub move_string_iter(:$forward = True) {
   my $method =
-    "iter_{ $forward ?? 'forward' !! 'backward' }_to_context_class_togggle";
+    "iter_{ $forward ?? 'forward' !! 'backward' }_to_context_class_toggle";
 
   my $insert = %globals<buffer>.get_insert;
   my $iter = %globals<buffer>.get_iter_at_mark($insert);
@@ -448,10 +448,11 @@ sub MAIN {
   );
 
   $b<background_pattern>.changed.tap(-> *@a {
-    $b<view>.background-pattern = $b<background_pattern>.text eq 'Grid' ??
-      GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID
-      !!
-      GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE
+    $b<view>.background-pattern =
+      $b<background_pattern>.active_text eq 'Grid' ??
+        GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID
+        !!
+        GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE
   });
 
   %globals<space_drawer> = $b<view>.space-drawer;
@@ -465,15 +466,12 @@ sub MAIN {
   open_file('gtksourceview/gtksourcebuffer.c');
 
   $a.activate.tap({
-    say 'activate enter';
     $a.wait-for-init;
     $a.window.set_default_size(900, 600);
     $a.window.destroy-signal.tap({ $a.exit });
     $a.window.add($b<TestWidget>);
     $a.window.show;
-    say 'activate exit';
   });
 
-  say 'application enter';
   $a.run;
 }
