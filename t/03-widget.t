@@ -187,9 +187,9 @@ sub open_button_clicked_cb {
   state $last_dir;
 
   my $main_window = %globals<view>.get_toplevel;
-  my $chooser = GTK::Dialog::FileChooser.new(
+  my $chooser = GTK::Dialog::FileChooser.new(\
     'Open file...',
-    $main_window,
+    cast(GtkWindow, $main_window.Widget),
     GTK_FILE_CHOOSER_ACTION_OPEN
   );
 
@@ -197,11 +197,14 @@ sub open_button_clicked_cb {
     $last_dir = '/gtksourceview';
     $last_dir = "t/{ $last_dir }" unless $last_dir.IO.d;
   }
-
   $chooser.current_folder = $last_dir if $last_dir.IO.is-absolute;
-  my $response = $chooser.run;
 
-  $last_dir = $chooser.current_folder if $chooser.filename.defined;
+  my $response = $chooser.run;
+  if $response == GTK_RESPONSE_OK {
+    my $filename = $chooser.filename;
+    $last_dir = $chooser.current_folder if $filename.defined;
+    open_file($filename);
+  }
 }
 
 # Can be optimized OUT! - using NON_BLOCKING_PAGINATION
