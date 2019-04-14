@@ -1,9 +1,11 @@
 Cairo
 GTK::Button
+GTK::Compat::File
 GTK::Compat::GList
 GTK::Compat::GSList
 GTK::Compat::Pixbuf
 GTK::Compat::RGBA
+GTK::Compat::Roles::ListData
 GTK::Compat::Roles::Object
 GTK::Compat::Types
 GTK::Compat::Value

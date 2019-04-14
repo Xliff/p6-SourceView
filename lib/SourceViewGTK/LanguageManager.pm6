@@ -10,6 +10,8 @@ use SourceViewGTK::Raw::Types;
 
 use GTK::Compat::Roles::Object;
 
+use SourceViewGTK::Language;
+
 class SourceViewGTK::LanguageManager {
   also does GTK::Compat::Roles::Object;
 
@@ -37,7 +39,8 @@ class SourceViewGTK::LanguageManager {
   }
 
   method get_language (Str() $id) is also<get-language> {
-    gtk_source_language_manager_get_language($!slm, $id);
+    my $l = gtk_source_language_manager_get_language($!slm, $id);
+    $l.defined ?? SourceViewGTK::Language.new($l) !! Nil;
   }
 
   method get_search_path is also<get-search-path> {
@@ -63,11 +66,12 @@ class SourceViewGTK::LanguageManager {
   method guess_language (Str() $filename, Str() $content_type)
     is also<guess-language>
   {
-    gtk_source_language_manager_guess_language(
+    my $l = gtk_source_language_manager_guess_language(
       $!slm,
       $filename,
       $content_type
     );
+    $l.defined ?? SourceViewGTK::Language.new($l) !! Nil;
   }
 
   proto method set_search_path (|)
