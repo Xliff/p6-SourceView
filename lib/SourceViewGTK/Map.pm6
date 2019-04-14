@@ -34,12 +34,17 @@ class SourceViewGTK::Map is SourceViewGTK::View {
             nativecast(GtkSourceMap, $_);
           }
         }
-        self.setView($to-parent);
+        self.setSourceView($to-parent);
       }
     }
   }
   
-  method new {
+  multi method new (SourceMapAncestry $map) {
+    my $o = self.bless(:$map);
+    $o.upref;
+    $o;
+  }
+  multi method new {
     self.bless( map => gtk_source_map_new() );
   }
   

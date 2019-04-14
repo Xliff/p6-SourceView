@@ -18,7 +18,10 @@ class SourceViewGTK::SpaceDrawer {
     self!setObject($!ssd = $drawer);
   }
   
-  method new {
+  multi method new (GtkSourceSpaceDrawer $drawer) {
+    self.bless(:$drawer);
+  }
+  multi method new {
     self.bless( drawer => gtk_source_space_drawer_new() );
   }
   

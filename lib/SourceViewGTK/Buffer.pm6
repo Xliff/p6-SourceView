@@ -22,6 +22,7 @@ our subset SourceBufferAncestry is export
 
 class SourceViewGTK::Buffer is GTK::TextBuffer {
   also does GTK::Roles::Types;
+  also does SourceViewGTK::Roles::Signals::Buffer;
   
   has GtkSourceBuffer $!sb;
   

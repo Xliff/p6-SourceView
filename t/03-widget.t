@@ -11,6 +11,7 @@ use GTK::Compat::Types;
 
 use GTK::Compat::ContentType;
 use GTK::Compat::Binding;
+use GTK::Compat::File;
 use GTK::Compat::RGBA;
 
 use GTK::Raw::Types;
@@ -24,13 +25,16 @@ use GTK::TextMark;
 
 use SourceViewGTK::Raw::Types;
 
+use SourceViewGTK::Builder::Registry;
 use SourceViewGTK::File;
 use SourceViewGTK::FileLoader;
 use SourceViewGTK::Language;
 use SourceViewGTK::LanguageManager;
+use SourceViewGTK::Map;
 use SourceViewGTK::MarkAttributes;
 use SourceViewGTK::PrintCompositor;
 use SourceViewGTK::View;
+use SourceViewGTK::StyleSchemeChooserButton;
 
 use SourceViewTests;
 
@@ -147,9 +151,8 @@ sub update_indent_width {
     %globals<indent_width_spinbutton>.get_value_as_int !! -1;
 }
 
-# This can be optimized OUT!
-sub smart_home_end_changed_cb ($combo) {
-  %globals<view>.smart_home_end = do given $combo.get_active {
+sub smart_home_end_changed_cb {
+  %globals<view>.smart_home_end = do given %globals<smart_home_end>.active {
     when 0  { GTK_SOURCE_SMART_HOME_END_DISABLED }
     when 1  { GTK_SOURCE_SMART_HOME_END_BEFORE   }
     when 2  { GTK_SOURCE_SMART_HOME_END_AFTER    }
@@ -195,7 +198,7 @@ sub open_button_clicked_cb {
 
 # Can be optimized OUT! - using NON_BLOCKING_PAGINATION
 sub begin_print ($context) {
-  1 while %globals<compositor>.paginate($context);
+  Nil while %globals<compositor>.paginate($context);
   %globals<print_operation>.n_pages = %globals<compositor>.get_n_pages;
 }
   
@@ -338,7 +341,13 @@ sub MAIN {
   my $ui-data = process_ui('test-widget.ui');
   
   my $a  = GTK::Application.new( title => 'org.genex.sourceview.test_widget' );
-  my $dv = SourceViewGTK::View.new;
+  
+  # Seems to prevent this error:
+  #    Type check failed for return value; expected Str but got Whatever (*)
+  my $dv; 
+  $dv = .new for SourceViewGTK::Map, 
+                 SourceViewGTK::StyleSchemeChooserButton,
+                 SourceViewGTK::View;
 
   # Register SourceViewGTK widgets.
   GTK::Builder.register( SourceViewGTK::Builder::Registry );
@@ -347,7 +356,7 @@ sub MAIN {
 
   die 'GTK::Builder error' unless $b.keys;
   %globals{$_}      := $b{$_} for $b.keys;
-  %globals<buffer>   = $b<view>.buffer;
+  %globals<buffer>   = $b<view>.source_buffer;
 
   GTK::Compat::Binding.bind(%globals<view>, $_[0], $_[1], 'active')
     for (

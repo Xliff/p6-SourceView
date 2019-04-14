@@ -8,7 +8,7 @@ use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Signals::Generic;
 
-role SourceViewGTK::Roles::Buffer {
+role SourceViewGTK::Roles::Signals::Buffer {
   also does GTK::Roles::Signals::Generic;
   
   has %!signals-sb;
@@ -90,11 +90,11 @@ role SourceViewGTK::Roles::Buffer {
   
 }
 
-# GtkSourceBuffer, GtkTextIter, GtkSourceBracketMatchType, gpointer
+# GtkSourceBuffer, GtkTextIter, uint32 (GtkSourceBracketMatchType), gpointer
 sub g-connect-bracket-matched(
   Pointer $app,
   Str $name,
-  &handler (Pointer, GtkTextIter, GtkSourceBracketMatchType, Pointer),
+  &handler (Pointer, GtkTextIter, uint32, Pointer),
   Pointer $data,
   uint32 $flags
 )

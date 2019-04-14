@@ -4,14 +4,16 @@ use Method::Also;
 use NativeCall;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
+
 use SourceViewGTK::Raw::StyleSchemeChooserButton;
 
 use GTK::Button;
 
 use SourceViewGTK::Roles::StyleSchemeChooser;
 
-our subset StyleSchemeChooserButtonAncestry 
+our subset StyleSchemeChooserButtonAncestry is export
   where GtkSourceStyleSchemeChooserButton | ButtonAncestry;
 
 class SourceViewGTK::StyleSchemeChooserButton is GTK::Button {
@@ -28,8 +30,19 @@ class SourceViewGTK::StyleSchemeChooserButton is GTK::Button {
   submethod BUILD (:$button) {
     given $button {
       when StyleSchemeChooserButtonAncestry {
-        self.setButton($!sscb = $button);
+        my $to-parent;
+        $!sscb = do {
+          when GtkSourceStyleSchemeChooserButton {
+            $to-parent = nativecast(GtkButton, $_);
+            $_;
+          }
+          default {
+            $to-parent = $_;
+            nativecast(GtkSourceStyleSchemeChooserButton, $_);
+          }
+        };
         # SourceViewGTK::Roles::StyleSchemeChooser
+        self.setButton($to-parent);
         $!ssc = nativecast(GtkSourceStyleSchemeChooser, $!sscb);
       }
       when SourceViewGTK::StyleSchemeChooserButton {
@@ -39,16 +52,26 @@ class SourceViewGTK::StyleSchemeChooserButton is GTK::Button {
     }
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceStyleSchemeChooserButton { 
-    $!sscb 
-  }
+  method SourceViewGTK::Raw::Types::GtkSourceStyleSchemeChooserButton 
+    is also<StyleSchemeChooserButton>
+  { $!sscb }
 
-  method new {
+  multi method new (StyleSchemeChooserButtonAncestry $button) {
+    my $o = self.bless(:$button);
+    $o.upref;
+  }
+  multi method new {
     self.bless( button => gtk_source_style_scheme_chooser_button_new() );
   }
   
   method get_type is also<get-type> {
-    gtk_source_style_scheme_chooser_button_get_type();
+    state ($n, $t);
+    unstable_get_type( 
+      self.^name,
+      &gtk_source_style_scheme_chooser_button_get_type,
+      $n,
+      $t
+    );
   }
   
 }

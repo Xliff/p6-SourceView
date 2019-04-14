@@ -14,6 +14,7 @@ use SourceViewGTK::Roles::Signals::View;
 
 use GTK::TextView;
 use SourceViewGTK::Buffer;
+use SourceViewGTK::SpaceDrawer;
 
 our subset SourceViewAncestry is export 
   where GtkSourceView | TextViewAncestry;
