@@ -230,8 +230,7 @@ sub paginate ($context, $r) {
 }
 
 # Using - ENABLE_CUSTOM_OVERLAY
-sub draw_page ($ctxt) {
-  say "C: { $ctxt }";
+sub draw_page ($ctxt, $pn) {
   my $context = GTK::PrintContext.new($ctxt);
   my $cr = $context.get_cairo_context;
   $cr.save;
@@ -243,10 +242,11 @@ sub draw_page ($ctxt) {
   $layout.font_description = $desc;
 
   my ($, $lr) = $layout.get_extents;
-  $cr.move_to(
-    $context.width - $lr.width / PANGO_SCALE / 2,
-    $context.height - $lr.height / PANGO_SCALE / 2
+  my ($x, $y) = (
+    ($context.width  - ($lr.width  / PANGO_SCALE)) / 2,
+    ($context.height - ($lr.height / PANGO_SCALE)) / 2
   );
+  $cr.move_to($x, $y);
   Pango::Cairo.layout_path($cr, $layout);
 
   $cr.rgba(0.85, 0.85, 0.85, 0.80);
@@ -256,6 +256,8 @@ sub draw_page ($ctxt) {
   $cr.rgba(0.8, 0.8, 0.8, 0.6);
   $cr.fill;
   $cr.restore;
+
+  %globals<compositor>.draw_page($context, $pn);
 }
 
 # NOT using SETUP_FROM_VIEW
@@ -290,8 +292,8 @@ sub print_button_clicked_cb {
   %globals<print_operation>.show_progress = True;
 
   my $po := %globals<print_operation>;
-  $po.paginate.tap( -> *@a { paginate( |@a[1, 3] )      });
-  $po.draw-page.tap(-> *@a { draw_page( @a[1] )         });
+  $po.paginate.tap( -> *@a { paginate(  |@a[1, 3] )     });
+  $po.draw-page.tap(-> *@a { draw_page( |@a[1, 2] )     });
   $po.end-print.tap(-> *@a { %globals<compositor> = Nil });
 
   %globals<print_operation>.run( GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG );
