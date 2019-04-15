@@ -5,6 +5,7 @@ use lib 't';
 use Cairo;
 
 use Pango::Raw::Types;
+use Pango::Cairo;
 use Pango::Layout;
 
 use GTK::Compat::Types;
@@ -68,12 +69,14 @@ sub get_language_for_file ($buffer, $filename) {
   );
   $content_type = Str if $result_uncertain;
 
-  my $manager = SourceViewGTK::LanguageManager.default;
+  my $manager  = SourceViewGTK::LanguageManager.default;
   my $language = $manager.guess_language($filename, $content_type);
+  my $lang_id  = $language.defined ??
+    ( $language.get_id || '(none)' ) !! '(none)';
 
   GTK::Compat::Log.message(qq:to/M/.chomp);
 Detected '{ $content_type || '(null)' }' mime type for file {
-$filename }, chose language { $language.get_id || '(none)' }
+$filename }, chose language { $lang_id }
 M
 
   $language;
@@ -207,23 +210,37 @@ sub open_button_clicked_cb {
   }
 }
 
-# Can be optimized OUT! - using NON_BLOCKING_PAGINATION
-sub begin_print ($context) {
-  Nil while %globals<compositor>.paginate($context);
-  %globals<print_operation>.n_pages = %globals<compositor>.get_n_pages;
+# Using NON_BLOCKING_PAGINATION
+sub paginate ($context, $r) {
+
+  sub say_progress {
+    my $pp = %globals<compositor>.pagination_progress * 100;
+    say "Pagination progress: { $pp.fmt('%.2f') }";
+  }
+
+  say_progress;
+
+  my $ret = 0;
+  if $context.defined && %globals<compositor>.paginate($context) {
+    say_progress;
+    %globals<print_operation>.n-pages = %globals<compositor>.n_pages;
+    $ret = 1;
+  }
+  $r.r = $ret;
 }
 
 # Using - ENABLE_CUSTOM_OVERLAY
 sub draw_page ($ctxt) {
+  say "C: { $ctxt }";
   my $context = GTK::PrintContext.new($ctxt);
-  my $cr = Cairo::Context.new( $context.get_cairo_context );
+  my $cr = $context.get_cairo_context;
   $cr.save;
 
-  my $layout = GTK::PrintContext.create_pango_layout($ctxt);
+  my $layout = $context.create_pango_layout;
   $layout.text = 'Draft';
 
   my $desc = Pango::FontDescription.new_from_string('Sans Bold 120');
-  $layout.description = $desc;
+  $layout.font_description = $desc;
 
   my ($, $lr) = $layout.get_extents;
   $cr.move_to(
@@ -233,7 +250,7 @@ sub draw_page ($ctxt) {
   Pango::Cairo.layout_path($cr, $layout);
 
   $cr.rgba(0.85, 0.85, 0.85, 0.80);
-  $cr.line_width(0.5);
+  $cr.line_width = 0.5;
   $cr.stroke(:preserve);
 
   $cr.rgba(0.8, 0.8, 0.8, 0.6);
@@ -250,14 +267,17 @@ sub print_button_clicked_cb {
     $basename = $location.basename with $location;
   }
 
-  %globals<compositor> = SourceViewGTK::PrintCompositor.new(%globals<buffer>);
-  %globals<compositor>.tab_with = %globals<view>.tab_width;
+  # There is NO coercion for constructors!
+  %globals<compositor> = SourceViewGTK::PrintCompositor.new(
+    %globals<buffer>.SourceBuffer
+  );
+  %globals<compositor>.tab_width = %globals<view>.tab_width;
   %globals<compositor>.wrap_mode = %globals<view>.wrap_mode;
   %globals<compositor>.print_line_numbers = True;
   %globals<compositor>.body_font_name = BODY_FONT_NAME;
   %globals<compositor>.footer_font_name = FOOTER_FONT_NAME;
   %globals<compositor>.header_font_name = HEADER_FONT_NAME;
-  %globals<compositor>.line_number_font_name = LINE_NUMBERS_FONT_NAME;
+  %globals<compositor>.line_numbers_font_name = LINE_NUMBERS_FONT_NAME;
   %globals<compositor>.set_header_format(
     True, 'Printed on %A', 'test-widget', '%F'
   );
@@ -266,14 +286,13 @@ sub print_button_clicked_cb {
   %globals<compositor>.print_footer = True;
 
   %globals<print_operation> = GTK::PrintOperation.new;
-  %globals<print_operation>.name = $basename;
+  %globals<print_operation>.job_name = $basename;
   %globals<print_operation>.show_progress = True;
 
-  GTK::Compat::Signal.connect(%globals<print_operation>, .key, .value ) for (
-    'paginate'   => -> *@a { begin_print( @a[1] )       },
-    'draw-page'  => -> *@a { draw_page(   @a[1] )       },
-    'end-print'  => -> *@a { %globals<compositor> = Nil }
-  );
+  my $po := %globals<print_operation>;
+  $po.paginate.tap( -> *@a { paginate( |@a[1, 3] )      });
+  $po.draw-page.tap(-> *@a { draw_page( @a[1] )         });
+  $po.end-print.tap(-> *@a { %globals<compositor> = Nil });
 
   %globals<print_operation>.run( GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG );
 }
