@@ -445,9 +445,12 @@ sub MAIN {
     update_cursor_position_info
       if @a[2].p == %globals<buffer>.get_insert.TextMark.p
   });
+
   %globals<buffer>.bracket-matched.tap(-> *@a {
     bracket_matched_cb( |@a[1, 2] )
   });
+  
+  %globals<buffer>.changed.tap(-> *@a { update_cursor_position_info });
 
   add_source_mark_attributes;
 
