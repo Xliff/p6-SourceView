@@ -409,7 +409,7 @@ sub MAIN {
   $b<show_top_border_window_checkbutton>.toggled.tap(-> *@a {
     $b<view>.set_border_window_size(
       GTK_TEXT_WINDOW_TOP,
-      $b<show_top_border_window_checkbutton>.active ?? 20 !! 0;
+      $b<show_top_border_window_checkbutton>.active ?? 20 !! 0
     );
   });
 
