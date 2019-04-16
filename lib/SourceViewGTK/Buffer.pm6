@@ -31,23 +31,27 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     my $to-parent;
     given $buffer {
       when SourceBufferAncestry {
-        $!sb = do {
-          when GtkSourceBuffer {
-            $to-parent = nativecast(GtkTextBuffer, $_);
-            $_;
-          }
-          default {
-            $to-parent = $_;
-            nativecast(GtkSourceBuffer, $_);
-          }
-        }
-        self.setTextBuffer($to-parent);
+        self.setSourceBuffer($buffer);
       }
       when SourceViewGTK::Buffer {
       }
       default {
       }
     }
+  }
+
+  method setSourceBuffer(SourceBufferAncestry $buffer) {
+    $!sb = do given $buffer {
+      when GtkSourceBuffer {
+        $to-parent = nativecast(GtkTextBuffer, $_);
+        $_;
+      }
+      default {
+        $to-parent = $_;
+        nativecast(GtkSourceBuffer, $_);
+      }
+    }
+    self.setTextBuffer($to-parent);
   }
 
   method SourceViewGTK::Raw::Types::GtkSourceBuffer
@@ -99,7 +103,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     self.connect($!sb, 'undo');
   }
 
-  method highlight_matching_brackets is rw 
+  method highlight_matching_brackets is rw
     is also<highlight-matching-brackets>
   {
     Proxy.new(
