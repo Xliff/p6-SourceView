@@ -1,0 +1,1082 @@
+{
+  "SourceViewGTK::Raw::CompletionProvider": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 2.031e0
+  },
+  "SourceViewGTK::Raw::CompletionInfo": {
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.748e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "Method::Also": {
+    "parse": 0.528e0,
+    "ast": 0e0,
+    "optimize": 0.001e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.003e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "GTK::TextBuffer": {
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.439e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::Raw::Types": {
+    "start": 0e0,
+    "mbc": 0.001e0,
+    "parse": 1.871e0,
+    "ast": 0e0,
+    "optimize": 0.001e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.004e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::Roles::Signals::GutterRenderer": {
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 2.061e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::Raw::StyleSchemeManager": {
+    "parse": 1.759e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Utils": {
+    "parse": 1.487e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Encoding": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.514e0
+  },
+  "SourceViewGTK::Raw::CompletionContext": {
+    "parse": 1.702e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::CompletionItem": {
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.578e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "GTK::Compat::Pixbuf": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 0.77e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::Raw::View": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.002e0,
+    "parse": 2.906e0
+  },
+  "SourceViewGTK::Raw::SpaceDrawer": {
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.708e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::Roles::Signals::Completion": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.764e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0
+  },
+  "SourceViewGTK::Mark": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.473e0
+  },
+  "SourceViewGTK::GutterRenderer::Pixbuf": {
+    "parse": 1.542e0,
+    "moar": 0e0,
+    "mast": 0.007e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::CompletionProposal": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.765e0
+  },
+  "GTK::TextTag": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.011e0
+  },
+  "GTK::Roles::Properties": {
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "parse": 0.856e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::Roles::CompletionProvider": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.67e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0
+  },
+  "SourceViewGTK::GutterRenderer": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "parse": 1.939e0
+  },
+  "SourceViewGTK::SearchSettings": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.533e0
+  },
+  "GTK::Roles::Signals::Generic": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 0.806e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0
+  },
+  "GTK::Raw::Types": {
+    "parse": 0.769e0,
+    "mast": 0.006e0,
+    "moar": 0e0,
+    "optimize": 0.008e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0.002e0
+  },
+  "SourceViewGTK::Raw::PrintCompositor": {
+    "parse": 2.92e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Tag": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.82e0
+  },
+  "SourceViewGTK::File": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.644e0
+  },
+  "SourceViewGTK::Raw::Mark": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.569e0
+  },
+  "GTK::Compat::Roles::ListData": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 0.703e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::Raw::Version": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.443e0
+  },
+  "SourceViewGTK::SearchContext": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 2.18e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0
+  },
+  "SourceViewGTK::Raw::GutterRendererText": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.586e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0
+  },
+  "SourceViewGTK::Raw::FileSaver": {
+    "parse": 1.873e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "GTK::Compat::File": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 0.765e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::Map": {
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 2.295e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::Raw::GutterRenderer": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 2.477e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0
+  },
+  "GTK::Roles::Pointers": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 0.621e0
+  },
+  "SourceViewGTK::Completion": {
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "parse": 2.629e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SUMMARY": {
+    "user": 241.03e0,
+    "sys": 13.69e0,
+    "real": 174.89e0
+  },
+  "GTK::Raw::ReturnedValue": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 0.541e0,
+    "moar": 0e0,
+    "mast": 0.003e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0.001e0,
+    "ast": 0e0
+  },
+  "GTK::Compat::RGBA": {
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 0.686e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::CompletionInfo": {
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "parse": 2.061e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "GTK::Button": {
+    "parse": 1.917e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::Map": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.532e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "Pango::Raw::Types": {
+    "parse": 0.686e0,
+    "mast": 0.002e0,
+    "moar": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0.001e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0.001e0
+  },
+  "SourceViewGTK::Raw::StyleSchemeChooserWidget": {
+    "parse": 1.485e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::File": {
+    "parse": 1.772e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::SearchContext": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 2.259e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0
+  },
+  "SourceViewGTK::Completion::Words": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.794e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0
+  },
+  "GTK::Roles::References": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 0.771e0
+  },
+  "SourceViewGTK::FileLoader": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.837e0
+  },
+  "SourceViewGTK::Raw::MarkAttributes": {
+    "parse": 2.004e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Roles::Signals::Buffer": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.9e0
+  },
+  "GTK::Compat::Value": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 0.825e0
+  },
+  "GTK::Raw::TextView": {
+    "parse": 0.788e0,
+    "mast": 0.002e0,
+    "moar": 0e0,
+    "optimize": 0.001e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "GTK::TextView": {
+    "parse": 2.214e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "GTK::Compat::GSList": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "parse": 0.764e0
+  },
+  "SourceViewGTK::StyleScheme": {
+    "parse": 1.629e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Roles::CompletionProposal": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.493e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0
+  },
+  "SourceViewGTK::MarkAttributes": {
+    "parse": 1.674e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::Encoding": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.735e0
+  },
+  "SourceViewGTK::Raw::Buffer": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 3.004e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0
+  },
+  "GTK::Compat::GList": {
+    "parse": 0.709e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::StyleSchemeManager": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "parse": 1.519e0
+  },
+  "SourceViewGTK::Roles::StyleSchemeChooser": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.503e0
+  },
+  "SourceViewGTK::UndoManager": {
+    "parse": 1.489e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::Gutter": {
+    "parse": 1.674e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::StyleSchemeChooserButton": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.47e0
+  },
+  "SourceViewGTK::Style": {
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.833e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::FileSaver": {
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.891e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "DEPENDENCIES": {
+    "sys": 0.04e0,
+    "real": 1.04e0,
+    "user": 1.39e0
+  },
+  "SourceViewGTK::Raw::Language": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.729e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0
+  },
+  "SourceViewGTK::View": {
+    "parse": 2.641e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::Style": {
+    "parse": 1.682e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "Cairo": {
+    "parse": 0.634e0,
+    "moar": 0e0,
+    "mast": 0.003e0,
+    "optimize": 0.001e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0.001e0
+  },
+  "SourceViewGTK::Raw::UndoManager": {
+    "parse": 1.701e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::SpaceDrawer": {
+    "parse": 1.509e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::GutterRenderer::Text": {
+    "parse": 1.465e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "GTK::Compat::Types": {
+    "parse": 0.651e0,
+    "mast": 0.006e0,
+    "moar": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0.003e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0.003e0
+  },
+  "SourceViewGTK::StyleSchemeChooserButton": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 2.174e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0
+  },
+  "SourceViewGTK::Roles::Signals::View": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.869e0
+  },
+  "SourceViewGTK::Raw::FileLoader": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.884e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::PrintCompositor": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "ast": 0e0,
+    "optimize": 0.001e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.003e0,
+    "moar": 0e0,
+    "parse": 1.897e0
+  },
+  "SourceViewGTK::LanguageManager": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.633e0
+  },
+  "SourceViewGTK::Raw::CompletionItem": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.703e0
+  },
+  "SourceViewGTK::Buffer": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "moar": 0e0,
+    "mast": 0.003e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0.001e0,
+    "ast": 0e0,
+    "parse": 1.914e0
+  },
+  "GTK::Window": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.856e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::Raw::SearchSettings": {
+    "parse": 1.808e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Region": {
+    "parse": 1.836e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::CompletionContext": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.839e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0
+  },
+  "SourceViewGTK::Gutter": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.71e0
+  },
+  "SourceViewGTK::StyleChooserWidget": {
+    "parse": 1.84e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0.001e0
+  },
+  "SourceViewGTK::Version": {
+    "parse": 1.453e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::Region": {
+    "parse": 2.114e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::LanguageManager": {
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "parse": 1.637e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "GTK::Compat::Roles::Object": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 0.685e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "GTK::Raw::Utils": {
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 0.647e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::Roles::Signals::MarkAttributes": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.857e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0
+  },
+  "SourceViewGTK::Language": {
+    "parse": 1.691e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "syntaxcheck": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::GutterRendererPixbuf": {
+    "parse": 1.613e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "GTK::TextIter": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.096e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0
+  },
+  "SourceViewGTK::Raw::Completion": {
+    "parse": 1.988e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::StyleScheme": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.597e0
+  },
+  "GTK::Widget": {
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.7e0,
+    "mbc": 0e0,
+    "start": 0e0
+  },
+  "SourceViewGTK::StyleSchemeChooserWidget": {
+    "mbc": 0e0,
+    "start": 0e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "parse": 1.96e0
+  },
+  "SourceViewGTK::Raw::CompletionWords": {
+    "start": 0e0,
+    "mbc": 0e0,
+    "parse": 1.76e0,
+    "moar": 0e0,
+    "mast": 0.001e0,
+    "ast": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0
+  },
+  "GTK::Roles::Types": {
+    "parse": 0.69e0,
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "syntaxcheck": 0e0,
+    "ast": 0e0,
+    "start": 0e0,
+    "mbc": 0e0
+  },
+  "SourceViewGTK::Raw::StyleSchemeChooser": {
+    "mast": 0.001e0,
+    "moar": 0e0,
+    "optimize": 0e0,
+    "ast": 0e0,
+    "syntaxcheck": 0e0,
+    "parse": 1.512e0,
+    "mbc": 0e0,
+    "start": 0e0
+  }
+}
