@@ -5,7 +5,7 @@ use NativeCall;
 
 use GTK::Compat::Types;
 
-use GTK::Compat::File;
+use GTK::Compat::Roles::GFile;
 
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileLoader;

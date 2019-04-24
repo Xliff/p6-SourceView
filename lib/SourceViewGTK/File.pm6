@@ -10,7 +10,7 @@ use SourceViewGTK::Raw::File;
 
 use GTK::Compat::Roles::Object;
 
-use GTK::Compat::File;
+use GTK::Compat::Roles::GFile;
 
 class SourceViewGTK::File {
   also does GTK::Compat::Roles::Object;
@@ -30,7 +30,7 @@ class SourceViewGTK::File {
   method location is rw {
     Proxy.new(
       FETCH => sub ($) {
-        GTK::Compat::File.new( gtk_source_file_get_location($!sf) );
+        GTK::Compat::Roles::File.new( gtk_source_file_get_location($!sf) );
       },
       STORE => sub ($, GFile() $location is copy) {
         gtk_source_file_set_location($!sf, $location);
