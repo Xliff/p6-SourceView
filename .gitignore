@@ -5,3 +5,5 @@ lib/.precomp/
 LastBuildResults
 *.bump
 LastBuildResults.*
+scripts.old/
+scripts/
