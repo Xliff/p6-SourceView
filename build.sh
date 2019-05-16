@@ -7,7 +7,7 @@ else
 fi
 export P6_BUILDING_GTK=1
 echo -e "Dependency Generation\n=====================" >> LastBuildResults
-/usr/bin/time -p -o LastBuildResults -a perl6 scripts/dependencies.pl6
+/usr/bin/time -p -o LastBuildResults -a perl6 scripts/dependencies.pl6 --prefix=GtkSource
 /usr/bin/time -p /bin/bash -c '(
   for a in `cat BuildList`; do
     (

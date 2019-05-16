@@ -3,7 +3,8 @@ lib/.precomp/
 .touch/
 *.bak
 LastBuildResults
+LastBuildResults.*
 *.bump
 LastBuildResults.*
-scripts.old/
+scripts.old*/
 scripts/
