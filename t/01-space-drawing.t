@@ -47,7 +47,7 @@ $a.activate.tap({
   $view.monospace = True;
   $view.expand = True;
   
-  my $buffer = $view.buffer;
+  my $buffer = $view.source-buffer;
   my $tag = $buffer.create_source_tag(Str, 'draw-spaces', False);
   
   fill_buffer($buffer, $tag);
