@@ -285,11 +285,14 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     my $sm_list = GTK::Compat::GSList.new(
       gtk_source_buffer_get_source_marks_at_line($!sb, $l, $category)
     ) but GTK::Compat::Roles::ListData[GtkSourceMark];
+
+    # Needs definedness check!
     $sm_list.Array.map({ SourceViewGTK::Mark.new($_) with $_ });
   }
 
   method get_type is also<get-type> {
     state ($n, $t);
+
     unstable_get_type(self.^name, &gtk_source_buffer_get_type, $n, $t);
   }
 
