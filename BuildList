@@ -1,4 +1,5 @@
 Cairo
+GIO::InputStream
 GTK::Button
 GTK::Compat::GList
 GTK::Compat::GSList

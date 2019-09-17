@@ -5,6 +5,8 @@ use NativeCall;
 
 use GTK::Compat::Types;
 
+use GIO::InputStream;
+
 use GTK::Compat::Roles::GFile;
 
 use SourceViewGTK::Raw::Types;
@@ -33,14 +35,18 @@ class SourceViewGTK::FileLoader {
   }
 
   method new_from_stream (
-    GtkSourceBuffer $buffer,
+    GtkSourceBuffer() $buffer,
     GtkSourceFile() $file,
-    GInputStream $stream
+    GInputStream() $stream
   )
     is also<new-from-stream>
   {
     self.bless(
-      loader => gtk_source_file_loader_new_from_stream($buffer, $file, $stream)
+      loader => gtk_source_file_loader_new_from_stream(
+        $buffer,
+        $file,
+        $stream
+      )
     )
   }
 
@@ -85,14 +91,15 @@ class SourceViewGTK::FileLoader {
     gtk_source_file_loader_get_file($!sfl);
   }
 
-  method get_input_stream
+  method get_input_stream (:$raw = False)
     is also<
       get-input-stream
       input_stream
       input-stream
     >
   {
-    gtk_source_file_loader_get_input_stream($!sfl);
+    my $rv = gtk_source_file_loader_get_input_stream($!sfl);
+    $raw ?? $rv !! GIO::InputStream.new($rv);
   }
 
   method get_location
