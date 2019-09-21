@@ -5,6 +5,8 @@ use NativeCall;
 
 use GTK::Compat::Types;
 
+use GTK::Raw::Utils;
+
 use GIO::InputStream;
 
 use GTK::Compat::Roles::GFile;
@@ -13,11 +15,9 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileLoader;
 
 use GTK::Compat::Roles::Object;
-use GTK::Roles::Types;
 
 class SourceViewGTK::FileLoader {
   also does GTK::Compat::Roles::Object;
-  also does GTK::Roles::Types;
 
   has GtkSourceFileLoader $!sfl;
 
@@ -99,16 +99,19 @@ class SourceViewGTK::FileLoader {
     >
   {
     my $rv = gtk_source_file_loader_get_input_stream($!sfl);
+
     $raw ?? $rv !! GIO::InputStream.new($rv);
   }
 
-  method get_location
+  method get_location (:$raw = False)
     is also<
       get-location
       location
     >
   {
-    GTK::Compat::File.new( gtk_source_file_loader_get_location($!sfl) );
+    my $l = gtk_source_file_loader_get_location($!sfl);
+
+    $raw ?? $l !! GTK::Compat::Roles::GFile.new($l);
   }
 
   method get_newline_type
@@ -123,6 +126,7 @@ class SourceViewGTK::FileLoader {
 
   method get_type is also<get-type> {
     state ($n, $t);
+
     unstable_get_type( self.^name, &gtk_source_file_loader_get_type, $n, $t );
   }
 
@@ -158,7 +162,8 @@ class SourceViewGTK::FileLoader {
     &callback,
     gpointer $user_data = Pointer
   ) {
-    my gint $ip = self.RESOLVE-INT($io_priority);
+    my gint $ip = resolve-int($io_priority);
+
     gtk_source_file_loader_load_async(
       $!sfl,
       $ip,

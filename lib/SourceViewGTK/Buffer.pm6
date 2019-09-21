@@ -27,10 +27,10 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
 
   has GtkSourceBuffer $!sb;
 
-  submethod BUILD (:$buffer) {
-    given $buffer {
+  submethod BUILD (:$source-buffer) {
+    given $source-buffer {
       when SourceBufferAncestry {
-        self.setSourceBuffer($buffer);
+        self.setSourceBuffer($source-buffer);
       }
       when SourceViewGTK::Buffer {
       }
@@ -39,13 +39,14 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     }
   }
 
-  method setSourceBuffer(SourceBufferAncestry $buffer) {
+  method setSourceBuffer(SourceBufferAncestry $_) {
     my $to-parent;
-    $!sb = do given $buffer {
+    $!sb = do {
       when GtkSourceBuffer {
         $to-parent = nativecast(GtkTextBuffer, $_);
         $_;
       }
+
       default {
         $to-parent = $_;
         nativecast(GtkSourceBuffer, $_);
@@ -63,8 +64,8 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   multi method new (SourceBufferAncestry $buffer) {
     self.bless(:$buffer);
   }
-  multi method new (GtkTextTagTable() $table) {
-    self.bless( buffer => gtk_source_buffer_new($table) );
+  multi method new (GtkTextTagTable() $table = GtkTextTagTable) {
+    self.bless( source-buffer => gtk_source_buffer_new($table) );
   }
 
   method new_with_language (GtkSourceViewLanguage() $language)

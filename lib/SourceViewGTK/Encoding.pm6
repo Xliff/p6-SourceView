@@ -2,6 +2,7 @@ use v6.c;
 
 use Method::Also;
 
+use GTK::Compat::Types;
 use GTK::Compat::GSList;
 
 use SourceViewGTK::Raw::Types;
