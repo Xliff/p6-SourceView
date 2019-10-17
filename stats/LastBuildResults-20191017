@@ -1,0 +1,1718 @@
+Dependency Generation
+=====================
+real 0.75
+user 1.13
+sys 0.05
+ === Cairo ===
+Stage start      :   0.000
+Stage parse      :   0.877
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::InputStream ===
+Stage start      :   0.000
+Stage parse      :   1.336
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Button ===
+Stage start      :   0.000
+Stage parse      :   2.884
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::GList ===
+Stage start      :   0.000
+Stage parse      :   0.890
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::GSList ===
+Stage start      :   0.000
+Stage parse      :   1.145
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Pixbuf ===
+Stage start      :   0.000
+Stage parse      :   0.997
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::RGBA ===
+Stage start      :   0.000
+Stage parse      :   0.881
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Compat::Roles::GFile ===
+Stage start      :   0.000
+Stage parse      :   1.343
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Roles::ListData ===
+Stage start      :   0.000
+Stage parse      :   0.870
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Roles::Object ===
+Stage start      :   0.000
+Stage parse      :   0.963
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Types ===
+Stage start      :   0.000
+Stage parse      :   0.896
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.007
+Stage mast       :   0.014
+Stage mbc        :   0.007
+Stage moar       :   0.000
+ === GTK::Compat::Value ===
+Stage start      :   0.000
+Stage parse      :   0.957
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::ReturnedValue ===
+Stage start      :   0.000
+Stage parse      :   0.861
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Raw::TextView ===
+Stage start      :   0.000
+Stage parse      :   1.156
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   0.913
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.009
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === GTK::Raw::Utils ===
+Stage start      :   0.000
+Stage parse      :   0.913
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Roles::Pointers ===
+Stage start      :   0.000
+Stage parse      :   0.865
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Roles::Properties ===
+Stage start      :   0.000
+Stage parse      :   0.950
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Roles::References ===
+Stage start      :   0.000
+Stage parse      :   1.171
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Roles::Signals::Generic ===
+Stage start      :   0.000
+Stage parse      :   0.928
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Roles::Types ===
+Stage start      :   0.000
+Stage parse      :   1.085
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::TextBuffer ===
+Stage start      :   0.000
+Stage parse      :   2.141
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::TextIter ===
+Stage start      :   0.000
+Stage parse      :   1.714
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::TextTag ===
+Stage start      :   0.000
+Stage parse      :   1.484
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::TextView ===
+Stage start      :   0.000
+Stage parse      :   1.696
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Widget ===
+Stage start      :   0.000
+Stage parse      :   1.354
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Window ===
+Stage start      :   0.000
+Stage parse      :   1.526
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === Method::Also ===
+Stage start      :   0.000
+Stage parse      :   0.873
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === Pango::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   0.864
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Types ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.781
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.160
+    Stage mbc        :   0.006
+Stage parse      :   2.926
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Buffer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.906
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.035
+    Stage mast       :   0.155
+    Stage mbc        :   0.008
+Stage parse      :   6.111
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Completion ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.264
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.089
+    Stage mbc        :   0.006
+Stage parse      :   3.364
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionContext ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.414
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.067
+    Stage mbc        :   0.005
+Stage parse      :   2.503
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionInfo ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.297
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.069
+    Stage mbc        :   0.006
+Stage parse      :   2.374
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionItem ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.705
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.071
+    Stage mbc        :   0.004
+Stage parse      :   2.765
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionProposal ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.864
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.075
+    Stage mbc        :   0.004
+Stage parse      :   2.931
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionProvider ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.401
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.118
+    Stage mbc        :   0.006
+Stage parse      :   3.543
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionWords ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/CompletionWords.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.424
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.068
+    Stage mbc        :   0.006
+Stage parse      :   2.505
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Encoding ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.773
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.073
+    Stage mbc        :   0.004
+Stage parse      :   2.834
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::File ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.015
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.082
+    Stage mbc        :   0.004
+Stage parse      :   3.087
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::FileLoader ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.113
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.084
+    Stage mbc        :   0.004
+Stage parse      :   3.156
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::FileSaver ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.313
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.094
+    Stage mbc        :   0.004
+Stage parse      :   3.377
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Gutter ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.562
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.045
+    Stage mast       :   0.071
+    Stage mbc        :   0.004
+Stage parse      :   2.618
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRenderer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.548
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.124
+    Stage mbc        :   0.007
+Stage parse      :   4.732
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRendererPixbuf ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/GutterRendererPixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.505
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.030
+    Stage mast       :   0.068
+    Stage mbc        :   0.004
+Stage parse      :   2.561
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRendererText ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/GutterRendererText.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.513
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.067
+    Stage mbc        :   0.004
+Stage parse      :   2.541
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Language ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.846
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.074
+    Stage mbc        :   0.004
+Stage parse      :   2.908
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::LanguageManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.574
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.069
+    Stage mbc        :   0.004
+Stage parse      :   2.618
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Map ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.276
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.067
+    Stage mbc        :   0.004
+Stage parse      :   2.329
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Mark ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.340
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.062
+    Stage mbc        :   0.004
+Stage parse      :   2.363
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::MarkAttributes ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.281
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.098
+    Stage mbc        :   0.006
+Stage parse      :   3.395
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::PrintCompositor ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.863
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.032
+    Stage mast       :   0.237
+    Stage mbc        :   0.008
+Stage parse      :   6.128
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Quarks ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Quarks.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.088
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.007
+    Stage mast       :   0.068
+    Stage mbc        :   0.004
+Stage parse      :   2.201
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Region ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.599
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.103
+    Stage mbc        :   0.007
+Stage parse      :   3.708
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SearchContext ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/SearchContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.038
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.113
+    Stage mbc        :   0.007
+Stage parse      :   4.158
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SearchSettings ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.927
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.073
+    Stage mbc        :   0.006
+Stage parse      :   2.999
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SpaceDrawer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.675
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.046
+    Stage mast       :   0.072
+    Stage mbc        :   0.004
+Stage parse      :   2.774
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Style ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.274
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.069
+    Stage mbc        :   0.005
+Stage parse      :   2.389
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleScheme ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.483
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.067
+    Stage mbc        :   0.004
+Stage parse      :   2.545
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooser ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.201
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.058
+    Stage mbc        :   0.004
+Stage parse      :   2.224
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooserButton ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.140
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.007
+    Stage mast       :   0.061
+    Stage mbc        :   0.003
+Stage parse      :   2.190
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooserWidget ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.132
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.059
+    Stage mbc        :   0.003
+Stage parse      :   2.170
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.744
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.073
+    Stage mbc        :   0.004
+Stage parse      :   2.792
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::UndoManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.668
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.068
+    Stage mbc        :   0.004
+Stage parse      :   2.746
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Version ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.102
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.051
+    Stage mbc        :   0.001
+Stage parse      :   2.125
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::View ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Raw/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.753
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.162
+    Stage mbc        :   0.008
+Stage parse      :   5.959
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Region ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.363
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.181
+    Stage mbc        :   0.005
+Stage parse      :   2.899
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::CompletionProposal ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.136
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.076
+    Stage mbc        :   0.005
+Stage parse      :   2.320
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::CompletionProvider ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.120
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.060
+    Stage mbc        :   0.007
+Stage parse      :   2.177
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::Buffer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/Signals/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.608
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.090
+    Stage mbc        :   0.007
+Stage parse      :   2.733
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::Completion ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/Signals/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.346
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.085
+    Stage mbc        :   0.002
+Stage parse      :   2.467
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::GutterRenderer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/Signals/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.778
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.109
+    Stage mbc        :   0.007
+Stage parse      :   2.926
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::MarkAttributes ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/Signals/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.417
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.079
+    Stage mbc        :   0.006
+Stage parse      :   2.499
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::View ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/Signals/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.442
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.082
+    Stage mbc        :   0.006
+Stage parse      :   2.551
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::SearchSettings ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.077
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.089
+    Stage mbc        :   0.005
+Stage parse      :   2.220
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::SpaceDrawer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.054
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.086
+    Stage mbc        :   0.005
+Stage parse      :   2.175
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Style ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.256
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.132
+    Stage mbc        :   0.012
+Stage parse      :   2.456
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleScheme ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.242
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.061
+    Stage mbc        :   0.010
+Stage parse      :   2.296
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleSchemeManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.001
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.078
+    Stage mbc        :   0.005
+Stage parse      :   2.065
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Tag ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Tag.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.257
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.104
+    Stage mbc        :   0.007
+Stage parse      :   2.457
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::UndoManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.045
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.007
+    Stage mast       :   0.076
+    Stage mbc        :   0.002
+Stage parse      :   2.156
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Utils ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Utils.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.042
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.003
+    Stage mast       :   0.050
+    Stage mbc        :   0.001
+Stage parse      :   2.036
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Version ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   0.955
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.005
+    Stage mast       :   0.048
+    Stage mbc        :   0.001
+Stage parse      :   2.008
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Completion::Words ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Completion/Words.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.175
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.130
+    Stage mbc        :   0.007
+Stage parse      :   2.425
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::CompletionContext ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.269
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.155
+    Stage mbc        :   0.008
+Stage parse      :   2.637
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::CompletionInfo ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.723
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.232
+    Stage mbc        :   0.006
+Stage parse      :   3.655
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::CompletionItem ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.211
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.118
+    Stage mbc        :   0.006
+Stage parse      :   2.432
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Encoding ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.332
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.083
+    Stage mbc        :   0.004
+Stage parse      :   2.527
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::File ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.264
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.093
+    Stage mbc        :   0.004
+Stage parse      :   2.438
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::FileLoader ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader)
+    Default value '(NativeCall::Types::Pointer)' will never bind to a parameter of type GTK::Compat::Types::GCancellable
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader):141
+    ------> [32m    GCancellable $cancellable = Pointer[33m⏏[31m,[0m
+        expecting any of:
+            constraint
+            infix
+            infix stopper
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader)
+Default value '(NativeCall::Types::Pointer)' will never bind to a parameter of type GTK::Compat::Types::GCancellable
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader):141
+------> [32m    GCancellable $cancellable = Pointer[33m⏏[31m,[0m
+    expecting any of:
+        constraint
+        infix
+        infix stopper
+ === SourceViewGTK::GutterRenderer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.289
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.032
+    Stage mast       :   0.153
+    Stage mbc        :   0.009
+Stage parse      :   2.598
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::GutterRenderer::Pixbuf ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/GutterRenderer/Pixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.120
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.103
+    Stage mbc        :   0.006
+Stage parse      :   2.364
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::GutterRenderer::Text ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/GutterRenderer/Text.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.010
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.071
+    Stage mbc        :   0.006
+Stage parse      :   2.078
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Language ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.301
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.080
+    Stage mbc        :   0.004
+Stage parse      :   2.451
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::LanguageManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.157
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.086
+    Stage mbc        :   0.005
+Stage parse      :   2.316
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Mark ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.038
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.081
+    Stage mbc        :   0.005
+Stage parse      :   2.145
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::MarkAttributes ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.115
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.101
+    Stage mbc        :   0.007
+Stage parse      :   2.295
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::StyleSchemeChooser ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Roles/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.129
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.059
+    Stage mbc        :   0.004
+Stage parse      :   2.208
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleChooserWidget ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/StyleChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.479
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.005
+    Stage mast       :   0.199
+    Stage mbc        :   0.003
+Stage parse      :   3.210
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleSchemeChooserButton ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.773
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.269
+    Stage mbc        :   0.008
+Stage parse      :   3.850
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleSchemeChooserWidget ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.506
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.211
+    Stage mbc        :   0.006
+Stage parse      :   3.280
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Buffer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.597
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.038
+    Stage mast       :   0.247
+    Stage mbc        :   0.009
+Stage parse      :   3.331
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::FileSaver ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver)
+    Default value '(NativeCall::Types::Pointer)' will never bind to a parameter of type GTK::Compat::Types::GCancellable
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver):120
+    ------> [32m    GCancellable $cancellable = Pointer[33m⏏[31m, [0m
+        expecting any of:
+            constraint
+            infix
+            infix stopper
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver)
+Default value '(NativeCall::Types::Pointer)' will never bind to a parameter of type GTK::Compat::Types::GCancellable
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver):120
+------> [32m    GCancellable $cancellable = Pointer[33m⏏[31m, [0m
+    expecting any of:
+        constraint
+        infix
+        infix stopper
+ === SourceViewGTK::Gutter ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.185
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.109
+    Stage mbc        :   0.009
+Stage parse      :   2.415
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::PrintCompositor ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.760
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.040
+    Stage mast       :   0.216
+    Stage mbc        :   0.007
+Stage parse      :   3.501
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::SearchContext ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext)
+    Default value '(NativeCall::Types::Pointer)' will never bind to a parameter of type GTK::Compat::Types::GCancellable
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext):103
+    ------> [32m  [33m⏏[31m) {[0m
+        expecting any of:
+            constraint
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext)
+Default value '(NativeCall::Types::Pointer)' will never bind to a parameter of type GTK::Compat::Types::GCancellable
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext):103
+------> [32m  [33m⏏[31m) {[0m
+    expecting any of:
+        constraint
+ === SourceViewGTK::View ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.246
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.036
+    Stage mast       :   0.353
+    Stage mbc        :   0.009
+Stage parse      :   4.658
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Completion ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.339
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.369
+    Stage mbc        :   0.009
+Stage parse      :   4.999
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Map ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.995
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.291
+    Stage mbc        :   0.004
+Stage parse      :   4.348
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+
+real 269.41
+user 335.82
+sys 17.17
