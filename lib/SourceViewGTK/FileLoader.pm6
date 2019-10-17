@@ -138,14 +138,13 @@ class SourceViewGTK::FileLoader {
     Int() $io_priority,
     &callback,
     &progress_callback = -> $, $, $ { },
-    GCancellable $cancellable = Pointer,
     gpointer $progress_callback_data = Pointer,
     GDestroyNotify $progress_callback_notify = Pointer,
     gpointer $user_data = Pointer
   ) {
     samewith(
       $io_priority,
-      $cancellable,
+      GCancellable,
       &progress_callback,
       $progress_callback_data,
       $progress_callback_notify,
@@ -155,7 +154,7 @@ class SourceViewGTK::FileLoader {
   }
   multi method load_async (
     Int() $io_priority,
-    GCancellable $cancellable,
+    GCancellable() $cancellable,
     &progress_callback,
     gpointer $progress_callback_data,
     GDestroyNotify $progress_callback_notify,
@@ -186,7 +185,7 @@ class SourceViewGTK::FileLoader {
     samewith($result, $error);
   }
   multi method load_finish (
-    GAsyncResult $result,
+    GAsyncResult() $result,
     CArray[Pointer[GError]] $error = gerror()
   ) {
     clear_error;

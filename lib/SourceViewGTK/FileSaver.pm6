@@ -17,33 +17,33 @@ use SourceViewGTK::File;
 class SourceViewGTK::FileSaver {
   also does GTK::Roles::Types;
   also does GTK::Compat::Roles::Object;
-  
+
   has GtkSourceFileSaver $!sfs;
-  
+
   submethod BUILD (:$saver) {
     self!setObject($!sfs = $saver);
   }
-  
+
   method SourceViewGTK::Raw::Types::GtkSourceFileSaver { $!sfs }
-  
+
   method new (GtkSourceBuffer() $buffer, GtkSourceFile $file) {
     self.bless( saver => gtk_source_file_saver_new($buffer, $file) );
   }
 
   method new_with_target (
-    GtkSourceBuffer() $buffer, 
-    GtkSourceFile() $file, 
+    GtkSourceBuffer() $buffer,
+    GtkSourceFile() $file,
     GFile $target_location
   ) {
-    self.bless( 
+    self.bless(
       saver => gtk_source_file_saver_new_with_target(
-        $buffer, 
-        $file, 
+        $buffer,
+        $file,
         $target_location
       )
     );
   }
-  
+
   method compression_type is rw {
     Proxy.new(
       FETCH => sub ($) {
@@ -114,43 +114,44 @@ class SourceViewGTK::FileSaver {
     gtk_source_file_saver_get_type();
   }
 
+  # ::FileLoader.load_async and ::FileSaver.save_async
+  # do NOT match. This needs a review!
   multi method save_async (
-    Int() $io_priority, 
-    &progress_callback, 
-    GCancellable $cancellable = Pointer, 
-    gpointer $progress_callback_data = Pointer, 
-    GDestroyNotify $progress_callback_notify = Pointer, 
-    &async_callback = -> {}, 
+    Int() $io_priority,
+    &progress_callback,
+    gpointer $progress_callback_data = Pointer,
+    GDestroyNotify $progress_callback_notify = Pointer,
+    &async_callback = -> {},
     gpointer $user_data = Pointer
   ) {
     samewith(
-      $io_priority, 
-      $cancellable, 
-      &progress_callback, 
+      $io_priority,
+      GCancellable,
+      &progress_callback,
       $progress_callback_data,
       $progress_callback_notify,
       &async_callback,
       $user_data
     );
-  } 
+  }
   multi method save_async (
-    Int() $io_priority, 
-    GCancellable $cancellable, 
-    &progress_callback, 
-    gpointer $progress_callback_data = Pointer, 
-    GDestroyNotify $progress_callback_notify = Pointer, 
-    &async_callback = -> {}, 
+    Int() $io_priority,
+    GCancellable() $cancellable,
+    &progress_callback,
+    gpointer $progress_callback_data = Pointer,
+    GDestroyNotify $progress_callback_notify = Pointer,
+    &async_callback = -> {},
     gpointer $user_data = Pointer
   ) {
     my gint $iop = self.RESOLVE-INT($io_priority);
     gtk_source_file_saver_save_async(
-      $!sfs, 
-      $io_priority, 
-      $cancellable, 
-      &progress_callback, 
-      $progress_callback_data, 
-      $progress_callback_notify, 
-      &async_callback, 
+      $!sfs,
+      $io_priority,
+      $cancellable,
+      &progress_callback,
+      $progress_callback_data,
+      $progress_callback_notify,
+      &async_callback,
       $user_data
     );
   }
@@ -160,10 +161,10 @@ class SourceViewGTK::FileSaver {
     samewith($result, $error);
   }
   multi method save_finish (
-    GAsyncResult $result, 
+    GAsyncResult $result,
     CArray[Pointer[GError]] $error = gerror()
   ) {
     gtk_source_file_saver_save_finish($!sfs, $result, $error);
   }
-  
+
 }
