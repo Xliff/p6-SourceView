@@ -1,8 +1,8 @@
 Cairo
 GIO::InputStream
+GLib::GSList
 GTK::Button
 GTK::Compat::GList
-GTK::Compat::GSList
 GTK::Compat::Pixbuf
 GTK::Compat::RGBA
 GTK::Compat::Roles::GFile

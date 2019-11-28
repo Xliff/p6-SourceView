@@ -8,21 +8,21 @@ use GTK::Raw::Types;
 use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 
-use GTK::Compat::Roles::ListData;
-use GTK::Roles::Types;
-use GTK::Roles::References;
-use SourceViewGTK::Roles::Signals::Buffer;
+use GLib::GSList;
 
 use GTK::TextBuffer;
 
 use SourceViewGTK::Language;
 use SourceViewGTK::Tag;
 
+use GTK::Compat::Roles::ListData;
+use GTK::Roles::References;
+use SourceViewGTK::Roles::Signals::Buffer;
+
 our subset SourceBufferAncestry is export
   where GtkSourceBuffer | GtkTextBuffer;
 
 class SourceViewGTK::Buffer is GTK::TextBuffer {
-  also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::Buffer;
 
   has GtkSourceBuffer $!sb;
@@ -112,7 +112,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         so gtk_source_buffer_get_highlight_matching_brackets($!sb);
       },
       STORE => sub ($, Int() $highlight is copy) {
-        my gboolean $h = self.RESOLVE-BOOL($highlight);
+        my gboolean $h = $highlight;
         gtk_source_buffer_set_highlight_matching_brackets($!sb, $h);
       }
     );
@@ -124,7 +124,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         so gtk_source_buffer_get_highlight_syntax($!sb);
       },
       STORE => sub ($, Int() $highlight is copy) {
-        my gboolean $h = self.RESOLVE-BOOL($highlight);
+        my gboolean $h = $highlight;
         gtk_source_buffer_set_highlight_syntax($!sb, $h);
       }
     );
@@ -136,7 +136,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         so gtk_source_buffer_get_implicit_trailing_newline($!sb);
       },
       STORE => sub ($, Int() $implicit_trailing_newline is copy) {
-        my gboolean $itn = self.RESOLVE-BOOL($implicit_trailing_newline);
+        my gboolean $itn = $implicit_trailing_newline;
         gtk_source_buffer_set_implicit_trailing_newline($!sb, $itn);
       }
     );
@@ -159,7 +159,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         gtk_source_buffer_get_max_undo_levels($!sb);
       },
       STORE => sub ($, Int() $max_undo_levels is copy) {
-        my gint $mul = self.RESOLVE-INT($max_undo_levels);
+        my gint $mul = $max_undo_levels;
         gtk_source_buffer_set_max_undo_levels($!sb, $mul);
       }
     );
@@ -235,7 +235,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   )
     is also<create-source-tag>
   {
-    my guint $pv = self.RESOLVE-UINT($prop_val);
+    my guint $pv = $prop_val;
     SourceViewGTK::Tag.new(
       gtk_source_buffer_create_source_tag(
         $!sb,
@@ -279,16 +279,23 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     gtk_source_buffer_get_source_marks_at_iter($!sb, $iter, $category);
   }
 
-  method get_source_marks_at_line (Int() $line, Str() $category)
+  method get_source_marks_at_line (
+    Int() $line,
+    Str() $category,
+    :$glist = False,
+    :$raw   = False
+  )
     is also<get-source-marks-at-line>
   {
-    my gint $l = self.RESOLVE-INT($line);
-    my $sm_list = GTK::Compat::GSList.new(
-      gtk_source_buffer_get_source_marks_at_line($!sb, $l, $category)
-    ) but GTK::Compat::Roles::ListData[GtkSourceMark];
+    my gint $l = $line;
+    my $ml = gtk_source_buffer_get_source_marks_at_line($!sb, $l, $category);
 
-    # Needs definedness check!
-    $sm_list.Array.map({ SourceViewGTK::Mark.new($_) with $_ });
+    return Nil unless $ml;
+    return $ml if     $glist;
+
+    $ml = GLib::GSList.new($ml) but GTK::Compat::Roles::ListData[GtkSourceMark];
+
+    $raw ?? $ml.Array !! $ml.Array.map({ SourceViewGTK::Mark.new($_) });
   }
 
   method get_type is also<get-type> {
@@ -364,8 +371,8 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   )
     is also<sort-lines>
   {
-    my guint $f = self.RESOLVE-UINT($flags);
-    my gint $c = self.RESOLVE-INT($column);
+    my guint $f = $flags;
+    my gint $c = $column;
     gtk_source_buffer_sort_lines($!sb, $start, $end, $f, $c);
   }
 
