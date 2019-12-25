@@ -7,29 +7,29 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::Style;
 
-use GTK::Roles::Properties;
+use GLib::Value;
 
-use GTK::Compat::Value;
+use GTK::Roles::Properties;
 
 class SourceViewGTK::Style {
   also does GTK::Roles::Properties;
-  
+
   has GtkSourceStyle $!ss;
-  
+
   submethod BUILD (:$style) {
     self!setObject($!ss = $style);          # GTK::Roles::Properties\
   }
-  
+
   method new (GtkSourceStyle $style) {
     self.bless(:$style);
   }
-  
+
   # Str
   method background is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
+    my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('background', $gv)
         );
         $gv.string;
@@ -43,10 +43,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method background-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('background-set', $gv)
         );
         $gv.boolean;
@@ -60,10 +60,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method bold is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('bold', $gv)
         );
         $gv.boolean;
@@ -77,10 +77,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method bold-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('bold-set', $gv)
         );
         $gv.boolean;
@@ -94,10 +94,10 @@ class SourceViewGTK::Style {
 
   # Type: gchar
   method foreground is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
+    my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('foreground', $gv)
         );
         $gv.string;
@@ -111,10 +111,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method foreground-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('foreground-set', $gv)
         );
         $gv.boolean;
@@ -128,10 +128,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method italic is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('italic', $gv)
         );
         $gv.boolean;
@@ -145,10 +145,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method italic-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('italic-set', $gv)
         );
         $gv.boolean;
@@ -162,10 +162,10 @@ class SourceViewGTK::Style {
 
   # Type: gchar
   method line-background is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
+    my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('line-background', $gv)
         );
         $gv.string;
@@ -179,10 +179,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method line-background-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('line-background-set', $gv)
         );
         $gv.boolean;
@@ -196,10 +196,10 @@ class SourceViewGTK::Style {
 
   # Type: PangoUnderline (uint32)
   method pango-underline is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('pango-underline', $gv)
         );
         PangoUnderline( $gv.uint );
@@ -213,10 +213,10 @@ class SourceViewGTK::Style {
 
   # Type: gchar
   method scale is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
+    my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('scale', $gv)
         );
         $gv.string;
@@ -230,10 +230,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method scale-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('scale-set', $gv)
         );
         $gv.boolean;
@@ -247,10 +247,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method strikethrough is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('strikethrough', $gv)
         );
         $gv.boolean;
@@ -264,10 +264,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method strikethrough-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('strikethrough-set', $gv)
         );
         $gv.boolean;
@@ -281,10 +281,10 @@ class SourceViewGTK::Style {
 
   # Type: gchar
   method underline-color is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
+    my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('underline-color', $gv)
         );
         $gv.string;
@@ -298,10 +298,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method underline-color-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('underline-color-set', $gv)
         );
         $gv.boolean;
@@ -315,10 +315,10 @@ class SourceViewGTK::Style {
 
   # Type: gboolean
   method underline-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('underline-set', $gv)
         );
         $gv.boolean;
@@ -329,7 +329,7 @@ class SourceViewGTK::Style {
       }
     );
   }
-  
+
   method apply (GtkTextTag() $tag) {
     gtk_source_style_apply($!ss, $tag);
   }

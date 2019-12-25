@@ -7,36 +7,38 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionItem;
 
+use GLib::Value;
+
 use GTK::Compat::Roles::Object;
 use SourceViewGTK::Roles::CompletionProposal;
 
 class SourceViewGTK::CompletionItem {
   also does GTK::Compat::Roles::Object;
   also does SourceViewGTK::Roles::CompletionProposal;
-  
+
   has GtkSourceCompletionItem $!sci;
-  
+
   submethod BUILD (:$item) {
     # SourceViewGTK::Roles::CompletionProposal
     self!setObject(
       $!scp = nativecast(GtkSourceCompletionProposal, $!sci = $item)
     );
   }
-  
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionItem 
+
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionItem
     #is also<CompletionItem>
     { $!sci }
-  
+
   method new {
     self.bless( item => gtk_source_completion_item_new() );
   }
-  
+
   # Type: GIcon
   # method gicon is rw  {
-  #   my GTK::Compat::Value $gv .= new( -type- );
+  #   my GLib::Value $gv .= new( -type- );
   #   Proxy.new(
   #     FETCH => -> $ {
-  #       $gv = GTK::Compat::Value.new(
+  #       $gv = GLib::Value.new(
   #         self.prop_get('gicon', $gv)
   #       );
   #       #$gv.TYPE
@@ -89,7 +91,7 @@ class SourceViewGTK::CompletionItem {
       FETCH => -> $              { self.get_text        },
       STORE => -> $, Str() $text { self.set_text($text) };
   }
-  
+
   method get_type {
     gtk_source_completion_item_get_type();
   }

@@ -8,41 +8,39 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::GutterRenderer;
 
 use GTK::Compat::RGBA;
-use GTK::Compat::Value;
+use GLib::Value;
 
 use GTK::Roles::Properties;
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::GutterRenderer;
 
-use GTK::Compat::Value;
-
 class SourceViewGTK::GutterRenderer {
   also does GTK::Roles::Properties;
   also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::GutterRenderer;
-  
+
   has GtkSourceGutterRenderer $!sgr;
-  
+
   submethod BUILD (:$renderer) {
     self.setGutterRenderer($renderer);
   }
-   
+
   submethod DESTROY {
     #self.disconnect-all($_) for %!signals-sgr;
   }
-  
-  method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer 
+
+  method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer
   #  is also<SourceGutterRenderer>
   { $!sgr }
-  
+
   method new (GtkSourceGutterRenderer $renderer) {
     self.bless(:$renderer);
   }
-  
+
   method setGutterRenderer($renderer) {
     self!setObject($!sgr = $renderer);
   }
-  
+
   # Is originally:
   # GtkSourceGutterRenderer, GtkTextIter, GdkRectangle, GdkEvent, gpointer --> void
   # Made multi so as to not conflict with the method activate(), below.
@@ -73,7 +71,7 @@ class SourceViewGTK::GutterRenderer {
   method queue-draw {
     self.connect($!sgr, 'queue-draw');
   }
-  
+
   method alignment_mode is rw {
     Proxy.new(
       FETCH => sub ($) {
@@ -114,10 +112,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: GdkRGBA
   method background-rgba is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_OBJECT );
+    my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('background-rgba', $gv)
         );
         nativecast(GTK::Compat::RGBA, $gv.object);
@@ -131,10 +129,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: gboolean
   method background-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('background-set', $gv)
         );
         $gv.boolean;
@@ -148,10 +146,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: uint32 (GtkTextWindowType)
   method window-type is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('window-type', $gv)
         );
         GtkTextWindowType( $gv.uint );
@@ -164,10 +162,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: gfloat
   method xalign is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_FLOAT );
+    my GLib::Value $gv .= new( G_TYPE_FLOAT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('xalign', $gv)
         );
         $gv.float;
@@ -181,10 +179,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: gint
   method xpad is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_INT );
+    my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('xpad', $gv)
         );
         $gv.int;
@@ -198,10 +196,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: gfloat
   method yalign is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_FLOAT );
+    my GLib::Value $gv .= new( G_TYPE_FLOAT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('yalign', $gv)
         );
         $gv.float;
@@ -215,10 +213,10 @@ class SourceViewGTK::GutterRenderer {
 
   # Type: gint
   method ypad is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_INT );
+    my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('ypad', $gv)
         );
         $gv.int;
@@ -229,47 +227,47 @@ class SourceViewGTK::GutterRenderer {
       }
     );
   }
-  
+
   multi method activate (
-    GtkTextIter() $iter, 
-    GdkRectangle $area, 
+    GtkTextIter() $iter,
+    GdkRectangle $area,
     GdkEvent $event
   ) {
     gtk_source_gutter_renderer_activate($!sgr, $iter, $area, $event);
   }
 
   method begin (
-    cairo_t $cr, 
-    GdkRectangle $background_area, 
-    GdkRectangle $cell_area, 
-    GtkTextIter() $start, 
+    cairo_t $cr,
+    GdkRectangle $background_area,
+    GdkRectangle $cell_area,
+    GtkTextIter() $start,
     GtkTextIter() $end
   ) {
     gtk_source_gutter_renderer_begin(
-      $!sgr, 
-      $cr, 
-      $background_area, 
-      $cell_area, 
+      $!sgr,
+      $cr,
+      $background_area,
+      $cell_area,
       $start, $end
     );
   }
 
   method draw (
-    cairo_t $cr, 
-    GdkRectangle $background_area, 
-    GdkRectangle $cell_area, 
-    GtkTextIter() $start, 
-    GtkTextIter() $end, 
+    cairo_t $cr,
+    GdkRectangle $background_area,
+    GdkRectangle $cell_area,
+    GtkTextIter() $start,
+    GtkTextIter() $end,
     Int() $state                  # GtkSourceGutterRendererState $state
   ) {
     my guint $s = self.RESOLVE-UINT($state);
     gtk_source_gutter_renderer_draw(
-      $!sgr, 
-      $cr, 
-      $background_area, 
-      $cell_area, 
-      $start, 
-      $end, 
+      $!sgr,
+      $cr,
+      $background_area,
+      $cell_area,
+      $start,
+      $end,
       $s
     );
   }
@@ -295,8 +293,8 @@ class SourceViewGTK::GutterRenderer {
   method get_type {
     state ($n, $t);
     unstable_get_type(
-      self.^name, 
-      &gtk_source_gutter_renderer_get_type, 
+      self.^name,
+      &gtk_source_gutter_renderer_get_type,
       $n,
       $t
     );
@@ -313,35 +311,35 @@ class SourceViewGTK::GutterRenderer {
   }
 
   method query_activatable (
-    GtkTextIter() $iter, 
-    GdkRectangle $area, 
+    GtkTextIter() $iter,
+    GdkRectangle $area,
     GdkEvent $event
   ) {
     gtk_source_gutter_renderer_query_activatable($!sgr, $iter, $area, $event);
   }
 
   method query_data (
-    GtkTextIter() $start, 
-    GtkTextIter() $end, 
+    GtkTextIter() $start,
+    GtkTextIter() $end,
     guint $state                  # GtkSourceGutterRendererState $state
   ) {
     gtk_source_gutter_renderer_query_data($!sgr, $start, $end, $state);
   }
 
   method query_tooltip (
-    GtkTextIter() $iter, 
-    GdkRectangle $area, 
-    Int() $x, 
-    Int() $y, 
+    GtkTextIter() $iter,
+    GdkRectangle $area,
+    Int() $x,
+    Int() $y,
     GtkTooltip() $tooltip
   ) {
     my gint ($xx, $yy) = self.RESOLVE-INT($x, $y);
     gtk_source_gutter_renderer_query_tooltip(
-      $!sgr, 
-      $iter, 
-      $area, 
-      $xx, 
-      $yy, 
+      $!sgr,
+      $iter,
+      $area,
+      $xx,
+      $yy,
       $tooltip
     );
   }

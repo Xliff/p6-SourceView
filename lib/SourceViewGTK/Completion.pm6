@@ -13,7 +13,7 @@ use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::Completion;
 
 use GTK::Compat::GList;
-use GTK::Compat::Value;
+use GLib::Value;
 use SourceViewGTK::CompletionContext;
 use SourceViewGTK::CompletionInfo;
 use SourceViewGTK::View;
@@ -69,10 +69,10 @@ class SourceViewGTK::Completion {
   
   # Type: guint
   method accelerators is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('accelerators', $gv)
         );
         $gv.uint;
@@ -86,10 +86,10 @@ class SourceViewGTK::Completion {
 
   # Type: guint
   method auto-complete-delay is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('auto-complete-delay', $gv)
         );
         $gv.uint;
@@ -103,10 +103,10 @@ class SourceViewGTK::Completion {
 
   # Type: guint
   method proposal-page-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('proposal-page-size', $gv)
         );
         $gv.uint;
@@ -120,10 +120,10 @@ class SourceViewGTK::Completion {
 
   # Type: guint
   method provider-page-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('provider-page-size', $gv)
         );
         $gv.uint;
@@ -137,10 +137,10 @@ class SourceViewGTK::Completion {
 
   # Type: gboolean
   method remember-info-visibility is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('remember-info-visibility', $gv)
         );
         $gv.boolean;
@@ -154,10 +154,10 @@ class SourceViewGTK::Completion {
 
   # Type: gboolean
   method select-on-show is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('select-on-show', $gv)
         );
         $gv.boolean;
@@ -171,10 +171,10 @@ class SourceViewGTK::Completion {
 
   # Type: gboolean
   method show-headers is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('show-headers', $gv)
         );
         $gv.boolean;
@@ -188,10 +188,10 @@ class SourceViewGTK::Completion {
 
   # Type: gboolean
   method show-icons is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('show-icons', $gv)
         );
         $gv.boolean;
@@ -205,10 +205,10 @@ class SourceViewGTK::Completion {
 
   # Type: GtkSourceView
   method view is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_OBJECT );
+    my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('view', $gv)
         );
         SourceViewGTK::View.new( nativecast(GtkSourceView, $gv.object) );

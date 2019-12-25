@@ -2,12 +2,11 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Value;
-
 use GTK::Compat::Types;
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
+use GLib::Value;
 use GTK::TextTag;
 
 our subset SourceTagAncestry is export
@@ -15,7 +14,7 @@ our subset SourceTagAncestry is export
 
 class SourceViewGTK::Tag is GTK::TextTag {
   has GtkSourceTag $!st;
-  
+
   submethod BUILD (:$sourcetag) {
     given $sourcetag {
       when SourceTagAncestry {
@@ -38,20 +37,20 @@ class SourceViewGTK::Tag is GTK::TextTag {
       }
     }
   }
-  
+
   multi method new (SourceTagAncestry $sourcetag) {
     self.bless(:$sourcetag);
   }
   multi method new (Str() $name) {
     self.bless( sourcetag => gtk_source_tag_new($name) );
   }
-  
+
   # Type: gboolean
   method draw-spaces is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('draw-spaces', $gv)
         );
         $gv.boolean;
@@ -65,10 +64,10 @@ class SourceViewGTK::Tag is GTK::TextTag {
 
   # Type: gboolean
   method draw-spaces-set is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_BOOLEAN );
+    my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('draw-spaces-set', $gv)
         );
         $gv.boolean;
@@ -79,7 +78,7 @@ class SourceViewGTK::Tag is GTK::TextTag {
       }
     );
   }
-    
+
 }
 
 sub gtk_source_tag_new (Str $name)

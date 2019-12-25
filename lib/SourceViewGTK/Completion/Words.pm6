@@ -3,11 +3,12 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
-use GTK::Compat::Value;
 
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionWords;
+
+use GLib::Value;
 
 use GTK::Roles::Properties;
 use SourceViewGTK::Roles::CompletionProvider;
@@ -15,28 +16,28 @@ use SourceViewGTK::Roles::CompletionProvider;
 class SourceViewGTK::Completion::Words {
   also does GTK::Roles::Properties;
   also does SourceViewGTK::Roles::CompletionProvider;
-  
+
   has GtkSourceCompletionWords $!scw;
-  
+
   submethod BUILD (:$words) {
     # SourceViewGTK::Roles::CompletionProvider
     self!setObject(
       $!scp = nativecast(GtkSourceCompletionWords, $!scw = $words)
     );
   }
-  
+
   method SourceViewGTK::Raw::Types::GtkSourceCompletionWords { $!scw }
-  
+
   method new (GdkPixbuf() $icon) {
     gtk_source_completion_words_new($icon);
   }
-  
+
   # Type: uint32 (GtkSourceCompletionActivation)
   method activation is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('activation', $gv)
         );
         GtkSourceCompletionActivation( $gv.uint );
@@ -50,10 +51,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: GdkPixbuf
   method icon is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_OBJECT );
+    my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('icon', $gv)
         );
         GTK::Compat::Pixbuf.new( $gv.object );
@@ -67,10 +68,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: gint
   method interactive-delay is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_INT );
+    my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('interactive-delay', $gv)
         );
         $gv.int;
@@ -84,10 +85,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: guint
   method minimum-word-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('minimum-word-size', $gv)
         );
         $gv.uint;
@@ -101,10 +102,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: gchar
   method name is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_STRING );
+    my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('name', $gv)
         );
         $gv.string;
@@ -118,10 +119,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: gint
   method priority is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_INT );
+    my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('priority', $gv)
         );
         $gv.int;
@@ -135,10 +136,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: guint
   method proposals-batch-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('proposals-batch-size', $gv)
         );
         $gv.uint;
@@ -152,10 +153,10 @@ class SourceViewGTK::Completion::Words {
 
   # Type: guint
   method scan-batch-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_UINT );
+    my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('scan-batch-size', $gv)
         );
         $gv.uint;
