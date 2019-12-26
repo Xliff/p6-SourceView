@@ -11,13 +11,13 @@ use Pango::Layout;
 use GTK::Compat::Types;
 
 use GTK::Compat::ContentType;
-use GTK::Compat::Binding;
 use GTK::Compat::File;
 use GTK::Compat::Log;
 use GTK::Compat::RGBA;
 
 use GTK::Raw::Types;
 
+use GLib::Object::Binding;
 use GTK::Application;
 use GTK::Builder;
 use GTK::Dialog::FileChooser;
@@ -391,7 +391,7 @@ sub MAIN {
   %globals{$_}      := $b{$_} for $b.keys;
   %globals<buffer>   = $b<view>.source_buffer;
 
-  GTK::Compat::Binding.bind(%globals<view>, $_[0], $_[1], 'active')
+  GLib::Object::Binding.bind(%globals<view>, $_[0], $_[1], 'active')
     for (
       [ 'auto-indent',                   $b<auto_indent>            ],
       [ 'highlight-current-line',        $b<highlight_current_line> ],
@@ -401,7 +401,7 @@ sub MAIN {
       [ 'show-right-margin',             $b<show_right_margin>      ],
     );
 
-  GTK::Compat::Binding.bind(%globals<buffer>, $_[0], $_[1], 'active')
+  GLib::Object::Binding.bind(%globals<buffer>, $_[0], $_[1], 'active')
     for (
       [ 'highlight-syntax',            $b<highlight_syntax>           ],
       [ 'highlight-matching-brackets', $b<highlight_matching_bracket> ],
@@ -449,7 +449,7 @@ sub MAIN {
   %globals<buffer>.bracket-matched.tap(-> *@a {
     bracket_matched_cb( |@a[1, 2] )
   });
-  
+
   %globals<buffer>.changed.tap(-> *@a { update_cursor_position_info });
 
   add_source_mark_attributes;
@@ -458,17 +458,17 @@ sub MAIN {
     line_mark_activated_cb( |@a[1, 2] );
   });
 
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     $b<chooser_button>, 'style-scheme',
     %globals<buffer>,   'style-scheme',
     G_BINDING_SYNC_CREATE
   );
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     $b<show_map_checkbutton>, 'active',
     $b<map>,                  'visible',
     G_BINDING_SYNC_CREATE
   );
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     $b<smart_backspace_checkbutton>, 'active',
     %globals<view>,                  'smart-backspace',
     G_BINDING_SYNC_CREATE
@@ -483,7 +483,7 @@ sub MAIN {
   });
 
   %globals<space_drawer> = $b<view>.space-drawer;
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     $b<draw_spaces_checkbutton>,
     'active',
     %globals<space_drawer>,

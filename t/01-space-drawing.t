@@ -3,7 +3,7 @@ use v6.c;
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
-use GTK::Compat::Binding;
+use GLib::Object::Binding;
 
 use GTK::Application;
 use GTK::CheckButton;
@@ -74,7 +74,7 @@ $a.activate.tap({
   );
   $panel-grid.add(%check-buttons<matrix>);
   %check-buttons<matrix>.active = True;
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     %check-buttons<matrix>, 'active', $space-drawer, 'enable-matrix'
   );
   
@@ -83,7 +83,7 @@ $a.activate.tap({
   );
   $panel-grid.add(%check-buttons<tag-set>);
   %check-buttons<tag-set>.active = True;
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     %check-buttons<tag-set>, 'active', $tag, 'draw-spaces-set'
   );
   
@@ -92,7 +92,7 @@ $a.activate.tap({
   );
   $panel-grid.add(%check-buttons<tag>);
   %check-buttons<tag>.active = True;
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     %check-buttons<tag>, 'active', $tag, 'draw-spaces'
   );
 
@@ -101,7 +101,7 @@ $a.activate.tap({
   );
   $panel-grid.add(%check-buttons<implicit>);
   %check-buttons<implicit>.active = True;
-  GTK::Compat::Binding.bind(
+  GLib::Object::Binding.bind(
     %check-buttons<implicit>, 'active', $buffer, 'implicit-trailing-newline'
   );
   

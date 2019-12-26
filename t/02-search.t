@@ -2,7 +2,7 @@ use v6.c;
 
 use lib 't';
 
-use GTK::Compat::Binding;
+use GLib::Object::Binding;
 use GTK::Compat::Signal;
 use GTK::Compat::Types;
 
@@ -153,13 +153,13 @@ sub MAIN {
     %globals<search_context>.replace_all(%globals<replace_entry>.text, $len);
   });
   
-  %settings<highlight> = GTK::Compat::Binding.bind(
+  %settings<highlight> = GLib::Object::Binding.bind(
     %globals<search_context>, 
     'highlight', 
     %globals<checkbutton_highlight>,
     'active'
   );
-  %settings{$_[0]} = GTK::Compat::Binding.bind(
+  %settings{$_[0]} = GLib::Object::Binding.bind(
     %globals<settings>, $_[0], $_[1], 'active'
   ) for (
     [ 'case-sensitive',     %globals<checkbutton_match_case>         ],
