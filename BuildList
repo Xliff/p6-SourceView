@@ -1,12 +1,12 @@
 Cairo
 GIO::InputStream
+GIO::Roles::GFile
 GLib::GSList
 GLib::Value
 GTK::Button
 GTK::Compat::GList
 GTK::Compat::Pixbuf
 GTK::Compat::RGBA
-GTK::Compat::Roles::GFile
 GTK::Compat::Roles::ListData
 GTK::Compat::Roles::Object
 GTK::Compat::Types

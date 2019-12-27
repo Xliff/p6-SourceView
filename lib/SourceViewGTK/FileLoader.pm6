@@ -9,7 +9,7 @@ use GTK::Raw::Utils;
 
 use GIO::InputStream;
 
-use GTK::Compat::Roles::GFile;
+use GIO::Roles::GFile;
 
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileLoader;
@@ -111,7 +111,7 @@ class SourceViewGTK::FileLoader {
   {
     my $l = gtk_source_file_loader_get_location($!sfl);
 
-    $raw ?? $l !! GTK::Compat::Roles::GFile.new($l);
+    $raw ?? $l !! GIO::Roles::GFile.new($l);
   }
 
   method get_newline_type

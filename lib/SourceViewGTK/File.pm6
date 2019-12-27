@@ -10,7 +10,7 @@ use SourceViewGTK::Raw::File;
 
 use GTK::Compat::Roles::Object;
 
-use GTK::Compat::Roles::GFile;
+use GIO::Roles::GFile;
 
 class SourceViewGTK::File {
   also does GTK::Compat::Roles::Object;
