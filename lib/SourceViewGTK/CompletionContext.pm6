@@ -96,7 +96,7 @@ class SourceViewGTK::CompletionContext {
     Int() $finished
   ) {
     # List of GtkSourceCompletionItem
-    my $proposals = GTK::Compat::GList.new(@proposals);
+    my $proposals = GLib::GList.new(@proposals);
     samewith(
       $provider,
       $proposals,

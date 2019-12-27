@@ -12,7 +12,7 @@ use GTK::Roles::Properties;
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::Completion;
 
-use GTK::Compat::GList;
+use GLib::GList;
 use GLib::Value;
 use SourceViewGTK::CompletionContext;
 use SourceViewGTK::CompletionInfo;
@@ -248,7 +248,7 @@ class SourceViewGTK::Completion {
   }
 
   method get_providers {
-    GTK::Compat::GList.new( gtk_source_completion_get_providers($!sc) );
+    GLib::GList.new( gtk_source_completion_get_providers($!sc) );
   }
 
   method get_type {

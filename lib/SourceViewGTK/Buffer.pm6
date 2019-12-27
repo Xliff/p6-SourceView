@@ -15,7 +15,7 @@ use GTK::TextBuffer;
 use SourceViewGTK::Language;
 use SourceViewGTK::Tag;
 
-use GTK::Compat::Roles::ListData;
+use GLib::Roles::ListData;
 use GTK::Roles::References;
 use SourceViewGTK::Roles::Signals::Buffer;
 
@@ -293,7 +293,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     return Nil unless $ml;
     return $ml if     $glist;
 
-    $ml = GLib::GSList.new($ml) but GTK::Compat::Roles::ListData[GtkSourceMark];
+    $ml = GLib::GSList.new($ml) but GLib::Roles::ListData[GtkSourceMark];
 
     $raw ?? $ml.Array !! $ml.Array.map({ SourceViewGTK::Mark.new($_) });
   }

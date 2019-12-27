@@ -79,7 +79,7 @@ class SourceViewGTK::Encoding {
     return $el if     $glist;
 
     $el = GTK::Compat::GSList.new($el)
-      but GTK::Compat::Roles::ListData[GtkSourceEncoding];
+      but GLib::Roles::ListData[GtkSourceEncoding];
 
     $raw ?? $el.Array !! $el.Array.map({ SourceViewGTK::Encoding.new($el) });
   }
@@ -110,7 +110,7 @@ class SourceViewGTK::Encoding {
     return $el if     $glist;
 
     $el = GTK::Compat::GSList.new($el)
-      but GTK::Compat::Roles::ListData[GtkSourceEncoding];
+      but GLib::Roles::ListData[GtkSourceEncoding];
 
     $raw ?? $el.Array !! $el.Array.map({ SourceViewGTK::Encoding.new($el) });
   }
