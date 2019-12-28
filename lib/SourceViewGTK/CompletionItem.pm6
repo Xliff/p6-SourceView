@@ -9,11 +9,11 @@ use SourceViewGTK::Raw::CompletionItem;
 
 use GLib::Value;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 use SourceViewGTK::Roles::CompletionProposal;
 
 class SourceViewGTK::CompletionItem {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
   also does SourceViewGTK::Roles::CompletionProposal;
 
   has GtkSourceCompletionItem $!sci;

@@ -9,7 +9,7 @@ use GLib::GSList;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Encoding;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 # Boxed!
 

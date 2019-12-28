@@ -8,12 +8,12 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::LanguageManager;
 use SourceViewGTK::Raw::Types;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use SourceViewGTK::Language;
 
 class SourceViewGTK::LanguageManager {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has GtkSourceLanguageManager $!slm;
 

@@ -8,12 +8,12 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::MarkAttributes;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::MarkAttributes;
 
 class SourceViewGTK::MarkAttributes {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
   also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::MarkAttributes;
   

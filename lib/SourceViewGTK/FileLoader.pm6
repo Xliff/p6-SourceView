@@ -14,10 +14,10 @@ use GIO::Roles::GFile;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileLoader;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 class SourceViewGTK::FileLoader {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has GtkSourceFileLoader $!sfl;
 

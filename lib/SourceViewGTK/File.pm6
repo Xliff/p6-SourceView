@@ -8,12 +8,12 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::File;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use GIO::Roles::GFile;
 
 class SourceViewGTK::File {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has GtkSourceFile $!sf;
 

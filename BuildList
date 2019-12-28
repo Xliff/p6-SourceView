@@ -4,11 +4,11 @@ GIO::Roles::GFile
 GLib::GList
 GLib::GSList
 GLib::Roles::ListData
+GLib::Roles::Object
 GLib::Value
 GTK::Button
 GTK::Compat::Pixbuf
 GTK::Compat::RGBA
-GTK::Compat::Roles::Object
 GTK::Compat::Types
 GTK::Raw::ReturnedValue
 GTK::Raw::TextView

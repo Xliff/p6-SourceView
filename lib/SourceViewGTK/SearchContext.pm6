@@ -9,7 +9,7 @@ use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::SearchContext;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 use GTK::Roles::Types;
 
 use GTK::TextIter;
@@ -18,7 +18,7 @@ use SourceViewGTK::Buffer;
 use SourceViewGTK::SearchSettings;
 
 class SourceViewGTK::SearchContext {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has GtkSourceSearchContext $!ssc;
 

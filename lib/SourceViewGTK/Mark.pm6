@@ -7,10 +7,10 @@ use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Mark;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 class SourceViewGTK::Mark {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has GtkSourceMark $!sm;
 

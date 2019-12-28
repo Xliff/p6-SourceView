@@ -6,13 +6,13 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Gutter;
 
 use GTK::Roles::Types;
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use SourceViewGTK::GutterRenderer;
 
 class SourceViewGTK::Gutter {
   also does GTK::Roles::Types;
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
   
   has GtkSourceGutter $!sg;
   
