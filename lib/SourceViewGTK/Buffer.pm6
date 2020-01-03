@@ -16,7 +16,6 @@ use SourceViewGTK::Language;
 use SourceViewGTK::Tag;
 
 use GLib::Roles::ListData;
-use GTK::Roles::References;
 use SourceViewGTK::Roles::Signals::Buffer;
 
 our subset SourceBufferAncestry is export
