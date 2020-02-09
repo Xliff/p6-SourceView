@@ -4,7 +4,7 @@ use NativeCall;
 
 use GTK::Raw::ReturnedValue;
 
-use GTK::Compat::Types;
+
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 

@@ -1,6 +1,6 @@
 use v6.c;
 
-use GTK::Compat::Types;
+
 
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::SpaceDrawer;

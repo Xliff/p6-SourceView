@@ -2,7 +2,7 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
+
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::SpaceDrawer;

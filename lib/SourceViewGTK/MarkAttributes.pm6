@@ -2,7 +2,7 @@ use v6.c;
 
 use GTK::Compat::RGBA;
 
-use GTK::Compat::Types;
+
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 

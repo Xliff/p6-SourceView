@@ -5,7 +5,7 @@ use NativeCall;
 use Cairo;
 
 use GTK::Compat::RGBA;
-use GTK::Compat::Types;
+
 
 use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;

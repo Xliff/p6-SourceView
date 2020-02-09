@@ -2,7 +2,7 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
+
 use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::StyleSchemeChooser;
