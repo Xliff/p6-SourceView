@@ -1,7 +1,7 @@
 use v6.c;
 
 
-use GTK::Raw::Types;
+
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Gutter;
 

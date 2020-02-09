@@ -3,7 +3,7 @@ use v6.c;
 use GTK::Compat::RGBA;
 
 
-use GTK::Raw::Types;
+
 use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::MarkAttributes;

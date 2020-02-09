@@ -4,7 +4,7 @@ use Method::Also;
 use NativeCall;
 
 
-use GTK::Raw::Types;
+
 use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 

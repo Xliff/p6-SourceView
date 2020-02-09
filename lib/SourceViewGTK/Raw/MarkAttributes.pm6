@@ -5,7 +5,7 @@ use NativeCall;
 use GTK::Compat::RGBA;
 
 
-use GTK::Raw::Types;
+
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::MarkAttributes;

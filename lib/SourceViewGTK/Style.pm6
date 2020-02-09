@@ -2,7 +2,7 @@ use v6.c;
 
 use Pango::Raw::Types;
 
-use GTK::Raw::Types;
+
 use SourceViewGTK::Raw::Types;
 
 use SourceViewGTK::Raw::Style;
