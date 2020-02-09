@@ -2,15 +2,13 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::PrintCompositor;
 
 sub gtk_source_print_compositor_draw_page (
-  GtkSourcePrintCompositor $compositor, 
-  GtkPrintContext $context, 
+  GtkSourcePrintCompositor $compositor,
+  GtkPrintContext $context,
   gint $page_nr
 )
   is native(sourceview)
@@ -18,7 +16,7 @@ sub gtk_source_print_compositor_draw_page (
   { * }
 
 sub gtk_source_print_compositor_get_bottom_margin (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   uint32 $unit                    # GtkUnit $unit
 )
   returns gdouble
@@ -35,7 +33,7 @@ sub gtk_source_print_compositor_get_buffer (
   { * }
 
 sub gtk_source_print_compositor_get_left_margin (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   uint32 $unit                    # GtkUnit $unit
 )
   returns gdouble
@@ -60,7 +58,7 @@ sub gtk_source_print_compositor_get_pagination_progress (
   { * }
 
 sub gtk_source_print_compositor_get_right_margin (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   uint32 $unit                    # GtkUnit $unit
 )
   returns gdouble
@@ -69,7 +67,7 @@ sub gtk_source_print_compositor_get_right_margin (
   { * }
 
 sub gtk_source_print_compositor_get_top_margin (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   uint32 $unit                    # GtkUnit $unit
 )
   returns gdouble
@@ -96,7 +94,7 @@ sub gtk_source_print_compositor_new_from_view (GtkSourceView $view)
   { * }
 
 sub gtk_source_print_compositor_paginate (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   GtkPrintContext $context
 )
   returns uint32
@@ -105,8 +103,8 @@ sub gtk_source_print_compositor_paginate (
   { * }
 
 sub gtk_source_print_compositor_set_bottom_margin (
-  GtkSourcePrintCompositor $compositor, 
-  gdouble $margin, 
+  GtkSourcePrintCompositor $compositor,
+  gdouble $margin,
   uint32 $unit                    # GtkUnit $unit
 )
   is native(sourceview)
@@ -114,10 +112,10 @@ sub gtk_source_print_compositor_set_bottom_margin (
   { * }
 
 sub gtk_source_print_compositor_set_footer_format (
-  GtkSourcePrintCompositor $compositor, 
-  gboolean $separator, 
-  Str $left, 
-  Str $center, 
+  GtkSourcePrintCompositor $compositor,
+  gboolean $separator,
+  Str $left,
+  Str $center,
   Str $right
 )
   is native(sourceview)
@@ -125,10 +123,10 @@ sub gtk_source_print_compositor_set_footer_format (
   { * }
 
 sub gtk_source_print_compositor_set_header_format (
-  GtkSourcePrintCompositor $compositor, 
-  gboolean $separator, 
-  Str $left, 
-  Str $center, 
+  GtkSourcePrintCompositor $compositor,
+  gboolean $separator,
+  Str $left,
+  Str $center,
   Str $right
 )
   is native(sourceview)
@@ -136,8 +134,8 @@ sub gtk_source_print_compositor_set_header_format (
   { * }
 
 sub gtk_source_print_compositor_set_left_margin (
-  GtkSourcePrintCompositor $compositor, 
-  gdouble $margin, 
+  GtkSourcePrintCompositor $compositor,
+  gdouble $margin,
   uint32 $unit                    # GtkUnit $unit
 )
   is native(sourceview)
@@ -145,8 +143,8 @@ sub gtk_source_print_compositor_set_left_margin (
   { * }
 
 sub gtk_source_print_compositor_set_right_margin (
-  GtkSourcePrintCompositor $compositor, 
-  gdouble $margin, 
+  GtkSourcePrintCompositor $compositor,
+  gdouble $margin,
   uint32 $unit                    # GtkUnit $unit
 )
   is native(sourceview)
@@ -154,8 +152,8 @@ sub gtk_source_print_compositor_set_right_margin (
   { * }
 
 sub gtk_source_print_compositor_set_top_margin (
-  GtkSourcePrintCompositor $compositor, 
-  gdouble $margin, 
+  GtkSourcePrintCompositor $compositor,
+  gdouble $margin,
   uint32 $unit                    # GtkUnit $unit
 )
   is native(sourceview)
@@ -243,7 +241,7 @@ sub gtk_source_print_compositor_get_wrap_mode (
   { * }
 
 sub gtk_source_print_compositor_set_body_font_name (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   Str $font_name
 )
   is native(sourceview)
@@ -251,7 +249,7 @@ sub gtk_source_print_compositor_set_body_font_name (
   { * }
 
 sub gtk_source_print_compositor_set_footer_font_name (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   Str $font_name
 )
   is native(sourceview)
@@ -259,7 +257,7 @@ sub gtk_source_print_compositor_set_footer_font_name (
   { * }
 
 sub gtk_source_print_compositor_set_header_font_name (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   Str $font_name
 )
   is native(sourceview)
@@ -267,7 +265,7 @@ sub gtk_source_print_compositor_set_header_font_name (
   { * }
 
 sub gtk_source_print_compositor_set_highlight_syntax (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   gboolean $highlight
 )
   is native(sourceview)
@@ -275,7 +273,7 @@ sub gtk_source_print_compositor_set_highlight_syntax (
   { * }
 
 sub gtk_source_print_compositor_set_line_numbers_font_name (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   Str $font_name
 )
   is native(sourceview)
@@ -283,7 +281,7 @@ sub gtk_source_print_compositor_set_line_numbers_font_name (
   { * }
 
 sub gtk_source_print_compositor_set_print_footer (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   gboolean $print
 )
   is native(sourceview)
@@ -291,7 +289,7 @@ sub gtk_source_print_compositor_set_print_footer (
   { * }
 
 sub gtk_source_print_compositor_set_print_header (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   gboolean $print
 )
   is native(sourceview)
@@ -299,7 +297,7 @@ sub gtk_source_print_compositor_set_print_header (
   { * }
 
 sub gtk_source_print_compositor_set_print_line_numbers (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   guint $interval
 )
   is native(sourceview)
@@ -307,7 +305,7 @@ sub gtk_source_print_compositor_set_print_line_numbers (
   { * }
 
 sub gtk_source_print_compositor_set_tab_width (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   guint $width
 )
   is native(sourceview)
@@ -315,7 +313,7 @@ sub gtk_source_print_compositor_set_tab_width (
   { * }
 
 sub gtk_source_print_compositor_set_wrap_mode (
-  GtkSourcePrintCompositor $compositor, 
+  GtkSourcePrintCompositor $compositor,
   uint32 $wrap_mode               # GtkWrapMode $wrap_mode
 )
   is native(sourceview)

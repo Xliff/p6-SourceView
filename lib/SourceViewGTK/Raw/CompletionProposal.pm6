@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::CompletionProposal;
@@ -15,7 +14,7 @@ sub gtk_source_completion_proposal_changed (
   { * }
 
 sub gtk_source_completion_proposal_equal (
-  GtkSourceCompletionProposal $proposal, 
+  GtkSourceCompletionProposal $proposal,
   GtkSourceCompletionProposal $other
 )
   returns uint32

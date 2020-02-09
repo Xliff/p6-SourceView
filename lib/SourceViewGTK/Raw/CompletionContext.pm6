@@ -2,16 +2,14 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::CompletionContext;
 
 sub gtk_source_completion_context_add_proposals (
-  GtkSourceCompletionContext $context, 
-  GtkSourceCompletionProvider $provider, 
-  GList $proposals, 
+  GtkSourceCompletionContext $context,
+  GtkSourceCompletionProvider $provider,
+  GList $proposals,
   gboolean $finished
 )
   is native(sourceview)
@@ -27,7 +25,7 @@ sub gtk_source_completion_context_get_activation (
   { * }
 
 sub gtk_source_completion_context_get_iter (
-  GtkSourceCompletionContext $context, 
+  GtkSourceCompletionContext $context,
   GtkTextIter $iter
 )
   returns uint32

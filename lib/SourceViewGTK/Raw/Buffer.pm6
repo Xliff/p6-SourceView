@@ -2,15 +2,13 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Buffer;
 
 sub gtk_source_buffer_backward_iter_to_source_mark (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $iter, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $iter,
   Str $category
 )
   returns uint32
@@ -36,9 +34,9 @@ sub gtk_source_buffer_can_undo (GtkSourceBuffer $buffer)
   { * }
 
 sub gtk_source_buffer_change_case (
-  GtkSourceBuffer $buffer, 
-  uint32 $case_type,              # GtkSourceChangeCaseType $case_type, 
-  GtkTextIter $start, 
+  GtkSourceBuffer $buffer,
+  uint32 $case_type,              # GtkSourceChangeCaseType $case_type,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -46,9 +44,9 @@ sub gtk_source_buffer_change_case (
   { * }
 
 sub gtk_source_buffer_create_source_mark (
-  GtkSourceBuffer $buffer, 
-  Str $name, 
-  Str $category, 
+  GtkSourceBuffer $buffer,
+  Str $name,
+  Str $category,
   GtkTextIter $where
 )
   returns GtkSourceMark
@@ -62,8 +60,8 @@ sub gtk_source_buffer_end_not_undoable_action (GtkSourceBuffer $buffer)
   { * }
 
 sub gtk_source_buffer_ensure_highlight (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $start, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -71,8 +69,8 @@ sub gtk_source_buffer_ensure_highlight (
   { * }
 
 sub gtk_source_buffer_forward_iter_to_source_mark (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $iter, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $iter,
   Str $category
 )
   returns uint32
@@ -81,7 +79,7 @@ sub gtk_source_buffer_forward_iter_to_source_mark (
   { * }
 
 sub gtk_source_buffer_get_context_classes_at_iter (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   GtkTextIter $iter
 )
   returns CArray[Str]
@@ -90,8 +88,8 @@ sub gtk_source_buffer_get_context_classes_at_iter (
   { * }
 
 sub gtk_source_buffer_get_source_marks_at_iter (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $iter, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $iter,
   Str $category
 )
   returns GSList
@@ -100,8 +98,8 @@ sub gtk_source_buffer_get_source_marks_at_iter (
   { * }
 
 sub gtk_source_buffer_get_source_marks_at_line (
-  GtkSourceBuffer $buffer, 
-  gint $line, 
+  GtkSourceBuffer $buffer,
+  gint $line,
   Str $category
 )
   returns GSList
@@ -116,8 +114,8 @@ sub gtk_source_buffer_get_type ()
   { * }
 
 sub gtk_source_buffer_iter_backward_to_context_class_toggle (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $iter, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $iter,
   Str $context_class
 )
   returns uint32
@@ -126,8 +124,8 @@ sub gtk_source_buffer_iter_backward_to_context_class_toggle (
   { * }
 
 sub gtk_source_buffer_iter_forward_to_context_class_toggle (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $iter, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $iter,
   Str $context_class
 )
   returns uint32
@@ -136,8 +134,8 @@ sub gtk_source_buffer_iter_forward_to_context_class_toggle (
   { * }
 
 sub gtk_source_buffer_iter_has_context_class (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $iter, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $iter,
   Str $context_class
 )
   returns uint32
@@ -146,8 +144,8 @@ sub gtk_source_buffer_iter_has_context_class (
   { * }
 
 sub gtk_source_buffer_join_lines (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $start, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -172,9 +170,9 @@ sub gtk_source_buffer_redo (GtkSourceBuffer $buffer)
   { * }
 
 sub gtk_source_buffer_remove_source_marks (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $start, 
-  GtkTextIter $end, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $start,
+  GtkTextIter $end,
   Str $category
 )
   is native(sourceview)
@@ -182,10 +180,10 @@ sub gtk_source_buffer_remove_source_marks (
   { * }
 
 sub gtk_source_buffer_sort_lines (
-  GtkSourceBuffer $buffer, 
-  GtkTextIter $start, 
-  GtkTextIter $end, 
-  uint32 $flags,                  # GtkSourceSortFlags $flags, 
+  GtkSourceBuffer $buffer,
+  GtkTextIter $start,
+  GtkTextIter $end,
+  uint32 $flags,                  # GtkSourceSortFlags $flags,
   gint $column
 )
   is native(sourceview)
@@ -242,7 +240,7 @@ sub gtk_source_buffer_get_undo_manager (GtkSourceBuffer $buffer)
   { * }
 
 sub gtk_source_buffer_set_highlight_matching_brackets (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   gboolean $highlight
 )
   is native(sourceview)
@@ -250,7 +248,7 @@ sub gtk_source_buffer_set_highlight_matching_brackets (
   { * }
 
 sub gtk_source_buffer_set_highlight_syntax (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   gboolean $highlight
 )
   is native(sourceview)
@@ -258,7 +256,7 @@ sub gtk_source_buffer_set_highlight_syntax (
   { * }
 
 sub gtk_source_buffer_set_implicit_trailing_newline (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   gboolean $implicit_trailing_newline
 )
   is native(sourceview)
@@ -266,7 +264,7 @@ sub gtk_source_buffer_set_implicit_trailing_newline (
   { * }
 
 sub gtk_source_buffer_set_language (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   GtkSourceLanguage $language
 )
   is native(sourceview)
@@ -274,7 +272,7 @@ sub gtk_source_buffer_set_language (
   { * }
 
 sub gtk_source_buffer_set_max_undo_levels (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   gint $max_undo_levels
 )
   is native(sourceview)
@@ -282,7 +280,7 @@ sub gtk_source_buffer_set_max_undo_levels (
   { * }
 
 sub gtk_source_buffer_set_style_scheme (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   GtkSourceStyleScheme $scheme
 )
   is native(sourceview)
@@ -290,7 +288,7 @@ sub gtk_source_buffer_set_style_scheme (
   { * }
 
 sub gtk_source_buffer_set_undo_manager (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   GtkSourceUndoManager $manager
 )
   is native(sourceview)
@@ -308,4 +306,3 @@ sub gtk_source_buffer_create_source_tag (
   is native(sourceview)
   is export
   { * }
-  

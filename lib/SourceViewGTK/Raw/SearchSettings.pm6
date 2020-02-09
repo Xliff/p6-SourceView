@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::SearchSettings;
@@ -60,7 +59,7 @@ sub gtk_source_search_settings_get_wrap_around (
   { * }
 
 sub gtk_source_search_settings_set_at_word_boundaries (
-  GtkSourceSearchSettings $settings, 
+  GtkSourceSearchSettings $settings,
   gboolean $at_word_boundaries
 )
   is native(sourceview)
@@ -68,7 +67,7 @@ sub gtk_source_search_settings_set_at_word_boundaries (
   { * }
 
 sub gtk_source_search_settings_set_case_sensitive (
-  GtkSourceSearchSettings $settings, 
+  GtkSourceSearchSettings $settings,
   gboolean $case_sensitive
 )
   is native(sourceview)
@@ -76,7 +75,7 @@ sub gtk_source_search_settings_set_case_sensitive (
   { * }
 
 sub gtk_source_search_settings_set_regex_enabled (
-  GtkSourceSearchSettings $settings, 
+  GtkSourceSearchSettings $settings,
   gboolean $regex_enabled
 )
   is native(sourceview)
@@ -84,7 +83,7 @@ sub gtk_source_search_settings_set_regex_enabled (
   { * }
 
 sub gtk_source_search_settings_set_search_text (
-  GtkSourceSearchSettings $settings, 
+  GtkSourceSearchSettings $settings,
   Str $search_text
 )
   is native(sourceview)
@@ -92,7 +91,7 @@ sub gtk_source_search_settings_set_search_text (
   { * }
 
 sub gtk_source_search_settings_set_wrap_around (
-  GtkSourceSearchSettings $settings, 
+  GtkSourceSearchSettings $settings,
   gboolean $wrap_around
 )
   is native(sourceview)

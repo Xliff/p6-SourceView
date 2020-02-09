@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Language;
@@ -50,7 +49,7 @@ sub gtk_source_language_get_section (GtkSourceLanguage $language)
   { * }
 
 sub gtk_source_language_get_style_fallback (
-  GtkSourceLanguage $language, 
+  GtkSourceLanguage $language,
   Str $style_id
 )
   returns Str
@@ -65,7 +64,7 @@ sub gtk_source_language_get_style_ids (GtkSourceLanguage $language)
   { * }
 
 sub gtk_source_language_get_style_name (
-  GtkSourceLanguage $language, 
+  GtkSourceLanguage $language,
   Str $style_id
 )
   returns Str

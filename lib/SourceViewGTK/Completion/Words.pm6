@@ -71,7 +71,7 @@ class SourceViewGTK::Completion::Words {
       },
       STORE => -> $, GdkPixbuf() $val is copy {
         $gv.object = $val;
-        
+
         self.prop_set('icon', $gv);
       }
     );
@@ -184,7 +184,7 @@ class SourceViewGTK::Completion::Words {
 
     unstable_get_type(
       self.^name,
-      &gtk_source_completion_words_get_type
+      &gtk_source_completion_words_get_type,
       $n,
       $t
     );

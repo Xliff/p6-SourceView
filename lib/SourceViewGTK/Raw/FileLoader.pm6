@@ -1,7 +1,6 @@
 use v6.c;
+
 use NativeCall;
-
-
 
 use SourceViewGTK::Raw::Types;
 
@@ -62,13 +61,13 @@ sub gtk_source_file_loader_get_type ()
   { * }
 
 sub gtk_source_file_loader_load_async (
-  GtkSourceFileLoader $loader, 
-  gint $io_priority, 
-  GCancellable $cancellable, 
-  &progress_callback (int64, int64, Pointer), 
-  gpointer $progress_callback_data, 
-  GDestroyNotify $progress_callback_notify, 
-  &async_callback (GObject, GAsyncResult, Pointer), 
+  GtkSourceFileLoader $loader,
+  gint $io_priority,
+  GCancellable $cancellable,
+  &progress_callback (int64, int64, Pointer),
+  gpointer $progress_callback_data,
+  GDestroyNotify $progress_callback_notify,
+  &async_callback (GObject, GAsyncResult, Pointer),
   gpointer $user_data
 )
   is native(sourceview)
@@ -76,8 +75,8 @@ sub gtk_source_file_loader_load_async (
   { * }
 
 sub gtk_source_file_loader_load_finish (
-  GtkSourceFileLoader $loader, 
-  GAsyncResult $result, 
+  GtkSourceFileLoader $loader,
+  GAsyncResult $result,
   CArray[Pointer[GError]] $error
 )
   returns uint32
@@ -86,7 +85,7 @@ sub gtk_source_file_loader_load_finish (
   { * }
 
 sub gtk_source_file_loader_new (
-  GtkSourceBuffer $buffer, 
+  GtkSourceBuffer $buffer,
   GtkSourceFile $file
 )
   returns GtkSourceFileLoader
@@ -95,8 +94,8 @@ sub gtk_source_file_loader_new (
   { * }
 
 sub gtk_source_file_loader_new_from_stream (
-  GtkSourceBuffer $buffer, 
-  GtkSourceFile $file, 
+  GtkSourceBuffer $buffer,
+  GtkSourceFile $file,
   GInputStream $stream
 )
   returns GtkSourceFileLoader
@@ -105,7 +104,7 @@ sub gtk_source_file_loader_new_from_stream (
   { * }
 
 sub gtk_source_file_loader_set_candidate_encodings (
-  GtkSourceFileLoader $loader, 
+  GtkSourceFileLoader $loader,
   GSList $candidate_encodings
 )
   is native(sourceview)

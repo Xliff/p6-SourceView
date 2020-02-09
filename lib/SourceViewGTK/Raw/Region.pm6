@@ -2,14 +2,12 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Region;
 
 sub gtk_source_region_add_region (
-  GtkSourceRegion $region, 
+  GtkSourceRegion $region,
   GtkSourceRegion $region_to_add
 )
   is native(sourceview)
@@ -17,8 +15,8 @@ sub gtk_source_region_add_region (
   { * }
 
 sub gtk_source_region_add_subregion (
-  GtkSourceRegion $region, 
-  GtkTextIter $start, 
+  GtkSourceRegion $region,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -26,8 +24,8 @@ sub gtk_source_region_add_subregion (
   { * }
 
 sub gtk_source_region_get_bounds (
-  GtkSourceRegion $region, 
-  GtkTextIter $start, 
+  GtkSourceRegion $region,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   returns uint32
@@ -42,7 +40,7 @@ sub gtk_source_region_get_buffer (GtkSourceRegion $region)
   { * }
 
 sub gtk_source_region_get_start_region_iter (
-  GtkSourceRegion $region, 
+  GtkSourceRegion $region,
   GtkSourceRegionIter $iter
 )
   is native(sourceview)
@@ -50,7 +48,7 @@ sub gtk_source_region_get_start_region_iter (
   { * }
 
 sub gtk_source_region_intersect_region (
-  GtkSourceRegion $region1, 
+  GtkSourceRegion $region1,
   GtkSourceRegion $region2
 )
   returns GtkSourceRegion
@@ -59,8 +57,8 @@ sub gtk_source_region_intersect_region (
   { * }
 
 sub gtk_source_region_intersect_subregion (
-  GtkSourceRegion $region, 
-  GtkTextIter $start, 
+  GtkSourceRegion $region,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   returns GtkSourceRegion
@@ -75,8 +73,8 @@ sub gtk_source_region_is_empty (GtkSourceRegion $region)
   { * }
 
 sub gtk_source_region_iter_get_subregion (
-  GtkSourceRegionIter $iter, 
-  GtkTextIter $start, 
+  GtkSourceRegionIter $iter,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   returns uint32
@@ -103,7 +101,7 @@ sub gtk_source_region_new (GtkTextBuffer $buffer)
   { * }
 
 sub gtk_source_region_subtract_region (
-  GtkSourceRegion $region, 
+  GtkSourceRegion $region,
   GtkSourceRegion $region_to_subtract
 )
   is native(sourceview)
@@ -111,8 +109,8 @@ sub gtk_source_region_subtract_region (
   { * }
 
 sub gtk_source_region_subtract_subregion (
-  GtkSourceRegion $region, 
-  GtkTextIter $start, 
+  GtkSourceRegion $region,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)

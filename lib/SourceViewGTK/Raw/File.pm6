@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::File;
@@ -67,9 +66,9 @@ sub gtk_source_file_new ()
   { * }
 
 sub gtk_source_file_set_mount_operation_factory (
-  GtkSourceFile $file, 
-  &callback (Pointer, Pointer --> GMountOperation), 
-  gpointer $user_data, 
+  GtkSourceFile $file,
+  &callback (Pointer, Pointer --> GMountOperation),
+  gpointer $user_data,
   GDestroyNotify $notify
 )
   is native(sourceview)

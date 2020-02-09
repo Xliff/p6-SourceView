@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::LanguageManager;
@@ -14,7 +13,7 @@ sub gtk_source_language_manager_get_default ()
   { * }
 
 sub gtk_source_language_manager_get_language (
-  GtkSourceLanguageManager $lm, 
+  GtkSourceLanguageManager $lm,
   Str $id
 )
   returns GtkSourceLanguage
@@ -29,8 +28,8 @@ sub gtk_source_language_manager_get_type ()
   { * }
 
 sub gtk_source_language_manager_guess_language (
-  GtkSourceLanguageManager $lm, 
-  Str $filename, 
+  GtkSourceLanguageManager $lm,
+  Str $filename,
   Str $content_type
 )
   returns GtkSourceLanguage
@@ -45,24 +44,24 @@ sub gtk_source_language_manager_new ()
   { * }
 
 sub gtk_source_language_manager_set_search_path (
-  GtkSourceLanguageManager $lm, 
+  GtkSourceLanguageManager $lm,
   CArray[Str] $dirs
 )
   is native(sourceview)
   is export
   { * }
-  
+
 sub gtk_source_language_manager_get_search_path (
   GtkSourceLanguageManager $lm
-) 
+)
   returns CArray[Str]
   is native(sourceview)
   is export
   { * }
-  
+
 sub gtk_source_language_manager_get_language_ids (
   GtkSourceLanguageManager $lm
-) 
+)
   returns CArray[Str]
   is native(sourceview)
   is export

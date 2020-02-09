@@ -2,15 +2,13 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::CompletionProvider;
 
 sub gtk_source_completion_provider_activate_proposal (
-  GtkSourceCompletionProvider $provider, 
-  GtkSourceCompletionProposal $proposal, 
+  GtkSourceCompletionProvider $provider,
+  GtkSourceCompletionProposal $proposal,
   GtkTextIter $iter
 )
   returns uint32
@@ -51,7 +49,7 @@ sub gtk_source_completion_provider_get_icon_name (
   { * }
 
 sub gtk_source_completion_provider_get_info_widget (
-  GtkSourceCompletionProvider $provider, 
+  GtkSourceCompletionProvider $provider,
   GtkSourceCompletionProposal $proposal
 )
   returns GtkWidget
@@ -84,9 +82,9 @@ sub gtk_source_completion_provider_get_priority (
   { * }
 
 sub gtk_source_completion_provider_get_start_iter (
-  GtkSourceCompletionProvider $provider, 
-  GtkSourceCompletionContext $context, 
-  GtkSourceCompletionProposal $proposal, 
+  GtkSourceCompletionProvider $provider,
+  GtkSourceCompletionContext $context,
+  GtkSourceCompletionProposal $proposal,
   GtkTextIter $iter
 )
   returns uint32
@@ -101,7 +99,7 @@ sub gtk_source_completion_provider_get_type ()
   { * }
 
 sub gtk_source_completion_provider_match (
-  GtkSourceCompletionProvider $provider, 
+  GtkSourceCompletionProvider $provider,
   GtkSourceCompletionContext $context
 )
   returns uint32
@@ -110,7 +108,7 @@ sub gtk_source_completion_provider_match (
   { * }
 
 sub gtk_source_completion_provider_populate (
-  GtkSourceCompletionProvider $provider, 
+  GtkSourceCompletionProvider $provider,
   GtkSourceCompletionContext $context
 )
   is native(sourceview)
@@ -118,8 +116,8 @@ sub gtk_source_completion_provider_populate (
   { * }
 
 sub gtk_source_completion_provider_update_info (
-  GtkSourceCompletionProvider $provider, 
-  GtkSourceCompletionProposal $proposal, 
+  GtkSourceCompletionProvider $provider,
+  GtkSourceCompletionProposal $proposal,
   GtkSourceCompletionInfo $info
 )
   is native(sourceview)

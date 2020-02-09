@@ -2,14 +2,13 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Gutter;
 
 sub gtk_source_gutter_get_renderer_at_pos (
-  GtkSourceGutter $gutter, 
-  gint $x, 
+  GtkSourceGutter $gutter,
+  gint $x,
   gint $y
 )
   returns GtkSourceGutterRenderer
@@ -36,8 +35,8 @@ sub gtk_source_gutter_get_window_type (GtkSourceGutter $gutter)
   { * }
 
 sub gtk_source_gutter_insert (
-  GtkSourceGutter $gutter, 
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutter $gutter,
+  GtkSourceGutterRenderer $renderer,
   gint $position
 )
   returns uint32
@@ -51,7 +50,7 @@ sub gtk_source_gutter_queue_draw (GtkSourceGutter $gutter)
   { * }
 
 sub gtk_source_gutter_remove (
-  GtkSourceGutter $gutter, 
+  GtkSourceGutter $gutter,
   GtkSourceGutterRenderer $renderer
 )
   is native(sourceview)
@@ -59,8 +58,8 @@ sub gtk_source_gutter_remove (
   { * }
 
 sub gtk_source_gutter_reorder (
-  GtkSourceGutter $gutter, 
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutter $gutter,
+  GtkSourceGutterRenderer $renderer,
   gint $position
 )
   is native(sourceview)

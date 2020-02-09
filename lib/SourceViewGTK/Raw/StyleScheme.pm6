@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::StyleScheme;
@@ -32,7 +31,7 @@ sub gtk_source_style_scheme_get_name (GtkSourceStyleScheme $scheme)
   { * }
 
 sub gtk_source_style_scheme_get_style (
-  GtkSourceStyleScheme $scheme, 
+  GtkSourceStyleScheme $scheme,
   Str $style_id
 )
   returns GtkSourceStyle
@@ -45,10 +44,9 @@ sub gtk_source_style_scheme_get_type ()
   is native(sourceview)
   is export
   { * }
-  
-sub gtk_source_style_scheme_get_authors (GtkSourceStyleScheme $scheme) 
+
+sub gtk_source_style_scheme_get_authors (GtkSourceStyleScheme $scheme)
   returns CArray[Str]
   is native(sourceview)
   is export
   { * }
- 
