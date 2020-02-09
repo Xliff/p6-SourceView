@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::GutterRendererPixbuf;
 
@@ -10,10 +9,10 @@ use SourceViewGTK::GutterRenderer;
 
 our subset SourceGutterRendererPixbufAncestry is export
   where GtkSourceGutterRendererPixbuf | GtkSourceGutterRenderer;
-  
+
 class SourceViewGTK::GutterRendererPixbuf is SourceViewGTK::GutterRenderer {
   has GtkSourceGutterRendererPixbuf $!sgrp;
-  
+
   submethod BUILD (:$renderer) {
     given $renderer {
       when SourceGutterRendererPixbufAncestry {
@@ -25,13 +24,13 @@ class SourceViewGTK::GutterRendererPixbuf is SourceViewGTK::GutterRenderer {
       }
     }
   }
-  
+
   method SourceViewGTK::Raw::Types::GtkSourceGutterRendererPixbuf { $!sgrp }
-  
+
   method new {
     self.bless( renderer => gtk_source_gutter_renderer_pixbuf_new() );
   }
-  
+
   # method gicon is rw {
   #   Proxy.new(
   #     FETCH => sub ($) {
@@ -66,9 +65,9 @@ class SourceViewGTK::GutterRendererPixbuf is SourceViewGTK::GutterRenderer {
       }
     );
   }
-  
+
   method get_type {
     gtk_source_gutter_renderer_pixbuf_get_type();
   }
-    
+
 }

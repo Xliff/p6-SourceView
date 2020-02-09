@@ -2,12 +2,10 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::GutterRenderer;
 
-use GTK::Compat::RGBA;
+use GDK::RGBA;
 use GLib::Value;
 
 use GTK::Roles::Properties;
@@ -118,7 +116,7 @@ class SourceViewGTK::GutterRenderer {
         $gv = GLib::Value.new(
           self.prop_get('background-rgba', $gv)
         );
-        nativecast(GTK::Compat::RGBA, $gv.object);
+        nativecast(GDK::RGBA, $gv.object);
       },
       STORE => -> $, GdkRGBA $val is copy {
         $gv.object = $val;

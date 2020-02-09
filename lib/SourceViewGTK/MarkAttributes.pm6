@@ -1,6 +1,6 @@
 use v6.c;
 
-use GTK::Compat::RGBA;
+use GDK::RGBA;
 
 
 
@@ -80,7 +80,7 @@ class SourceViewGTK::MarkAttributes {
   method background is rw {
     Proxy.new:
       FETCH => -> $, { 
-        my GTK::Compat::RGBA $c .= new;
+        my GDK::RGBA $c .= new;
         self.get_background($c);
         $c;
       },
