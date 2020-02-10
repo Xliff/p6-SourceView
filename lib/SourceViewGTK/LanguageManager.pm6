@@ -1,9 +1,7 @@
 use v6.c;
 
-use NativeCall;
-
 use Method::Also;
-
+use NativeCall;
 
 use SourceViewGTK::Raw::LanguageManager;
 use SourceViewGTK::Raw::Types;
@@ -22,11 +20,16 @@ class SourceViewGTK::LanguageManager {
   }
 
   method SourceViewGTK::Raw::Definitions::GtkSourceLanguageManager
-    is also<LanguageManager>
-    { $!slm }
+    is also<
+      LanguageManager
+      GtkSourceLanguageManager
+    >
+  { $!slm }
 
   method new {
-    self.bless( manager => gtk_source_language_manager_new() );
+    my $manager = gtk_source_language_manager_new();
+
+    $manager ?? self.bless(:$manager) !! Nil;
   }
 
   method get_default
@@ -35,35 +38,40 @@ class SourceViewGTK::LanguageManager {
       default
     >
   {
-    self.bless( manager => gtk_source_language_manager_get_default() );
+    my $manager = gtk_source_language_manager_get_default();
+
+    $manager ?? self.bless(:$manager) !! Nil;
   }
 
-  method get_language (Str() $id) is also<get-language> {
+  method get_language (Str() $id, :$raw = False) is also<get-language> {
     my $l = gtk_source_language_manager_get_language($!slm, $id);
-    $l.defined ?? SourceViewGTK::Language.new($l) !! Nil;
+
+    $l ??
+      ( $raw ?? $l !! SourceViewGTK::Language.new($l) )
+      !!
+      Nil;
   }
 
   method get_search_path is also<get-search-path> {
-    my CArray[Str] $sps = gtk_source_language_manager_get_search_path($!slm);
-    my @sps;
-    my $i = 0;
-    @sps[$i] = $sps[$i++] while $sps[$i];
-    @sps;
+    CStringArrayToArray( gtk_source_language_manager_get_search_path($!slm) )
   }
 
   method get_language_ids is also<get-language-ids> {
-    my CArray[Str] $lids = gtk_source_language_manager_get_language_ids($!slm);
-    my @lids;
-    my $i = 0;
-    @lids[$i] = $lids[$i++] while $lids[$i];
-    @lids;
+    CStringArrayToArray( gtk_source_language_manager_get_language_ids($!slm) );
   }
 
   method get_type is also<get-type> {
-    gtk_source_language_manager_get_type();
+    state ($n, $t);
+
+    unstable_get_type(
+      self.^name,
+      &gtk_source_language_manager_get_type,
+      $n,
+      $t
+    );
   }
 
-  method guess_language (Str() $filename, Str() $content_type)
+  method guess_language (Str() $filename, Str() $content_type, :$raw = False)
     is also<guess-language>
   {
     my $l = gtk_source_language_manager_guess_language(
@@ -71,7 +79,11 @@ class SourceViewGTK::LanguageManager {
       $filename,
       $content_type
     );
-    $l.defined ?? SourceViewGTK::Language.new($l) !! Nil;
+
+    $l ??
+      ( $raw ?? $l !! SourceViewGTK::Language.new($l) )
+      !!
+      Nil;
   }
 
   proto method set_search_path (|)
@@ -80,9 +92,8 @@ class SourceViewGTK::LanguageManager {
 
   multi method set_search_path(@dirs)  {
     die '@dirs must only contain Str objects' unless @dirs.all ~~ Str;
-    my $sp = CArray[Str].new;
-    $sp[$_] = @dirs[$_] for ^@dirs.elems;
-    samewith($sp);
+
+    samewith( ArrayToCArray(Str, @dirs) );
   }
   multi method set_search_path (CArray[Str] $dirs) {
     gtk_source_language_manager_set_search_path($!slm, $dirs);
