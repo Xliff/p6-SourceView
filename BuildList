@@ -1,4 +1,5 @@
 Cairo
+GDK::Pixbuf
 GDK::RGBA
 GDK::Raw::Definitions
 GDK::Raw::Enums
@@ -13,6 +14,7 @@ GIO::Raw::Exports
 GIO::Raw::Structs
 GIO::Raw::Subs
 GIO::Roles::GFile
+GIO::Roles::Icon
 GLib::GList
 GLib::GSList
 GLib::Raw::Definitions
@@ -25,8 +27,6 @@ GLib::Roles::Object
 GLib::Roles::Pointers
 GLib::Value
 GTK::Button
-GTK::Compat::Pixbuf
-GTK::Compat::RGBA
 GTK::Raw::Definitions
 GTK::Raw::Enums
 GTK::Raw::Exports
@@ -36,7 +36,6 @@ GTK::Raw::Structs
 GTK::Raw::Subs
 GTK::Raw::TextView
 GTK::Raw::Utils
-GTK::Roles::Properties
 GTK::Roles::Signals::Generic
 GTK::Roles::Types
 GTK::TextBuffer
