@@ -21,26 +21,44 @@ class SourceViewGTK::CompletionInfo is GTK::Window {
 
   submethod BUILD (:$info) {
     given $info {
-      when CompletionInfoAncestry {
-        self.setWindow( $!sci = $info );
+      when CompletionInfoAncestry        { self.setCompletionInfo($info) }
+      when SourceViewGTK::CompletionInfo { }
+      default                            { }
+    }
+  }
+
+  method setCompletionInfo (CompletionInfoAncestry $_) {
+    my $to-parent;
+    $!sci = do {
+      when GtkSourceCompletionInfo {
+        $to-parent = cast(GtkWindow, $_);
+        $_;
       }
-      when SourceViewGTK::CompletionInfo {
-      }
+
       default {
+        $to-parent = $_;
+        cast(GtkSourceCompletionInfo, $_);
       }
     }
+    self.setWindow($to-parent);
   }
 
   method SourceViewGTK::Raw::Definitions::GtkSourceCompletionInfo
     is also<SourceCompletionInfo>
-    { $!sci }
+  { $!sci }
 
-  multi method new (GtkSourceCompletionInfo $info) {
-    self.bless(:$info);
+  multi method new (GtkSourceCompletionInfo $info, :$ref = True) {
+    return Nil unless $info;
+
+    my $o = self.bless(:$info);
+    $o.ref if $ref;
+    $o;
   }
 
   multi method new {
-    self.bless( info => gtk_source_completion_info_new() );
+    my $info = gtk_source_completion_info_new();
+
+    $info ?? self.bless($info) !! Nil;
   }
 
   method get_type is also<get-type> {
