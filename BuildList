@@ -114,7 +114,6 @@ SourceViewGTK::CompletionInfo
 SourceViewGTK::CompletionItem
 SourceViewGTK::Encoding
 SourceViewGTK::File
-SourceViewGTK::FileLoader
 SourceViewGTK::GutterRenderer
 SourceViewGTK::GutterRenderer::Pixbuf
 SourceViewGTK::GutterRenderer::Text
@@ -127,6 +126,7 @@ SourceViewGTK::StyleChooserWidget
 SourceViewGTK::StyleSchemeChooserButton
 SourceViewGTK::StyleSchemeChooserWidget
 SourceViewGTK::Buffer
+SourceViewGTK::FileLoader
 SourceViewGTK::FileSaver
 SourceViewGTK::Gutter
 SourceViewGTK::PrintCompositor

@@ -3,18 +3,14 @@ use v6.c;
 use Method::Also;
 use NativeCall;
 
-
-
-use GTK::Raw::Utils;
-
-use GIO::InputStream;
-
-use GIO::Roles::GFile;
-
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::FileLoader;
 
+use GIO::InputStream;
+use SourceViewGTK::Buffer;
+
 use GLib::Roles::Object;
+use GIO::Roles::GFile;
 
 class SourceViewGTK::FileLoader {
   also does GLib::Roles::Object;
@@ -26,12 +22,16 @@ class SourceViewGTK::FileLoader {
   }
 
   method SourceViewGTK::Raw::Definitions::GtkSourceFileLoader
-    is also<FileLoader>
+    is also<
+      FileLoader
+      GtrkSourceFileLoader
+    >
   { $!sfl }
 
   method new (GtkSourceBuffer() $buffer, GtkSourceFile() $file) {
-    my $o = self.bless( loader => gtk_source_file_loader_new($buffer, $file) );
-    $o;
+    my $loader = gtk_source_file_loader_new($buffer, $file);
+
+    $loader ?? self.bless( :$loader ) !! Nil;
   }
 
   method new_from_stream (
@@ -41,26 +41,31 @@ class SourceViewGTK::FileLoader {
   )
     is also<new-from-stream>
   {
-    self.bless(
-      loader => gtk_source_file_loader_new_from_stream(
-        $buffer,
-        $file,
-        $stream
-      )
-    )
+    my $loader = gtk_source_file_loader_new_from_stream(
+      $buffer,
+      $file,
+      $stream
+    );
+
+    $loader ?? self.bless( :$loader ) !! Nil;
   }
 
   method error_quark is also<error-quark> {
     gtk_source_file_loader_error_quark();
   }
 
-  method get_buffer
+  method get_buffer (:$raw = False)
     is also<
       get-buffer
       buffer
     >
   {
-    gtk_source_file_loader_get_buffer($!sfl);
+    my $b = gtk_source_file_loader_get_buffer($!sfl);
+
+    $b ??
+      ( $raw ?? $b !! SourceViewGTK::Buffer.new($b) )
+      !!
+      Nil;
   }
 
   method get_compression_type
@@ -70,25 +75,37 @@ class SourceViewGTK::FileLoader {
       compression-type
     >
   {
-    gtk_source_file_loader_get_compression_type($!sfl);
+    GtkSourceCompressionTypeEnum(
+      gtk_source_file_loader_get_compression_type($!sfl)
+    );
   }
 
-  method get_encoding
+  method get_encoding (:$raw = False)
     is also<
       get-encoding
       encoding
     >
   {
-    gtk_source_file_loader_get_encoding($!sfl);
+    my $e = gtk_source_file_loader_get_encoding($!sfl);
+
+    $e ??
+      ( $raw ?? $e !! SourceViewGTK::Encoding.new($e) )
+      !!
+      Nil;
   }
 
-  method get_file
+  method get_file (:$raw = False)
     is also<
       get-file
       file
     >
   {
-    gtk_source_file_loader_get_file($!sfl);
+    my $f = gtk_source_file_loader_get_file($!sfl);
+
+    $f ??
+      ( $raw ?? $f !! SourceViewGTK::File.new($f) )
+      !!
+      Nil;
   }
 
   method get_input_stream (:$raw = False)
@@ -98,9 +115,12 @@ class SourceViewGTK::FileLoader {
       input-stream
     >
   {
-    my $rv = gtk_source_file_loader_get_input_stream($!sfl);
+    my $is = gtk_source_file_loader_get_input_stream($!sfl);
 
-    $raw ?? $rv !! GIO::InputStream.new($rv);
+    $is ??
+      ( $raw ?? $is !! GIO::InputStream.new($is) )
+      !!
+      Nil;
   }
 
   method get_location (:$raw = False)
@@ -111,7 +131,10 @@ class SourceViewGTK::FileLoader {
   {
     my $l = gtk_source_file_loader_get_location($!sfl);
 
-    $raw ?? $l !! GIO::Roles::GFile.new($l);
+    $l ??
+      ( $raw ?? $l !! GIO::Roles::GFile.new-file-obj($l) )
+      !!
+      Nil;
   }
 
   method get_newline_type
@@ -121,7 +144,7 @@ class SourceViewGTK::FileLoader {
       newline-type
     >
   {
-    gtk_source_file_loader_get_newline_type($!sfl);
+    GtkSourceNewlineTypeEnum( gtk_source_file_loader_get_newline_type($!sfl) );
   }
 
   method get_type is also<get-type> {
@@ -137,10 +160,10 @@ class SourceViewGTK::FileLoader {
   multi method load_async (
     Int() $io_priority,
     &callback,
-    &progress_callback = -> $, $, $ { },
-    gpointer $progress_callback_data = Pointer,
+    &progress_callback                       = Callable,
+    gpointer $progress_callback_data         = Pointer,
     GDestroyNotify $progress_callback_notify = Pointer,
-    gpointer $user_data = Pointer
+    gpointer $user_data                      = Pointer
   ) {
     samewith(
       $io_priority,
@@ -161,7 +184,7 @@ class SourceViewGTK::FileLoader {
     &callback,
     gpointer $user_data = Pointer
   ) {
-    my gint $ip = resolve-int($io_priority);
+    my gint $ip = $io_priority;
 
     gtk_source_file_loader_load_async(
       $!sfl,
@@ -175,27 +198,33 @@ class SourceViewGTK::FileLoader {
     );
   }
 
-  proto method load_finished (|)
-    is also<load-finished>
-  { * }
 
-  multi method load_finish (GAsyncResult $result) {
-    my $error = CArray[Pointer[GError]].new;
-
-    samewith($result, $error);
-  }
   multi method load_finish (
     GAsyncResult() $result,
-    CArray[Pointer[GError]] $error = gerror()
-  ) {
+    CArray[Pointer[GError]] $error = gerror
+  )
+    is also<load-finished>
+  {
     clear_error;
     gtk_source_file_loader_load_finish($!sfl, $result, $error);
     set_error($error);
   }
 
-  method set_candidate_encodings (GSList() $candidate_encodings)
+  proto method set_candidate_encodings (|)
     is also<set-candidate-encodings>
-  {
+  { * }
+
+  multi method set_candidate_encodings (@candidate_encodings) {
+    samewith( GLib::GSList.new(@candidate_encodings) );
+  }
+  multi method set_candidate_encodings ($candidate_encodings is copy) {
+    my $compatible = $candidate_encodings ~~ GSList;
+    my $coercible  = $candidate_encodings.^lookup('GSList');
+    die '$candidate_encodings must be a GSList-compatible object'
+      unless $compatible || $coercible;
+
+    $candidate_encodings .= GSList if $coercible;
+
     gtk_source_file_loader_set_candidate_encodings(
       $!sfl,
       $candidate_encodings
