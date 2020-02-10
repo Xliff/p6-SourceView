@@ -2,17 +2,15 @@ use v6.c;
 
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Signals::Generic;
 
 role SourceViewGTK::Roles::Signals::Buffer {
   also does GTK::Roles::Signals::Generic;
-  
+
   has %!signals-sb;
-  
+
   # GtkSourceBuffer, GtkTextIter, GtkSourceBracketMatchType, gpointer
   method connect-bracket-matched (
     $obj,
@@ -27,7 +25,7 @@ role SourceViewGTK::Roles::Signals::Buffer {
           CATCH {
             default { $s.quit($_) }
           }
-          
+
           $s.emit( [self, $gtir, $gsbmte, $ud ] );
         },
         Pointer, 0
@@ -51,7 +49,7 @@ role SourceViewGTK::Roles::Signals::Buffer {
         -> $, $gtir1, $gtir2, $ud {
           CATCH {
             default { $s.quit($_) }
-            
+
            $s.emit( [self, $gtir1, $gtir2, $ud] );
           }
         },
@@ -87,7 +85,7 @@ role SourceViewGTK::Roles::Signals::Buffer {
     %!signals-sb{$signal}[0].tap(&handler) with &handler;
     %!signals-sb{$signal}[0];
   }
-  
+
 }
 
 # GtkSourceBuffer, GtkTextIter, uint32 (GtkSourceBracketMatchType), gpointer

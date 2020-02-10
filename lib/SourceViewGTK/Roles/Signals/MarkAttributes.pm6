@@ -4,7 +4,7 @@ use NativeCall;
 
 
 
-use GTK::Raw::ReturnedValue;
+use GLib::Raw::ReturnedValue;
 use SourceViewGTK::Raw::Types;
 
 role SourceViewGTK::Roles::Signals::MarkAttributes {
