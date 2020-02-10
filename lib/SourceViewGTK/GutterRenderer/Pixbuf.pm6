@@ -5,6 +5,7 @@ use NativeCall;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::GutterRendererPixbuf;
 
+use GDK::Pixbuf;
 use SourceViewGTK::GutterRenderer;
 
 our subset SourceGutterRendererPixbufAncestry is export
@@ -56,7 +57,7 @@ class SourceViewGTK::GutterRendererPixbuf is SourceViewGTK::GutterRenderer {
   method pixbuf is rw {
     Proxy.new(
       FETCH => sub ($) {
-        GTK::Compat::Pixbuf.new(
+        GDK::Pixbuf.new(
           gtk_source_gutter_renderer_pixbuf_get_pixbuf($!sgrp)
         );
       },

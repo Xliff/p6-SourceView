@@ -1,12 +1,10 @@
 use v6.c;
 
-use GDK::RGBA;
-
-
-
 use SourceViewGTK::Raw::Types;
-
 use SourceViewGTK::Raw::MarkAttributes;
+
+use GDK::RGBA;
+use GDK::Pixbuf;
 
 use GLib::Roles::Object;
 use GTK::Roles::Types;
@@ -16,19 +14,19 @@ class SourceViewGTK::MarkAttributes {
   also does GLib::Roles::Object;
   also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::MarkAttributes;
-  
+
   has GtkSourceMarkAttributes $!sma;
-  
+
   submethod BUILD (:$attr) {
     $!sma = $attr;
   }
-  
+
   method SourceViewGTK::Raw::Definitions::GtkSourceMarkAttributes { $!sma }
-  
+
   method new {
     self.bless( attr => gtk_source_mark_attributes_new() );
   }
-  
+
   # Is originally:
   # GtkSourceMarkAttributes, GtkSourceMark, gpointer --> gchar
   method query-tooltip-markup {
@@ -40,7 +38,7 @@ class SourceViewGTK::MarkAttributes {
   method query-tooltip-text {
     self.connect-query-tooltip-text($!sma);
   }
-  
+
   # method gicon is rw {
   #   Proxy.new(
   #     FETCH => sub ($) {
@@ -66,7 +64,7 @@ class SourceViewGTK::MarkAttributes {
   method pixbuf is rw {
     Proxy.new(
       FETCH => sub ($) {
-        GTK::Compat::Pixbuf.new(
+        GDK::Pixbuf.new(
           gtk_source_mark_attributes_get_pixbuf($!sma)
         );
       },
@@ -75,11 +73,11 @@ class SourceViewGTK::MarkAttributes {
       }
     );
   }
-  
+
   # Wrapper attribute
   method background is rw {
     Proxy.new:
-      FETCH => -> $, { 
+      FETCH => -> $, {
         my GDK::RGBA $c .= new;
         self.get_background($c);
         $c;
@@ -88,7 +86,7 @@ class SourceViewGTK::MarkAttributes {
         self.set_background($c);
       }
   }
-  
+
   method get_background (GdkRGBA $background) {
     gtk_source_mark_attributes_get_background($!sma, $background);
   }
@@ -113,5 +111,5 @@ class SourceViewGTK::MarkAttributes {
   method set_background (GdkRGBA $background) {
     gtk_source_mark_attributes_set_background($!sma, $background);
   }
-  
+
 }

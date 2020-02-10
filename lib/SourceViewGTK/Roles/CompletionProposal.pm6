@@ -4,7 +4,7 @@ use v6.c;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionProposal;
 
-use GTK::Compat::Pixbuf;
+use GDK::Pixbuf;
 
 role SourceViewGTK::Roles::CompletionProposal {
   has GtkSourceCompletionProposal $!scp;
@@ -24,7 +24,7 @@ role SourceViewGTK::Roles::CompletionProposal {
   # }
 
   method get_icon {
-    GTK::Compat::Pixbuf.new( 
+    GDK::Pixbuf.new( 
       gtk_source_completion_proposal_get_icon($!scp)
     );
   }
