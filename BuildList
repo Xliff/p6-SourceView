@@ -36,7 +36,6 @@ GTK::Raw::Requisition
 GTK::Raw::Structs
 GTK::Raw::Subs
 GTK::Raw::TextView
-GTK::Raw::Utils
 GTK::Roles::Signals::Generic
 GTK::Roles::Types
 GTK::TextBuffer
