@@ -2,20 +2,15 @@ use v6.c;
 
 use Method::Also;
 
-
-
 use SourceViewGTK::Raw::Types;
-
 use SourceViewGTK::Raw::PrintCompositor;
-
-use GLib::Roles::Object;
-use GTK::Roles::Types;
 
 use SourceViewGTK::Buffer;
 
+use GLib::Roles::Object;
+
 class SourceViewGTK::PrintCompositor {
   also does GLib::Roles::Object;
-  also does GTK::Roles::Types;
 
   has GtkSourcePrintCompositor $!spc;
 
@@ -27,14 +22,20 @@ class SourceViewGTK::PrintCompositor {
     is also<SourcePrintCompositor>
   { $!spc }
 
-  method new (GtkSourceBuffer $buffer) {
-    self.bless( compositor => gtk_source_print_compositor_new($buffer) );
+
+  multi method new (GtkSourcePrintCompositor $compositor) {
+    $compositor ?? self.bless(:$compositor) !! Nil;
+  }
+  multi method new (GtkSourceBuffer() $buffer) {
+    my $compositor = gtk_source_print_compositor_new($buffer);
+
+    $compositor ?? self.bless(:$compositor) !! Nil;
   }
 
   method new_from_view (GtkSourceView() $view) is also<new-from-view> {
-    self.bless(
-      compositor =>gtk_source_print_compositor_new_from_view($view)
-    );
+    my $compositor = gtk_source_print_compositor_new_from_view($view);
+
+    $compositor ?? self.bless(:$compositor) !! Nil;
   }
 
   method body_font_name is rw is also<body-font-name> {
@@ -76,7 +77,8 @@ class SourceViewGTK::PrintCompositor {
         so gtk_source_print_compositor_get_highlight_syntax($!spc);
       },
       STORE => sub ($, Int() $highlight is copy) {
-        my gboolean $h = self.RESOLVE-BOOL($highlight);
+        my gboolean $h = $highlight.so.Int;
+
         gtk_source_print_compositor_set_highlight_syntax($!spc, $h);
       }
     );
@@ -102,7 +104,8 @@ class SourceViewGTK::PrintCompositor {
         so gtk_source_print_compositor_get_print_footer($!spc);
       },
       STORE => sub ($, Int() $print is copy) {
-        my gboolean $p = self.RESOLVE-BOOL($print);
+        my gboolean $p = $print.so.Int;
+
         gtk_source_print_compositor_set_print_footer($!spc, $p);
       }
     );
@@ -114,7 +117,8 @@ class SourceViewGTK::PrintCompositor {
         so gtk_source_print_compositor_get_print_header($!spc);
       },
       STORE => sub ($, Int() $print is copy) {
-        my gboolean $p = self.RESOLVE-BOOL($print);
+        my gboolean $p = $print.so.Int;
+
         gtk_source_print_compositor_set_print_header($!spc, $p);
       }
     );
@@ -126,7 +130,8 @@ class SourceViewGTK::PrintCompositor {
         gtk_source_print_compositor_get_print_line_numbers($!spc);
       },
       STORE => sub ($, Int() $interval is copy) {
-        my guint $i = self.RESOLVE-UINT($interval);
+        my guint $i = $interval;
+
         gtk_source_print_compositor_set_print_line_numbers($!spc, $i);
       }
     );
@@ -138,7 +143,8 @@ class SourceViewGTK::PrintCompositor {
         gtk_source_print_compositor_get_tab_width($!spc);
       },
       STORE => sub ($, Int() $width is copy) {
-        my guint $w = self.RESOLVE-UINT($width);
+        my guint $w = $width;
+
         gtk_source_print_compositor_set_tab_width($!spc, $w);
       }
     );
@@ -147,10 +153,11 @@ class SourceViewGTK::PrintCompositor {
   method wrap_mode is rw is also<wrap-mode> {
     Proxy.new(
       FETCH => sub ($) {
-        GtkWrapMode( gtk_source_print_compositor_get_wrap_mode($!spc) );
+        GtkWrapModeEnum( gtk_source_print_compositor_get_wrap_mode($!spc) );
       },
-      STORE => sub ($, $wrap_mode is copy) {
-        my gboolean $wm = self.RESOLVE-BOOL($wrap_mode);
+      STORE => sub ($, Int() $wrap_mode is copy) {
+        my GtkWrapMode $wm = $wrap_mode;
+
         gtk_source_print_compositor_set_wrap_mode($!spc, $wm);
       }
     );
@@ -159,28 +166,34 @@ class SourceViewGTK::PrintCompositor {
   method draw_page (GtkPrintContext() $context, Int() $page_nr)
     is also<draw-page>
   {
-    my gint $pnr = self.RESOLVE-INT($page_nr);
+    my gint $pnr = $page_nr;
+
     gtk_source_print_compositor_draw_page($!spc, $context, $page_nr);
   }
 
   method get_bottom_margin (Int() $unit) is also<get-bottom-margin> {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
+
     gtk_source_print_compositor_get_bottom_margin($!spc, $u);
   }
 
-  method get_buffer
+  method get_buffer (:$raw = False)
     is also<
       get-buffer
       buffer
     >
   {
-    SourceViewGTK::Buffer.new(
-      gtk_source_print_compositor_get_buffer($!spc)
-    );
+    my $b = gtk_source_print_compositor_get_buffer($!spc);
+
+    $b ??
+      ( $raw ?? $b !! SourceViewGTK::Buffer.new($b) )
+      !!
+      Nil;
   }
 
   method get_left_margin (Int() $unit) is also<get-left-margin> {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
+
     gtk_source_print_compositor_get_left_margin($!spc, $u);
   }
 
@@ -205,28 +218,38 @@ class SourceViewGTK::PrintCompositor {
   }
 
   method get_right_margin (Int() $unit) is also<get-right-margin> {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
+
     gtk_source_print_compositor_get_right_margin($!spc, $u);
   }
 
   method get_top_margin (Int() $unit) is also<get-top-margin> {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
+
     gtk_source_print_compositor_get_top_margin($!spc, $u);
   }
 
   method get_type is also<get-type> {
-    gtk_source_print_compositor_get_type();
+    state ($n, $t);
+
+    unstable_get_type(
+      self.^name,
+      &gtk_source_print_compositor_get_type,
+      $n,
+      $t
+    );
   }
 
   method paginate (GtkPrintContext() $context) {
-    gtk_source_print_compositor_paginate($!spc, $context);
+    so gtk_source_print_compositor_paginate($!spc, $context);
   }
 
   method set_bottom_margin (Num() $margin, Int() $unit)
     is also<set-bottom-margin>
   {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
     my gdouble $m = $margin;
+
     gtk_source_print_compositor_set_bottom_margin($!spc, $m, $u);
   }
 
@@ -238,7 +261,8 @@ class SourceViewGTK::PrintCompositor {
   )
     is also<set-footer-format>
   {
-    my gboolean $s = self.RESOLVE-BOOL($separator);
+    my gboolean $s = $separator.so.Int;
+
     gtk_source_print_compositor_set_footer_format(
       $!spc,
       $s,
@@ -256,7 +280,8 @@ class SourceViewGTK::PrintCompositor {
   )
     is also<set-header-format>
   {
-    my Int $s = self.RESOLVE-BOOL($separator);
+    my Int $s = $separator;
+
     gtk_source_print_compositor_set_header_format(
       $!spc,
       $s,
@@ -269,22 +294,25 @@ class SourceViewGTK::PrintCompositor {
   method set_left_margin (Num() $margin, Int() $unit)
     is also<set-left-margin>
   {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
     my gdouble $m = $margin;
+
     gtk_source_print_compositor_set_left_margin($!spc, $m, $u);
   }
 
   method set_right_margin (Num() $margin, Int() $unit)
     is also<set-right-margin>
   {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
     my gdouble $m = $margin;
+
     gtk_source_print_compositor_set_right_margin($!spc, $m, $u);
   }
 
   method set_top_margin (Num() $margin, Int() $unit) is also<set-top-margin> {
-    my guint $u = self.RESOLVE-UINT($unit);
+    my guint $u = $unit;
     my gdouble $m = $margin;
+
     gtk_source_print_compositor_set_top_margin($!spc, $m, $u);
   }
 
