@@ -1,22 +1,21 @@
 use v6.c;
 
-
-
 use SourceViewGTK::Raw::CompletionProvider;
 use SourceViewGTK::Raw::Types;
 
 role SourceViewGTK::Roles::CompletionProvider {
   has GtkSourceCompletionProvider $!scp;
-  
-  method SourceViewGTK::Raw::TYpes::GtkSourceCompletionProvider { $!scp }
-  
+
+  method SourceViewGTK::Raw::Types::GtkSourceCompletionProvider
+  { $!scp }
+
   method activate_proposal (
-    GtkSourceCompletionProposal() $proposal, 
+    GtkSourceCompletionProposal() $proposal,
     GtkTextIter() $iter
   ) {
     gtk_source_completion_provider_activate_proposal(
-      $!scp, 
-      $proposal, 
+      $!scp,
+      $proposal,
       $iter
     );
   }
@@ -24,7 +23,7 @@ role SourceViewGTK::Roles::CompletionProvider {
   method get_activation {
     gtk_source_completion_provider_get_activation($!scp);
   }
-  
+
   # method get_gicon {
   #   gtk_source_completion_provider_get_gicon($!scp);
   # }
@@ -54,14 +53,14 @@ role SourceViewGTK::Roles::CompletionProvider {
   }
 
   method get_start_iter (
-    GtkSourceCompletionContext() $context, 
-    GtkSourceCompletionProposal() $proposal, 
+    GtkSourceCompletionContext() $context,
+    GtkSourceCompletionProposal() $proposal,
     GtkTextIter() $iter
   ) {
     gtk_source_completion_provider_get_start_iter(
-      $!scp, 
-      $context, 
-      $proposal, 
+      $!scp,
+      $context,
+      $proposal,
       $iter
     );
   }
@@ -79,10 +78,10 @@ role SourceViewGTK::Roles::CompletionProvider {
   }
 
   method update_info (
-    GtkSourceCompletionProposal() $proposal, 
+    GtkSourceCompletionProposal() $proposal,
     GtkSourceCompletionInfo() $info
   ) {
     gtk_source_completion_provider_update_info($!scp, $proposal, $info);
   }
-  
+
 }

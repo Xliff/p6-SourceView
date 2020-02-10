@@ -8,12 +8,12 @@ use SourceViewGTK::Raw::GutterRenderer;
 use GDK::RGBA;
 use GLib::Value;
 
-use GTK::Roles::Properties;
+use GLib::Roles::Object;
 use GTK::Roles::Types;
 use SourceViewGTK::Roles::Signals::GutterRenderer;
 
 class SourceViewGTK::GutterRenderer {
-  also does GTK::Roles::Properties;
+  also does GLib::Roles::Object;
   also does GTK::Roles::Types;
   also does SourceViewGTK::Roles::Signals::GutterRenderer;
 

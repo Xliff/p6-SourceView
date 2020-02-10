@@ -9,15 +9,15 @@ use SourceViewGTK::Raw::Style;
 
 use GLib::Value;
 
-use GTK::Roles::Properties;
+use GLib::Roles::Object;
 
 class SourceViewGTK::Style {
-  also does GTK::Roles::Properties;
+  also does GLib::Roles::Object;
 
   has GtkSourceStyle $!ss;
 
   submethod BUILD (:$style) {
-    self!setObject($!ss = $style);          # GTK::Roles::Properties\
+    self!setObject($!ss = $style);          # GLib::Roles::Object\
   }
 
   method new (GtkSourceStyle $style) {

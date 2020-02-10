@@ -10,13 +10,13 @@ use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionContext;
 
 use GLib::Value;
-use GTK::Roles::Properties;
+use GLib::Roles::Object;
 use GTK::Roles::Types;
 
 use GTK::TextIter;
 
 class SourceViewGTK::CompletionContext {
-  also does GTK::Roles::Properties;
+  also does GLib::Roles::Object;
   also does GTK::Roles::Types;
 
   has GtkSourceCompletionContext $!scc;
