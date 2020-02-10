@@ -2,8 +2,6 @@ use v6.c;
 
 use Method::Also;
 
-use NativeCall;
-
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::GutterRenderer;
 

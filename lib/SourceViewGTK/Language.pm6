@@ -1,11 +1,8 @@
 use v6.c;
 
 use Method::Also;
-use NativeCall;
-
 
 use SourceViewGTK::Raw::Types;
-
 use SourceViewGTK::Raw::Language;
 
 use GLib::Roles::Object;
@@ -24,6 +21,8 @@ class SourceViewGTK::Language {
   { $!sl }
 
   method new (GtkSourceLanguage $language) {
+    return Nil unless $language;
+
     my $o = self.bless(:$language);
     #$o.upref;
     $o;
@@ -35,11 +34,7 @@ class SourceViewGTK::Language {
       globs
     >
   {
-    my CArray[Str] $g = gtk_source_language_get_globs($!sl);
-    my ($i, @g) = (0);
-    @g[$i] = $g[$i++] while $g[$i];
-    # g_strfreev($g);
-    @g;
+    CStringArrayToArray( gtk_source_language_get_globs($!sl) )
   }
 
   method get_hidden
@@ -48,7 +43,7 @@ class SourceViewGTK::Language {
       hidden
     >
   {
-    gtk_source_language_get_hidden($!sl);
+    so gtk_source_language_get_hidden($!sl);
   }
 
   method get_id
@@ -65,11 +60,7 @@ class SourceViewGTK::Language {
   }
 
   method get_mime_types is also<get-mime-types> {
-    my CArray[Str] $mt = gtk_source_language_get_mime_types($!sl);
-    my ($i, @mt) = (0);
-    @mt[$i] = $mt[$i++] while $mt[$i];
-    # g_strfreev($sids);
-    @mt;
+    CStringArrayToArray( gtk_source_language_get_mime_types($!sl) )
   }
 
   method get_name
@@ -101,11 +92,7 @@ class SourceViewGTK::Language {
       style-ids
     >
   {
-    my CArray[Str] $sids = gtk_source_language_get_style_ids($!sl);
-    my ($i, @ids) = (0);
-    @ids[$i] = $sids[$i++] while $sids[$i];
-    # g_strfreev($sids);
-    @ids;
+    CStringArrayToArray( gtk_source_language_get_style_ids($!sl) )
   }
 
   method get_style_name (Str() $style_id) {
@@ -114,6 +101,7 @@ class SourceViewGTK::Language {
 
   method get_type {
     state ($n, $t);
+
     unstable_get_type( self.^name, &gtk_source_language_get_type, $n, $t );
   }
 
