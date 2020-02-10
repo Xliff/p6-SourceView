@@ -23,7 +23,7 @@ class SourceViewGTK::PrintCompositor {
     self!setObject($!spc = $compositor);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourcePrintCompositor
+  method SourceViewGTK::Raw::Definitions::GtkSourcePrintCompositor
     is also<SourcePrintCompositor>
   { $!spc }
 

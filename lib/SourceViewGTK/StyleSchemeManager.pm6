@@ -14,7 +14,7 @@ class SourceViewGTK::StyleSchemeManager {
     $!sscm = $manager;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceStyleSchemeManager { $!sscm }
+  method SourceViewGTK::Raw::Definitions::GtkSourceStyleSchemeManager { $!sscm }
   
   method new {
     self.bless( manager => gtk_source_style_scheme_manager_new() );

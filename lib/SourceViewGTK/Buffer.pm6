@@ -46,7 +46,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     self.setTextBuffer($to-parent);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceBuffer
+  method SourceViewGTK::Raw::Definitions::GtkSourceBuffer
     is also<
       SourceBuffer
       GtkSourceBuffer

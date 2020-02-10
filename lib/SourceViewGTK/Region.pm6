@@ -18,7 +18,7 @@ class SourceViewGTK::Region {
     $!sr = $region;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceRegion
+  method SourceViewGTK::Raw::Definitions::GtkSourceRegion
     #is also<Region>
     { $!sr }
   
@@ -89,7 +89,7 @@ class SourceViewGTK::RegionIter {
     $!sri = $iter;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceRegionIter 
+  method SourceViewGTK::Raw::Definitions::GtkSourceRegionIter 
     #is also<RegionIter>
     { $!sri }
   

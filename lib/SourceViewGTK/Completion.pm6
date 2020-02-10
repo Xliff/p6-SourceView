@@ -26,7 +26,7 @@ class SourceViewGTK::Completion {
     self!setObject($!sc = $completion);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceCompletion
+  method SourceViewGTK::Raw::Definitions::GtkSourceCompletion
     is also<GtkSourceCompletion>
   { $!sc }
 

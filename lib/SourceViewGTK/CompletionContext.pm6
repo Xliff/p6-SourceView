@@ -21,7 +21,7 @@ class SourceViewGTK::CompletionContext {
     self!setObject($!scc = $context);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceViewCompletionContext
+  method SourceViewGTK::Raw::Definitions::GtkSourceViewCompletionContext
     is also<
       CompletionContext
       GtkSourceViewCompletionContext

@@ -36,7 +36,7 @@ class SourceViewGTK::GutterRenderer::Text {
     }
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceGutterRendererText 
+  method SourceViewGTK::Raw::Definitions::GtkSourceGutterRendererText 
    #is also<GutterRendererText>
    { $!sgrt }
   

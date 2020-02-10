@@ -25,7 +25,7 @@ class SourceViewGTK::Completion::Words {
     );
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionWords
+  method SourceViewGTK::Raw::Definitions::GtkSourceCompletionWords
     is also<GtkSourceCompletionWords>
   { $!scw }
 

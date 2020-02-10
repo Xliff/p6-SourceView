@@ -20,7 +20,7 @@ class SourceViewGTK::Gutter {
     self!setObject($!sg = $gutter); 
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceGutter { $!sg }
+  method SourceViewGTK::Raw::Definitions::GtkSourceGutter { $!sg }
   
   method get_renderer_at_pos (Int() $x, Int() $y) {
     my gint ($xx, $yy) = self.RESOLVE-INT($x, $y);

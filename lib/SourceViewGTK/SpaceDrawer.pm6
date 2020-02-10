@@ -25,7 +25,7 @@ class SourceViewGTK::SpaceDrawer {
     self.bless( drawer => gtk_source_space_drawer_new() );
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceSpaceDrawer { $!ssd }
+  method SourceViewGTK::Raw::Definitions::GtkSourceSpaceDrawer { $!ssd }
   
   method enable_matrix is rw {
     Proxy.new(

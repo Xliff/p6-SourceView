@@ -48,7 +48,7 @@ class SourceViewGTK::StyleSchemeChooserWidget is GTK::Widget {
     }
   }
   
-  method SourceViewGTK::Raw::Types::StyleSchemeChooserWidget 
+  method SourceViewGTK::Raw::Definitions::StyleSchemeChooserWidget 
     is also<SourceStyleSchemeChooserWidget>
   { $!sscw }
   

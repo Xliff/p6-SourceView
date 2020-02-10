@@ -9,7 +9,7 @@ use GTK::Compat::Pixbuf;
 role SourceViewGTK::Roles::CompletionProposal {
   has GtkSourceCompletionProposal $!scp;
   
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionProposal { $!scp }
+  method SourceViewGTK::Raw::Definitions::GtkSourceCompletionProposal { $!scp }
   
   method emit-changed {
     gtk_source_completion_proposal_changed($!scp);

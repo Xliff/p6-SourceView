@@ -18,7 +18,7 @@ class SourceViewGTK::Mark {
     self!setObject($!sm = $mark);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceMark
+  method SourceViewGTK::Raw::Definitions::GtkSourceMark
     is also<
       GtkSourceMark
       SourceMark

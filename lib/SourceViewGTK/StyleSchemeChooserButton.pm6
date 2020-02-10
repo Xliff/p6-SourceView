@@ -52,7 +52,7 @@ class SourceViewGTK::StyleSchemeChooserButton is GTK::Button {
     }
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceStyleSchemeChooserButton 
+  method SourceViewGTK::Raw::Definitions::GtkSourceStyleSchemeChooserButton 
     is also<StyleSchemeChooserButton>
   { $!sscb }
 

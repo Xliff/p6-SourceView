@@ -24,7 +24,7 @@ class SourceViewGTK::FileSaver {
     self!setObject($!sfs = $saver);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceFileSaver { $!sfs }
+  method SourceViewGTK::Raw::Definitions::GtkSourceFileSaver { $!sfs }
 
   method new (GtkSourceBuffer() $buffer, GtkSourceFile $file) {
     self.bless( saver => gtk_source_file_saver_new($buffer, $file) );

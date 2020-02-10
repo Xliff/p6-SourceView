@@ -23,7 +23,7 @@ class SourceViewGTK::MarkAttributes {
     $!sma = $attr;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceMarkAttributes { $!sma }
+  method SourceViewGTK::Raw::Definitions::GtkSourceMarkAttributes { $!sma }
   
   method new {
     self.bless( attr => gtk_source_mark_attributes_new() );

@@ -25,7 +25,7 @@ class SourceViewGTK::FileLoader {
     self!setObject($!sfl = $loader);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceFileLoader
+  method SourceViewGTK::Raw::Definitions::GtkSourceFileLoader
     is also<FileLoader>
   { $!sfl }
 

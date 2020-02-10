@@ -26,7 +26,7 @@ class SourceViewGTK::SearchContext {
     self!setObject($!ssc = $context);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceSearchContext
+  method SourceViewGTK::Raw::Definitions::GtkSourceSearchContext
     is also<GtkSourceSearchContext>
   { $!ssc }
 

@@ -21,7 +21,7 @@ class SourceViewGTK::File {
     self!setObject($!sf = $file);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceFile { $!sf }
+  method SourceViewGTK::Raw::Definitions::GtkSourceFile { $!sf }
 
   method new {
     self.bless( file => gtk_source_file_new() );

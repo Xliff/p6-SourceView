@@ -20,7 +20,7 @@ class SourceViewGTK::Encoding {
     $!se = $encoding;
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceEncoding
+  method SourceViewGTK::Raw::Definitions::GtkSourceEncoding
     is also<GtkSourceEncoding>
   { $!se }
 

@@ -21,7 +21,7 @@ class SourceViewGTK::LanguageManager {
     self!setObject($!slm = $manager);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceLanguageManager
+  method SourceViewGTK::Raw::Definitions::GtkSourceLanguageManager
     is also<LanguageManager>
     { $!slm }
 

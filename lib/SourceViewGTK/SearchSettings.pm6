@@ -17,7 +17,7 @@ class SourceViewGTK::SearchSettings {
     self!setObject($!sss = $settings);
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceSearchSettings { $!sss }
+  method SourceViewGTK::Raw::Definitions::GtkSourceSearchSettings { $!sss }
   
   multi method new (GtkSourceSearchSettings $settings) {
     self.bless(:$settings);

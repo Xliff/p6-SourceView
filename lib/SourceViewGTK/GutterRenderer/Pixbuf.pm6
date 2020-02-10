@@ -25,7 +25,7 @@ class SourceViewGTK::GutterRendererPixbuf is SourceViewGTK::GutterRenderer {
     }
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceGutterRendererPixbuf { $!sgrp }
+  method SourceViewGTK::Raw::Definitions::GtkSourceGutterRendererPixbuf { $!sgrp }
 
   method new {
     self.bless( renderer => gtk_source_gutter_renderer_pixbuf_new() );

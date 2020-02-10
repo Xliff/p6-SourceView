@@ -27,7 +27,7 @@ class SourceViewGTK::GutterRenderer {
     #self.disconnect-all($_) for %!signals-sgr;
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceGutterRenderer
+  method SourceViewGTK::Raw::Definitions::GtkSourceGutterRenderer
   #  is also<SourceGutterRenderer>
   { $!sgr }
 

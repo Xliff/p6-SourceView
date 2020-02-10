@@ -6,7 +6,7 @@ use SourceViewGTK::Raw::Types;
 role SourceViewGTK::Roles::CompletionProvider {
   has GtkSourceCompletionProvider $!scp;
 
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionProvider
+  method SourceViewGTK::Raw::Definitions::GtkSourceCompletionProvider
   { $!scp }
 
   method activate_proposal (

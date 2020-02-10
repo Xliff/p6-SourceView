@@ -19,7 +19,7 @@ class SourceViewGTK::Language {
     self!setObject($!sl = $language);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceLanguage
+  method SourceViewGTK::Raw::Definitions::GtkSourceLanguage
     is also<SourceLanguage>
   { $!sl }
 

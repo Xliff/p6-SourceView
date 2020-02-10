@@ -64,7 +64,7 @@ class SourceViewGTK::View is GTK::TextView {
     #self.disconnect-all($_) for %!signals-sv;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceView { $!sv }
+  method SourceViewGTK::Raw::Definitions::GtkSourceView { $!sv }
   
   multi method new (SourceViewAncestry $view) {
     my $o = self.bless(:$view);

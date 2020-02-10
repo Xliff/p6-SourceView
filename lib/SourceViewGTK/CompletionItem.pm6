@@ -25,7 +25,7 @@ class SourceViewGTK::CompletionItem {
     );
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionItem
+  method SourceViewGTK::Raw::Definitions::GtkSourceCompletionItem
     #is also<CompletionItem>
     { $!sci }
 

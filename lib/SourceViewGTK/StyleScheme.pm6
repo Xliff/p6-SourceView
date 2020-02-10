@@ -15,7 +15,7 @@ class SourceViewGTK::StyleScheme {
     $!ss = $scheme;
   }
   
-  method SourceViewGTK::Raw::Types::GtkSourceStyleScheme { $!ss }
+  method SourceViewGTK::Raw::Definitions::GtkSourceStyleScheme { $!ss }
   
   method get_authors 
     is also<
