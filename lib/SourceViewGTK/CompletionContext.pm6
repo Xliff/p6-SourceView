@@ -1,10 +1,6 @@
 use v6.c;
 
 use Method::Also;
-use NativeCall;
-
-
-
 
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionContext;
@@ -26,11 +22,14 @@ class SourceViewGTK::CompletionContext {
   }
 
   method SourceViewGTK::Raw::Types::GtkSourceViewCompletionContext
-    #is also<CompletionContext>
-    { $!scc }
+    is also<
+      CompletionContext
+      GtkSourceViewCompletionContext
+    >
+  { $!scc }
 
   method new (GtkSourceCompletionContext $context) {
-    self.bless(:$context);
+    $context ?? self.bless(:$context) !! Nil;
   }
 
     # Type: GtkSourceCompletionActivation
@@ -41,7 +40,7 @@ class SourceViewGTK::CompletionContext {
         $gv = GLib::Value.new(
           self.prop_get('activation', $gv)
         );
-        GtkSourceCompletionActivation( $gv.uint );
+        GtkSourceCompletionActivationEnum( $gv.uint );
       },
       STORE => -> $, Int() $val is copy {
         $gv.uint = $val;
@@ -51,16 +50,19 @@ class SourceViewGTK::CompletionContext {
   }
 
   # Type: GtkSourceCompletion
-  method completion is rw  {
+  method completion (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
       FETCH => -> $ {
         $gv = GLib::Value.new(
           self.prop_get('completion', $gv)
         );
-        ::('SourceViewGTK::Completion').new(
-          nativecast(GtkSourceCompletion, $gv.object)
-        )
+
+        return Nil unless $gv.object;
+
+        my $c = cast(GtkSourceCompletion, $gv.object)
+
+        $raw ?? $c !! ::('SourceViewGTK::Completion').new($c)
       },
       STORE => -> $, GtkSourceCompletion() $val is copy {
         $gv.object = $val;
@@ -70,14 +72,19 @@ class SourceViewGTK::CompletionContext {
   }
 
   # Type: GtkTextIter
-  method iter is rw  {
+  method iter (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
       FETCH => -> $ {
         $gv = GLib::Value.new(
           self.prop_get('iter', $gv)
         );
-        GTK::TextIter.new( nativecast(GtkTextIter, $gv.object) );
+
+        return Nil unless $gv.object;
+
+        my $i = cast(GtkTextIter, $gv.object);
+
+        $raw ?? $i !! GTK::TextIter.new($i);
       },
       STORE => -> $, GtkTextIter() $val is copy {
         $gv.object = $val;
@@ -88,7 +95,7 @@ class SourceViewGTK::CompletionContext {
 
   proto method add_proposals (|)
     is also<add-proposals>
-    { * }
+  { * }
 
   multi method add_proposals (
     GtkSourceCompletionProvider() $provider,
@@ -96,10 +103,12 @@ class SourceViewGTK::CompletionContext {
     Int() $finished
   ) {
     # List of GtkSourceCompletionItem
-    my $proposals = GLib::GList.new(@proposals);
+    die '@proposals must only contain GtkSourceCompletionItem'
+      unless @proposals.all ~~ GtkSourceCompletionItem;
+
     samewith(
       $provider,
-      $proposals,
+      GLib::GList.new(@proposals),
       $finished
     );
   }
@@ -108,7 +117,8 @@ class SourceViewGTK::CompletionContext {
     GList() $proposals,
     Int() $finished
   ) {
-    my gboolean $f = self.RESOLVE-BOOL($finished);
+    my gboolean $f = $finished.so.Int;
+
     gtk_source_completion_context_add_proposals(
       $!scc,
       $provider,
@@ -118,26 +128,62 @@ class SourceViewGTK::CompletionContext {
   }
 
   method get_activation is also<get-activation> {
-    GtkSourceCompletionActivation(
+    GtkSourceCompletionActivationEnum(
       gtk_source_completion_context_get_activation($!scc)
     );
   }
 
   proto method get_iter (|)
-     is also<get-iter>
-     { * }
+    is also<get-iter>
+  { * }
 
-  multi method get_iter {
-    my $iter = GtkTextIter.new;
-    my $rc = samewith($iter);
-    ($iter, $rc);
+  multi method get_iter (:$raw = False) {
+    my @r = samewith($, :all, :$raw);
+
+    @r[0] ?? @r[1] !! Nil;
   }
-  multi method get_iter (GtkTextIter() $iter) {
-    so gtk_source_completion_context_get_iter($!scc, $iter);
+  # cw: There is too much ambiguity here, and possibly across the entire
+  #     codebase. The original intent is for C users to be able to stick
+  #     in a NON-INITIALIZED value and get something useful out. Not
+  #     for them to have to self-initialze. So what's the best way to
+  #     handle things if they do?
+  #
+  #     In that case, the best thing to do is not to fuck with it.
+  #     Also, the current defaults below better serve the user.
+  #     *sigh* -- It's these type of situations where you want other
+  #     heads to bang against.
+  multi method get_iter ($iter is rw, :$all = True, :$raw = False) {
+    if (my $i = $iter) {
+      my ($compatible, $coercible);
+      $compatible = $i ~~ GtkTextIter;
+      $coercible  = $i.^lookup('GtkTextIter');
+
+      die '$iter must be GtkTextIter-compatible'
+        unless $compatible || $coercible;
+
+      $i .= GtkTextIter if $coercible;
+    } else {
+      $i = GtkTextIter.new;
+    }
+
+    my $rv = so gtk_source_completion_context_get_iter($!scc, $i);
+
+    $i = GTK::TextIter.new($i) unless $raw;
+
+    $iter = $i unless $iter;
+
+    $all.not ?? $rv !! ($rv, $i);
   }
 
   method get_type is also<get-type> {
-    gtk_source_completion_context_get_type();
+    state ($n, $t);
+
+    unstable_get_type(
+      self.^name,
+      &gtk_source_completion_context_get_type,
+      $n,
+      $t
+    );
   }
 
 }

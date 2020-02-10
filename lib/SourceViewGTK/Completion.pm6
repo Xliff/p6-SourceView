@@ -221,11 +221,14 @@ class SourceViewGTK::Completion {
 
   method add_provider (
     GtkSourceCompletionProvider() $provider,
-    CArray[Pointer[GError]] $error
+    CArray[Pointer[GError]] $error = gerror
   )
     is also<add-provider>
   {
-    so gtk_source_completion_add_provider($!sc, $provider, $error);
+    clear_error;
+    my $rv = so gtk_source_completion_add_provider($!sc, $provider, $error);
+    set_error($error);
+    $rv;s
   }
 
   method block_interactive is also<block-interactive> {
