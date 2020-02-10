@@ -4,11 +4,11 @@ use NativeCall;
 
 use SourceViewGTK::Raw::Types;
 
+use GLib::Roles::StaticClass;
+
 class SourceViewGTK::Utils {
-  method new {
-    die 'SourceViewGTK::Utils is not an instantiable class.';
-  }
-  
+  also does GLib::Roles::StaticClass;
+
   method escape_search_text (SourceViewGTK::Utils:U: Str() $text) {
     gtk_source_utils_escape_search_text($text);
   }

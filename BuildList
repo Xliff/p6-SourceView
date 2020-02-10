@@ -26,6 +26,7 @@ GLib::Raw::Subs
 GLib::Roles::ListData
 GLib::Roles::Object
 GLib::Roles::Pointers
+GLib::Roles::StaticClass
 GLib::Value
 GTK::Button
 GTK::Raw::Definitions
