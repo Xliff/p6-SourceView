@@ -1,16 +1,11 @@
 use v6.c;
 
+use Method::Also;
+
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
-
 use SourceViewGTK::Raw::Completion;
-
-use GTK::Roles::Properties;
-use GTK::Roles::Types;
-use SourceViewGTK::Roles::Signals::Completion;
 
 use GLib::GList;
 use GLib::Value;
@@ -18,22 +13,26 @@ use SourceViewGTK::CompletionContext;
 use SourceViewGTK::CompletionInfo;
 use SourceViewGTK::View;
 
+use GLib::Roles::Object;
+use SourceViewGTK::Roles::Signals::Completion;
+
 class SourceViewGTK::Completion {
-  also does GTK::Roles::Properties;
-  also does GTK::Roles::Types;
+  also does GLib::Roles::Object;
   also does SourceViewGTK::Roles::Signals::Completion;
-  
+
   has GtkSourceCompletion $!sc;
-  
+
   submethod BUILD (:$completion) {
-    self!setObject($!sc = $completion); 
+    self!setObject($!sc = $completion);
   }
-  
-  method SourceViewGTK::Raw::Types::GtkSourceCompletion { $!sc }
-  
+
+  method SourceViewGTK::Raw::Types::GtkSourceCompletion
+    is also<GtkSourceCompletion>
+  { $!sc }
+
   # Is originally:
   # GtkSourceCompletion, gpointer --> void
-  method activate-proposal {
+  method activate-proposal is also<activate_proposal> {
     self.connect($!sc, 'activate-proposal');
   }
 
@@ -45,19 +44,19 @@ class SourceViewGTK::Completion {
 
   # Is originally:
   # GtkSourceCompletion, GtkScrollStep, gint, gpointer --> void
-  method move-cursor {
+  method move-cursor is also<move_cursor> {
     self.connect-move-cursor($!sc);
   }
 
   # Is originally:
   # GtkSourceCompletion, GtkScrollStep, gint, gpointer --> void
-  method move-page {
+  method move-page is also<move_page> {
     self.connect-move-page($!sc);
   }
 
   # Is originally:
   # GtkSourceCompletion, GtkSourceCompletionContext, gpointer --> void
-  method populate-context {
+  method populate-context is also<populate_context> {
     self.connect-populate-context($!sc);
   }
 
@@ -66,7 +65,7 @@ class SourceViewGTK::Completion {
   method show {
     self.connect($!sc, 'show');
   }
-  
+
   # Type: guint
   method accelerators is rw  {
     my GLib::Value $gv .= new( G_TYPE_UINT );
@@ -85,7 +84,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: guint
-  method auto-complete-delay is rw  {
+  method auto-complete-delay is rw  is also<auto_complete_delay> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
@@ -102,7 +101,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: guint
-  method proposal-page-size is rw  {
+  method proposal-page-size is rw  is also<proposal_page_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
@@ -119,7 +118,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: guint
-  method provider-page-size is rw  {
+  method provider-page-size is rw  is also<provider_page_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
       FETCH => -> $ {
@@ -136,7 +135,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: gboolean
-  method remember-info-visibility is rw  {
+  method remember-info-visibility is rw  is also<remember_info_visibility> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
@@ -153,7 +152,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: gboolean
-  method select-on-show is rw  {
+  method select-on-show is rw  is also<select_on_show> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
@@ -170,7 +169,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: gboolean
-  method show-headers is rw  {
+  method show-headers is rw  is also<show_headers> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
@@ -187,7 +186,7 @@ class SourceViewGTK::Completion {
   }
 
   # Type: gboolean
-  method show-icons is rw  {
+  method show-icons is rw  is also<show_icons> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
       FETCH => -> $ {
@@ -219,66 +218,110 @@ class SourceViewGTK::Completion {
       }
     );
   }
-  
+
   method add_provider (
-    GtkSourceCompletionProvider() $provider, 
+    GtkSourceCompletionProvider() $provider,
     CArray[Pointer[GError]] $error
-  ) {
+  )
+    is also<add-provider>
+  {
     so gtk_source_completion_add_provider($!sc, $provider, $error);
   }
 
-  method block_interactive {
+  method block_interactive is also<block-interactive> {
     gtk_source_completion_block_interactive($!sc);
   }
 
-  method create_context (GtkTextIter() $position) {
-    SourceViewGTK::CompletionContext.new(
-      gtk_source_completion_create_context($!sc, $position)
-    );
+  method create_context (GtkTextIter() $position, :$raw = False)
+    is also<create-context>
+  {
+    my $cc = gtk_source_completion_create_context($!sc, $position);
+
+    $cc ??
+      ( $raw ?? $cc !! SourceViewGTK::CompletionContext.new($cc) )
+      !!
+      Nil;
   }
 
-  method error_quark {
+  method error_quark is also<error-quark> {
     gtk_source_completion_error_quark();
   }
 
-  method get_info_window {
-    SourceViewGTK::CompletionInfo.new( 
-      gtk_source_completion_get_info_window($!sc)
-    );
+  method get_info_window (:$raw = False) is also<get-info-window> {
+    my $ci = gtk_source_completion_get_info_window($!sc);
+
+    $ci ??
+      ( $raw ?? $ci !! SourceViewGTK::CompletionInfo.new($ci) )
+      !!
+      Nil;
   }
 
-  method get_providers {
-    GLib::GList.new( gtk_source_completion_get_providers($!sc) );
+  method get_providers (:$glist = False, :$raw = False)
+    is also<get-providers>
+  {
+    my $pl = gtk_source_completion_get_providers($!sc);
+
+    return Nil unless $pl;
+    return $pl if $glist;
+
+    $pl = GLib::GList.new($pl) but
+      GLib::Roles::ListData[GtkSourceCompletionProvider];
+
+    constant C = SourceViewGTK::Roles::CompletionProvider;
+    $raw ?? $pl.Array !! $pl.Array.map({ C.new-completionprovider-obj($_) });
   }
 
-  method get_type {
-    gtk_source_completion_get_type();
+  method get_type is also<get-type> {
+    state ($n, $t);
+
+    unstable_get_type( self.^name, &gtk_source_completion_get_type, $n, $t );
   }
 
-  method get_view {
-    SourceViewGTK::View.new( gtk_source_completion_get_view($!sc) );
+  method get_view (:$raw = False) is also<get-view> {
+    my $v = gtk_source_completion_get_view($!sc);
+
+    $v ??
+      ( $raw ?? $v !! SourceViewGTK::View.new($v) )
+      !!
+      Nil;
   }
 
   # Renamed to avoid conflict with the signal 'hide'
-  method hide-window {
+  method hide-window is also<hide_window> {
     gtk_source_completion_hide($!sc);
   }
 
   method remove_provider (
-    GtkSourceCompletionProvider() $provider, 
-    CArray[Pointer[GError]] $error
-  ) {
-    so gtk_source_completion_remove_provider($!sc, $provider, $error);
+    GtkSourceCompletionProvider() $provider,
+    CArray[Pointer[GError]] $error = gerror
+  )
+    is also<remove-provider>
+  {
+    clear_error;
+    my $rv = so gtk_source_completion_remove_provider($!sc, $provider, $error);
+    set_error($error);
+    $rv;
   }
 
-  method start (
-    GList() $providers, 
+  multi method start (@providers, $context) {
+    samewith( GLib::GList.new(@providers), $context );
+  }
+  multi method start (
+    $providers is copy,
     GtkSourceCompletionContext() $context
   ) {
+    my $compatible = $providers ~~ GList;
+    my $coercible  = $providers.^lookup('GList');
+
+    die '$providers must be GList-compatible!'
+      unless $compatible || $coercible;
+
+    $providers .= GList if $coercible;
+
     so gtk_source_completion_start($!sc, $providers, $context);
   }
 
-  method unblock_interactive {
+  method unblock_interactive is also<unblock-interactive> {
     gtk_source_completion_unblock_interactive($!sc);
   }
 
