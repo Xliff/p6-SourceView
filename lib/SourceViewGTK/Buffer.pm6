@@ -56,20 +56,20 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   proto method new (|) { * }
 
   multi method new (SourceBufferAncestry $source-buffer) {
-    $buffer ?? self.bless(:$source-buffer) !! Nil;
+    $source-buffer ?? self.bless(:$source-buffer) !! Nil;
   }
   multi method new (GtkTextTagTable() $table = GtkTextTagTable) {
     my $source-buffer = gtk_source_buffer_new($table);
 
-    $buffer ?? self.bless(:$source-buffer) !! Nil;
+    $source-buffer ?? self.bless(:$source-buffer) !! Nil;
   }
 
   method new_with_language (GtkSourceViewLanguage() $language)
     is also<new-with-language>
   {
-    my $source-buffer = gtk_source_buffer_new_withlanguage($language);
+    my $source-buffer = gtk_source_buffer_new_with_language($language);
 
-    $buffer ?? self.bless(:$source-buffer) !! Nil;
+    $source-buffer ?? self.bless(:$source-buffer) !! Nil;
   }
 
   # Is originally:
@@ -262,7 +262,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
       $prop_name,
       $pv,
       Str
-    )
+    );
 
     $t ??
       ( $raw ?? $t !! SourceViewGTK::Tag.new($t) )
@@ -407,7 +407,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   {
     my guint $f = $flags;
     my gint $c = $column;
-    
+
     gtk_source_buffer_sort_lines($!sb, $start, $end, $f, $c);
   }
 
