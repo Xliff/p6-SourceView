@@ -2,8 +2,6 @@ use v6.c;
 
 use Method::Also;
 
-
-
 use GLib::GSList;
 
 use SourceViewGTK::Raw::Types;
@@ -109,7 +107,8 @@ class SourceViewGTK::Encoding {
     return Nil unless $el;
     return $el if     $glist;
 
-    $el = GTK::Compat::GSList.new($el)
+    # Use GList instead of GSList, at this time.
+    $el = GTK::Compat::GList.new($el)
       but GLib::Roles::ListData[GtkSourceEncoding];
 
     $raw ?? $el.Array !! $el.Array.map({ SourceViewGTK::Encoding.new($el) });
