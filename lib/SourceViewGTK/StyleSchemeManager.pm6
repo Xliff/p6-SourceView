@@ -3,21 +3,35 @@ use v6.c;
 use Method::Also;
 use NativeCall;
 
-
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::StyleSchemeManager;
 
+use SourceViewGTK::StyleScheme;
+
 class SourceViewGTK::StyleSchemeManager {
   has GtkSourceStyleSchemeManager $!sscm;
-  
+
   submethod BUILD (:$manager) {
     $!sscm = $manager;
   }
-  
-  method SourceViewGTK::Raw::Definitions::GtkSourceStyleSchemeManager { $!sscm }
-  
-  method new {
-    self.bless( manager => gtk_source_style_scheme_manager_new() );
+
+  method SourceViewGTK::Raw::Definitions::GtkSourceStyleSchemeManager
+    is also<GtkSourceStyleSchemeManager>
+  { $!sscm }
+
+  multi method new (GtkSourceStyleSchemeManager $manager) {
+    $manager ?? self.bless($manager) !! Nil;
+  }
+  multi method new {
+    my $manager = gtk_source_style_scheme_manager_new();
+
+    $manager ?? self.bless($manager) !! Nil;
+  }
+
+  method get_default is also<get-default> {
+    my $manager = gtk_source_style_scheme_manager_get_default();
+
+    $manager ?? self.bless($manager) !! Nil;
   }
 
   method append_search_path (Str() $path) is also<append-search-path> {
@@ -28,49 +42,52 @@ class SourceViewGTK::StyleSchemeManager {
     gtk_source_style_scheme_manager_force_rescan($!sscm);
   }
 
-  method get_default is also<get-default> {
-    self.bless( manager => gtk_source_style_scheme_manager_get_default() );
+  method get_scheme (Str() $scheme_id, :$raw = False) is also<get-scheme> {
+    my $sc = gtk_source_style_scheme_manager_get_scheme($!sscm, $scheme_id);
+
+    $sc ??
+      ( $raw ?? $sc !! SourceViewGTK::StyleScheme.new($sc) )
+      !!
+      Nil;
   }
 
-  method get_scheme (Str() $scheme_id) is also<get-scheme> {
-    gtk_source_style_scheme_manager_get_scheme($!sscm, $scheme_id);
-  }
-  
   method get_scheme_ids is also<get-scheme-ids> {
-    my CArray[Str] $sids = gtk_source_style_scheme_manager_get_search_path(
-      $!sscm
+    CStringArrayToArray(
+      gtk_source_style_scheme_manager_get_search_path($!sscm)
     );
-    my ($i, @sids) = (0);
-    @sids[$i] = $sids[$i++] while $sids[$i];
-    @sids;
   }
-  
+
   method get_search_path is also<get-search-path> {
-    my CArray[Str] $sp = gtk_source_style_scheme_manager_get_search_path(
-      $!sscm
+    CStringArrayToArray(
+      gtk_source_style_scheme_manager_get_search_path(
+        $!sscm
+      )
     );
-    my ($i, @sp) = (0);
-    @sp[$i] = $sp[$i++] while $sp[$i];
-    @sp;
   }
 
   method get_type is also<get-type> {
-    gtk_source_style_scheme_manager_get_type();
+    state ($n, $t);
+
+    unstable_get_type(
+      self.^name,
+      &gtk_source_style_scheme_manager_get_type,
+      $n,
+      $t
+    );
   }
 
   method prepend_search_path (Str() $path) is also<prepend-search-path> {
     gtk_source_style_scheme_manager_prepend_search_path($!sscm, $path);
   }
 
-  proto method set_search_path(|) 
+  proto method set_search_path(|)
     is also<set-search-path>
-    { * }
-    
+  { * }
+
   multi method set_search_path(@path)  {
     die '@path must contain only strings.' unless @path.all ~~ Str;
-    my $p = CArray[Str].new;
-    $p[$_] = @path[$_] for ^@path.elems;
-    samewith($p);
+
+    samewith( ArrayToCArray(Str, @path) );
   }
   multi method set_search_path (CArray[Str] $path) {
     gtk_source_style_scheme_manager_set_search_path($!sscm, $path);

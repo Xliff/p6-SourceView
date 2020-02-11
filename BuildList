@@ -122,7 +122,6 @@ SourceViewGTK::LanguageManager
 SourceViewGTK::Mark
 SourceViewGTK::MarkAttributes
 SourceViewGTK::Roles::StyleSchemeChooser
-SourceViewGTK::StyleChooserWidget
 SourceViewGTK::StyleSchemeChooserButton
 SourceViewGTK::StyleSchemeChooserWidget
 SourceViewGTK::Buffer
