@@ -1,9 +1,5 @@
 use v6.c;
 
-use NativeCall;
-
-
-
 use SourceViewGTK::Raw::Types;
 
 use GLib::Value;
@@ -21,12 +17,13 @@ class SourceViewGTK::Tag is GTK::TextTag {
         my $to-parent;
         $!st = do {
           when GtkSourceTag {
-            $to-parent = nativecast(GtkTextTag, $_);
+            $to-parent = cast(GtkTextTag, $_);
             $_;
           }
+
           default {
             $to-parent = $_;
-            nativecast(GtkSourceTag, $_);
+            cast(GtkSourceTag, $_);
           }
         }
         self.setTextTag($to-parent);
@@ -39,10 +36,12 @@ class SourceViewGTK::Tag is GTK::TextTag {
   }
 
   multi method new (SourceTagAncestry $sourcetag) {
-    self.bless(:$sourcetag);
+    $sourcetag ?? self.bless(:$sourcetag) !! Nil;
   }
   multi method new (Str() $name) {
-    self.bless( sourcetag => gtk_source_tag_new($name) );
+    my $sourcetag = gtk_source_tag_new($name);
+
+    $sourcetag ?? self.bless(:$sourcetag) !! Nil;
   }
 
   # Type: gboolean
