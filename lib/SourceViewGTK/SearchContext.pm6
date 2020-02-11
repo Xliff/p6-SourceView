@@ -3,19 +3,15 @@ use v6.c;
 use Method::Also;
 use NativeCall;
 
-
-
 use SourceViewGTK::Raw::Types;
-
 use SourceViewGTK::Raw::SearchContext;
 
-use GLib::Roles::Object;
-use GTK::Roles::Types;
-
 use GTK::TextIter;
-
 use SourceViewGTK::Buffer;
 use SourceViewGTK::SearchSettings;
+use SourceViewGTK::Style;
+
+use GLib::Roles::Object;
 
 class SourceViewGTK::SearchContext {
   also does GLib::Roles::Object;
@@ -30,48 +26,62 @@ class SourceViewGTK::SearchContext {
     is also<GtkSourceSearchContext>
   { $!ssc }
 
-  method new (
+  multi method new (GtkSourceSearchContext $context) {
+    $context ?? self.bless( :$context ) !! Nil;
+  }
+  multi method new (
     GtkSourceBuffer() $buffer,
     GtkSourceSearchSettings() $settings
   ) {
-    self.bless(
-      context => gtk_source_search_context_new($buffer, $settings)
-    );
+    my $context = gtk_source_search_context_new($buffer, $settings);
+
+    $context ?? self.bless( :$context ) !! Nil;
   }
 
   method highlight is rw {
     Proxy.new(
       FETCH => sub ($) {
-        gtk_source_search_context_get_highlight($!ssc);
+        so gtk_source_search_context_get_highlight($!ssc);
       },
-      STORE => sub ($, $highlight is copy) {
-        gtk_source_search_context_set_highlight($!ssc, $highlight);
+      STORE => sub ($, Int() $highlight is copy) {
+        my gboolean $h = $highlight.so.Int;
+
+        gtk_source_search_context_set_highlight($!ssc, $h);
       }
     );
   }
 
-  method match_style is rw is also<match-style> {
+  method match_style (:$raw = False) is rw is also<match-style> {
     Proxy.new(
       FETCH => sub ($) {
-        gtk_source_search_context_get_match_style($!ssc);
+        my $s = gtk_source_search_context_get_match_style($!ssc);
+
+        $s ??
+          ( $raw ?? $s !! SourceViewGTK::Style.new($s) )
+          !!
+          Nil;
       },
-      STORE => sub ($, $match_style is copy) {
+      STORE => sub ($, GtkSourceStyle() $match_style is copy) {
         gtk_source_search_context_set_match_style($!ssc, $match_style);
       }
     );
   }
 
+  # This may best answer the question posed earlier in the refinement review
+  # process!
   multi method backward (
-    GtkTextIter() $iter
+    GtkTextIter() $iter,
+    :$raw = False
   ) {
     my ($start, $end, $hwa) = ( |(GtkTextIter.new xx 2), 0 );
-    samewith($iter, $start, $end, $hwa);
+    samewith($iter, $start, $end, $hwa, :$raw);
   }
   multi method backward (
     GtkTextIter() $iter,
     GtkTextIter() $match_start,
     GtkTextIter() $match_end,
-    $has_wrapped_around is rw
+    $has_wrapped_around is rw,
+    :$raw = False
   ) {
     my gboolean $hwa = 0;
     my $rc = gtk_source_search_context_backward(
@@ -84,8 +94,12 @@ class SourceViewGTK::SearchContext {
     $has_wrapped_around = so $hwa;
     $rc ??
       (
-        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $match_start.defined ?? ( $raw ?? $match_start !!
+                                          GTK::TextIter.new($match_start) ) !!
+                                Nil,
+        $match_end.defined   ?? ( $raw ?? $match_end   !!
+                                          GTK::TextIter.new($match_end) )   !!
+                                Nil,
         $has_wrapped_around
       )
       !!
@@ -99,7 +113,7 @@ class SourceViewGTK::SearchContext {
   multi method backward_async (
     GtkTextIter() $iter,
     &callback,
-    gpointer $user_data       = Pointer,
+    gpointer $user_data       = gpointer,
   ) {
     samewith($iter, GCancellable, &callback, $user_data);
   }
@@ -107,7 +121,7 @@ class SourceViewGTK::SearchContext {
     GtkTextIter() $iter,
     GCancellable() $cancellable,
     &callback,
-    gpointer $user_data
+    gpointer $user_data = gpointer
   ) {
     gtk_source_search_context_backward_async(
       $!ssc,
@@ -123,16 +137,17 @@ class SourceViewGTK::SearchContext {
     is also<backward-finish>
   { * }
 
-  multi method backward_finish (GAsyncResult $result) {
+  multi method backward_finish (GAsyncResult() $result, :$raw = False) {
     my ($start, $end, $wrapped) = ( |(GtkTextIter.new xx 2), 0 );
-    samewith($result, $start, $end, $wrapped);
+    samewith($result, $start, $end, $wrapped, :$raw);
   }
   multi method backward_finish (
     GAsyncResult $result,
     GtkTextIter() $match_start,
     GtkTextIter() $match_end,
     $has_wrapped_around is rw,
-    CArray[Pointer[GError]] $error = gerror()
+    CArray[Pointer[GError]] $error = gerror,
+    :$raw = False
   ) {
     clear_error;
     my guint $hwa = 0;
@@ -149,8 +164,12 @@ class SourceViewGTK::SearchContext {
     say "BF: $rc";
     $rc ??
       (
-        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $match_start.defined ?? ( $raw ?? $match_start !!
+                                          GTK::TextIter.new($match_start) ) !!
+                                Nil,
+        $match_end.defined   ?? ( $raw ?? $match_end   !!
+                                          GTK::TextIter.new($match_end) )   !!
+                                Nil,
         $has_wrapped_around
       )
       !!
@@ -158,16 +177,18 @@ class SourceViewGTK::SearchContext {
   }
 
   multi method forward (
-    GtkTextIter() $iter
+    GtkTextIter() $iter,
+    :$raw = False
   ) {
     my ($start, $end, $hwa) = ( |(GtkTextIter.new xx 2), 0 );
-    samewith($iter, $start, $end, $hwa);
+    samewith($iter, $start, $end, $hwa, :$raw);
   }
   multi method forward (
     GtkTextIter() $iter,
     GtkTextIter() $match_start,
     GtkTextIter() $match_end,
-    $has_wrapped_around is rw
+    $has_wrapped_around is rw,
+    :$raw = False
   ) {
     my gboolean $hwa = 0;
     my $rc = gtk_source_search_context_forward(
@@ -180,8 +201,12 @@ class SourceViewGTK::SearchContext {
     $has_wrapped_around = so $hwa;
     $rc ??
       (
-        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $match_start.defined ?? ( $raw ?? $match_start !!
+                                          GTK::TextIter.new($match_start) ) !!
+                                Nil,
+        $match_end.defined   ?? ( $raw ?? $match_end   !!
+                                          GTK::TextIter.new($match_end) )   !!
+                                Nil,
         $has_wrapped_around
       )
       !!
@@ -195,7 +220,7 @@ class SourceViewGTK::SearchContext {
   multi method forward_async(
     GtkTextIter() $iter,
     &callback,
-    gpointer $user_data       = Pointer
+    gpointer $user_data       = gpointer
   ) {
     samewith($iter, GCancellable, &callback, $user_data);
   }
@@ -219,17 +244,19 @@ class SourceViewGTK::SearchContext {
   { * }
 
   multi method forward_finish (
-    GAsyncResult $result
+    GAsyncResult() $result,
+    :$raw = False
   ) {
     my ($start, $end, $wrapped) = ( |(GtkTextIter.new xx 2), 0 );
-    samewith($result, $start, $end, $wrapped);
+    samewith($result, $start, $end, $wrapped, :$raw);
   }
   multi method forward_finish (
     GAsyncResult() $result,
     GtkTextIter() $match_start,
     GtkTextIter() $match_end,
     $has_wrapped_around is rw,
-    CArray[Pointer[GError]] $error = gerror()
+    CArray[Pointer[GError]] $error = gerror,
+    :$raw = False
   ) {
     my guint $hwa = 0;
     clear_error;
@@ -249,21 +276,30 @@ class SourceViewGTK::SearchContext {
 
     $rc ??
       (
-        $match_start.defined ?? GTK::TextIter.new($match_start) !! Nil,
-        $match_end.defined   ?? GTK::TextIter.new($match_end)   !! Nil,
+        $match_start.defined ?? ($raw ?? $match_start !!
+                                         GTK::TextIter.new($match_start) ) !!
+                                Nil,
+        $match_end.defined   ?? ($raw ?? $match_end   !!
+                                         GTK::TextIter.new($match_end) )   !!
+                                Nil,
         $has_wrapped_around
       )
       !!
       Nil;
   }
 
-  method get_buffer
+  method get_buffer (:$raw = False)
     is also<
       buffer
       get-buffer
     >
   {
-    SourceViewGTK::Buffer.new( gtk_source_search_context_get_buffer($!ssc) );
+    my $b = gtk_source_search_context_get_buffer($!ssc);
+
+    $b ??
+      ( $raw ?? $b !! SourceViewGTK::Buffer.new($b) )
+      !!
+      Nil;
   }
 
   method get_occurrence_position (
@@ -297,15 +333,18 @@ class SourceViewGTK::SearchContext {
     gtk_source_search_context_get_regex_error($!ssc);
   }
 
-  method get_settings
+  method get_settings (:$raw = False)
     is also<
       get-settings
       settings
     >
   {
-    SourceViewGTK::SearchSettings.new(
-      gtk_source_search_context_get_settings($!ssc)
-    );
+    my $s = gtk_source_search_context_get_settings($!ssc);
+
+    $s ??
+      ( $raw ?? $s !! SourceViewGTK::SearchSettings.new($s) )
+      !!
+      Nil;
   }
 
   method get_type is also<get-type> {
