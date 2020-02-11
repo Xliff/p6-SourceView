@@ -9,7 +9,10 @@ use SourceViewGTK::Raw::Types;
 use GLib::GSList;
 use GTK::TextBuffer;
 use SourceViewGTK::Language;
+use SourceViewGTK::Mark;
+use SourceViewGTK::StyleScheme;
 use SourceViewGTK::Tag;
+use SourceViewGTK::UndoManager;
 
 use GLib::Roles::ListData;
 use SourceViewGTK::Roles::Signals::Buffer;

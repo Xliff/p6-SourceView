@@ -8,6 +8,8 @@ use SourceViewGTK::Raw::FileLoader;
 
 use GIO::InputStream;
 use SourceViewGTK::Buffer;
+use SourceViewGTK::Encoding;
+use SourceViewGTK::File;
 
 use GLib::Roles::Object;
 use GIO::Roles::GFile;
