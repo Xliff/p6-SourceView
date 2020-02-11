@@ -60,7 +60,7 @@ class SourceViewGTK::CompletionContext {
 
         return Nil unless $gv.object;
 
-        my $c = cast(GtkSourceCompletion, $gv.object)
+        my $c = cast(GtkSourceCompletion, $gv.object);
 
         $raw ?? $c !! ::('SourceViewGTK::Completion').new($c)
       },

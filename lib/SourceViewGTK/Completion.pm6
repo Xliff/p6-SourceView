@@ -11,9 +11,9 @@ use GLib::GList;
 use GLib::Value;
 use SourceViewGTK::CompletionContext;
 use SourceViewGTK::CompletionInfo;
-use SourceViewGTK::View;
 
 use GLib::Roles::Object;
+use SourceViewGTK::Roles::CompletionProvider;
 use SourceViewGTK::Roles::Signals::Completion;
 
 class SourceViewGTK::Completion {
@@ -203,14 +203,19 @@ class SourceViewGTK::Completion {
   }
 
   # Type: GtkSourceView
-  method view is rw  {
+  method view (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
       FETCH => -> $ {
         $gv = GLib::Value.new(
           self.prop_get('view', $gv)
         );
-        SourceViewGTK::View.new( nativecast(GtkSourceView, $gv.object) );
+
+        return Nil unless $gv.object;
+
+        my $v = cast(GtkSourceView, $gv.object);
+
+        $raw ?? $v !! ::('SourceViewGTK::View').new($v);
       },
       STORE => -> $, GtkSourceView() $val is copy {
         $gv.object = $val;
@@ -228,7 +233,7 @@ class SourceViewGTK::Completion {
     clear_error;
     my $rv = so gtk_source_completion_add_provider($!sc, $provider, $error);
     set_error($error);
-    $rv;s
+    $rv;
   }
 
   method block_interactive is also<block-interactive> {
