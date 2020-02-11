@@ -125,11 +125,11 @@ SourceViewGTK::Roles::StyleSchemeChooser
 SourceViewGTK::StyleSchemeChooserButton
 SourceViewGTK::StyleSchemeChooserWidget
 SourceViewGTK::Buffer
+SourceViewGTK::Completion
 SourceViewGTK::FileLoader
 SourceViewGTK::FileSaver
 SourceViewGTK::Gutter
 SourceViewGTK::PrintCompositor
 SourceViewGTK::SearchContext
 SourceViewGTK::View
-SourceViewGTK::Completion
 SourceViewGTK::Map
