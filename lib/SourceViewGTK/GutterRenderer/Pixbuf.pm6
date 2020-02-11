@@ -1,6 +1,5 @@
 use v6.c;
 
-use NativeCall;
 use Method::Also;
 
 use SourceViewGTK::Raw::Types;
