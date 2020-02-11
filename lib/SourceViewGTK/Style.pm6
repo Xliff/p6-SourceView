@@ -1,10 +1,7 @@
 use v6.c;
 
 use Pango::Raw::Types;
-
-
 use SourceViewGTK::Raw::Types;
-
 use SourceViewGTK::Raw::Style;
 
 use GLib::Value;
@@ -202,7 +199,7 @@ class SourceViewGTK::Style {
         $gv = GLib::Value.new(
           self.prop_get('pango-underline', $gv)
         );
-        PangoUnderline( $gv.uint );
+        PangoUnderlineEnum( $gv.uint );
       },
       STORE => -> $, Int() $val is copy {
         $gv.uint = $val;
@@ -334,12 +331,19 @@ class SourceViewGTK::Style {
     gtk_source_style_apply($!ss, $tag);
   }
 
-  method copy {
-    gtk_source_style_copy($!ss);
+  method copy (:$raw = False) {
+    my $c = gtk_source_style_copy($!ss);
+
+    $c ??
+      ( $raw ?? $c !! SourceViewGTK::Style.new($c) )
+      !!
+      Nil;
   }
 
   method get_type {
-    gtk_source_style_get_type();
+    state ($n, $t);
+
+    unstable_get_type( self.^name, &gtk_source_style_get_type, $n, $t );
   }
 
 }
