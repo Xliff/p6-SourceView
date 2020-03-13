@@ -25,7 +25,7 @@ class SourceViewGTK::Style {
   method background is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('background', $gv)
         );
@@ -42,7 +42,7 @@ class SourceViewGTK::Style {
   method background-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('background-set', $gv)
         );
@@ -59,7 +59,7 @@ class SourceViewGTK::Style {
   method bold is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('bold', $gv)
         );
@@ -76,7 +76,7 @@ class SourceViewGTK::Style {
   method bold-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('bold-set', $gv)
         );
@@ -93,7 +93,7 @@ class SourceViewGTK::Style {
   method foreground is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('foreground', $gv)
         );
@@ -110,7 +110,7 @@ class SourceViewGTK::Style {
   method foreground-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('foreground-set', $gv)
         );
@@ -127,7 +127,7 @@ class SourceViewGTK::Style {
   method italic is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('italic', $gv)
         );
@@ -144,7 +144,7 @@ class SourceViewGTK::Style {
   method italic-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('italic-set', $gv)
         );
@@ -161,7 +161,7 @@ class SourceViewGTK::Style {
   method line-background is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('line-background', $gv)
         );
@@ -178,7 +178,7 @@ class SourceViewGTK::Style {
   method line-background-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('line-background-set', $gv)
         );
@@ -195,7 +195,7 @@ class SourceViewGTK::Style {
   method pango-underline is rw  {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('pango-underline', $gv)
         );
@@ -212,7 +212,7 @@ class SourceViewGTK::Style {
   method scale is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('scale', $gv)
         );
@@ -229,7 +229,7 @@ class SourceViewGTK::Style {
   method scale-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('scale-set', $gv)
         );
@@ -246,7 +246,7 @@ class SourceViewGTK::Style {
   method strikethrough is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('strikethrough', $gv)
         );
@@ -263,7 +263,7 @@ class SourceViewGTK::Style {
   method strikethrough-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('strikethrough-set', $gv)
         );
@@ -280,7 +280,7 @@ class SourceViewGTK::Style {
   method underline-color is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('underline-color', $gv)
         );
@@ -297,7 +297,7 @@ class SourceViewGTK::Style {
   method underline-color-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('underline-color-set', $gv)
         );
@@ -314,7 +314,7 @@ class SourceViewGTK::Style {
   method underline-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('underline-set', $gv)
         );

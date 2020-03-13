@@ -45,7 +45,7 @@ class SourceViewGTK::CompletionItem {
   # method gicon is rw  {
   #   my GLib::Value $gv .= new( -type- );
   #   Proxy.new(
-  #     FETCH => -> $ {
+  #     FETCH => sub ($) {
   #       $gv = GLib::Value.new(
   #         self.prop_get('gicon', $gv)
   #       );
@@ -74,7 +74,7 @@ class SourceViewGTK::CompletionItem {
   method gicon (:$raw = False) is rw  {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('gicon', $gv)
         );
@@ -97,7 +97,7 @@ class SourceViewGTK::CompletionItem {
   method icon (:$raw = False) is rw  {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('icon', $gv)
         );
@@ -120,7 +120,7 @@ class SourceViewGTK::CompletionItem {
   method icon-name is rw  is also<icon_name> {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('icon-name', $gv)
         );
@@ -138,7 +138,7 @@ class SourceViewGTK::CompletionItem {
   method info is rw  {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('info', $gv)
         );
@@ -156,7 +156,7 @@ class SourceViewGTK::CompletionItem {
   method label is rw  {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('label', $gv)
         );
@@ -174,7 +174,7 @@ class SourceViewGTK::CompletionItem {
   method markup is rw  {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('markup', $gv)
         );
@@ -192,7 +192,7 @@ class SourceViewGTK::CompletionItem {
   method text is rw  {
     my $gv;
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('text', $gv)
         );

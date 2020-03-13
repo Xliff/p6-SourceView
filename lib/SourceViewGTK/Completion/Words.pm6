@@ -41,7 +41,7 @@ class SourceViewGTK::Completion::Words {
   method activation is rw  {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('activation', $gv)
         );
@@ -58,7 +58,7 @@ class SourceViewGTK::Completion::Words {
   method icon (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('icon', $gv)
         );
@@ -80,7 +80,7 @@ class SourceViewGTK::Completion::Words {
   method interactive-delay is rw  is also<interactive_delay> {
     my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('interactive-delay', $gv)
         );
@@ -97,7 +97,7 @@ class SourceViewGTK::Completion::Words {
   method minimum-word-size is rw  is also<minimum_word_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('minimum-word-size', $gv)
         );
@@ -114,7 +114,7 @@ class SourceViewGTK::Completion::Words {
   method name is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('name', $gv)
         );
@@ -131,7 +131,7 @@ class SourceViewGTK::Completion::Words {
   method priority is rw  {
     my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('priority', $gv)
         );
@@ -148,7 +148,7 @@ class SourceViewGTK::Completion::Words {
   method proposals-batch-size is rw  is also<proposals_batch_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('proposals-batch-size', $gv)
         );
@@ -165,7 +165,7 @@ class SourceViewGTK::Completion::Words {
   method scan-batch-size is rw  is also<scan_batch_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('scan-batch-size', $gv)
         );

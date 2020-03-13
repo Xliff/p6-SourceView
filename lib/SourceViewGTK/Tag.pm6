@@ -48,7 +48,7 @@ class SourceViewGTK::Tag is GTK::TextTag {
   method draw-spaces is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('draw-spaces', $gv)
         );
@@ -65,7 +65,7 @@ class SourceViewGTK::Tag is GTK::TextTag {
   method draw-spaces-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('draw-spaces-set', $gv)
         );

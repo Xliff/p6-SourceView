@@ -87,7 +87,7 @@ class SourceViewGTK::MarkAttributes {
   # Wrapper attribute
   method background is rw {
     Proxy.new:
-      FETCH => -> $, {
+      FETCH => sub ($) {
         my $c = GDK::RGBA.new;
 
         self.get_background($c);

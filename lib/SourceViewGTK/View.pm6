@@ -175,7 +175,7 @@ class SourceViewGTK::View is GTK::TextView {
     is rw
   {
     Proxy.new:
-      FETCH => -> $ {
+      FETCH => sub ($) {
         my $b = gtk_text_view_get_buffer(self.GtkTextView);
 
         $b ??

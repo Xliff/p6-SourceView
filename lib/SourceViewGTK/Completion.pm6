@@ -70,7 +70,7 @@ class SourceViewGTK::Completion {
   method accelerators is rw  {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('accelerators', $gv)
         );
@@ -87,7 +87,7 @@ class SourceViewGTK::Completion {
   method auto-complete-delay is rw  is also<auto_complete_delay> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('auto-complete-delay', $gv)
         );
@@ -104,7 +104,7 @@ class SourceViewGTK::Completion {
   method proposal-page-size is rw  is also<proposal_page_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('proposal-page-size', $gv)
         );
@@ -121,7 +121,7 @@ class SourceViewGTK::Completion {
   method provider-page-size is rw  is also<provider_page_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('provider-page-size', $gv)
         );
@@ -138,7 +138,7 @@ class SourceViewGTK::Completion {
   method remember-info-visibility is rw  is also<remember_info_visibility> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('remember-info-visibility', $gv)
         );
@@ -155,7 +155,7 @@ class SourceViewGTK::Completion {
   method select-on-show is rw  is also<select_on_show> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('select-on-show', $gv)
         );
@@ -172,7 +172,7 @@ class SourceViewGTK::Completion {
   method show-headers is rw  is also<show_headers> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('show-headers', $gv)
         );
@@ -189,7 +189,7 @@ class SourceViewGTK::Completion {
   method show-icons is rw  is also<show_icons> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('show-icons', $gv)
         );
@@ -206,7 +206,7 @@ class SourceViewGTK::Completion {
   method view (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('view', $gv)
         );

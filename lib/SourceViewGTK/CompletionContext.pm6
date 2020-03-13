@@ -36,7 +36,7 @@ class SourceViewGTK::CompletionContext {
   method activation is rw  {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('activation', $gv)
         );
@@ -53,7 +53,7 @@ class SourceViewGTK::CompletionContext {
   method completion (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('completion', $gv)
         );
@@ -75,7 +75,7 @@ class SourceViewGTK::CompletionContext {
   method iter (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('iter', $gv)
         );

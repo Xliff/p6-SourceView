@@ -113,7 +113,7 @@ class SourceViewGTK::GutterRenderer {
   method background-rgba is rw  is also<background_rgba> {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('background-rgba', $gv)
         );
@@ -130,7 +130,7 @@ class SourceViewGTK::GutterRenderer {
   method background-set is rw  is also<background_set> {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('background-set', $gv)
         );
@@ -147,7 +147,7 @@ class SourceViewGTK::GutterRenderer {
   method window-type is rw  is also<window_type> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('window-type', $gv)
         );
@@ -163,7 +163,7 @@ class SourceViewGTK::GutterRenderer {
   method xalign is rw  {
     my GLib::Value $gv .= new( G_TYPE_FLOAT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('xalign', $gv)
         );
@@ -180,7 +180,7 @@ class SourceViewGTK::GutterRenderer {
   method xpad is rw  {
     my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('xpad', $gv)
         );
@@ -197,7 +197,7 @@ class SourceViewGTK::GutterRenderer {
   method yalign is rw  {
     my GLib::Value $gv .= new( G_TYPE_FLOAT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('yalign', $gv)
         );
@@ -214,7 +214,7 @@ class SourceViewGTK::GutterRenderer {
   method ypad is rw  {
     my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('ypad', $gv)
         );
