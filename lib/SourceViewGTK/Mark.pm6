@@ -2,8 +2,6 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::Mark;
 
@@ -18,18 +16,19 @@ class SourceViewGTK::Mark {
     self!setObject($!sm = $mark);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceMark
+  method SourceViewGTK::Raw::Definitions::GtkSourceMark
     is also<
       GtkSourceMark
       SourceMark
     >
   { $!sm }
 
-  multi method new (GtkSourceMark $mark) {
+  multi method new (GtkSourceMark $mark, :$ref = True) {
     return unless $mark;
 
     my $o = self.bless(:$mark);
-    $o.upref;
+    $o.ref if $ref;
+    $o;
   }
   multi method new (Str() $name, Str() $category) {
     my $m = gtk_source_mark_new($name, $category);

@@ -2,9 +2,9 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
-use GTK::Raw::ReturnedValue;
+
+
+use GLib::Raw::ReturnedValue;
 use SourceViewGTK::Raw::Types;
 
 role SourceViewGTK::Roles::Signals::MarkAttributes {

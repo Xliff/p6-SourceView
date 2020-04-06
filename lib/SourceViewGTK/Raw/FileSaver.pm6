@@ -2,8 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::FileSaver;
@@ -45,8 +43,8 @@ sub gtk_source_file_saver_new (GtkSourceBuffer $buffer, GtkSourceFile $file)
   { * }
 
 sub gtk_source_file_saver_new_with_target (
-  GtkSourceBuffer $buffer, 
-  GtkSourceFile $file, 
+  GtkSourceBuffer $buffer,
+  GtkSourceFile $file,
   GFile $target_location
 )
   returns GtkSourceFileSaver
@@ -55,13 +53,13 @@ sub gtk_source_file_saver_new_with_target (
   { * }
 
 sub gtk_source_file_saver_save_async (
-  GtkSourceFileSaver $saver, 
-  gint $io_priority, 
-  GCancellable $cancellable, 
-  &progress_callback (int64, int64, Pointer), 
-  gpointer $progress_callback_data, 
-  GDestroyNotify $progress_callback_notify, 
-  &async_callback (GObject, GAsyncResult, Pointer), 
+  GtkSourceFileSaver $saver,
+  gint $io_priority,
+  GCancellable $cancellable,
+  &progress_callback (int64, int64, Pointer),
+  gpointer $progress_callback_data,
+  GDestroyNotify $progress_callback_notify,
+  &async_callback (GObject, GAsyncResult, Pointer),
   gpointer $user_data
 )
   is native(sourceview)
@@ -69,8 +67,8 @@ sub gtk_source_file_saver_save_async (
   { * }
 
 sub gtk_source_file_saver_save_finish (
-  GtkSourceFileSaver $saver, 
-  GAsyncResult $result, 
+  GtkSourceFileSaver $saver,
+  GAsyncResult $result,
   CArray[Pointer[GError]] $error
 )
   returns uint32
@@ -103,7 +101,7 @@ sub gtk_source_file_saver_get_newline_type (GtkSourceFileSaver $saver)
   { * }
 
 sub gtk_source_file_saver_set_compression_type (
-  GtkSourceFileSaver $saver, 
+  GtkSourceFileSaver $saver,
   uint32 $compression_type        # GtkSourceCompressionType $compression_type
 )
   is native(sourceview)
@@ -111,7 +109,7 @@ sub gtk_source_file_saver_set_compression_type (
   { * }
 
 sub gtk_source_file_saver_set_encoding (
-  GtkSourceFileSaver $saver, 
+  GtkSourceFileSaver $saver,
   GtkSourceEncoding $encoding
 )
   is native(sourceview)
@@ -119,7 +117,7 @@ sub gtk_source_file_saver_set_encoding (
   { * }
 
 sub gtk_source_file_saver_set_flags (
-  GtkSourceFileSaver $saver, 
+  GtkSourceFileSaver $saver,
   uint32 $flags                   # GtkSourceFileSaverFlags $flags
 )
   is native(sourceview)
@@ -127,7 +125,7 @@ sub gtk_source_file_saver_set_flags (
   { * }
 
 sub gtk_source_file_saver_set_newline_type (
-  GtkSourceFileSaver $saver, 
+  GtkSourceFileSaver $saver,
   uint32 $newline_type            # GtkSourceNewlineType $newline_type
 )
   is native(sourceview)

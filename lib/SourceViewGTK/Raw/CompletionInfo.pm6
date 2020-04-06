@@ -2,8 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::CompletionInfo;
@@ -15,8 +13,8 @@ sub gtk_source_completion_info_get_type ()
   { * }
 
 sub gtk_source_completion_info_move_to_iter (
-  GtkSourceCompletionInfo $info, 
-  GtkTextView $view, 
+  GtkSourceCompletionInfo $info,
+  GtkTextView $view,
   GtkTextIter $iter
 )
   is native(sourceview)

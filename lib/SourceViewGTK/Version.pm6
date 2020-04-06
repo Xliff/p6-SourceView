@@ -1,27 +1,25 @@
 use v6.c;
 
-use GTK::Raw::Utils;
-
 use SourceViewGTK::Raw::Version;
 
-class SourceViewGTK::Version {
+use GLib::Roles::StaticClass;
 
-  method new {
-    die "SourceViewGTK::Version is not an instantiable class.";
-  }
-    
+class SourceViewGTK::Version {
+  also does GLib::Roles::StaticClass;
+
   method check_version (Int() $major, Int() $minor, Int() $micro) {
-    my uint32 ($mj, $mn, $mc) = self.RESOLVE-UINT($major, $minor, $micro);
+    my uint32 ($mj, $mn, $mc) = ($major, $minor, $micro);
+
     gtk_source_check_version($mj, $mn, $mc);
   }
-  
-  method Str { 
-    "v{ self.get_major_version }.{ self.get_minor_version }.{ 
+
+  method Str {
+    "v{ self.get_major_version }.{ self.get_minor_version }.{
         self.get_micro_version }";
   }
-  
+
   method Version {
-    Version.new(~self);
+    Version.new( SourceViewGTK::Version.Str );
   }
 
   method get_major_version (SourceViewGTK::Version:U:) {
@@ -35,5 +33,5 @@ class SourceViewGTK::Version {
   method get_minor_version (SourceViewGTK::Version:U:) {
     gtk_source_get_minor_version();
   }
-  
+
 }

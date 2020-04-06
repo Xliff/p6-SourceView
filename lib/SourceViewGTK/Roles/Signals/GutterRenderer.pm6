@@ -2,10 +2,10 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Raw::ReturnedValue;
+use GLib::Raw::ReturnedValue;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
+
+
 use SourceViewGTK::Raw::Types;
 
 use GTK::Roles::Signals::Generic;

@@ -1,158 +1,51 @@
 use v6.c;
 
-use GTK::Compat::Types;
+use NativeCall;
 
-use GTK::Roles::Pointers;
+use CompUnit::Util :re-export;
+use GLib::Raw::Exports;
+use Pango::Raw::Exports;
+use GIO::Raw::Exports;
+use GDK::Raw::Exports;
+use GTK::Raw::Exports;
+use SourceViewGTK::Raw::Exports;
 
 unit package SourceViewGTK::Raw::Types;
 
-# Number of times I've had to force compile the entire project
-our constant forced = 13;
+need Cairo;
+need GLib::Raw::Definitions;
+need GLib::Raw::Enums;
+need GLib::Raw::Structs;
+need GLib::Raw::Struct_Subs;
+need GLib::Raw::Subs;
+need Pango::Raw::Definitions;
+need Pango::Raw::Enums;
+need Pango::Raw::Structs;
+need Pango::Raw::Subs;
+need GIO::DBus::Raw::Types;
+need GIO::Raw::Definitions;
+need GIO::Raw::Enums;
+need GIO::Raw::Structs;
+need GIO::Raw::Subs;
+need GIO::Raw::Exports;
+need GDK::Raw::Definitions;
+need GDK::Raw::Enums;
+need GDK::Raw::Structs;
+need GDK::Raw::Subs;
+need GTK::Raw::Definitions;
+need GTK::Raw::Enums;
+need GTK::Raw::Structs;
+need GTK::Raw::Subs;
+need GTK::Raw::Requisition;
+need SourceViewGTK::Raw::Definitions;
+need SourceViewGTK::Raw::Enums;
 
-constant sourceview is export = 'gtksourceview-4',v0;
-
-class GtkSourceBuffer                             is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletion                         is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletionContext                  is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletionInfo                     is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletionItem                     is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletionProposal                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletionProvider                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceCompletionWords                    is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceEncoding                           is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceFile                               is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceFileLoader                         is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceFileSaver                          is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceGutter                             is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceGutterRenderer                     is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceGutterRendererPixbuf               is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceGutterRendererText                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceLanguage                           is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceLanguageManager                    is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceMap                                is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceMark                               is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceMarkAttributes                     is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourcePrintCompositor                    is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceRegion                             is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceRegionIter                         is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceSearchContext                      is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceSearchSettings                     is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceSpaceDrawer                        is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyle                              is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyleChooserWidget                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyleScheme                        is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyleSchemeChooser                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyleSchemeChooserButton           is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyleSchemeChooserWidget           is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceStyleSchemeManager                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceSyleSchemeChooserButton            is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceTag                                is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceUndoManager                        is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceView                               is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceViewCompletionContext              is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceViewCompletionInfo                 is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceViewLanguage                       is repr('CPointer') is export does GTK::Roles::Pointers { }
-class GtkSourceViewUndoManager                    is repr('CPointer') is export does GTK::Roles::Pointers { }
-
-our enum GtkSourceFileLoaderError is export <
-  GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG 
-  GTK_SOURCE_FILE_LOADER_ERROR_ENCODING_AUTO_DETECTION_FAILED 
-  GTK_SOURCE_FILE_LOADER_ERROR_CONVERSION_FALLBACK 
->;
-
-our enum GtkSourceCompressionType is export <
-  GTK_SOURCE_COMPRESSION_TYPE_NONE 
-  GTK_SOURCE_COMPRESSION_TYPE_GZIP 
->;
-
-our enum GtkSourceFileSaverFlags is export (
-  GTK_SOURCE_FILE_SAVER_FLAGS_NONE                     =>  0,
-  GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_INVALID_CHARS     =>  1 +< 0,
-  GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_MODIFICATION_TIME =>  1 +< 1,
-  GTK_SOURCE_FILE_SAVER_FLAGS_CREATE_BACKUP            =>  1 +< 2,
-);
-
-our enum GtkSourceBracketMatchType is export <
-  GTK_SOURCE_BRACKET_MATCH_NONE 
-  GTK_SOURCE_BRACKET_MATCH_OUT_OF_RANGE 
-  GTK_SOURCE_BRACKET_MATCH_NOT_FOUND 
-  GTK_SOURCE_BRACKET_MATCH_FOUND 
->;
-
-our enum GtkSourceFileSaverError is export <
-  GTK_SOURCE_FILE_SAVER_ERROR_INVALID_CHARS 
-  GTK_SOURCE_FILE_SAVER_ERROR_EXTERNALLY_MODIFIED 
->;
-
-our enum GtkSourceSortFlags is export (
-  GTK_SOURCE_SORT_FLAGS_NONE              =>  0,
-  GTK_SOURCE_SORT_FLAGS_CASE_SENSITIVE    =>  1 +< 0,
-  GTK_SOURCE_SORT_FLAGS_REVERSE_ORDER     =>  1 +< 1,
-  GTK_SOURCE_SORT_FLAGS_REMOVE_DUPLICATES =>  1 +< 2,
-);
-
-our enum GtkSourceGutterRendererState is export (
-  GTK_SOURCE_GUTTER_RENDERER_STATE_NORMAL   =>  0,
-  GTK_SOURCE_GUTTER_RENDERER_STATE_CURSOR   =>  1 +< 0,
-  GTK_SOURCE_GUTTER_RENDERER_STATE_PRELIT   =>  1 +< 1,
-  GTK_SOURCE_GUTTER_RENDERER_STATE_SELECTED =>  1 +< 2
-);
-
-our enum GtkSourceChangeCaseType is export <
-  GTK_SOURCE_CHANGE_CASE_LOWER 
-  GTK_SOURCE_CHANGE_CASE_UPPER 
-  GTK_SOURCE_CHANGE_CASE_TOGGLE 
-  GTK_SOURCE_CHANGE_CASE_TITLE 
->;
-
-our enum GtkSourceNewlineType is export <
-  GTK_SOURCE_NEWLINE_TYPE_LF 
-  GTK_SOURCE_NEWLINE_TYPE_CR 
-  GTK_SOURCE_NEWLINE_TYPE_CR_LF 
->;
-
-our enum GtkSourceSmartHomeEndType is export <
-  GTK_SOURCE_SMART_HOME_END_DISABLED 
-  GTK_SOURCE_SMART_HOME_END_BEFORE 
-  GTK_SOURCE_SMART_HOME_END_AFTER 
-  GTK_SOURCE_SMART_HOME_END_ALWAYS 
->;
-
-our enum GtkSourceGutterRendererAlignmentMode is export <
-  GTK_SOURCE_GUTTER_RENDERER_ALIGNMENT_MODE_CELL 
-  GTK_SOURCE_GUTTER_RENDERER_ALIGNMENT_MODE_FIRST 
-  GTK_SOURCE_GUTTER_RENDERER_ALIGNMENT_MODE_LAST 
->;
-
-our enum GtkSourceCompletionError is export (
-  GTK_SOURCE_COMPLETION_ERROR_ALREADY_BOUND =>  0,
-  'GTK_SOURCE_COMPLETION_ERROR_NOT_BOUND'
-);
-
-our enum GtkSourceCompletionActivation is export (
-  GTK_SOURCE_COMPLETION_ACTIVATION_NONE           =>  0,
-  GTK_SOURCE_COMPLETION_ACTIVATION_INTERACTIVE    =>  1 +< 0,
-  GTK_SOURCE_COMPLETION_ACTIVATION_USER_REQUESTED =>  1 +< 1,
-);
-
-our enum GtkSourceBackgroundPatternType is export <
-  GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE 
-  GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID 
->;
-
-our enum GtkSourceSpaceTypeFlags is export (
-  GTK_SOURCE_SPACE_TYPE_NONE      => 0,
-  GTK_SOURCE_SPACE_TYPE_SPACE     => 1,
-  GTK_SOURCE_SPACE_TYPE_TAB       => 1 +< 1,
-  GTK_SOURCE_SPACE_TYPE_NEWLINE   => 1 +< 2,
-  GTK_SOURCE_SPACE_TYPE_NBSP      => 1 +< 3,
-  GTK_SOURCE_SPACE_TYPE_ALL       => 0xf
-);
-
-our enum GtkSourceSpaceLocationFlags is export (
-  GTK_SOURCE_SPACE_LOCATION_NONE          => 0,
-  GTK_SOURCE_SPACE_LOCATION_LEADING       => 1,
-  GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT   => 1 +< 1,
-  GTK_SOURCE_SPACE_LOCATION_TRAILING      => 1 +< 2,
-  GTK_SOURCE_SPACE_LOCATION_ALL           => 0x7
-);
+BEGIN {
+  re-export($_) for
+    |@glib-exports,
+    |@pango-exports,
+    |@gio-exports,
+    |@gdk-exports,
+    |@gtk-exports,
+    |@sourceview-exports;
+}

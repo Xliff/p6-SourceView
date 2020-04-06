@@ -4,18 +4,16 @@ use NativeCall;
 
 use Cairo;
 
-use GTK::Compat::RGBA;
-use GTK::Compat::Types;
+use GDK::RGBA;
 
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::GutterRenderer;
 
 sub gtk_source_gutter_renderer_activate (
-  GtkSourceGutterRenderer $renderer, 
-  GtkTextIter $iter, 
-  GdkRectangle $area, 
+  GtkSourceGutterRenderer $renderer,
+  GtkTextIter $iter,
+  GdkRectangle $area,
   GdkEvent $event
 )
   is native(sourceview)
@@ -23,11 +21,11 @@ sub gtk_source_gutter_renderer_activate (
   { * }
 
 sub gtk_source_gutter_renderer_begin (
-  GtkSourceGutterRenderer $renderer, 
-  cairo_t $cr, 
-  GdkRectangle $background_area, 
-  GdkRectangle $cell_area, 
-  GtkTextIter $start, 
+  GtkSourceGutterRenderer $renderer,
+  cairo_t $cr,
+  GdkRectangle $background_area,
+  GdkRectangle $cell_area,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -35,12 +33,12 @@ sub gtk_source_gutter_renderer_begin (
   { * }
 
 sub gtk_source_gutter_renderer_draw (
-  GtkSourceGutterRenderer $renderer, 
-  cairo_t $cr, 
-  GdkRectangle $background_area, 
-  GdkRectangle $cell_area, 
-  GtkTextIter $start, 
-  GtkTextIter $end, 
+  GtkSourceGutterRenderer $renderer,
+  cairo_t $cr,
+  GdkRectangle $background_area,
+  GdkRectangle $cell_area,
+  GtkTextIter $start,
+  GtkTextIter $end,
   guint $state                    # GtkSourceGutterRendererState $state
 )
   is native(sourceview)
@@ -53,8 +51,8 @@ sub gtk_source_gutter_renderer_end (GtkSourceGutterRenderer $renderer)
   { * }
 
 sub gtk_source_gutter_renderer_get_alignment (
-  GtkSourceGutterRenderer $renderer, 
-  gfloat $xalign, 
+  GtkSourceGutterRenderer $renderer,
+  gfloat $xalign,
   gfloat $yalign
 )
   is native(sourceview)
@@ -62,7 +60,7 @@ sub gtk_source_gutter_renderer_get_alignment (
   { * }
 
 sub gtk_source_gutter_renderer_get_background (
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutterRenderer $renderer,
   GdkRGBA $color
 )
   returns uint32
@@ -71,8 +69,8 @@ sub gtk_source_gutter_renderer_get_background (
   { * }
 
 sub gtk_source_gutter_renderer_get_padding (
-  GtkSourceGutterRenderer $renderer, 
-  gint $xpad, 
+  GtkSourceGutterRenderer $renderer,
+  gint $xpad,
   gint $ypad
 )
   is native(sourceview)
@@ -98,9 +96,9 @@ sub gtk_source_gutter_renderer_get_window_type (GtkSourceGutterRenderer $rendere
   { * }
 
 sub gtk_source_gutter_renderer_query_activatable (
-  GtkSourceGutterRenderer $renderer, 
-  GtkTextIter $iter, 
-  GdkRectangle $area, 
+  GtkSourceGutterRenderer $renderer,
+  GtkTextIter $iter,
+  GdkRectangle $area,
   GdkEvent $event
 )
   returns uint32
@@ -109,9 +107,9 @@ sub gtk_source_gutter_renderer_query_activatable (
   { * }
 
 sub gtk_source_gutter_renderer_query_data (
-  GtkSourceGutterRenderer $renderer, 
-  GtkTextIter $start, 
-  GtkTextIter $end, 
+  GtkSourceGutterRenderer $renderer,
+  GtkTextIter $start,
+  GtkTextIter $end,
   uint32 $state                   # GtkSourceGutterRendererState $state
 )
   is native(sourceview)
@@ -119,11 +117,11 @@ sub gtk_source_gutter_renderer_query_data (
   { * }
 
 sub gtk_source_gutter_renderer_query_tooltip (
-  GtkSourceGutterRenderer $renderer, 
-  GtkTextIter $iter, 
-  GdkRectangle $area, 
-  gint $x, 
-  gint $y, 
+  GtkSourceGutterRenderer $renderer,
+  GtkTextIter $iter,
+  GdkRectangle $area,
+  gint $x,
+  gint $y,
   GtkTooltip $tooltip
 )
   returns uint32
@@ -137,8 +135,8 @@ sub gtk_source_gutter_renderer_queue_draw (GtkSourceGutterRenderer $renderer)
   { * }
 
 sub gtk_source_gutter_renderer_set_alignment (
-  GtkSourceGutterRenderer $renderer, 
-  gfloat $xalign, 
+  GtkSourceGutterRenderer $renderer,
+  gfloat $xalign,
   gfloat $yalign
 )
   is native(sourceview)
@@ -146,7 +144,7 @@ sub gtk_source_gutter_renderer_set_alignment (
   { * }
 
 sub gtk_source_gutter_renderer_set_background (
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutterRenderer $renderer,
   GdkRGBA $color
 )
   is native(sourceview)
@@ -154,8 +152,8 @@ sub gtk_source_gutter_renderer_set_background (
   { * }
 
 sub gtk_source_gutter_renderer_set_padding (
-  GtkSourceGutterRenderer $renderer, 
-  gint $xpad, 
+  GtkSourceGutterRenderer $renderer,
+  gint $xpad,
   gint $ypad
 )
   is native(sourceview)
@@ -183,7 +181,7 @@ sub gtk_source_gutter_renderer_get_visible (GtkSourceGutterRenderer $renderer)
   { * }
 
 sub gtk_source_gutter_renderer_set_alignment_mode (
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutterRenderer $renderer,
   uint32                          # GtkSourceGutterRendererAlignmentMode $mode
 )
   is native(sourceview)
@@ -191,7 +189,7 @@ sub gtk_source_gutter_renderer_set_alignment_mode (
   { * }
 
 sub gtk_source_gutter_renderer_set_size (
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutterRenderer $renderer,
   gint $size
 )
   is native(sourceview)
@@ -199,7 +197,7 @@ sub gtk_source_gutter_renderer_set_size (
   { * }
 
 sub gtk_source_gutter_renderer_set_visible (
-  GtkSourceGutterRenderer $renderer, 
+  GtkSourceGutterRenderer $renderer,
   gboolean $visible
 )
   is native(sourceview)

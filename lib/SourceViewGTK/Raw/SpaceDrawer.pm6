@@ -2,15 +2,14 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::SpaceDrawer;
 
 sub gtk_source_space_drawer_bind_matrix_setting (
-  GtkSourceSpaceDrawer $drawer, 
-  GSettings $settings, 
-  Str $key, 
+  GtkSourceSpaceDrawer $drawer,
+  GSettings $settings,
+  Str $key,
   uint32 $flags                   # GSettingsBindFlags $flags
 )
   is native(sourceview)
@@ -24,7 +23,7 @@ sub gtk_source_space_drawer_get_type ()
   { * }
 
 sub gtk_source_space_drawer_get_types_for_locations (
-  GtkSourceSpaceDrawer $drawer, 
+  GtkSourceSpaceDrawer $drawer,
   uint32 $flags                   # GtkSourceSpaceLocationFlags $locations
 )
   returns uint32 # GtkSourceSpaceTypeFlags
@@ -39,8 +38,8 @@ sub gtk_source_space_drawer_new ()
   { * }
 
 sub gtk_source_space_drawer_set_types_for_locations (
-  GtkSourceSpaceDrawer $drawer, 
-  uint32 $locations,              # GtkSourceSpaceLocationFlags $locations, 
+  GtkSourceSpaceDrawer $drawer,
+  uint32 $locations,              # GtkSourceSpaceLocationFlags $locations,
   uint32 $types                   # GtkSourceSpaceTypeFlags $types
 )
   is native(sourceview)
@@ -60,7 +59,7 @@ sub gtk_source_space_drawer_get_matrix (GtkSourceSpaceDrawer $drawer)
   { * }
 
 sub gtk_source_space_drawer_set_enable_matrix (
-  GtkSourceSpaceDrawer $drawer, 
+  GtkSourceSpaceDrawer $drawer,
   gboolean $enable_matrix
 )
   is native(sourceview)
@@ -68,7 +67,7 @@ sub gtk_source_space_drawer_set_enable_matrix (
   { * }
 
 sub gtk_source_space_drawer_set_matrix (
-  GtkSourceSpaceDrawer $drawer, 
+  GtkSourceSpaceDrawer $drawer,
   GVariant $matrix
 )
   is native(sourceview)

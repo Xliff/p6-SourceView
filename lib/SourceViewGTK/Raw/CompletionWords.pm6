@@ -2,8 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Completion::Words;
@@ -21,7 +19,7 @@ sub gtk_source_completion_words_new (Str $name, GdkPixbuf $icon)
   { * }
 
 sub gtk_source_completion_words_register (
-  GtkSourceCompletionWords $words, 
+  GtkSourceCompletionWords $words,
   GtkTextBuffer $buffer
 )
   is native(sourceview)
@@ -29,7 +27,7 @@ sub gtk_source_completion_words_register (
   { * }
 
 sub gtk_source_completion_words_unregister (
-  GtkSourceCompletionWords $words, 
+  GtkSourceCompletionWords $words,
   GtkTextBuffer $buffer
 )
   is native(sourceview)

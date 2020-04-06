@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::StyleSchemeChooser;
@@ -22,7 +21,7 @@ sub gtk_source_style_scheme_chooser_get_style_scheme (
   { * }
 
 sub gtk_source_style_scheme_chooser_set_style_scheme (
-  GtkSourceStyleSchemeChooser $chooser, 
+  GtkSourceStyleSchemeChooser $chooser,
   GtkSourceStyleScheme $scheme
 )
   is native(sourceview)

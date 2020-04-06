@@ -1,9 +1,5 @@
 use v6.c;
 
-use NativeCall;
-
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 use GLib::Value;
@@ -21,12 +17,13 @@ class SourceViewGTK::Tag is GTK::TextTag {
         my $to-parent;
         $!st = do {
           when GtkSourceTag {
-            $to-parent = nativecast(GtkTextTag, $_);
+            $to-parent = cast(GtkTextTag, $_);
             $_;
           }
+
           default {
             $to-parent = $_;
-            nativecast(GtkSourceTag, $_);
+            cast(GtkSourceTag, $_);
           }
         }
         self.setTextTag($to-parent);
@@ -39,17 +36,19 @@ class SourceViewGTK::Tag is GTK::TextTag {
   }
 
   multi method new (SourceTagAncestry $sourcetag) {
-    self.bless(:$sourcetag);
+    $sourcetag ?? self.bless(:$sourcetag) !! Nil;
   }
   multi method new (Str() $name) {
-    self.bless( sourcetag => gtk_source_tag_new($name) );
+    my $sourcetag = gtk_source_tag_new($name);
+
+    $sourcetag ?? self.bless(:$sourcetag) !! Nil;
   }
 
   # Type: gboolean
   method draw-spaces is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('draw-spaces', $gv)
         );
@@ -66,7 +65,7 @@ class SourceViewGTK::Tag is GTK::TextTag {
   method draw-spaces-set is rw  {
     my GLib::Value $gv .= new( G_TYPE_BOOLEAN );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('draw-spaces-set', $gv)
         );

@@ -2,15 +2,13 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::Completion;
 
 sub gtk_source_completion_add_provider (
-  GtkSourceCompletion $completion, 
-  GtkSourceCompletionProvider $provider, 
+  GtkSourceCompletion $completion,
+  GtkSourceCompletionProvider $provider,
   CArray[Pointer[GError]] $error
 )
   returns uint32
@@ -24,7 +22,7 @@ sub gtk_source_completion_block_interactive (GtkSourceCompletion $completion)
   { * }
 
 sub gtk_source_completion_create_context (
-  GtkSourceCompletion $completion, 
+  GtkSourceCompletion $completion,
   GtkTextIter $position
 )
   returns GtkSourceCompletionContext
@@ -68,8 +66,8 @@ sub gtk_source_completion_hide (GtkSourceCompletion $completion)
   { * }
 
 sub gtk_source_completion_remove_provider (
-  GtkSourceCompletion $completion, 
-  GtkSourceCompletionProvider $provider, 
+  GtkSourceCompletion $completion,
+  GtkSourceCompletionProvider $provider,
   CArray[Pointer[GError]] $error
 )
   returns uint32
@@ -78,8 +76,8 @@ sub gtk_source_completion_remove_provider (
   { * }
 
 sub gtk_source_completion_start (
-  GtkSourceCompletion $completion, 
-  GList $providers, 
+  GtkSourceCompletion $completion,
+  GList $providers,
   GtkSourceCompletionContext $context
 )
   returns uint32

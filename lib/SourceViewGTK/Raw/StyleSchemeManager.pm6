@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::SourceSchemeManager;
@@ -28,7 +27,7 @@ sub gtk_source_style_scheme_manager_get_default ()
   { * }
 
 sub gtk_source_style_scheme_manager_get_scheme (
-  GtkSourceStyleSchemeManager $manager, 
+  GtkSourceStyleSchemeManager $manager,
   Str $scheme_id
 )
   returns GtkSourceStyleScheme
@@ -49,7 +48,7 @@ sub gtk_source_style_scheme_manager_new ()
   { * }
 
 sub gtk_source_style_scheme_manager_prepend_search_path (
-  GtkSourceStyleSchemeManager $manager, 
+  GtkSourceStyleSchemeManager $manager,
   Str $path
 )
   is native(sourceview)
@@ -57,25 +56,25 @@ sub gtk_source_style_scheme_manager_prepend_search_path (
   { * }
 
 sub gtk_source_style_scheme_manager_set_search_path (
-  GtkSourceStyleSchemeManager $manager, 
+  GtkSourceStyleSchemeManager $manager,
   CArray[Str] $path
 )
   is native(sourceview)
   is export
   { * }
-  
+
 sub gtk_source_style_scheme_manager_get_search_path (
   GtkSourceStyleSchemeManager $manager
 )
-  returns CArray[Str]  
+  returns CArray[Str]
   is native(sourceview)
   is export
   { * }
-  
+
 sub gtk_source_style_scheme_manager_get_scheme_ids (
   GtkSourceStyleSchemeManager $manager
 )
-  returns CArray[Str]  
+  returns CArray[Str]
   is native(sourceview)
   is export
   { * }

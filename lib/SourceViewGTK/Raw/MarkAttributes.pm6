@@ -2,16 +2,14 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::RGBA;
+use GDK::RGBA;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::MarkAttributes;
 
 sub gtk_source_mark_attributes_get_background (
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceMarkAttributes $attributes,
   GdkRGBA $background
 )
   returns uint32
@@ -20,7 +18,7 @@ sub gtk_source_mark_attributes_get_background (
   { * }
 
 sub gtk_source_mark_attributes_get_tooltip_markup (
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceMarkAttributes $attributes,
   GtkSourceMark $mark
 )
   returns Str
@@ -29,7 +27,7 @@ sub gtk_source_mark_attributes_get_tooltip_markup (
   { * }
 
 sub gtk_source_mark_attributes_get_tooltip_text (
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceMarkAttributes $attributes,
   GtkSourceMark $mark
 )
   returns Str
@@ -50,8 +48,8 @@ sub gtk_source_mark_attributes_new ()
   { * }
 
 sub gtk_source_mark_attributes_render_icon (
-  GtkSourceMarkAttributes $attributes, 
-  GtkWidget $widget, 
+  GtkSourceMarkAttributes $attributes,
+  GtkWidget $widget,
   gint $size
 )
   returns GdkPixbuf
@@ -60,7 +58,7 @@ sub gtk_source_mark_attributes_render_icon (
   { * }
 
 sub gtk_source_mark_attributes_set_background (
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceMarkAttributes $attributes,
   GdkRGBA $background
 )
   is native(sourceview)
@@ -92,7 +90,7 @@ sub gtk_source_mark_attributes_get_pixbuf (
   { * }
 
 # sub gtk_source_mark_attributes_set_gicon (
-#   GtkSourceMarkAttributes $attributes, 
+#   GtkSourceMarkAttributes $attributes,
 #   GIcon $gicon
 # )
 #   is native(sourceview)
@@ -100,7 +98,7 @@ sub gtk_source_mark_attributes_get_pixbuf (
 #   { * }
 
 sub gtk_source_mark_attributes_set_icon_name (
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceMarkAttributes $attributes,
   Str $icon_name
 )
   is native(sourceview)
@@ -108,7 +106,7 @@ sub gtk_source_mark_attributes_set_icon_name (
   { * }
 
 sub gtk_source_mark_attributes_set_pixbuf (
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceMarkAttributes $attributes,
   GdkPixbuf $pixbuf
 )
   is native(sourceview)

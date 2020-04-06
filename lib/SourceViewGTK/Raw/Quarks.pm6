@@ -2,8 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-
 use SourceViewGTK::Raw::Completion;
 use SourceViewGTK::Raw::FileLoader;
 use SourceViewGTK::Raw::FileSaver;

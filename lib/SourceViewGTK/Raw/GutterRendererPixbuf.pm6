@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::GutterRendererPixbuf;
@@ -44,7 +43,7 @@ sub gtk_source_gutter_renderer_pixbuf_get_pixbuf (
   { * }
 
 # sub gtk_source_gutter_renderer_pixbuf_set_gicon (
-#   GtkSourceGutterRendererPixbuf $renderer, 
+#   GtkSourceGutterRendererPixbuf $renderer,
 #   GIcon $icon
 # )
 #   is native(sourceview)
@@ -52,7 +51,7 @@ sub gtk_source_gutter_renderer_pixbuf_get_pixbuf (
 #   { * }
 
 sub gtk_source_gutter_renderer_pixbuf_set_icon_name (
-  GtkSourceGutterRendererPixbuf $renderer, 
+  GtkSourceGutterRendererPixbuf $renderer,
   Str $icon_name
 )
   is native(sourceview)
@@ -60,7 +59,7 @@ sub gtk_source_gutter_renderer_pixbuf_set_icon_name (
   { * }
 
 sub gtk_source_gutter_renderer_pixbuf_set_pixbuf (
-  GtkSourceGutterRendererPixbuf $renderer, 
+  GtkSourceGutterRendererPixbuf $renderer,
   GdkPixbuf $pixbuf
 )
   is native(sourceview)

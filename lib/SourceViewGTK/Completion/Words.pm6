@@ -1,23 +1,21 @@
 use v6.c;
 
+use Method::Also;
 use NativeCall;
 
-use GTK::Compat::Types;
-
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::CompletionWords;
 
 use GLib::Value;
 
-use GTK::Roles::Properties;
+use GLib::Roles::Object;
 use SourceViewGTK::Roles::CompletionProvider;
 
 class SourceViewGTK::Completion::Words {
-  also does GTK::Roles::Properties;
+  also does GLib::Roles::Object;
   also does SourceViewGTK::Roles::CompletionProvider;
 
-  has GtkSourceCompletionWords $!scw;
+  has GtkSourceCompletionWords $!scw is implementor;
 
   submethod BUILD (:$words) {
     # SourceViewGTK::Roles::CompletionProvider
@@ -26,17 +24,24 @@ class SourceViewGTK::Completion::Words {
     );
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceCompletionWords { $!scw }
+  method SourceViewGTK::Raw::Definitions::GtkSourceCompletionWords
+    is also<GtkSourceCompletionWords>
+  { $!scw }
 
-  method new (GdkPixbuf() $icon) {
-    gtk_source_completion_words_new($icon);
+  multi method new (GtkSourceCompletionWords $words) {
+    $words ?? self.bless( :$words ) !! Nil;
+  }
+  multi method new (Str() $name, GdkPixbuf() $icon) {
+    my $words = gtk_source_completion_words_new($name, $icon);
+
+    $words ?? self.bless( :$words ) !! Nil;
   }
 
   # Type: uint32 (GtkSourceCompletionActivation)
   method activation is rw  {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('activation', $gv)
         );
@@ -50,27 +55,32 @@ class SourceViewGTK::Completion::Words {
   }
 
   # Type: GdkPixbuf
-  method icon is rw  {
+  method icon (:$raw = False) is rw  {
     my GLib::Value $gv .= new( G_TYPE_OBJECT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('icon', $gv)
         );
-        GTK::Compat::Pixbuf.new( $gv.object );
+        return Nil unless $gv.object;
+
+        my $i = cast(GdkPixbuf, $gv.object);
+
+        $raw ?? $i !! GDK::Pixbuf.new($i);
       },
-      STORE => -> $, GdkPixbuf $val is copy {
+      STORE => -> $, GdkPixbuf() $val is copy {
         $gv.object = $val;
+
         self.prop_set('icon', $gv);
       }
     );
   }
 
   # Type: gint
-  method interactive-delay is rw  {
+  method interactive-delay is rw  is also<interactive_delay> {
     my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('interactive-delay', $gv)
         );
@@ -84,10 +94,10 @@ class SourceViewGTK::Completion::Words {
   }
 
   # Type: guint
-  method minimum-word-size is rw  {
+  method minimum-word-size is rw  is also<minimum_word_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('minimum-word-size', $gv)
         );
@@ -104,7 +114,7 @@ class SourceViewGTK::Completion::Words {
   method name is rw  {
     my GLib::Value $gv .= new( G_TYPE_STRING );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('name', $gv)
         );
@@ -121,7 +131,7 @@ class SourceViewGTK::Completion::Words {
   method priority is rw  {
     my GLib::Value $gv .= new( G_TYPE_INT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('priority', $gv)
         );
@@ -135,10 +145,10 @@ class SourceViewGTK::Completion::Words {
   }
 
   # Type: guint
-  method proposals-batch-size is rw  {
+  method proposals-batch-size is rw  is also<proposals_batch_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('proposals-batch-size', $gv)
         );
@@ -152,10 +162,10 @@ class SourceViewGTK::Completion::Words {
   }
 
   # Type: guint
-  method scan-batch-size is rw  {
+  method scan-batch-size is rw  is also<scan_batch_size> {
     my GLib::Value $gv .= new( G_TYPE_UINT );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('scan-batch-size', $gv)
         );
@@ -168,8 +178,15 @@ class SourceViewGTK::Completion::Words {
     );
   }
 
-  method get_type {
-    gtk_source_completion_words_get_type();
+  method get_type is also<get-type> {
+    state ($n, $t);
+
+    unstable_get_type(
+      self.^name,
+      &gtk_source_completion_words_get_type,
+      $n,
+      $t
+    );
   }
 
   method register (GtkTextBuffer() $buffer) {

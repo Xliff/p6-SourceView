@@ -3,20 +3,18 @@ use v6.c;
 use Method::Also;
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Buffer;
 use SourceViewGTK::Raw::Types;
 
 use GLib::GSList;
-
 use GTK::TextBuffer;
-
 use SourceViewGTK::Language;
+use SourceViewGTK::Mark;
+use SourceViewGTK::StyleScheme;
 use SourceViewGTK::Tag;
+use SourceViewGTK::UndoManager;
 
 use GLib::Roles::ListData;
-use GTK::Roles::References;
 use SourceViewGTK::Roles::Signals::Buffer;
 
 our subset SourceBufferAncestry is export
@@ -29,13 +27,9 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
 
   submethod BUILD (:$source-buffer) {
     given $source-buffer {
-      when SourceBufferAncestry {
-        self.setSourceBuffer($source-buffer);
-      }
-      when SourceViewGTK::Buffer {
-      }
-      default {
-      }
+      when SourceBufferAncestry  { self.setSourceBuffer($source-buffer) }
+      when SourceViewGTK::Buffer { }
+      default                    { }
     }
   }
 
@@ -55,23 +49,30 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     self.setTextBuffer($to-parent);
   }
 
-  method SourceViewGTK::Raw::Types::GtkSourceBuffer
-    is also<SourceBuffer>
+  method SourceViewGTK::Raw::Definitions::GtkSourceBuffer
+    is also<
+      SourceBuffer
+      GtkSourceBuffer
+    >
   { $!sb }
 
   proto method new (|) { * }
 
-  multi method new (SourceBufferAncestry $buffer) {
-    self.bless(:$buffer);
+  multi method new (SourceBufferAncestry $source-buffer) {
+    $source-buffer ?? self.bless(:$source-buffer) !! Nil;
   }
   multi method new (GtkTextTagTable() $table = GtkTextTagTable) {
-    self.bless( source-buffer => gtk_source_buffer_new($table) );
+    my $source-buffer = gtk_source_buffer_new($table);
+
+    $source-buffer ?? self.bless(:$source-buffer) !! Nil;
   }
 
   method new_with_language (GtkSourceViewLanguage() $language)
     is also<new-with-language>
   {
-    gtk_source_buffer_new_with_language($language);
+    my $source-buffer = gtk_source_buffer_new_with_language($language);
+
+    $source-buffer ?? self.bless(:$source-buffer) !! Nil;
   }
 
   # Is originally:
@@ -112,7 +113,8 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         so gtk_source_buffer_get_highlight_matching_brackets($!sb);
       },
       STORE => sub ($, Int() $highlight is copy) {
-        my gboolean $h = $highlight;
+        my gboolean $h = $highlight.so.Int;
+
         gtk_source_buffer_set_highlight_matching_brackets($!sb, $h);
       }
     );
@@ -124,7 +126,8 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         so gtk_source_buffer_get_highlight_syntax($!sb);
       },
       STORE => sub ($, Int() $highlight is copy) {
-        my gboolean $h = $highlight;
+        my gboolean $h = $highlight.so.Int;
+
         gtk_source_buffer_set_highlight_syntax($!sb, $h);
       }
     );
@@ -136,16 +139,22 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         so gtk_source_buffer_get_implicit_trailing_newline($!sb);
       },
       STORE => sub ($, Int() $implicit_trailing_newline is copy) {
-        my gboolean $itn = $implicit_trailing_newline;
+        my gboolean $itn = $implicit_trailing_newline.so.Int;
+
         gtk_source_buffer_set_implicit_trailing_newline($!sb, $itn);
       }
     );
   }
 
-  method language is rw {
+  method language (:$raw = False) is rw {
     Proxy.new(
       FETCH => sub ($) {
-        SourceViewGTK::Language.new( gtk_source_buffer_get_language($!sb) );
+        my $l = gtk_source_buffer_get_language($!sb);
+
+        $l ??
+          ( $raw ?? $l !! SourceViewGTK::Language.new($l) )
+          !!
+          Nil;
       },
       STORE => sub ($, GtkSourceLanguage() $language is copy) {
         gtk_source_buffer_set_language($!sb, $language);
@@ -160,28 +169,39 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
       },
       STORE => sub ($, Int() $max_undo_levels is copy) {
         my gint $mul = $max_undo_levels;
+
         gtk_source_buffer_set_max_undo_levels($!sb, $mul);
       }
     );
   }
 
-  method style_scheme is rw is also<style-scheme> {
+  method style_scheme (:$raw = False) is rw is also<style-scheme> {
     Proxy.new(
       FETCH => sub ($) {
-        gtk_source_buffer_get_style_scheme($!sb);
+        my $ss = gtk_source_buffer_get_style_scheme($!sb);
+
+        $ss ??
+          ( $raw ?? $ss !! SourceViewGTK::StyleScheme.new($ss) )
+          !!
+          Nil;
       },
-      STORE => sub ($, $scheme is copy) {
+      STORE => sub ($, GtkSourceStyleScheme() $scheme is copy) {
         gtk_source_buffer_set_style_scheme($!sb, $scheme);
       }
     );
   }
 
-  method undo_manager is rw is also<undo-manager> {
+  method undo_manager (:$raw = False) is rw is also<undo-manager> {
     Proxy.new(
       FETCH => sub ($) {
-        GtkSourceStyleScheme( gtk_source_buffer_get_undo_manager($!sb) );
+        my $um = gtk_source_buffer_get_undo_manager($!sb);
+
+        $um ??
+          ( $raw ?? $um !! SourceViewGTK::UndoManager.new($um) )
+          !!
+          Nil;
       },
-      STORE => sub ($, GtkSourceViewUndoManager() $manager is copy) {
+      STORE => sub ($, GtkSourceUndoManager() $manager is copy) {
         gtk_source_buffer_set_undo_manager($!sb, $manager);
       }
     );
@@ -201,21 +221,23 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   }
 
   method can_redo is also<can-redo> {
-    gtk_source_buffer_can_redo($!sb);
+    so gtk_source_buffer_can_redo($!sb);
   }
 
   method can_undo is also<can-undo> {
-    gtk_source_buffer_can_undo($!sb);
+    so gtk_source_buffer_can_undo($!sb);
   }
 
   method change_case (
-    GtkSourceChangeCaseType $case_type,
+    Int() $case_type,
     GtkTextIter() $start,
     GtkTextIter() $end
   )
     is also<change-case>
   {
-    gtk_source_buffer_change_case($!sb, $case_type, $start, $end);
+    my GtkSourceChangeCaseType $c = $case_type;
+
+    gtk_source_buffer_change_case($!sb, $c, $start, $end);
   }
 
   method create_source_mark (
@@ -232,19 +254,23 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     Str() $tag_name,
     Str() $prop_name,
     Int() $prop_val,
+    :$raw = False
   )
     is also<create-source-tag>
   {
     my guint $pv = $prop_val;
-    SourceViewGTK::Tag.new(
-      gtk_source_buffer_create_source_tag(
-        $!sb,
-        $tag_name,
-        $prop_name,
-        $pv,
-        Str
-      )
+    my $t = gtk_source_buffer_create_source_tag(
+      $!sb,
+      $tag_name,
+      $prop_name,
+      $pv,
+      Str
     );
+
+    $t ??
+      ( $raw ?? $t !! SourceViewGTK::Tag.new($t) )
+      !!
+      Nil;
   }
 
   method end_not_undoable_action is also<end-not-undoable-action> {
@@ -260,23 +286,34 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   method forward_iter_to_source_mark (GtkTextIter() $iter, Str() $category)
     is also<forward-iter-to-source-mark>
   {
-    gtk_source_buffer_forward_iter_to_source_mark($!sb, $iter, $category);
+    so gtk_source_buffer_forward_iter_to_source_mark($!sb, $iter, $category);
   }
 
   method get_context_classes_at_iter (GtkTextIter() $iter)
     is also<get-context-classes-at-iter>
   {
-    my CArray[Str] $l =
-      gtk_source_buffer_get_context_classes_at_iter($!sb, $iter);
-    my ($i, @l) = ( 0 );
-    @l[$i] = $l[$i++] while $l[$i].defined;
-    @l;
+    CStringArrayToArray(
+      gtk_source_buffer_get_context_classes_at_iter($!sb, $iter)
+    );
   }
 
-  method get_source_marks_at_iter (GtkTextIter() $iter, Str() $category)
+  method get_source_marks_at_iter (
+    GtkTextIter() $iter,
+    Str() $category,
+    :$glist,
+    :$raw
+  )
     is also<get-source-marks-at-iter>
   {
-    gtk_source_buffer_get_source_marks_at_iter($!sb, $iter, $category);
+    my $sml =
+      gtk_source_buffer_get_source_marks_at_iter($!sb, $iter, $category);
+
+    return Nil unless $sml;
+    return $sml if $glist;
+
+    $sml = GLib::GList.new($sml) but GLib::Roles::ListData[GtkSourceMark];
+
+    $raw ?? $sml.Array !! $sml.Array.map({ SourceViewGTK::Mark.new($_) });
   }
 
   method get_source_marks_at_line (
@@ -293,7 +330,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     return Nil unless $ml;
     return $ml if     $glist;
 
-    $ml = GLib::GSList.new($ml) but GLib::Roles::ListData[GtkSourceMark];
+    $ml = GLib::GList.new($ml) but GLib::Roles::ListData[GtkSourceMark];
 
     $raw ?? $ml.Array !! $ml.Array.map({ SourceViewGTK::Mark.new($_) });
   }
@@ -310,7 +347,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   )
     is also<iter-backward-to-context-class-toggle>
   {
-    gtk_source_buffer_iter_backward_to_context_class_toggle(
+    so gtk_source_buffer_iter_backward_to_context_class_toggle(
       $!sb,
       $iter,
       $context_class
@@ -323,7 +360,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   )
     is also<iter-forward-to-context-class-toggle>
   {
-    gtk_source_buffer_iter_forward_to_context_class_toggle(
+    so gtk_source_buffer_iter_forward_to_context_class_toggle(
       $!sb,
       $iter,
       $context_class
@@ -336,7 +373,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   )
     is also<iter-has-context-class>
   {
-    gtk_source_buffer_iter_has_context_class(
+    so gtk_source_buffer_iter_has_context_class(
       $!sb,
       $iter,
       $context_class
@@ -373,6 +410,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
   {
     my guint $f = $flags;
     my gint $c = $column;
+
     gtk_source_buffer_sort_lines($!sb, $start, $end, $f, $c);
   }
 

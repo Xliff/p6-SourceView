@@ -2,8 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use SourceViewGTK::Raw::Types;
 
 unit package SourceViewGTK::Raw::View;
@@ -15,7 +13,7 @@ sub gtk_source_view_get_completion (GtkSourceView $view)
   { * }
 
 sub gtk_source_view_get_gutter (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   guint $window_type              # GtkTextWindowType $window_type
 )
   returns GtkSourceGutter
@@ -24,8 +22,8 @@ sub gtk_source_view_get_gutter (
   { * }
 
 sub gtk_source_view_get_mark_attributes (
-  GtkSourceView $view, 
-  gchar $category, 
+  GtkSourceView $view,
+  gchar $category,
   gint $priority
 )
   returns GtkSourceMarkAttributes
@@ -52,8 +50,8 @@ sub gtk_source_view_get_visual_column (GtkSourceView $view, GtkTextIter $iter)
   { * }
 
 sub gtk_source_view_indent_lines (
-  GtkSourceView $view, 
-  GtkTextIter $start, 
+  GtkSourceView $view,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -73,9 +71,9 @@ sub gtk_source_view_new_with_buffer (GtkSourceBuffer $buffer)
   { * }
 
 sub gtk_source_view_set_mark_attributes (
-  GtkSourceView $view, 
-  gchar $category, 
-  GtkSourceMarkAttributes $attributes, 
+  GtkSourceView $view,
+  gchar $category,
+  GtkSourceMarkAttributes $attributes,
   gint $priority
 )
   is native(sourceview)
@@ -83,8 +81,8 @@ sub gtk_source_view_set_mark_attributes (
   { * }
 
 sub gtk_source_view_unindent_lines (
-  GtkSourceView $view, 
-  GtkTextIter $start, 
+  GtkSourceView $view,
+  GtkTextIter $start,
   GtkTextIter $end
 )
   is native(sourceview)
@@ -175,7 +173,7 @@ sub gtk_source_view_set_auto_indent (GtkSourceView $view, gboolean $enable)
   { * }
 
 sub gtk_source_view_set_background_pattern (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   uint32 $background_pattern      # GtkSourceBackgroundPatternType
 )
   is native(sourceview)
@@ -183,7 +181,7 @@ sub gtk_source_view_set_background_pattern (
   { * }
 
 sub gtk_source_view_set_highlight_current_line (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   gboolean $highlight
 )
   is native(sourceview)
@@ -201,7 +199,7 @@ sub gtk_source_view_set_indent_width (GtkSourceView $view, gint $width)
   { * }
 
 sub gtk_source_view_set_insert_spaces_instead_of_tabs (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   gboolean $enable
 )
   is native(sourceview)
@@ -209,7 +207,7 @@ sub gtk_source_view_set_insert_spaces_instead_of_tabs (
   { * }
 
 sub gtk_source_view_set_right_margin_position (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   guint $pos
 )
   is native(sourceview)
@@ -222,7 +220,7 @@ sub gtk_source_view_set_show_line_marks (GtkSourceView $view, gboolean $show)
   { * }
 
 sub gtk_source_view_set_show_line_numbers (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   gboolean $show
 )
   is native(sourceview)
@@ -230,7 +228,7 @@ sub gtk_source_view_set_show_line_numbers (
   { * }
 
 sub gtk_source_view_set_show_right_margin (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   gboolean $show
 )
   is native(sourceview)
@@ -238,7 +236,7 @@ sub gtk_source_view_set_show_right_margin (
   { * }
 
 sub gtk_source_view_set_smart_backspace (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   gboolean $smart_backspace
 )
   is native(sourceview)
@@ -246,7 +244,7 @@ sub gtk_source_view_set_smart_backspace (
   { * }
 
 sub gtk_source_view_set_smart_home_end (
-  GtkSourceView $view, 
+  GtkSourceView $view,
   uint32 $smart_home_end          # GtkSourceSmartHomeEndType
 )
   is native(sourceview)
