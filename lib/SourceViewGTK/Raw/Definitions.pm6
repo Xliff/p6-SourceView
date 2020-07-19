@@ -5,7 +5,7 @@ use GLib::Roles::Pointers;
 unit package SourceViewGTK::Raw::Definitions;
 
 # Number of times I've had to force compile the entire project
-my constant forced = 23;
+my constant forced = 25;
 
 constant sourceview is export = 'gtksourceview-4',v0;
 
