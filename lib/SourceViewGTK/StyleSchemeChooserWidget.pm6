@@ -12,7 +12,7 @@ use SourceViewGTK::Roles::StyleSchemeChooser;
 
 our subset StyleSchemeChooserWidgetAncestry
   where GtkSourceStyleSchemeChooserWidget | GtkSourceStyleSchemeChooser |
-        WidgetAncestry;
+        GtkWidgetAncestry;
 
 class SourceViewGTK::StyleSchemeChooserWidget is GTK::Widget {
   also does SourceViewGTK::Roles::StyleSchemeChooser;
