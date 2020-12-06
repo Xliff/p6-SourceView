@@ -1,0 +1,2456 @@
+Dependency Generation
+=====================
+real 0.80
+user 1.22
+sys 0.06
+ === Cairo ===
+Stage start      :   0.000
+Stage parse      :   1.559
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Pixbuf ===
+Stage start      :   0.000
+Stage parse      :   2.304
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GDK::RGBA ===
+Stage start      :   0.000
+Stage parse      :   1.677
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Definitions ===
+Stage start      :   0.000
+Stage parse      :   1.602
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Enums ===
+Stage start      :   0.000
+Stage parse      :   1.597
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GDK::Raw::Exports ===
+Stage start      :   0.000
+Stage parse      :   1.461
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GDK::Raw::Structs ===
+Stage start      :   0.000
+Stage parse      :   1.635
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Subs ===
+Stage start      :   0.000
+Stage parse      :   1.614
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::DBus::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   1.783
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::InputStream ===
+Stage start      :   0.000
+Stage parse      :   2.039
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GIO::Raw::Definitions ===
+Stage start      :   0.000
+Stage parse      :   1.748
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Enums ===
+Stage start      :   0.000
+Stage parse      :   1.596
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Exports ===
+Stage start      :   0.000
+Stage parse      :   1.451
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GIO::Raw::Quarks ===
+Stage start      :   0.000
+Stage parse      :   1.709
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Structs ===
+Stage start      :   0.000
+Stage parse      :   1.688
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Subs ===
+Stage start      :   0.000
+Stage parse      :   1.737
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Roles::GFile ===
+Stage start      :   0.000
+Stage parse      :   2.644
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === GIO::Roles::Icon ===
+Stage start      :   0.000
+Stage parse      :   2.076
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GLib::GList ===
+Stage start      :   0.000
+Stage parse      :   1.706
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::GSList ===
+Stage start      :   0.000
+Stage parse      :   1.710
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Definitions ===
+Stage start      :   0.000
+Stage parse      :   1.596
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Enums ===
+Stage start      :   0.000
+Stage parse      :   1.629
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.007
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GLib::Raw::Exports ===
+Stage start      :   0.000
+Stage parse      :   1.537
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GLib::Raw::Object ===
+Stage start      :   0.000
+Stage parse      :   1.652
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::ReturnedValue ===
+Stage start      :   0.000
+Stage parse      :   1.484
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GLib::Raw::Struct_Subs ===
+Stage start      :   0.000
+Stage parse      :   1.629
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GLib::Raw::Structs ===
+Stage start      :   0.000
+Stage parse      :   1.672
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Subs ===
+Stage start      :   0.000
+Stage parse      :   1.689
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::ListData ===
+Stage start      :   0.000
+Stage parse      :   1.693
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::Object ===
+Stage start      :   0.000
+Stage parse      :   1.983
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GLib::Roles::Pointers ===
+Stage start      :   0.000
+Stage parse      :   1.593
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::Signals::Generic ===
+Stage start      :   0.000
+Stage parse      :   1.831
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::StaticClass ===
+Stage start      :   0.000
+Stage parse      :   1.747
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Value ===
+Stage start      :   0.000
+Stage parse      :   1.763
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Button ===
+Stage start      :   0.000
+Stage parse      :   4.086
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.016
+Stage moar       :   0.000
+ === GTK::Raw::Definitions ===
+Stage start      :   0.000
+Stage parse      :   1.595
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::Enums ===
+Stage start      :   0.000
+Stage parse      :   1.612
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.006
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GTK::Raw::Exports ===
+Stage start      :   0.000
+Stage parse      :   1.470
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Raw::Requisition ===
+Stage start      :   0.000
+Stage parse      :   1.882
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::Structs ===
+Stage start      :   0.000
+Stage parse      :   1.805
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::Subs ===
+Stage start      :   0.000
+Stage parse      :   1.680
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::TextView ===
+Stage start      :   0.000
+Stage parse      :   2.289
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GTK::Roles::Signals::Generic ===
+Stage start      :   0.000
+Stage parse      :   2.279
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.017
+Stage moar       :   0.000
+ === GTK::Roles::Types ===
+Stage start      :   0.000
+Stage parse      :   1.738
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::TextBuffer ===
+Stage start      :   0.000
+Stage parse      :   4.202
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.022
+Stage moar       :   0.000
+ === GTK::TextIter ===
+Stage start      :   0.000
+Stage parse      :   3.884
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.012
+Stage moar       :   0.000
+ === GTK::TextTag ===
+Stage start      :   0.000
+Stage parse      :   2.377
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.005
+Stage moar       :   0.000
+ === GTK::TextView ===
+Stage start      :   0.000
+Stage parse      :   4.461
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.017
+Stage moar       :   0.000
+ === GTK::Widget ===
+Stage start      :   0.000
+Stage parse      :   3.602
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.013
+Stage moar       :   0.000
+ === GTK::Window ===
+Stage start      :   0.000
+Stage parse      :   4.195
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === Method::Also ===
+Stage start      :   0.000
+Stage parse      :   1.549
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === NativeCall ===
+Stage start      :   0.000
+Stage parse      :   1.582
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === Pango::Raw::Definitions ===
+Stage start      :   0.000
+Stage parse      :   1.621
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Enums ===
+Stage start      :   0.000
+Stage parse      :   1.650
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Exports ===
+Stage start      :   0.000
+Stage parse      :   1.473
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === Pango::Raw::Structs ===
+Stage start      :   0.000
+Stage parse      :   1.779
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Subs ===
+Stage start      :   0.000
+Stage parse      :   1.813
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   1.842
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.009
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Exports ===
+Stage start      :   0.000
+Stage parse      :   1.464
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Definitions ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.712
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.004
+    Stage mast       :   0.038
+    Stage mbc        :   0.002
+Stage parse      :   3.317
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Enums ===
+Stage start      :   0.000
+Stage parse      :   1.615
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.006
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Types ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.866
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.001
+    Stage mast       :   0.041
+    Stage mbc        :   0.018
+Stage parse      :   5.271
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.008
+Stage mast       :   0.015
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::UndoManager ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.810
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.055
+    Stage mbc        :   0.041
+Stage parse      :   5.112
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Version ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.334
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.049
+    Stage mbc        :   0.022
+Stage parse      :   4.704
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::View ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.108
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.032
+    Stage mast       :   0.133
+    Stage mbc        :   0.143
+Stage parse      :   8.760
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.010
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::Buffer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.795
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.076
+    Stage mbc        :   0.042
+Stage parse      :   6.305
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::Completion ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.636
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.073
+    Stage mbc        :   0.035
+Stage parse      :   6.131
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::GutterRenderer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.980
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.082
+    Stage mbc        :   0.053
+Stage parse      :   6.403
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::MarkAttributes ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.220
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.132
+    Stage mbc        :   0.021
+Stage parse      :   4.658
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::View ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.594
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.071
+    Stage mbc        :   0.035
+Stage parse      :   6.046
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === SourceViewGTK::Tag ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Tag.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.700
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.078
+    Stage mbc        :   0.022
+Stage parse      :   6.204
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === SourceViewGTK::UndoManager ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.314
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.058
+    Stage mbc        :   0.015
+Adding alias in SourceViewGTK::UndoManager for can_redo_changed...
+Stage parse      :   5.784
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::UndoManager for can_undo_changed...
+Adding alias in SourceViewGTK::UndoManager for begin-not-undoable-action...
+Adding alias in SourceViewGTK::UndoManager for can-redo...
+Adding alias in SourceViewGTK::UndoManager for emit-can-redo-changed...
+Adding alias in SourceViewGTK::UndoManager for can-undo...
+Adding alias in SourceViewGTK::UndoManager for emit-can-undo-changed...
+Adding alias in SourceViewGTK::UndoManager for end-not-undoable-action...
+Adding alias in SourceViewGTK::UndoManager for get-type...
+Roles: ((Generic))
+R: GTK::Roles::Signals::Generic
+ === SourceViewGTK::Utils ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Utils.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.971
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.043
+    Stage mbc        :   0.014
+Stage parse      :   4.343
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Version ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.612
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.004
+    Stage mast       :   0.035
+    Stage mbc        :   0.001
+Stage parse      :   3.916
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Buffer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.190
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.039
+    Stage mast       :   0.126
+    Stage mbc        :   0.150
+Stage parse      :   8.898
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Completion ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.282
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.065
+    Stage mbc        :   0.053
+Stage parse      :   5.688
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionContext ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.251
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.125
+    Stage mbc        :   0.022
+Stage parse      :   4.687
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionInfo ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.156
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.044
+    Stage mbc        :   0.018
+Stage parse      :   4.473
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionItem ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.928
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.064
+    Stage mbc        :   0.039
+Stage parse      :   5.381
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionProposal ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.135
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.083
+    Stage mbc        :   0.047
+Stage parse      :   5.660
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionProvider ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.344
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.083
+    Stage mbc        :   0.055
+Stage parse      :   5.779
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.012
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionWords ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionWords.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.218
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.065
+    Stage mbc        :   0.021
+Stage parse      :   4.534
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Encoding ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.097
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.074
+    Stage mbc        :   0.050
+Stage parse      :   5.474
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::File ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.253
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.060
+    Stage mbc        :   0.058
+Stage parse      :   5.717
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::FileLoader ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.396
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.070
+    Stage mbc        :   0.059
+Stage parse      :   5.773
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::FileSaver ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.887
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.101
+    Stage mbc        :   0.069
+Stage parse      :   6.316
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Gutter ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.710
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.034
+    Stage mast       :   0.054
+    Stage mbc        :   0.036
+Stage parse      :   5.074
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRenderer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.707
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.097
+    Stage mbc        :   0.123
+Stage parse      :   7.316
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRendererPixbuf ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRendererPixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.673
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.070
+    Stage mbc        :   0.033
+Stage parse      :   5.120
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRendererText ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRendererText.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.550
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.051
+    Stage mbc        :   0.029
+Stage parse      :   4.982
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Language ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.139
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.060
+    Stage mbc        :   0.048
+Stage parse      :   5.501
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::LanguageManager ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.709
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.077
+    Stage mbc        :   0.036
+Stage parse      :   5.184
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Map ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.234
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.116
+    Stage mbc        :   0.022
+Stage parse      :   4.701
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Mark ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.433
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.051
+    Stage mbc        :   0.024
+Stage parse      :   4.774
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::MarkAttributes ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.592
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.098
+    Stage mbc        :   0.067
+Stage parse      :   6.091
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::PrintCompositor ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.533
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.033
+    Stage mast       :   0.123
+    Stage mbc        :   0.152
+Stage parse      :   9.216
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Quarks ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Quarks.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.877
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.001
+    Stage mast       :   0.030
+    Stage mbc        :   0.001
+Stage parse      :   4.154
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Region ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.746
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.073
+    Stage mbc        :   0.063
+Stage parse      :   6.207
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.012
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SearchContext ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SearchContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.201
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.118
+    Stage mbc        :   0.077
+Stage parse      :   6.816
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SearchSettings ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.283
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.069
+    Stage mbc        :   0.055
+Stage parse      :   5.691
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SpaceDrawer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.862
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.066
+    Stage mbc        :   0.040
+Stage parse      :   5.247
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Style ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.201
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.049
+    Stage mbc        :   0.018
+Stage parse      :   4.510
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleScheme ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.795
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.056
+    Stage mbc        :   0.032
+Stage parse      :   5.359
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooser ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.130
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.047
+    Stage mbc        :   0.021
+Stage parse      :   4.524
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooserButton ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.004
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.045
+    Stage mbc        :   0.015
+Stage parse      :   4.333
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooserWidget ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.024
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.042
+    Stage mbc        :   0.014
+Stage parse      :   4.350
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.011
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeManager ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.993
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.037
+    Stage mast       :   0.057
+    Stage mbc        :   0.044
+Stage parse      :   5.394
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === SourceViewGTK::Region ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.873
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.253
+    Stage mbc        :   0.058
+Adding alias in SourceViewGTK::Region for Region...
+Stage parse      :  10.815
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Region for GtkSourceRegion...
+Adding alias in SourceViewGTK::Region for add-region...
+Adding alias in SourceViewGTK::Region for add-subregion...
+Adding alias in SourceViewGTK::Region for get-bounds...
+Adding alias in SourceViewGTK::Region for get-buffer...
+Adding alias in SourceViewGTK::Region for get-start-region-iter...
+Adding alias in SourceViewGTK::Region for intersect-region...
+Adding alias in SourceViewGTK::Region for intersect-subregion...
+Adding alias in SourceViewGTK::Region for is-empty...
+Adding alias in SourceViewGTK::Region for subtract-region...
+Adding alias in SourceViewGTK::Region for subtract-subregion...
+Adding alias in SourceViewGTK::Region for to-string...
+Adding alias in SourceViewGTK::Region for Str...
+Roles: ()
+Adding alias in SourceViewGTK::RegionIter for RegionIter...
+Adding alias in SourceViewGTK::RegionIter for GtkSourceRegionIter...
+Adding alias in SourceViewGTK::RegionIter for get-subregion...
+Adding alias in SourceViewGTK::RegionIter for is-end...
+ === SourceViewGTK::Roles::CompletionProposal ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.677
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.058
+    Stage mbc        :   0.022
+Adding alias in SourceViewGTK::Roles::CompletionProposal for GtkSourceCompletionProvider...
+Stage parse      :   6.289
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Roles::CompletionProposal for emit_changed...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for get-icon...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for get-icon-name...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for get-info...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for get-label...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for get-markup...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for get-text...
+Adding alias in SourceViewGTK::Roles::CompletionProposal for completionproposal-get-type...
+ === SourceViewGTK::Roles::CompletionProvider ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.816
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.203
+    Stage mbc        :   0.044
+Adding alias in SourceViewGTK::Roles::CompletionProvider for GtkSourceCompletionProvider...
+Stage parse      :   9.199
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Roles::CompletionProvider for activate-proposal...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-activation...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-icon...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-icon-name...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-info-widget...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-interactive-delay...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-name...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-priority...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for get-start-iter...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for completionprovider-get-type...
+Adding alias in SourceViewGTK::Roles::CompletionProvider for update-info...
+ === SourceViewGTK::SearchSettings ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.731
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.051
+    Stage mbc        :   0.014
+Adding alias in SourceViewGTK::SearchSettings for GtkSourceSearchSettings...
+Stage parse      :   5.228
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::SearchSettings for at-word-boundaries...
+Adding alias in SourceViewGTK::SearchSettings for case-sensitive...
+Adding alias in SourceViewGTK::SearchSettings for regex-enabled...
+Adding alias in SourceViewGTK::SearchSettings for search-text...
+Adding alias in SourceViewGTK::SearchSettings for wrap-around...
+Adding alias in SourceViewGTK::SearchSettings for get-type...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::SpaceDrawer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.824
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.052
+    Stage mbc        :   0.016
+Adding alias in SourceViewGTK::SpaceDrawer for GtkSourceSpaceDrawer...
+Stage parse      :   5.271
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::SpaceDrawer for enable-matrix...
+Adding alias in SourceViewGTK::SpaceDrawer for bind-matrix-setting...
+Adding alias in SourceViewGTK::SpaceDrawer for get-type...
+Adding alias in SourceViewGTK::SpaceDrawer for get-types-for-locations...
+Adding alias in SourceViewGTK::SpaceDrawer for set-types-for-locations...
+Roles: ((Object) (Types))
+R: GLib::Roles::Object
+R: GTK::Roles::Types
+ === SourceViewGTK::Style ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.738
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.105
+    Stage mbc        :   0.011
+Stage parse      :   5.302
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === SourceViewGTK::StyleScheme ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.376
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.065
+    Stage mbc        :   0.018
+Adding alias in SourceViewGTK::StyleScheme for GtkSourceStyleScheme...
+Stage parse      :   4.922
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::StyleScheme for get-authors...
+Adding alias in SourceViewGTK::StyleScheme for authors...
+Adding alias in SourceViewGTK::StyleScheme for get-description...
+Adding alias in SourceViewGTK::StyleScheme for description...
+Adding alias in SourceViewGTK::StyleScheme for get-filename...
+Adding alias in SourceViewGTK::StyleScheme for filename...
+Adding alias in SourceViewGTK::StyleScheme for get-id...
+Adding alias in SourceViewGTK::StyleScheme for id...
+Adding alias in SourceViewGTK::StyleScheme for get-name...
+Adding alias in SourceViewGTK::StyleScheme for name...
+Adding alias in SourceViewGTK::StyleScheme for get-style...
+Adding alias in SourceViewGTK::StyleScheme for style...
+Adding alias in SourceViewGTK::StyleScheme for get-type...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::StyleSchemeManager ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.121
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.103
+    Stage mbc        :   0.008
+Adding alias in SourceViewGTK::StyleSchemeManager for GtkSourceStyleSchemeManager...
+Stage parse      :   4.651
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::StyleSchemeManager for get-default...
+Adding alias in SourceViewGTK::StyleSchemeManager for append-search-path...
+Adding alias in SourceViewGTK::StyleSchemeManager for force-rescan...
+Adding alias in SourceViewGTK::StyleSchemeManager for get-scheme...
+Adding alias in SourceViewGTK::StyleSchemeManager for get-scheme-ids...
+Adding alias in SourceViewGTK::StyleSchemeManager for get-search-path...
+Adding alias in SourceViewGTK::StyleSchemeManager for get-type...
+Adding alias in SourceViewGTK::StyleSchemeManager for prepend-search-path...
+Adding alias in SourceViewGTK::StyleSchemeManager for set-search-path...
+Roles: ()
+ === SourceViewGTK::Completion::Words ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Completion/Words.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.592
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.196
+    Stage mbc        :   0.014
+Adding alias in SourceViewGTK::Completion::Words for GtkSourceCompletionWords...
+Stage parse      :   6.946
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.007
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Completion::Words for interactive_delay...
+Adding alias in SourceViewGTK::Completion::Words for minimum_word_size...
+Adding alias in SourceViewGTK::Completion::Words for proposals_batch_size...
+Adding alias in SourceViewGTK::Completion::Words for scan_batch_size...
+Adding alias in SourceViewGTK::Completion::Words for get-type...
+Roles: ((Object) (CompletionProvider))
+R: GLib::Roles::Object
+R: SourceViewGTK::Roles::CompletionProvider
+ === SourceViewGTK::CompletionContext ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.395
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.223
+    Stage mbc        :   0.045
+Adding alias in SourceViewGTK::CompletionContext for CompletionContext...
+Stage parse      :  10.026
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::CompletionContext for GtkSourceViewCompletionContext...
+Adding alias in SourceViewGTK::CompletionContext for add-proposals...
+Adding alias in SourceViewGTK::CompletionContext for get-activation...
+Adding alias in SourceViewGTK::CompletionContext for get-iter...
+Adding alias in SourceViewGTK::CompletionContext for get-type...
+Roles: ((Object) (Types))
+R: GLib::Roles::Object
+R: GTK::Roles::Types
+ === SourceViewGTK::CompletionInfo ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.269
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.226
+    Stage mbc        :   0.042
+Adding alias in SourceViewGTK::CompletionInfo for SourceCompletionInfo...
+Stage parse      :   9.950
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::CompletionInfo for get-type...
+Adding alias in SourceViewGTK::CompletionInfo for move-to-iter...
+Roles: ()
+ === SourceViewGTK::CompletionItem ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.488
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.087
+    Stage mbc        :   0.017
+Adding alias in SourceViewGTK::CompletionItem for CompletionItem...
+Stage parse      :   6.099
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::CompletionItem for GtkSourceCompletionItem...
+Adding alias in SourceViewGTK::CompletionItem for get-type...
+Adding alias in SourceViewGTK::CompletionItem for icon_name...
+Adding alias in SourceViewGTK::CompletionItem for set-icon...
+Adding alias in SourceViewGTK::CompletionItem for set-icon-name...
+Adding alias in SourceViewGTK::CompletionItem for set-info...
+Adding alias in SourceViewGTK::CompletionItem for set-label...
+Adding alias in SourceViewGTK::CompletionItem for set-markup...
+Adding alias in SourceViewGTK::CompletionItem for set-text...
+Roles: ((Object) (CompletionProposal))
+R: GLib::Roles::Object
+R: SourceViewGTK::Roles::CompletionProposal
+ === SourceViewGTK::Encoding ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.868
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.090
+    Stage mbc        :   0.024
+Adding alias in SourceViewGTK::Encoding for GtkSourceEncoding...
+Stage parse      :   5.334
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Encoding for get-current...
+Adding alias in SourceViewGTK::Encoding for current...
+Adding alias in SourceViewGTK::Encoding for get-from-charset...
+Adding alias in SourceViewGTK::Encoding for get-utf8...
+Adding alias in SourceViewGTK::Encoding for utf8...
+Adding alias in SourceViewGTK::Encoding for get-all...
+Adding alias in SourceViewGTK::Encoding for all...
+Adding alias in SourceViewGTK::Encoding for get-charset...
+Adding alias in SourceViewGTK::Encoding for charset...
+Adding alias in SourceViewGTK::Encoding for get-default-candidates...
+Adding alias in SourceViewGTK::Encoding for default_candidates...
+Adding alias in SourceViewGTK::Encoding for default-candidates...
+Adding alias in SourceViewGTK::Encoding for get-name...
+Adding alias in SourceViewGTK::Encoding for get-type...
+Adding alias in SourceViewGTK::Encoding for to-string...
+Adding alias in SourceViewGTK::Encoding for Str...
+Roles: ()
+ === SourceViewGTK::File ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.645
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.072
+    Stage mbc        :   0.033
+Adding alias in SourceViewGTK::File for GtkSourceFile...
+Stage parse      :   7.369
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.006
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::File for check-file-on-disk...
+Adding alias in SourceViewGTK::File for get-compression-type...
+Adding alias in SourceViewGTK::File for compression_type...
+Adding alias in SourceViewGTK::File for compression-type...
+Adding alias in SourceViewGTK::File for get-encoding...
+Adding alias in SourceViewGTK::File for encoding...
+Adding alias in SourceViewGTK::File for get-newline-type...
+Adding alias in SourceViewGTK::File for newline_type...
+Adding alias in SourceViewGTK::File for newline-type...
+Adding alias in SourceViewGTK::File for get-type...
+Adding alias in SourceViewGTK::File for is-deleted...
+Adding alias in SourceViewGTK::File for is-externally-modified...
+Adding alias in SourceViewGTK::File for is-local...
+Adding alias in SourceViewGTK::File for is-readonly...
+Adding alias in SourceViewGTK::File for set-mount-operation-factory...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::GutterRenderer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.018
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.034
+    Stage mast       :   0.096
+    Stage mbc        :   0.026
+Adding alias in SourceViewGTK::GutterRenderer for SourceGutterRenderer...
+Stage parse      :   5.540
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.004
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::GutterRenderer for query_activatable...
+Adding alias in SourceViewGTK::GutterRenderer for query_data...
+Adding alias in SourceViewGTK::GutterRenderer for query_tooltip...
+Adding alias in SourceViewGTK::GutterRenderer for queue_draw...
+Adding alias in SourceViewGTK::GutterRenderer for alignment-mode...
+Adding alias in SourceViewGTK::GutterRenderer for background_rgba...
+Adding alias in SourceViewGTK::GutterRenderer for background_set...
+Adding alias in SourceViewGTK::GutterRenderer for window_type...
+Adding alias in SourceViewGTK::GutterRenderer for get-alignment...
+Adding alias in SourceViewGTK::GutterRenderer for get-background...
+Adding alias in SourceViewGTK::GutterRenderer for get-padding...
+Adding alias in SourceViewGTK::GutterRenderer for get-type...
+Adding alias in SourceViewGTK::GutterRenderer for get-view...
+Adding alias in SourceViewGTK::GutterRenderer for get-window-type...
+Adding alias in SourceViewGTK::GutterRenderer for render-query-activatable...
+Adding alias in SourceViewGTK::GutterRenderer for render-query-data...
+Adding alias in SourceViewGTK::GutterRenderer for render-query-tooltip...
+Adding alias in SourceViewGTK::GutterRenderer for render-queue-draw...
+Adding alias in SourceViewGTK::GutterRenderer for set-alignment...
+Adding alias in SourceViewGTK::GutterRenderer for set-background...
+Adding alias in SourceViewGTK::GutterRenderer for set-padding...
+Roles: ((Object) (GutterRenderer))
+R: GLib::Roles::Object
+R: SourceViewGTK::Roles::Signals::GutterRenderer
+ === SourceViewGTK::GutterRenderer::Pixbuf ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer/Pixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.709
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.073
+    Stage mbc        :   0.016
+Adding alias in SourceViewGTK::GutterRendererPixbuf for setGRPixbuf...
+Stage parse      :   6.381
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::GutterRendererPixbuf for GtkSourceGutterRendererPixbuf...
+Roles: ()
+ === SourceViewGTK::GutterRenderer::Text ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer/Text.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.888
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.042
+    Stage mbc        :   0.015
+Adding alias in SourceViewGTK::GutterRenderer::Text for GutterRendererText...
+Stage parse      :   4.264
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.012
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::GutterRenderer::Text for GtkSourceGutterRendererText...
+Adding alias in SourceViewGTK::GutterRenderer::Text for get-type...
+Adding alias in SourceViewGTK::GutterRenderer::Text for measure-markup...
+Adding alias in SourceViewGTK::GutterRenderer::Text for set-markup...
+Adding alias in SourceViewGTK::GutterRenderer::Text for set-text...
+Roles: ()
+ === SourceViewGTK::Language ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.049
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.138
+    Stage mbc        :   0.029
+Adding alias in SourceViewGTK::Language for SourceLanguage...
+Stage parse      :   5.452
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Language for get-globs...
+Adding alias in SourceViewGTK::Language for globs...
+Adding alias in SourceViewGTK::Language for get-hidden...
+Adding alias in SourceViewGTK::Language for hidden...
+Adding alias in SourceViewGTK::Language for get-id...
+Adding alias in SourceViewGTK::Language for id...
+Adding alias in SourceViewGTK::Language for get-metadata...
+Adding alias in SourceViewGTK::Language for get-mime-types...
+Adding alias in SourceViewGTK::Language for get-name...
+Adding alias in SourceViewGTK::Language for name...
+Adding alias in SourceViewGTK::Language for get-section...
+Adding alias in SourceViewGTK::Language for section...
+Adding alias in SourceViewGTK::Language for get-style-ids...
+Adding alias in SourceViewGTK::Language for style_ids...
+Adding alias in SourceViewGTK::Language for style-ids...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::LanguageManager ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.966
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.096
+    Stage mbc        :   0.014
+Adding alias in SourceViewGTK::LanguageManager for LanguageManager...
+Stage parse      :   5.416
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::LanguageManager for GtkSourceLanguageManager...
+Adding alias in SourceViewGTK::LanguageManager for get-default...
+Adding alias in SourceViewGTK::LanguageManager for default...
+Adding alias in SourceViewGTK::LanguageManager for get-language...
+Adding alias in SourceViewGTK::LanguageManager for get-search-path...
+Adding alias in SourceViewGTK::LanguageManager for get-language-ids...
+Adding alias in SourceViewGTK::LanguageManager for get-type...
+Adding alias in SourceViewGTK::LanguageManager for guess-language...
+Adding alias in SourceViewGTK::LanguageManager for set-search-path...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::Mark ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.772
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.049
+    Stage mbc        :   0.013
+Adding alias in SourceViewGTK::Mark for GtkSourceMark...
+Stage parse      :   5.161
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Mark for SourceMark...
+Adding alias in SourceViewGTK::Mark for get-category...
+Adding alias in SourceViewGTK::Mark for get-type...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::MarkAttributes ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.635
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.069
+    Stage mbc        :   0.017
+Adding alias in SourceViewGTK::MarkAttributes for GtkSourceMarkAttributes...
+Stage parse      :   6.149
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::MarkAttributes for query_tooltip_markup...
+Adding alias in SourceViewGTK::MarkAttributes for query_tooltip_text...
+Adding alias in SourceViewGTK::MarkAttributes for icon-name...
+Adding alias in SourceViewGTK::MarkAttributes for get-background...
+Adding alias in SourceViewGTK::MarkAttributes for get-tooltip-markup...
+Adding alias in SourceViewGTK::MarkAttributes for get-tooltip-text...
+Adding alias in SourceViewGTK::MarkAttributes for get-type...
+Adding alias in SourceViewGTK::MarkAttributes for render-icon...
+Adding alias in SourceViewGTK::MarkAttributes for set-background...
+Roles: ((Object) (MarkAttributes))
+R: GLib::Roles::Object
+R: SourceViewGTK::Roles::Signals::MarkAttributes
+ === SourceViewGTK::Roles::StyleSchemeChooser ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.031
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.048
+    Stage mbc        :   0.012
+Adding alias in SourceViewGTK::Roles::StyleSchemeChooser for gtk-source-style-scheme-chooser-style-scheme...
+Stage parse      :   4.615
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Roles::StyleSchemeChooser for get-style-scheme-chooser-role-type...
+ === SourceViewGTK::StyleSchemeChooserButton ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.454
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.252
+    Stage mbc        :   0.041
+Adding alias in SourceViewGTK::StyleSchemeChooserButton for StyleSchemeChooserButton...
+Stage parse      :  10.340
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::StyleSchemeChooserButton for get-type...
+Roles: ((StyleSchemeChooser))
+R: SourceViewGTK::Roles::StyleSchemeChooser
+ === SourceViewGTK::StyleSchemeChooserWidget ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.764
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.219
+    Stage mbc        :   0.036
+Adding alias in SourceViewGTK::StyleSchemeChooserWidget for SourceStyleSchemeChooserWidget...
+Stage parse      :   8.731
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::StyleSchemeChooserWidget for get-type...
+Roles: ((StyleSchemeChooser))
+R: SourceViewGTK::Roles::StyleSchemeChooser
+ === SourceViewGTK::Buffer ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.320
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.031
+    Stage mast       :   0.303
+    Stage mbc        :   0.059
+Adding alias in SourceViewGTK::Buffer for SourceBuffer...
+Stage parse      :  11.557
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Buffer for GtkSourceBuffer...
+Adding alias in SourceViewGTK::Buffer for new-with-language...
+Adding alias in SourceViewGTK::Buffer for bracket_matched...
+Adding alias in SourceViewGTK::Buffer for highlight_updated...
+Adding alias in SourceViewGTK::Buffer for source_mark_updated...
+Adding alias in SourceViewGTK::Buffer for highlight-matching-brackets...
+Adding alias in SourceViewGTK::Buffer for highlight-syntax...
+Adding alias in SourceViewGTK::Buffer for implicit-trailing-newline...
+Adding alias in SourceViewGTK::Buffer for max-undo-levels...
+Adding alias in SourceViewGTK::Buffer for style-scheme...
+Adding alias in SourceViewGTK::Buffer for undo-manager...
+Adding alias in SourceViewGTK::Buffer for backward-iter-to-source-mark...
+Adding alias in SourceViewGTK::Buffer for begin-not-undoable-action...
+Adding alias in SourceViewGTK::Buffer for can-redo...
+Adding alias in SourceViewGTK::Buffer for can-undo...
+Adding alias in SourceViewGTK::Buffer for change-case...
+Adding alias in SourceViewGTK::Buffer for create-source-mark...
+Adding alias in SourceViewGTK::Buffer for create-source-tag...
+Adding alias in SourceViewGTK::Buffer for end-not-undoable-action...
+Adding alias in SourceViewGTK::Buffer for ensure-highlight...
+Adding alias in SourceViewGTK::Buffer for forward-iter-to-source-mark...
+Adding alias in SourceViewGTK::Buffer for get-context-classes-at-iter...
+Adding alias in SourceViewGTK::Buffer for get-source-marks-at-iter...
+Adding alias in SourceViewGTK::Buffer for get-source-marks-at-line...
+Adding alias in SourceViewGTK::Buffer for get-type...
+Adding alias in SourceViewGTK::Buffer for iter-backward-to-context-class-toggle...
+Adding alias in SourceViewGTK::Buffer for iter-forward-to-context-class-toggle...
+Adding alias in SourceViewGTK::Buffer for iter-has-context-class...
+Adding alias in SourceViewGTK::Buffer for join-lines...
+Adding alias in SourceViewGTK::Buffer for emit_redo...
+Adding alias in SourceViewGTK::Buffer for remove-source-marks...
+Adding alias in SourceViewGTK::Buffer for sort-lines...
+Adding alias in SourceViewGTK::Buffer for emit_undo...
+Roles: ((Buffer))
+R: SourceViewGTK::Roles::Signals::Buffer
+ === SourceViewGTK::Completion ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.477
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.315
+    Stage mbc        :   0.011
+Adding alias in SourceViewGTK::Completion for GtkSourceCompletion...
+Stage parse      :   9.011
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Completion for activate_proposal...
+Adding alias in SourceViewGTK::Completion for move_cursor...
+Adding alias in SourceViewGTK::Completion for move_page...
+Adding alias in SourceViewGTK::Completion for populate_context...
+Adding alias in SourceViewGTK::Completion for auto_complete_delay...
+Adding alias in SourceViewGTK::Completion for proposal_page_size...
+Adding alias in SourceViewGTK::Completion for provider_page_size...
+Adding alias in SourceViewGTK::Completion for remember_info_visibility...
+Adding alias in SourceViewGTK::Completion for select_on_show...
+Adding alias in SourceViewGTK::Completion for show_headers...
+Adding alias in SourceViewGTK::Completion for show_icons...
+Adding alias in SourceViewGTK::Completion for add-provider...
+Adding alias in SourceViewGTK::Completion for block-interactive...
+Adding alias in SourceViewGTK::Completion for create-context...
+Adding alias in SourceViewGTK::Completion for error-quark...
+Adding alias in SourceViewGTK::Completion for get-info-window...
+Adding alias in SourceViewGTK::Completion for get-providers...
+Adding alias in SourceViewGTK::Completion for get-type...
+Adding alias in SourceViewGTK::Completion for get-view...
+Adding alias in SourceViewGTK::Completion for hide_window...
+Adding alias in SourceViewGTK::Completion for remove-provider...
+Adding alias in SourceViewGTK::Completion for unblock-interactive...
+Roles: ((Object) (Completion))
+R: GLib::Roles::Object
+R: SourceViewGTK::Roles::Signals::Completion
+ === SourceViewGTK::FileLoader ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.615
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.273
+    Stage mbc        :   0.034
+Adding alias in SourceViewGTK::FileLoader for FileLoader...
+Stage parse      :  10.265
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::FileLoader for GtrkSourceFileLoader...
+Adding alias in SourceViewGTK::FileLoader for new-from-stream...
+Adding alias in SourceViewGTK::FileLoader for error-quark...
+Adding alias in SourceViewGTK::FileLoader for get-buffer...
+Adding alias in SourceViewGTK::FileLoader for buffer...
+Adding alias in SourceViewGTK::FileLoader for get-compression-type...
+Adding alias in SourceViewGTK::FileLoader for compression_type...
+Adding alias in SourceViewGTK::FileLoader for compression-type...
+Adding alias in SourceViewGTK::FileLoader for get-encoding...
+Adding alias in SourceViewGTK::FileLoader for encoding...
+Adding alias in SourceViewGTK::FileLoader for get-file...
+Adding alias in SourceViewGTK::FileLoader for file...
+Adding alias in SourceViewGTK::FileLoader for get-input-stream...
+Adding alias in SourceViewGTK::FileLoader for input_stream...
+Adding alias in SourceViewGTK::FileLoader for input-stream...
+Adding alias in SourceViewGTK::FileLoader for get-location...
+Adding alias in SourceViewGTK::FileLoader for location...
+Adding alias in SourceViewGTK::FileLoader for get-newline-type...
+Adding alias in SourceViewGTK::FileLoader for newline_type...
+Adding alias in SourceViewGTK::FileLoader for newline-type...
+Adding alias in SourceViewGTK::FileLoader for get-type...
+Adding alias in SourceViewGTK::FileLoader for load-async...
+Adding alias in SourceViewGTK::FileLoader for load-finished...
+Adding alias in SourceViewGTK::FileLoader for set-candidate-encodings...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::FileSaver ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.847
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.305
+    Stage mbc        :   0.010
+Adding alias in SourceViewGTK::FileSaver for GtkSourceFileSaver...
+Stage parse      :   8.635
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.004
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::FileSaver for new-with-target...
+Adding alias in SourceViewGTK::FileSaver for compression-type...
+Adding alias in SourceViewGTK::FileSaver for newline-type...
+Adding alias in SourceViewGTK::FileSaver for error-quark...
+Adding alias in SourceViewGTK::FileSaver for get-buffer...
+Adding alias in SourceViewGTK::FileSaver for get-file...
+Adding alias in SourceViewGTK::FileSaver for get-location...
+Adding alias in SourceViewGTK::FileSaver for get-type...
+Adding alias in SourceViewGTK::FileSaver for save-async...
+Adding alias in SourceViewGTK::FileSaver for save-finish...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::Gutter ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.090
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.058
+    Stage mbc        :   0.015
+Adding alias in SourceViewGTK::Gutter for GtkSourceGutter...
+Stage parse      :   5.812
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::Gutter for get-renderer-at-pos...
+Adding alias in SourceViewGTK::Gutter for get-type...
+Adding alias in SourceViewGTK::Gutter for get-view...
+Adding alias in SourceViewGTK::Gutter for view...
+Adding alias in SourceViewGTK::Gutter for get-window-type...
+Adding alias in SourceViewGTK::Gutter for window_type...
+Adding alias in SourceViewGTK::Gutter for window-type...
+Adding alias in SourceViewGTK::Gutter for queue-draw...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::PrintCompositor ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.781
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.037
+    Stage mast       :   0.307
+    Stage mbc        :   0.021
+Adding alias in SourceViewGTK::PrintCompositor for SourcePrintCompositor...
+Stage parse      :   8.105
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::PrintCompositor for new-from-view...
+Adding alias in SourceViewGTK::PrintCompositor for body-font-name...
+Adding alias in SourceViewGTK::PrintCompositor for footer-font-name...
+Adding alias in SourceViewGTK::PrintCompositor for header-font-name...
+Adding alias in SourceViewGTK::PrintCompositor for highlight-syntax...
+Adding alias in SourceViewGTK::PrintCompositor for line-numbers-font-name...
+Adding alias in SourceViewGTK::PrintCompositor for print-footer...
+Adding alias in SourceViewGTK::PrintCompositor for print-header...
+Adding alias in SourceViewGTK::PrintCompositor for print-line-numbers...
+Adding alias in SourceViewGTK::PrintCompositor for tab-width...
+Adding alias in SourceViewGTK::PrintCompositor for wrap-mode...
+Adding alias in SourceViewGTK::PrintCompositor for draw-page...
+Adding alias in SourceViewGTK::PrintCompositor for get-bottom-margin...
+Adding alias in SourceViewGTK::PrintCompositor for get-buffer...
+Adding alias in SourceViewGTK::PrintCompositor for buffer...
+Adding alias in SourceViewGTK::PrintCompositor for get-left-margin...
+Adding alias in SourceViewGTK::PrintCompositor for get-n-pages...
+Adding alias in SourceViewGTK::PrintCompositor for n_pages...
+Adding alias in SourceViewGTK::PrintCompositor for n-pages...
+Adding alias in SourceViewGTK::PrintCompositor for get-pagination-progress...
+Adding alias in SourceViewGTK::PrintCompositor for pagination_progress...
+Adding alias in SourceViewGTK::PrintCompositor for pagination-progress...
+Adding alias in SourceViewGTK::PrintCompositor for get-right-margin...
+Adding alias in SourceViewGTK::PrintCompositor for get-top-margin...
+Adding alias in SourceViewGTK::PrintCompositor for get-type...
+Adding alias in SourceViewGTK::PrintCompositor for set-bottom-margin...
+Adding alias in SourceViewGTK::PrintCompositor for set-footer-format...
+Adding alias in SourceViewGTK::PrintCompositor for set-header-format...
+Adding alias in SourceViewGTK::PrintCompositor for set-left-margin...
+Adding alias in SourceViewGTK::PrintCompositor for set-right-margin...
+Adding alias in SourceViewGTK::PrintCompositor for set-top-margin...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::SearchContext ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SearchContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.338
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.289
+    Stage mbc        :   0.054
+Adding alias in SourceViewGTK::SearchContext for GtkSourceSearchContext...
+Stage parse      :  11.696
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::SearchContext for match-style...
+Adding alias in SourceViewGTK::SearchContext for backward-async...
+Adding alias in SourceViewGTK::SearchContext for backward-finish...
+Adding alias in SourceViewGTK::SearchContext for forward-async...
+Adding alias in SourceViewGTK::SearchContext for forward-finish...
+Adding alias in SourceViewGTK::SearchContext for buffer...
+Adding alias in SourceViewGTK::SearchContext for get-buffer...
+Adding alias in SourceViewGTK::SearchContext for get-occurences-position...
+Adding alias in SourceViewGTK::SearchContext for get-occurences-count...
+Adding alias in SourceViewGTK::SearchContext for get-regex-error...
+Adding alias in SourceViewGTK::SearchContext for regex_error...
+Adding alias in SourceViewGTK::SearchContext for regex-error...
+Adding alias in SourceViewGTK::SearchContext for get-settings...
+Adding alias in SourceViewGTK::SearchContext for settings...
+Adding alias in SourceViewGTK::SearchContext for get-type...
+Adding alias in SourceViewGTK::SearchContext for replace-all...
+Roles: ((Object))
+R: GLib::Roles::Object
+ === SourceViewGTK::View ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.709
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.032
+    Stage mast       :   0.365
+    Stage mbc        :   0.062
+Adding alias in SourceViewGTK::View for GtkSourceView...
+Stage parse      :  14.233
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+Adding alias in SourceViewGTK::View for new-with-buffer...
+Adding alias in SourceViewGTK::View for change_case...
+Adding alias in SourceViewGTK::View for change_number...
+Adding alias in SourceViewGTK::View for join_lines...
+Adding alias in SourceViewGTK::View for line_mark_activated...
+Adding alias in SourceViewGTK::View for move_lines...
+Adding alias in SourceViewGTK::View for move_to_matching_bracket...
+Adding alias in SourceViewGTK::View for move_words...
+Adding alias in SourceViewGTK::View for show_completion...
+Adding alias in SourceViewGTK::View for smart_home_end_signal...
+Adding alias in SourceViewGTK::View for auto-indent...
+Adding alias in SourceViewGTK::View for source-buffer...
+Adding alias in SourceViewGTK::View for background-pattern...
+Adding alias in SourceViewGTK::View for highlight-current-line...
+Adding alias in SourceViewGTK::View for indent-on-tab...
+Adding alias in SourceViewGTK::View for indent-width...
+Adding alias in SourceViewGTK::View for insert-spaces-instead-of-tabs...
+Adding alias in SourceViewGTK::View for right-margin-position...
+Adding alias in SourceViewGTK::View for show-line-marks...
+Adding alias in SourceViewGTK::View for show-line-numbers...
+Adding alias in SourceViewGTK::View for show-right-margin...
+Adding alias in SourceViewGTK::View for smart-backspace...
+Adding alias in SourceViewGTK::View for smart-home-end...
+Adding alias in SourceViewGTK::View for tab-width...
+Adding alias in SourceViewGTK::View for get-completion...
+Adding alias in SourceViewGTK::View for get-gutter...
+Adding alias in SourceViewGTK::View for get-mark-attributes...
+Adding alias in SourceViewGTK::View for get-space-drawer...
+Adding alias in SourceViewGTK::View for space-drawer...
+Adding alias in SourceViewGTK::View for space_drawer...
+Adding alias in SourceViewGTK::View for get-type...
+Adding alias in SourceViewGTK::View for get-visual-column...
+Adding alias in SourceViewGTK::View for indent-lines...
+Adding alias in SourceViewGTK::View for set-mark-attributes...
+Adding alias in SourceViewGTK::View for unindent-lines...
+Roles: ((View))
+R: SourceViewGTK::Roles::Signals::View
+ === SourceViewGTK::Map ===
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.324
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.319
+    Stage mbc        :   0.010
+Adding alias in SourceViewGTK::Map for get-type...
+Stage parse      :   9.599
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.005
+Stage moar       :   0.000
+Roles: ()
+
+real 652.35
+user 774.27
+sys 44.56
