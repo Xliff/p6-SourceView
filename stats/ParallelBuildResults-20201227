@@ -1,0 +1,2260 @@
+ === GDK::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   4.111
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.022
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GDK::Raw::Exports compile time: 4.386373
+ === Cairo === 
+Stage start      :   0.000
+Stage parse      :   4.376
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.007
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+Cairo compile time: 4.6463384
+ === GDK::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   4.385
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.006
+Stage mast       :   0.013
+Stage mbc        :   0.038
+Stage moar       :   0.000
+
+GDK::Raw::Enums compile time: 4.7080611
+ === GIO::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   4.210
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.019
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GIO::Raw::Exports compile time: 4.6494405
+ === GDK::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   4.621
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GDK::Raw::Definitions compile time: 4.88635853
+ === GDK::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   4.715
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GDK::Raw::Structs compile time: 4.9990844
+ === GDK::RGBA === 
+Stage start      :   0.000
+Stage parse      :   4.945
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.057
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GDK::RGBA compile time: 5.22803556
+ === GDK::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   4.810
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GDK::Raw::Subs compile time: 5.1393975
+ === GIO::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   5.000
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.009
+Stage mbc        :   0.005
+Stage moar       :   0.000
+
+GIO::Raw::Enums compile time: 5.4442975
+ === GIO::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   5.065
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.149
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GIO::Raw::Definitions compile time: 5.59678268
+ === GLib::GList === 
+Stage start      :   0.000
+Stage parse      :   4.976
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GLib::GList compile time: 5.4171003
+ === GIO::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   5.211
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.007
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GIO::Raw::Subs compile time: 5.616515
+ === GIO::Raw::Quarks === 
+Stage start      :   0.000
+Stage parse      :   5.334
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GIO::Raw::Quarks compile time: 5.7382572
+ === GIO::DBus::Raw::Types === 
+Stage start      :   0.000
+Stage parse      :   5.578
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.013
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GIO::DBus::Raw::Types compile time: 5.9113117
+ === GIO::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   5.335
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.108
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GIO::Raw::Structs compile time: 5.91229013
+ === GLib::GSList === 
+Stage start      :   0.000
+Stage parse      :   5.017
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.007
+Stage mbc        :   0.008
+Stage moar       :   0.000
+
+GLib::GSList compile time: 5.8191413
+ === GIO::InputStream === 
+Stage start      :   0.000
+Stage parse      :   6.173
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.007
+Stage mbc        :   0.019
+Stage moar       :   0.000
+
+GIO::InputStream compile time: 6.5273845
+ === GDK::Pixbuf === 
+Stage start      :   0.000
+Stage parse      :   7.067
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.020
+Stage moar       :   0.000
+
+GDK::Pixbuf compile time: 7.31058228
+ === GIO::Roles::Icon === 
+Stage start      :   0.000
+Stage parse      :   6.748
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GIO::Roles::Icon compile time: 7.3052
+ === GIO::Roles::GFile === 
+Stage start      :   0.000
+Stage parse      :   8.315
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.034
+Stage moar       :   0.000
+
+GIO::Roles::GFile compile time: 8.78274189
+ === GLib::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   4.663
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Definitions compile time: 5.2355899
+ === GLib::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   4.695
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Exports compile time: 5.28776
+ === GLib::Raw::ReturnedValue === 
+Stage start      :   0.000
+Stage parse      :   4.715
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.026
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::ReturnedValue compile time: 5.2639822
+ === GLib::Raw::Struct_Subs === 
+Stage start      :   0.000
+Stage parse      :   4.934
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Struct_Subs compile time: 5.476819
+ === GLib::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   5.460
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.008
+Stage mast       :   0.019
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GLib::Raw::Enums compile time: 6.0545524
+ === GLib::Raw::Object === 
+Stage start      :   0.000
+Stage parse      :   5.374
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Object compile time: 6.0097592
+ === GLib::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   5.416
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.008
+Stage moar       :   0.000
+
+GLib::Raw::Subs compile time: 5.9056067
+ === GLib::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   5.348
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Structs compile time: 5.92639839
+ === GLib::Roles::Pointers === 
+Stage start      :   0.000
+Stage parse      :   5.006
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.007
+Stage mbc        :   0.008
+Stage moar       :   0.000
+
+GLib::Roles::Pointers compile time: 5.5830867
+ === GTK::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   5.040
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.007
+Stage mbc        :   0.013
+Stage moar       :   0.000
+
+GTK::Raw::Definitions compile time: 5.7928154
+ === GLib::Roles::ListData === 
+Stage start      :   0.000
+Stage parse      :   6.198
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GLib::Roles::ListData compile time: 6.74788236
+ === GLib::Value === 
+Stage start      :   0.000
+Stage parse      :   5.685
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Value compile time: 6.420234
+ === GTK::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   4.636
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.007
+Stage mast       :   0.007
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GTK::Raw::Exports compile time: 5.1587865
+ === GLib::Roles::Signals::Generic === 
+Stage start      :   0.000
+Stage parse      :   6.077
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Roles::Signals::Generic compile time: 6.6916468
+ === GLib::Roles::StaticClass === 
+Stage start      :   0.000
+Stage parse      :   5.910
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GLib::Roles::StaticClass compile time: 6.6032519
+ === GLib::Roles::Object === 
+Stage start      :   0.000
+Stage parse      :   6.397
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.028
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GLib::Roles::Object compile time: 7.0170111
+ === GTK::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   5.673
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.009
+Stage mast       :   0.036
+Stage mbc        :   0.019
+Stage moar       :   0.000
+
+GTK::Raw::Enums compile time: 6.3429557
+ === GTK::Raw::Requisition === 
+Stage start      :   0.000
+Stage parse      :   6.458
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GTK::Raw::Requisition compile time: 6.91400341
+ === GTK::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   5.550
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GTK::Raw::Subs compile time: 6.1793535
+ === GTK::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   6.300
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GTK::Raw::Structs compile time: 6.9111499
+ === GTK::Roles::Types === 
+Stage start      :   0.000
+Stage parse      :   6.379
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GTK::Roles::Types compile time: 7.1053442
+ === Method::Also === 
+Stage start      :   0.000
+Stage parse      :   4.806
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+Method::Also compile time: 5.4186468
+ === Pango::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   4.740
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.026
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+Pango::Raw::Exports compile time: 5.3330904
+ === Pango::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   5.288
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+Pango::Raw::Definitions compile time: 5.850674
+ === Pango::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   5.434
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+Pango::Raw::Enums compile time: 5.9324522
+ === GTK::Roles::Signals::Generic === 
+Stage start      :   0.000
+Stage parse      :   7.767
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GTK::Roles::Signals::Generic compile time: 8.27809337
+ === Pango::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   5.721
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+Pango::Raw::Structs compile time: 6.2773392
+ === GTK::Raw::TextView === 
+Stage start      :   0.000
+Stage parse      :   8.392
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.011
+Stage moar       :   0.000
+
+GTK::Raw::TextView compile time: 8.90134553
+ === GTK::TextTag === 
+Stage start      :   0.000
+Stage parse      :   7.577
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GTK::TextTag compile time: 8.16036485
+ === SourceViewGTK::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   4.347
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Exports compile time: 4.8579176
+ === Pango::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   5.907
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+Pango::Raw::Subs compile time: 6.6267088
+ === Pango::Raw::Types === 
+Stage start      :   0.000
+Stage parse      :   5.869
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.008
+Stage mast       :   0.017
+Stage mbc        :   0.010
+Stage moar       :   0.000
+
+Pango::Raw::Types compile time: 6.499306
+ === GTK::Button === 
+Stage start      :   0.000
+Stage parse      :  13.085
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.015
+Stage moar       :   0.000
+
+GTK::Button compile time: 13.744705
+ === GTK::Widget === 
+Stage start      :   0.000
+Stage parse      :   9.418
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.016
+Stage moar       :   0.000
+
+GTK::Widget compile time: 10.092705
+ === GTK::TextIter === 
+Stage start      :   0.000
+Stage parse      :  10.337
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.016
+Stage moar       :   0.000
+
+GTK::TextIter compile time: 10.9189712
+ === GTK::TextBuffer === 
+Stage start      :   0.000
+Stage parse      :  10.512
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.017
+Stage moar       :   0.000
+
+GTK::TextBuffer compile time: 11.1217377
+ === GTK::Window === 
+Stage start      :   0.000
+Stage parse      :   9.714
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.017
+Stage moar       :   0.000
+
+GTK::Window compile time: 10.4179793
+ === SourceViewGTK::Raw::Definitions === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.641
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.005
+    Stage mast       :   0.081
+    Stage mbc        :   0.002
+Stage parse      :   6.152
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Definitions compile time: 6.7291319
+ === GTK::TextView === 
+Stage start      :   0.000
+Stage parse      :  10.957
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.019
+Stage moar       :   0.000
+
+GTK::TextView compile time: 11.530751
+ === SourceViewGTK::Raw::Enums === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Enums.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.779
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.007
+    Stage mast       :   0.196
+    Stage mbc        :   0.010
+Stage parse      :   6.852
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Enums compile time: 7.6234592
+ === SourceViewGTK::Raw::Types === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.820
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.001
+    Stage mast       :   0.056
+    Stage mbc        :   0.004
+Stage parse      :   4.909
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.011
+Stage mast       :   0.019
+Stage mbc        :   0.011
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Types compile time: 5.14240294
+ === SourceViewGTK::Raw::Version === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.039
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.033
+    Stage mast       :   0.142
+    Stage mbc        :   0.034
+Stage parse      :   7.056
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Version compile time: 7.30144078
+ === SourceViewGTK::Roles::Signals::MarkAttributes === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.495
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.040
+    Stage mast       :   0.100
+    Stage mbc        :   0.040
+Stage parse      :   7.779
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.013
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::Signals::MarkAttributes compile time: 8.04517893
+ === SourceViewGTK::Raw::UndoManager === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.052
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.036
+    Stage mast       :   0.203
+    Stage mbc        :   0.134
+Stage parse      :   8.330
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.014
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::UndoManager compile time: 8.5567224
+ === SourceViewGTK::Roles::Signals::Completion === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.074
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.056
+    Stage mast       :   0.258
+    Stage mbc        :   0.111
+Stage parse      :   9.646
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::Signals::Completion compile time: 9.89614566
+ === SourceViewGTK::Roles::Signals::Buffer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.163
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.049
+    Stage mast       :   0.306
+    Stage mbc        :   0.133
+Stage parse      :  11.306
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.009
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::Signals::Buffer compile time: 11.6113253
+ === SourceViewGTK::Roles::Signals::View === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.558
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.111
+    Stage mast       :   0.295
+    Stage mbc        :   0.111
+Stage parse      :  12.809
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.008
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::Signals::View compile time: 13.08735
+ === SourceViewGTK::Tag === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Tag.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.545
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.055
+    Stage mast       :   0.308
+    Stage mbc        :   0.082
+Stage parse      :  12.854
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Tag compile time: 13.191962
+ === SourceViewGTK::Roles::Signals::GutterRenderer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.953
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.089
+    Stage mast       :   0.320
+    Stage mbc        :   0.194
+Stage parse      :  14.440
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.003
+Stage mbc        :   0.008
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::Signals::GutterRenderer compile time: 14.7300934
+ === SourceViewGTK::Version === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.231
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.033
+    Stage mast       :   0.256
+    Stage mbc        :   0.013
+Stage parse      :  12.972
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.006
+Stage moar       :   0.000
+
+SourceViewGTK::Version compile time: 13.503083
+ === SourceViewGTK::Raw::View === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/View.pm6
+    Stage start      :   0.000
+    Stage parse      :  17.999
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.099
+    Stage mast       :   0.526
+    Stage mbc        :   0.482
+Stage parse      :  22.847
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.008
+Stage mbc        :   0.014
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::View compile time: 23.11926554
+ === SourceViewGTK::Utils === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Utils.pm6
+    Stage start      :   0.002
+    Stage parse      :   7.307
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.088
+    Stage mast       :   0.303
+    Stage mbc        :   0.067
+Stage parse      :  14.289
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.038
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+SourceViewGTK::Utils compile time: 14.7992185
+ === SourceViewGTK::Raw::CompletionInfo === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.668
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.062
+    Stage mast       :   0.169
+    Stage mbc        :   0.060
+Stage parse      :  14.378
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.011
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::CompletionInfo compile time: 14.9604588
+ === SourceViewGTK::Raw::CompletionWords === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionWords.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.223
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.036
+    Stage mast       :   0.199
+    Stage mbc        :   0.065
+Stage parse      :  14.767
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.035
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::CompletionWords compile time: 15.420493
+ === SourceViewGTK::Raw::CompletionContext === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.501
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.041
+    Stage mast       :   0.305
+    Stage mbc        :   0.083
+Stage parse      :  15.094
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.024
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::CompletionContext compile time: 15.734815
+ === SourceViewGTK::Raw::CompletionItem === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.618
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.094
+    Stage mast       :   0.362
+    Stage mbc        :   0.138
+Stage parse      :  18.228
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.032
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::CompletionItem compile time: 18.88197564
+ === SourceViewGTK::Raw::CompletionProposal === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionProposal.pm6
+    Stage start      :   0.002
+    Stage parse      :  11.773
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.045
+    Stage mast       :   0.272
+    Stage mbc        :   0.152
+Stage parse      :  18.656
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::CompletionProposal compile time: 19.4223175
+ === SourceViewGTK::UndoManager === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.490
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.047
+    Stage mast       :   0.217
+    Stage mbc        :   0.053
+Stage parse      :  19.237
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::UndoManager compile time: 19.68080043
+ === SourceViewGTK::Raw::Encoding === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :  11.873
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.082
+    Stage mast       :   0.237
+    Stage mbc        :   0.146
+Stage parse      :  18.940
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Encoding compile time: 19.7310481
+ === SourceViewGTK::Raw::Completion === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.564
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.111
+    Stage mast       :   0.370
+    Stage mbc        :   0.277
+Stage parse      :  19.710
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.021
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Completion compile time: 20.1898012
+ === SourceViewGTK::Raw::CompletionProvider === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.270
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.099
+    Stage mast       :   0.301
+    Stage mbc        :   0.131
+Stage parse      :  19.523
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::CompletionProvider compile time: 20.195784
+ === SourceViewGTK::Raw::File === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/File.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.777
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.097
+    Stage mast       :   0.248
+    Stage mbc        :   0.177
+Stage parse      :  19.519
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.018
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::File compile time: 20.16360462
+ === SourceViewGTK::Raw::Gutter === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.721
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.058
+    Stage mast       :   0.401
+    Stage mbc        :   0.114
+Stage parse      :  17.059
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.028
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Gutter compile time: 17.6117655
+ === SourceViewGTK::Raw::FileLoader === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.963
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.057
+    Stage mast       :   0.283
+    Stage mbc        :   0.200
+Stage parse      :  20.122
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.021
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::FileLoader compile time: 20.86282691
+ === SourceViewGTK::Raw::GutterRendererPixbuf === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRendererPixbuf.pm6
+    Stage start      :   0.002
+    Stage parse      :   8.873
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.047
+    Stage mast       :   0.206
+    Stage mbc        :   0.097
+Stage parse      :  15.722
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.022
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::GutterRendererPixbuf compile time: 16.4610628
+ === SourceViewGTK::Raw::GutterRendererText === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRendererText.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.408
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.053
+    Stage mast       :   0.233
+    Stage mbc        :   0.076
+Stage parse      :  15.041
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.015
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::GutterRendererText compile time: 15.8597902
+ === SourceViewGTK::Raw::FileSaver === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :  13.622
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.062
+    Stage mast       :   0.323
+    Stage mbc        :   0.263
+Stage parse      :  20.263
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::FileSaver compile time: 20.8034748
+ === SourceViewGTK::Raw::GutterRenderer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :  15.419
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.104
+    Stage mast       :   0.454
+    Stage mbc        :   0.399
+Stage parse      :  22.840
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.016
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::GutterRenderer compile time: 23.3950145
+ === SourceViewGTK::Raw::Map === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.409
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.047
+    Stage mast       :   0.308
+    Stage mbc        :   0.096
+Stage parse      :  12.592
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.026
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Map compile time: 13.16737297
+ === SourceViewGTK::Raw::Mark === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.185
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.038
+    Stage mast       :   0.260
+    Stage mbc        :   0.101
+Stage parse      :  13.650
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.021
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Mark compile time: 14.282312
+ === SourceViewGTK::Raw::LanguageManager === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.320
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.061
+    Stage mast       :   0.201
+    Stage mbc        :   0.135
+Stage parse      :  14.494
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.022
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::LanguageManager compile time: 15.071087552
+ === SourceViewGTK::Raw::Buffer === 
+Stage start      :   0.004
+
+    precomp lib/SourceViewGTK/Raw/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :  21.521
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.149
+    Stage mast       :   0.491
+    Stage mbc        :   0.580
+Stage parse      :  29.269
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Buffer compile time: 29.80739316
+ === SourceViewGTK::Raw::Language === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.634
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.046
+    Stage mast       :   0.213
+    Stage mbc        :   0.145
+Stage parse      :  17.025
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.015
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Language compile time: 17.54008962
+ === SourceViewGTK::Raw::MarkAttributes === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.517
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.039
+    Stage mast       :   0.326
+    Stage mbc        :   0.197
+Stage parse      :  16.406
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::MarkAttributes compile time: 16.9231181
+ === SourceViewGTK::Raw::Quarks === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Quarks.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.844
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.003
+    Stage mast       :   0.132
+    Stage mbc        :   0.003
+Stage parse      :  11.194
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Quarks compile time: 11.6429054
+ === SourceViewGTK::Raw::StyleSchemeChooserButton === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.192
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.037
+    Stage mast       :   0.134
+    Stage mbc        :   0.025
+Stage parse      :  11.265
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::StyleSchemeChooserButton compile time: 11.8382959
+ === SourceViewGTK::Raw::StyleSchemeChooserWidget === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.002
+    Stage parse      :   4.790
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.119
+    Stage mast       :   0.151
+    Stage mbc        :   0.044
+Stage parse      :  11.127
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::StyleSchemeChooserWidget compile time: 11.8497832
+ === SourceViewGTK::Raw::Style === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.878
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.053
+    Stage mast       :   0.166
+    Stage mbc        :   0.052
+Stage parse      :  11.742
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Style compile time: 12.2654469
+ === SourceViewGTK::Raw::StyleSchemeChooser === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.738
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.048
+    Stage mast       :   0.096
+    Stage mbc        :   0.027
+Stage parse      :  11.797
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.016
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::StyleSchemeChooser compile time: 12.3841831
+ === SourceViewGTK::Raw::StyleScheme === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.330
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.035
+    Stage mast       :   0.162
+    Stage mbc        :   0.075
+Stage parse      :  12.447
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.013
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::StyleScheme compile time: 12.9971745
+ === SourceViewGTK::Raw::SpaceDrawer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.158
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.140
+    Stage mbc        :   0.065
+Stage parse      :  13.057
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::SpaceDrawer compile time: 13.6303588
+ === SourceViewGTK::Raw::SearchSettings === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.442
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.123
+    Stage mbc        :   0.079
+Stage parse      :  13.174
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::SearchSettings compile time: 13.657669
+ === SourceViewGTK::Raw::StyleSchemeManager === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeManager.pm6
+    Stage start      :   0.002
+    Stage parse      :   7.221
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.073
+    Stage mast       :   0.125
+    Stage mbc        :   0.142
+Stage parse      :  13.156
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.013
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::StyleSchemeManager compile time: 13.90057768
+ === SourceViewGTK::Raw::Region === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.265
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.033
+    Stage mast       :   0.114
+    Stage mbc        :   0.085
+Stage parse      :  14.206
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Region compile time: 14.63363681
+ === SourceViewGTK::Raw::PrintCompositor === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :  15.820
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.056
+    Stage mast       :   0.214
+    Stage mbc        :   0.253
+Stage parse      :  21.536
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::PrintCompositor compile time: 22.0941184
+ === SourceViewGTK::Raw::SearchContext === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SearchContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.155
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.062
+    Stage mast       :   0.205
+    Stage mbc        :   0.242
+Stage parse      :  15.187
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::SearchContext compile time: 15.691299
+ === SourceViewGTK::SearchSettings === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.230
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.084
+    Stage mbc        :   0.021
+Stage parse      :   7.303
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::SearchSettings compile time: 7.56536434
+ === SourceViewGTK::Style === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.997
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.049
+    Stage mast       :   0.193
+    Stage mbc        :   0.030
+Stage parse      :   7.272
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Style compile time: 7.5640379
+ === SourceViewGTK::SpaceDrawer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.214
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.041
+    Stage mast       :   0.111
+    Stage mbc        :   0.017
+Stage parse      :   7.409
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::SpaceDrawer compile time: 7.6651102
+ === SourceViewGTK::Roles::CompletionProposal === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.169
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.083
+    Stage mbc        :   0.025
+Stage parse      :   8.261
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::CompletionProposal compile time: 8.5132895
+ === SourceViewGTK::Roles::CompletionProvider === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.108
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.281
+    Stage mbc        :   0.052
+Stage parse      :  12.287
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::CompletionProvider compile time: 12.5704134
+ === SourceViewGTK::StyleScheme === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.872
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.092
+    Stage mbc        :   0.021
+Stage parse      :   5.447
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::StyleScheme compile time: 5.6987057
+ === SourceViewGTK::Region === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.123
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.342
+    Stage mbc        :   0.067
+Stage parse      :  14.270
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Region compile time: 14.5612795
+ === SourceViewGTK::StyleSchemeManager === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.520
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.031
+    Stage mast       :   0.143
+    Stage mbc        :   0.012
+Stage parse      :   6.831
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::StyleSchemeManager compile time: 7.1144776
+ === SourceViewGTK::Encoding === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.844
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.044
+    Stage mast       :   0.226
+    Stage mbc        :   0.033
+Stage parse      :   8.187
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Encoding compile time: 8.41757485
+ === SourceViewGTK::GutterRenderer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.933
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.055
+    Stage mast       :   0.227
+    Stage mbc        :   0.015
+Stage parse      :   8.503
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::GutterRenderer compile time: 8.770442
+ === SourceViewGTK::CompletionItem === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.759
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.046
+    Stage mast       :   0.299
+    Stage mbc        :   0.037
+Stage parse      :   9.903
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::CompletionItem compile time: 10.17933017
+ === SourceViewGTK::File === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.460
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.125
+    Stage mbc        :   0.043
+Stage parse      :  11.161
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::File compile time: 11.4640249
+ === SourceViewGTK::Completion::Words === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Completion/Words.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.216
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.057
+    Stage mast       :   0.417
+    Stage mbc        :   0.018
+Stage parse      :  11.465
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Completion::Words compile time: 11.75375186
+ === SourceViewGTK::GutterRenderer::Text === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer/Text.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.524
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.071
+    Stage mbc        :   0.020
+Stage parse      :   5.598
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::GutterRenderer::Text compile time: 5.8778337
+ === SourceViewGTK::CompletionInfo === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.092
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.414
+    Stage mbc        :   0.060
+Stage parse      :  15.322
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+SourceViewGTK::CompletionInfo compile time: 15.627459
+ === SourceViewGTK::CompletionContext === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.483
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.371
+    Stage mbc        :   0.064
+Stage parse      :  15.365
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::CompletionContext compile time: 15.6383153
+ === SourceViewGTK::Language === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.123
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.067
+    Stage mbc        :   0.031
+Stage parse      :   7.228
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Language compile time: 7.493497
+ === SourceViewGTK::GutterRenderer::Pixbuf === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer/Pixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.711
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.106
+    Stage mbc        :   0.019
+Stage parse      :   8.033
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::GutterRenderer::Pixbuf compile time: 8.3176381
+ === SourceViewGTK::Roles::StyleSchemeChooser === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.602
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.030
+    Stage mast       :   0.071
+    Stage mbc        :   0.021
+Stage parse      :   5.455
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Roles::StyleSchemeChooser compile time: 5.6887766
+ === SourceViewGTK::Mark === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.760
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.073
+    Stage mbc        :   0.017
+Stage parse      :   6.619
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Mark compile time: 6.8410067
+ === SourceViewGTK::LanguageManager === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.966
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.106
+    Stage mbc        :   0.024
+Stage parse      :   6.674
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::LanguageManager compile time: 6.9037911
+ === SourceViewGTK::MarkAttributes === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.697
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.117
+    Stage mbc        :   0.022
+Stage parse      :   7.591
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::MarkAttributes compile time: 7.8370738
+ === SourceViewGTK::StyleSchemeChooserWidget === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.489
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.334
+    Stage mbc        :   0.044
+Stage parse      :  11.642
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::StyleSchemeChooserWidget compile time: 11.8945197
+ === SourceViewGTK::Completion === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.511
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.044
+    Stage mast       :   0.446
+    Stage mbc        :   0.013
+Stage parse      :  10.672
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Completion compile time: 10.91904344
+ === SourceViewGTK::StyleSchemeChooserButton === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.173
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.396
+    Stage mbc        :   0.051
+Stage parse      :  12.709
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+SourceViewGTK::StyleSchemeChooserButton compile time: 12.9675014
+ === SourceViewGTK::Buffer === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.228
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.033
+    Stage mast       :   0.387
+    Stage mbc        :   0.056
+Stage parse      :  13.610
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Buffer compile time: 13.8574084
+ === SourceViewGTK::Gutter === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.025
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.094
+    Stage mbc        :   0.020
+Stage parse      :   7.188
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Gutter compile time: 7.3972983
+ === SourceViewGTK::PrintCompositor === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.677
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.043
+    Stage mast       :   0.466
+    Stage mbc        :   0.025
+Stage parse      :   9.569
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::PrintCompositor compile time: 9.817272
+ === SourceViewGTK::FileSaver === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.309
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.037
+    Stage mast       :   0.552
+    Stage mbc        :   0.014
+Stage parse      :  10.891
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::FileSaver compile time: 11.13844313
+ === SourceViewGTK::FileLoader === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.262
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.425
+    Stage mbc        :   0.043
+Stage parse      :  12.636
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::FileLoader compile time: 12.872987
+ === SourceViewGTK::SearchContext === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SearchContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.426
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.030
+    Stage mast       :   0.407
+    Stage mbc        :   0.066
+Stage parse      :  14.261
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::SearchContext compile time: 14.5066656
+ === SourceViewGTK::View === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.122
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.038
+    Stage mast       :   0.429
+    Stage mbc        :   0.058
+Stage parse      :  14.760
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::View compile time: 15.03610194
+ === SourceViewGTK::Map === 
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.099
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.385
+    Stage mbc        :   0.009
+Stage parse      :   8.969
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Map compile time: 9.19134917
+
+Total compile time: 156.3012425s
