@@ -30,11 +30,7 @@ class SourceViewGTK::View is GTK::TextView {
   }
 
   submethod BUILD (:$source-view) {
-    given $source-view {
-      when SourceViewAncestry  { self.setSourceView($source-view) }
-      when SourceViewGTK::View { }
-      default                  { }
-    }
+    self.setSourceView($source-view) if $source-view;
   }
 
   method setSourceView(SourceViewAncestry $_) {
