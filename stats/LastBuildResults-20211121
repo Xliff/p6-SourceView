@@ -1,0 +1,3365 @@
+Dependency Generation
+=====================
+real 1.06
+user 1.59
+sys 0.07
+ === Cairo === (1/141)
+Stage start      :   0.000
+Stage parse      :   1.522
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Pixbuf === (2/141)
+Stage start      :   0.000
+Stage parse      :   2.462
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GDK::RGBA === (3/141)
+Stage start      :   0.000
+Stage parse      :   1.749
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Definitions === (4/141)
+Stage start      :   0.000
+Stage parse      :   1.589
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Enums === (5/141)
+Stage start      :   0.000
+Stage parse      :   1.560
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.005
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GDK::Raw::Exports === (6/141)
+Stage start      :   0.000
+Stage parse      :   1.329
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.015
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Structs === (7/141)
+Stage start      :   0.000
+Stage parse      :   1.608
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GDK::Raw::Subs === (8/141)
+Stage start      :   0.000
+Stage parse      :   1.576
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::DBus::Raw::Types === (9/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_n32 NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::InputStream === (10/141)
+Stage start      :   0.000
+./p6gtkexec: line 63: 188330 Segmentation fault      (core dumped) ${EXEC} --stagestats ${EXTRAS} ${INCLUDES} "$@"
+ === GIO::Raw::Definitions === (11/141)
+Stage start      :   0.000
+./p6gtkexec: line 63: 188344 Segmentation fault      (core dumped) ${EXEC} --stagestats ${EXTRAS} ${INCLUDES} "$@"
+ === GIO::Raw::Enums === (12/141)
+Stage start      :   0.000
+./p6gtkexec: line 63: 188356 Segmentation fault      (core dumped) ${EXEC} --stagestats ${EXTRAS} ${INCLUDES} "$@"
+ === GIO::Raw::Exports === (13/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_iX NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::Raw::Quarks === (14/141)
+Stage start      :   0.000
+Stage parse      :   1.783
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GIO::Raw::Structs === (15/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_iX NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::Raw::Subs === (16/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_n32 NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::Roles::GFile === (17/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_n32 NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GIO::Roles::Icon === (18/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_n32 NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GLib::GList === (19/141)
+Stage start      :   0.000
+Stage parse      :   1.809
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::GSList === (20/141)
+Stage start      :   0.000
+Stage parse      :   1.799
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Definitions === (21/141)
+Stage start      :   0.000
+Stage parse      :   1.518
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Enums === (22/141)
+Stage start      :   0.000
+Stage parse      :   1.622
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.007
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GLib::Raw::Exceptions === (23/141)
+Stage start      :   0.000
+Stage parse      :   1.335
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Exports === (24/141)
+Stage start      :   0.000
+Stage parse      :   1.394
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GLib::Raw::Object === (25/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_iX NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GLib::Raw::ReturnedValue === (26/141)
+Stage start      :   0.000
+Stage parse      :   1.341
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Struct_Subs === (27/141)
+Stage start      :   0.000
+Stage parse      :   1.537
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Structs === (28/141)
+Stage start      :   0.000
+Stage parse      :   1.722
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Raw::Subs === (29/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_iX NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GLib::Roles::ListData === (30/141)
+Stage start      :   0.000
+Stage parse      :   1.811
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::Object === (31/141)
+Stage start      :   0.000
+Stage parse      :   2.030
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GLib::Roles::Pointers === (32/141)
+Stage start      :   0.000
+Stage parse      :   1.523
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::Signals::Generic === (33/141)
+Stage start      :   0.000
+Stage parse      :   1.784
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GLib::Roles::StaticClass === (34/141)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+const_iX NYI
+at -e:1
+Actually thrown at:
+  in any statement_control at /home/cbwood/Projects/rakudobrew/versions/moar-blead/install/share/perl6/lib/Perl6/Grammar.moarvm line 1
+
+ === GLib::Value === (35/141)
+Stage start      :   0.000
+Stage parse      :   1.800
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Button === (36/141)
+Stage start      :   0.000
+Stage parse      :   3.832
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.006
+Stage moar       :   0.000
+ === GTK::Raw::Definitions === (37/141)
+Stage start      :   0.000
+Stage parse      :   1.527
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GTK::Raw::Enums === (38/141)
+Stage start      :   0.000
+Stage parse      :   1.544
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.007
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GTK::Raw::Exports === (39/141)
+Stage start      :   0.000
+Stage parse      :   1.311
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.005
+Stage moar       :   0.000
+ === GTK::Raw::Requisition === (40/141)
+Stage start      :   0.000
+Stage parse      :   1.973
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GTK::Raw::Structs === (41/141)
+Stage start      :   0.000
+Stage parse      :   1.935
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === GTK::Raw::Subs === (42/141)
+Stage start      :   0.000
+Stage parse      :   1.565
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::TextView === (43/141)
+Stage start      :   0.000
+Stage parse      :   2.402
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === GTK::Roles::Signals::Generic === (44/141)
+Stage start      :   0.000
+Stage parse      :   2.276
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.013
+Stage moar       :   0.000
+ === GTK::Roles::Types === (45/141)
+Stage start      :   0.000
+Stage parse      :   1.755
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::TextBuffer === (46/141)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at -e:1
+ === GTK::TextIter === (47/141)
+Stage start      :   0.000
+Stage parse      :   3.835
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.006
+Stage moar       :   0.000
+ === GTK::TextTag === (48/141)
+Stage start      :   0.000
+Stage parse      :   2.467
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === GTK::TextView === (49/141)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+
+at -e:1
+ === GTK::Widget === (50/141)
+Stage start      :   0.000
+Stage parse      :   3.495
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.005
+Stage moar       :   0.000
+ === GTK::Window === (51/141)
+Stage start      :   0.000
+Stage parse      :   3.869
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === Method::Also === (52/141)
+Stage start      :   0.000
+Stage parse      :   1.343
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === NativeCall === (53/141)
+Stage start      :   0.000
+Stage parse      :   1.471
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Definitions === (54/141)
+Stage start      :   0.000
+Stage parse      :   1.546
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Enums === (55/141)
+Stage start      :   0.000
+Stage parse      :   1.597
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Exports === (56/141)
+Stage start      :   0.000
+Stage parse      :   1.331
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.006
+Stage mbc        :   0.005
+Stage moar       :   0.000
+ === Pango::Raw::Structs === (57/141)
+Stage start      :   0.000
+Stage parse      :   1.800
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Subs === (58/141)
+Stage start      :   0.000
+Stage parse      :   1.827
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Pango::Raw::Types === (59/141)
+Stage start      :   0.000
+Stage parse      :   1.904
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.008
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Exports === (60/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Exports.pm6
+    Stage start      :   0.000
+    Stage parse      :   0.136
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.003
+    Stage mast       :   0.005
+    Stage mbc        :   0.002
+Stage parse      :   1.535
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.007
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Definitions === (61/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.694
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.007
+    Stage mast       :   0.017
+    Stage mbc        :   0.002
+Stage parse      :   3.134
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.007
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Enums === (62/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Enums.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.897
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.029
+    Stage mbc        :   0.008
+Stage parse      :   3.392
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.007
+Stage mbc        :   0.006
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Types === (63/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.193
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.003
+    Stage mast       :   0.020
+    Stage mbc        :   0.005
+Stage parse      :   4.885
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.016
+Stage mast       :   0.032
+Stage mbc        :   0.019
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::UndoManager === (64/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.274
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.024
+    Stage mbc        :   0.026
+Stage parse      :   3.969
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Version === (65/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.022
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.026
+    Stage mbc        :   0.010
+Stage parse      :   3.683
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::View === (66/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.554
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.049
+    Stage mbc        :   0.077
+Stage parse      :   5.358
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::Buffer === (67/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.764
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.047
+    Stage mbc        :   0.024
+Stage parse      :   5.528
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.010
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::Completion === (68/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.618
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.044
+    Stage mbc        :   0.024
+Stage parse      :   5.382
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.010
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::GutterRenderer === (69/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.786
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.060
+    Stage mbc        :   0.028
+Stage parse      :   5.554
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.012
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::MarkAttributes === (70/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.197
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.038
+    Stage mbc        :   0.013
+Stage parse      :   3.879
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::Signals::View === (71/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/Signals/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.628
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.040
+    Stage mbc        :   0.023
+Stage parse      :   5.374
+Stage syntaxcheck:   0.000
+Stage ast        :   0.010
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Tag === (72/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Tag.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.701
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.051
+    Stage mbc        :   0.018
+Stage parse      :   5.522
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::UndoManager === (73/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/UndoManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.433
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.040
+    Stage mbc        :   0.011
+R: GTK::Roles::Signals::Generic
+Stage parse      :   5.195
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Utils === (74/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Utils.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.064
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.023
+    Stage mbc        :   0.011
+Stage parse      :   3.753
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Version === (75/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Version.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.685
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.029
+    Stage mbc        :   0.001
+Stage parse      :   3.338
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Buffer === (76/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.593
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.031
+    Stage mast       :   0.077
+    Stage mbc        :   0.082
+Stage parse      :   5.452
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Completion === (77/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.397
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.045
+    Stage mbc        :   0.030
+Stage parse      :   4.117
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionContext === (78/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.081
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.037
+    Stage mbc        :   0.014
+Stage parse      :   3.766
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionInfo === (79/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.033
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.021
+    Stage mbc        :   0.012
+Stage parse      :   3.714
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionItem === (80/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.330
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.036
+    Stage mbc        :   0.026
+Stage parse      :   4.037
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionProposal === (81/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.321
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.023
+    Stage mbc        :   0.027
+Stage parse      :   4.012
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionProvider === (82/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.442
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.033
+    Stage mbc        :   0.030
+Stage parse      :   4.164
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::CompletionWords === (83/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/CompletionWords.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.072
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.023
+    Stage mbc        :   0.010
+Stage parse      :   3.743
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Encoding === (84/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.355
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.024
+    Stage mbc        :   0.027
+Stage parse      :   4.068
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::File === (85/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.422
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.028
+    Stage mbc        :   0.031
+Stage parse      :   4.112
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::FileLoader === (86/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.554
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.031
+    Stage mbc        :   0.033
+Stage parse      :   4.281
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::FileSaver === (87/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.651
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.031
+    Stage mbc        :   0.039
+Stage parse      :   4.368
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Gutter === (88/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.206
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.022
+    Stage mbc        :   0.021
+Stage parse      :   3.874
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRenderer === (89/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.249
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.036
+    Stage mbc        :   0.042
+Stage parse      :   5.040
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRendererPixbuf === (90/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRendererPixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.208
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.036
+    Stage mbc        :   0.016
+Stage parse      :   3.904
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::GutterRendererText === (91/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/GutterRendererText.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.154
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.022
+    Stage mbc        :   0.018
+Stage parse      :   3.862
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Language === (92/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.339
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.023
+    Stage mbc        :   0.027
+Stage parse      :   4.030
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::LanguageManager === (93/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.207
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.022
+    Stage mbc        :   0.022
+Stage parse      :   3.876
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Map === (94/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Map.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.036
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.025
+    Stage mbc        :   0.014
+Stage parse      :   3.712
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Mark === (95/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.094
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.021
+    Stage mbc        :   0.016
+Stage parse      :   3.771
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::MarkAttributes === (96/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.762
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.027
+    Stage mbc        :   0.023
+Stage parse      :   4.441
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::PrintCompositor === (97/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/PrintCompositor.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.511
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.032
+    Stage mast       :   0.068
+    Stage mbc        :   0.078
+Stage parse      :   5.352
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Quarks === (98/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Quarks.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.987
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.002
+    Stage mast       :   0.011
+    Stage mbc        :   0.002
+Stage parse      :   3.626
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Region === (99/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Region.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.541
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.033
+    Stage mbc        :   0.035
+Stage parse      :   4.236
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SearchContext === (100/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SearchContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.818
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.038
+    Stage mbc        :   0.040
+Stage parse      :   4.547
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SearchSettings === (101/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.352
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.039
+    Stage mbc        :   0.029
+Stage parse      :   4.062
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::SpaceDrawer === (102/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.244
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.049
+    Stage mbc        :   0.023
+Stage parse      :   3.956
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Style === (103/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.007
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.019
+    Stage mbc        :   0.012
+Stage parse      :   3.666
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleScheme === (104/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.183
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.036
+    Stage mbc        :   0.019
+Stage parse      :   3.869
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooser === (105/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.004
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.020
+    Stage mbc        :   0.012
+Stage parse      :   3.649
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooserButton === (106/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.983
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.040
+    Stage mbc        :   0.010
+Stage parse      :   3.652
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeChooserWidget === (107/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.978
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.040
+    Stage mbc        :   0.010
+Stage parse      :   3.643
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::StyleSchemeManager === (108/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Raw/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.284
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.026
+    Stage mbc        :   0.025
+Stage parse      :   3.991
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Region === (109/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Region.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+            Did you mean 'GtkTargetListAncestry'?
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Region.pm6 (SourceViewGTK::Region)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Region.pm6 (SourceViewGTK::Region):8
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Region.pm6 (SourceViewGTK::Region)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+Did you mean 'GtkTargetListAncestry'?
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Region.pm6 (SourceViewGTK::Region):8
+
+at -e:1
+ === SourceViewGTK::Roles::CompletionProposal === (110/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/CompletionProposal.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.636
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.035
+    Stage mbc        :   0.018
+Stage parse      :   5.461
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Roles::CompletionProvider === (111/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/CompletionProvider.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.406
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.099
+    Stage mbc        :   0.031
+Stage parse      :   7.787
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::SearchSettings === (112/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SearchSettings.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.826
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.035
+    Stage mbc        :   0.011
+R: GLib::Roles::Object
+Stage parse      :   4.572
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::SpaceDrawer === (113/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SpaceDrawer.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.970
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.032
+    Stage mbc        :   0.037
+R: GLib::Roles::Object
+Stage parse      :   4.794
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.012
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: GTK::Roles::Types
+ === SourceViewGTK::Style === (114/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Style.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.853
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.035
+    Stage mast       :   0.165
+    Stage mbc        :   0.011
+Stage parse      :   4.772
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleScheme === (115/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleScheme.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.411
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.040
+    Stage mbc        :   0.017
+R: GLib::Roles::Object
+Stage parse      :   4.221
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleSchemeManager === (116/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.199
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.036
+    Stage mast       :   0.055
+    Stage mbc        :   0.009
+Stage parse      :   4.064
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.012
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Completion::Words === (117/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Completion/Words.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.483
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.103
+    Stage mbc        :   0.010
+R: GLib::Roles::Object
+Stage parse      :   5.890
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: SourceViewGTK::Roles::CompletionProvider
+ === SourceViewGTK::CompletionContext === (118/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionContext.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.023
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.031
+    Stage mast       :   0.126
+    Stage mbc        :   0.030
+R: GLib::Roles::Object
+Stage parse      :   8.559
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: GTK::Roles::Types
+ === SourceViewGTK::CompletionInfo === (119/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionInfo.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.728
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.125
+    Stage mbc        :   0.032
+Stage parse      :   8.335
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::CompletionItem === (120/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/CompletionItem.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.511
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.042
+    Stage mast       :   0.067
+    Stage mbc        :   0.017
+R: GLib::Roles::Object
+Stage parse      :   5.454
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: SourceViewGTK::Roles::CompletionProposal
+ === SourceViewGTK::Encoding === (121/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.995
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.048
+    Stage mbc        :   0.016
+Stage parse      :   4.771
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.014
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::File === (122/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.550
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.043
+    Stage mbc        :   0.024
+R: GLib::Roles::Object
+Stage parse      :   6.628
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::GutterRenderer === (123/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.066
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.037
+    Stage mast       :   0.085
+    Stage mbc        :   0.010
+R: GLib::Roles::Object
+Stage parse      :   4.943
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: SourceViewGTK::Roles::Signals::GutterRenderer
+ === SourceViewGTK::GutterRenderer::Pixbuf === (124/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer/Pixbuf.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.795
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.050
+    Stage mbc        :   0.013
+Stage parse      :   5.698
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::GutterRenderer::Text === (125/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/GutterRenderer/Text.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.906
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.038
+    Stage mbc        :   0.014
+Stage parse      :   3.575
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Language === (126/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Language.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.002
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.029
+    Stage mbc        :   0.040
+R: GLib::Roles::Object
+Stage parse      :   4.765
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::LanguageManager === (127/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/LanguageManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.917
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.038
+    Stage mbc        :   0.012
+R: GLib::Roles::Object
+Stage parse      :   4.687
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Mark === (128/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Mark.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.808
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.113
+    Stage mbc        :   0.011
+R: GLib::Roles::Object
+Stage parse      :   4.622
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.014
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::MarkAttributes === (129/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/MarkAttributes.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.793
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.034
+    Stage mast       :   0.047
+    Stage mbc        :   0.012
+R: GLib::Roles::Object
+Stage parse      :   5.645
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: SourceViewGTK::Roles::Signals::MarkAttributes
+ === SourceViewGTK::Roles::StyleSchemeChooser === (130/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Roles/StyleSchemeChooser.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.048
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.041
+    Stage mast       :   0.024
+    Stage mbc        :   0.028
+Stage parse      :   3.930
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleSchemeChooserButton === (131/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeChooserButton.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.890
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.137
+    Stage mbc        :   0.031
+R: SourceViewGTK::Roles::StyleSchemeChooser
+Stage parse      :   8.535
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::StyleSchemeChooserWidget === (132/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/StyleSchemeChooserWidget.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.262
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.117
+    Stage mbc        :   0.025
+R: SourceViewGTK::Roles::StyleSchemeChooser
+Stage parse      :   7.736
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Buffer === (133/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+
+at -e:1
+ === SourceViewGTK::Completion === (134/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Completion.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.073
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.043
+    Stage mast       :   0.161
+    Stage mbc        :   0.010
+R: GLib::Roles::Object
+Stage parse      :   7.027
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+R: SourceViewGTK::Roles::Signals::Completion
+ === SourceViewGTK::FileLoader === (135/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/FileLoader.pm6
+    Stage start      :   0.000
+    
+        precomp lib/SourceViewGTK/Buffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader):10
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileLoader.pm6 (SourceViewGTK::FileLoader):10
+
+at -e:1
+ === SourceViewGTK::FileSaver === (136/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/FileSaver.pm6
+    Stage start      :   0.000
+    
+        precomp lib/SourceViewGTK/Buffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver):9
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/FileSaver.pm6 (SourceViewGTK::FileSaver):9
+
+at -e:1
+ === SourceViewGTK::Gutter === (137/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Gutter.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.987
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.021
+    Stage mast       :   0.036
+    Stage mbc        :   0.033
+R: GLib::Roles::Object
+Stage parse      :   4.867
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::PrintCompositor === (138/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/PrintCompositor.pm6
+    Stage start      :   0.000
+    
+        precomp lib/SourceViewGTK/Buffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/PrintCompositor.pm6 (SourceViewGTK::PrintCompositor)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/PrintCompositor.pm6 (SourceViewGTK::PrintCompositor):8
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/PrintCompositor.pm6 (SourceViewGTK::PrintCompositor)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/PrintCompositor.pm6 (SourceViewGTK::PrintCompositor):8
+
+at -e:1
+ === SourceViewGTK::SearchContext === (139/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/SearchContext.pm6
+    Stage start      :   0.000
+    
+        precomp lib/SourceViewGTK/Buffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext):10
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Buffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Buffer.pm6 (SourceViewGTK::Buffer):10
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/SearchContext.pm6 (SourceViewGTK::SearchContext):10
+
+at -e:1
+ === SourceViewGTK::View === (140/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/View.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+                Did you mean 'GtkTargetListAncestry'?
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+            Did you mean 'GtkTargetListAncestry'?
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+            Did you mean 'GtkTargetListAncestry'?
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+            Did you mean 'GtkTargetListAncestry'?
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View):9
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+            Did you mean 'GtkTargetListAncestry'?
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+        Did you mean 'GtkTargetListAncestry'?
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+    Did you mean 'GtkTargetListAncestry'?
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration. 
+Did you mean 'GtkTargetListAncestry'?
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View):9
+
+at -e:1
+ === SourceViewGTK::Map === (141/141)
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/Map.pm6
+    Stage start      :   0.000
+    
+        precomp lib/SourceViewGTK/View.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+                Stage start      :   0.000
+                
+                    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                    Stage start      :   0.000
+                    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+                
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+        
+        at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Map.pm6 (SourceViewGTK::Map)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View):9
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Map.pm6 (SourceViewGTK::Map):8
+[31m===[0mSORRY![31m===[0m Error while compiling -e
+Stage start      :   0.000
+
+    precomp lib/SourceViewGTK/View.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+            Stage start      :   0.000
+            
+                precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+                Stage start      :   0.000
+                [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+                Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+                at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+                ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+            
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+    
+    at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Map.pm6 (SourceViewGTK::Map)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextView.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+        Stage start      :   0.000
+        
+            precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+            Stage start      :   0.000
+            [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+            Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+            at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+            ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+        
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TextBuffer.pm6
+    Stage start      :   0.000
+    
+        precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+        Stage start      :   0.000
+        [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+        Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+        at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+        ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+    
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView)
+Stage start      :   0.000
+
+    precomp ../p6-GtkPlus/lib/GTK/TargetList.pm6
+    Stage start      :   0.000
+    [31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+    Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+    at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+    ------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer)
+Stage start      :   0.000
+[31m===[0mSORRY![31m===[0m Error while compiling /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList)
+Invalid typename 'GtkTargetEntryAncestry' in parameter declaration.
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TargetList.pm6 (GTK::TargetList):26
+------> [32metGtkTargetEntry (GtkTargetEntryAncestry[33m⏏[31m $_) {[0m
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextBuffer.pm6 (GTK::TextBuffer):9
+
+at /home/cbwood/Projects/p6-GtkPlus/lib/GTK/TextView.pm6 (GTK::TextView):12
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/View.pm6 (SourceViewGTK::View):9
+
+at /home/cbwood/Projects/p6-SourceViewGTK/lib/SourceViewGTK/Map.pm6 (SourceViewGTK::Map):8
+
+at -e:1
+
+real 602.68
+user 731.60
+sys 46.09
