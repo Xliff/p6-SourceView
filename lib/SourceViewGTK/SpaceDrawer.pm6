@@ -5,31 +5,63 @@ use Method::Also;
 use SourceViewGTK::Raw::Types;
 use SourceViewGTK::Raw::SpaceDrawer;
 
+use JSON::GLib::Variant;
+
 use GLib::Roles::Object;
 use GTK::Roles::Types;
+
+our subset GtkSourceSpaceDrawerAncestry is export of Mu
+  where GtkSourceSpaceDrawer | GObject;
 
 class SourceViewGTK::SpaceDrawer {
   also does GLib::Roles::Object;
   also does GTK::Roles::Types;
 
-  has GtkSourceSpaceDrawer $!ssd;
+  has GtkSourceSpaceDrawer $!ssd is implementor;
 
-  submethod BUILD (:$drawer) {
-    self!setObject($!ssd = $drawer);
+  submethod BUILD ( :$space-drawer ) {
+    self.setGtkSourceSpaceDrawer($space-drawer) if $space-drawer
   }
 
-  multi method new (GtkSourceSpaceDrawer $drawer) {
-    $drawer ?? self.bless(:$drawer) !! Nil;
-  }
-  multi method new {
-    my $drawer = gtk_source_space_drawer_new();
+  method setGtkSourceSpaceDrawer (GtkSourceSpaceDrawerAncestry $_) {
+    my $to-parent;
 
-    $drawer ?? self.bless(:$drawer) !! Nil;
+    $!ssd = do {
+      when GtkSourceSpaceDrawer {
+        $to-parent = cast(GObject, $_);
+        $_;
+      }
+
+      default {
+        $to-parent = $_;
+        cast(GtkSourceSpaceDrawer, $_);
+      }
+    }
+    self!setObject($to-parent);
   }
 
   method SourceViewGTK::Raw::Definitions::GtkSourceSpaceDrawer
     is also<GtkSourceSpaceDrawer>
   { $!ssd }
+
+  multi method new (
+     $space-drawer where * ~~ GtkSourceSpaceDrawerAncestry,
+
+    :$ref = True
+  ) {
+    return unless $space-drawer;
+
+    my $o = self.bless( :$space-drawer );
+    $o.ref if $ref;
+    $o;
+  }
+  multi method new ( *%a ) {
+    my $drawer = gtk_source_space_drawer_new();
+
+    my $o = $drawer ?? self.bless(:$drawer) !! Nil;
+    $o.setAttributes(%a) if $o && +%a;
+    $o;
+  }
 
   method enable_matrix is rw is also<enable-matrix> {
     Proxy.new(
@@ -45,15 +77,17 @@ class SourceViewGTK::SpaceDrawer {
   }
 
   # GVariant
-  method matrix (:$raw = False) is rw {
+  method matrix (:$raw = False, :$variant = False) is rw {
     Proxy.new(
       FETCH => sub ($) {
-        my $v = gtk_source_space_drawer_get_matrix($!ssd);
+        my $v = propReturnObject(
+          gtk_source_space_drawer_get_matrix($!ssd),
+          $raw,
+          |GLib::Variant.getTypePair
+        ) but JSON::GLib::Variant::Serialize;
 
-        $v ??
-          ( $raw ?? $v !! GLib::Variant.new($v) )
-          !!
-          Nil;
+        return $v if $variant;
+        $v.json-node.Raku;
       },
       STORE => sub ($, GVariant() $matrix is copy) {
         gtk_source_space_drawer_set_matrix($!ssd, $matrix);
@@ -63,12 +97,13 @@ class SourceViewGTK::SpaceDrawer {
 
   method bind_matrix_setting (
     GSettings() $settings,
-    Str() $key,
-    Int() $flag
+    Str()       $key,
+    Int()       $flag
   )
     is also<bind-matrix-setting>
   {
     my uint32 $f = $flag;
+
     gtk_source_space_drawer_bind_matrix_setting($!ssd, $settings, $key, $f);
   }
 
