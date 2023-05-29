@@ -33,7 +33,9 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
     }
   }
 
-  method setSourceBuffer(SourceBufferAncestry $_) {
+  method setGtkSourceBuffer(SourceBufferAncestry $_)
+    is also<setSourceBuffer>
+  {
     my $to-parent;
     $!sb = do {
       when GtkSourceBuffer {
@@ -46,7 +48,7 @@ class SourceViewGTK::Buffer is GTK::TextBuffer {
         nativecast(GtkSourceBuffer, $_);
       }
     }
-    self.setTextBuffer($to-parent);
+    self.setGtkTextBuffer($to-parent);
   }
 
   method SourceViewGTK::Raw::Definitions::GtkSourceBuffer
