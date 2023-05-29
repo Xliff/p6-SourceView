@@ -1,3 +1,4 @@
 prefix=SourceViewGTK::
 modules=GooCanvas::Raw::Types,GTK::Raw::Types,GTK::Compat::Types
 backups=backup,bitbucket
+has-widgets=True
