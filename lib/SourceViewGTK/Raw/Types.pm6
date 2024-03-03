@@ -12,6 +12,7 @@ use SourceViewGTK::Raw::Exports;
 unit package SourceViewGTK::Raw::Types;
 
 need Cairo;
+need GLib::Raw::Debug;
 need GLib::Raw::Definitions;
 need GLib::Raw::Enums;
 need GLib::Raw::Exceptions;
